@@ -85,6 +85,8 @@
             desc: "Établir son budget, rembourser les dettes chères, constituer une réserve avant d'investir." },
           { title: 'Suivi de budget', file: 'suivi-budget.html',
             desc: "Revenus, logement, charges fixes et variables, reste à vivre : un camembert pour voir où part votre argent." },
+          { title: 'La pyramide financière', file: 'pyramide-finance.html',
+            desc: "La pyramide de Maslow appliquée à l'argent : quatre étages pour savoir par où commencer, et un test pour situer votre prochain pas." },
           { title: 'Les frais', file: 'frais.html',
             desc: "Frais d'entrée, de gestion, de transaction, cachés : les repérer, les comparer et en mesurer l'effet." },
           { title: 'Construire son portefeuille', file: 'portefeuille.html',
