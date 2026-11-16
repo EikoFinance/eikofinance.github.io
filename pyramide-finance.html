@@ -16,15 +16,15 @@
 <style>
 .split{display:grid;grid-template-columns:minmax(260px,.9fr) 1.1fr;gap:1.6rem;align-items:start;margin:1rem 0 1.6rem}
 @media(max-width:800px){.split{grid-template-columns:1fr}}
-.pyr{display:flex;flex-direction:column;align-items:center;gap:6px}
-.pyr button{font:inherit;border:0;cursor:pointer;color:#fff;font-weight:700;padding:.9rem .5rem;text-align:center;transition:transform .15s}
-.pyr button small{display:block;font-weight:500;font-size:.76rem;opacity:.9}
-.pyr button:hover{transform:scale(1.02)}
-.pyr button[aria-pressed=true],.pyr button:focus-visible{outline:3px solid var(--gold-bright);outline-offset:2px}
-.f4{width:46%;background:#C5A059;clip-path:polygon(50% 0,100% 100%,0 100%);padding-top:1.6rem!important;color:var(--dark-blue)!important}
-.f3{width:70%;background:#6F8FC4;clip-path:polygon(18% 0,82% 0,100% 100%,0 100%)}
-.f2{width:86%;background:#3E63A8;clip-path:polygon(12% 0,88% 0,100% 100%,0 100%)}
-.f1{width:100%;background:#102A56;clip-path:polygon(8% 0,92% 0,100% 100%,0 100%)}
+.pyr{display:flex;flex-direction:column;gap:5px;width:100%;max-width:440px;margin:0 auto;filter:drop-shadow(0 6px 10px rgba(10,28,59,.22))}
+.pyr button{font:inherit;border:0;cursor:pointer;color:#fff;font-weight:700;font-size:.98rem;line-height:1.25;min-height:68px;padding:.7rem 1rem;text-align:center;text-wrap:balance;transition:filter .15s}
+.pyr button small{display:block;font-weight:500;font-size:.76rem;opacity:.92;margin-top:2px}
+.pyr button:hover,.pyr button:focus-visible{filter:brightness(1.12);outline:none}
+.pyr button[aria-pressed=true]{filter:brightness(1.18) saturate(1.1);box-shadow:inset 0 -4px 0 rgba(255,255,255,.85)}
+.f4{background:linear-gradient(180deg,#D9B65F,#C5A059);color:#0A1C3B!important;clip-path:polygon(22% 0,78% 0,83.5% 100%,16.5% 100%)}
+.f3{background:linear-gradient(180deg,#6489C0,#5A7FB8);clip-path:polygon(16.5% 0,83.5% 0,89% 100%,11% 100%)}
+.f2{background:linear-gradient(180deg,#4B72B5,#3E63A8);clip-path:polygon(11% 0,89% 0,94.5% 100%,5.5% 100%)}
+.f1{background:linear-gradient(180deg,#183A72,#102A56);clip-path:polygon(5.5% 0,94.5% 0,100% 100%,0 100%)}
 .fpanel{background:#fff;border:1px solid rgba(16,42,86,.14);border-top:4px solid var(--gold-accent);border-radius:8px;padding:1.2rem 1.4rem;box-shadow:0 4px 12px rgba(0,0,0,.04)}
 .fpanel h3{margin-top:0;font-family:var(--font-title);color:var(--primary-blue);font-size:1.15rem}
 .fpanel .qq{font-style:italic;color:var(--text-muted);margin:0 0 .8rem}
