@@ -1,6 +1,6 @@
 /* =========================================================
    EIKO FINANCE - ARBORESCENCE DU SITE (source unique)
-   Cinq chemins : Comprendre, Investir, Trading, Mesurer, Optimiser.
+   Cinq chemins : Comprendre, Investir, Trading, Planifier, Optimiser.
    Le menu, l'arbre de l'accueil et le jeu lisent cet objet :
    pour ajouter une leçon, on l'ajoute ici, dans le bon chemin.
    ========================================================= */
@@ -24,12 +24,6 @@
             desc: "Indicateurs, taux, dette : le tableau de bord d'un pays et les leviers des banques centrales." },
           { title: 'Les courants de pensée économique', file: 'courants.html',
             desc: 'Capitalisme, socialisme, Smith, Marx, Keynes, Friedman, Hayek, Schumpeter : pourquoi les experts divergent.' },
-          { title: 'Budget et épargne de précaution', file: 'budget-epargne.html',
-            desc: "Établir son budget, rembourser les dettes chères, constituer une réserve avant d'investir." },
-          { title: 'Construire son portefeuille', file: 'portefeuille.html',
-            desc: "Diversification, allocation, rééquilibrage, horizon, passif ou actif, en une fois ou progressivement : une méthode." },
-          { title: 'Les frais', file: 'frais.html',
-            desc: "Frais d'entrée, de gestion, de transaction, cachés : les repérer, les comparer et en mesurer l'effet." },
           { title: "Les biais de l'investisseur", file: 'biais-investisseur.html',
             desc: "Aversion à la perte, excès de confiance, effet de troupeau : pourquoi on se trompe, et comment s'en protéger." }
         ]
@@ -83,16 +77,24 @@
         ]
       },
       {
-        id: 'mesurer',
-        title: 'Mesurer',
-        tagline: 'Simuler pour décider avec des chiffres',
+        id: 'planifier',
+        title: 'Planifier',
+        tagline: 'Construire, mesurer et décider avec des chiffres',
         items: [
+          { title: 'Budget et épargne de précaution', file: 'budget-epargne.html',
+            desc: "Établir son budget, rembourser les dettes chères, constituer une réserve avant d'investir." },
+          { title: 'Suivi de budget', file: 'suivi-budget.html',
+            desc: "Revenus, logement, charges fixes et variables, reste à vivre : un camembert pour voir où part votre argent." },
+          { title: 'Les frais', file: 'frais.html',
+            desc: "Frais d'entrée, de gestion, de transaction, cachés : les repérer, les comparer et en mesurer l'effet." },
+          { title: 'Construire son portefeuille', file: 'portefeuille.html',
+            desc: "Diversification, allocation, rééquilibrage, horizon, passif ou actif, en une fois ou progressivement : une méthode." },
+          { title: 'Les portefeuilles historiques', file: 'portefeuilles-historiques.html',
+            desc: "60/40, Permanent Portfolio de Browne, All Weather de Dalio, Golden Butterfly, trois fonds : composition, logique et limites." },
           { title: 'Simulation Monte Carlo', file: 'monte-carlo.html',
             desc: "Le simulateur en ligne et l'application Android qui testent des milliers d'évolutions possibles d'un portefeuille." },
           { title: 'Intérêts composés', file: 'interets-composes.html',
-            desc: 'Voir comment le temps et la régularité font grandir un capital.' },
-          { title: 'Suivi de budget', file: 'suivi-budget.html',
-            desc: "Revenus, logement, charges fixes et variables, reste à vivre : un camembert pour voir où part votre argent." }
+            desc: 'Voir comment le temps et la régularité font grandir un capital.' }
         ]
       },
       {
@@ -248,6 +250,7 @@
     /* Un lien du type index.html#investir ouvre directement le bon chemin */
     function fromHash() {
       var id = location.hash.replace('#', '');
+      if (id === 'mesurer') id = 'planifier'; /* anciens liens */
       if (views[id] && id !== openId) {
         open(id);
         box.scrollIntoView({ block: 'start' });
