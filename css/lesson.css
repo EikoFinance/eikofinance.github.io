@@ -30,9 +30,11 @@ details p{margin:.7rem 0 0}
 .q button.good{background:#e3f3e9;border-color:#2e7d4f}
 .q button.bad{background:#f8e5e1;border-color:#b3402e}
 .q .fb{font-size:.92rem;margin-top:.5rem;color:var(--text-muted)}
-.pager{display:flex;justify-content:space-between;gap:1rem;margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid #d9dee5}
-.pager a{text-decoration:none;font-weight:700;padding:.65rem 1.1rem;border:1px solid var(--primary-blue);border-radius:4px;color:var(--primary-blue)}
-.pager a.next{background:linear-gradient(45deg,var(--gold-accent),var(--gold-bright));border-color:transparent;color:var(--dark-blue)}
+.pager{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid #d9dee5}
+/* Boutons précédent et suivant : même style doré des deux côtés */
+.pager a,.pager a.next{background:linear-gradient(45deg,var(--gold-accent),var(--gold-bright));border:0;color:var(--dark-blue);text-decoration:none;font-weight:700;padding:.7rem 1.2rem;border-radius:4px;transition:transform .2s ease,box-shadow .2s ease}
+.pager a:hover,.pager a.next:hover{transform:translateY(-2px);box-shadow:0 6px 15px rgba(197,160,89,.35)}
+@media(max-width:640px){.pager a{flex:1 1 100%;text-align:center}}
 .alerte{background:#fff8e6;border:1px solid var(--gold-accent);border-radius:8px;padding:.9rem 1.1rem;font-size:.95rem;margin:1.5rem 0}
 .tablewrap{overflow-x:auto;margin:1.2rem 0}
 table{border-collapse:collapse;width:100%;min-width:520px;font-size:.93rem}
