@@ -93,6 +93,8 @@
             desc: "Diversification, allocation, rééquilibrage, horizon, passif ou actif, en une fois ou progressivement : une méthode." },
           { title: 'Les portefeuilles historiques', file: 'portefeuilles-historiques.html',
             desc: "60/40, Permanent Portfolio de Browne, All Weather de Dalio, Golden Butterfly, trois fonds : composition, logique et limites." },
+          { title: "L'antifragilité d'un portefeuille", file: 'antifragilite.html',
+            desc: "Fragile, robuste ou antifragile ? Comment un portefeuille réagit aux chocs, et pourquoi garder des munitions compte autant que diversifier." },
           { title: 'Simulation Monte Carlo', file: 'monte-carlo.html',
             desc: "Le simulateur en ligne et l'application Android qui testent des milliers d'évolutions possibles d'un portefeuille." },
           { title: 'Intérêts composés', file: 'interets-composes.html',
