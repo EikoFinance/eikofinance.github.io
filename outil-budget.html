@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outil de suivi de budget - EikoFinance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+:root{
+  --c-log:#C5A059; --c-fix:#102A56; --c-var:#6F8FC4; --c-inv:#2F8F6B; --c-loi:#D9826B;
+  --line:rgba(16,42,86,.14);
+}
+.bud{max-width:1100px;margin:0 auto;padding:2.2rem 5% 3rem}
+.bud h1{font-family:var(--font-title);font-size:1.8rem;color:var(--primary-blue);letter-spacing:1px;margin-bottom:.5rem}
+.bud .lead{color:var(--text-muted);max-width:68ch;margin-bottom:1.8rem}
+.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:1.6rem;align-items:start}
+.panel{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold-accent);border-radius:8px;padding:1.2rem 1.4rem;margin-bottom:1.2rem;box-shadow:0 4px 12px rgba(0,0,0,.04)}
+.panel h2{font-family:var(--font-title);font-size:1.1rem;color:var(--primary-blue);margin-bottom:.2rem}
+.hint{font-size:.85rem;color:var(--text-muted);margin-bottom:.8rem}
+.row{display:grid;grid-template-columns:1fr 120px 34px;gap:8px;margin-bottom:8px}
+.row.single{grid-template-columns:1fr 120px}
+.bud input{width:100%;background:#fff;border:1px solid #cdd5e2;color:var(--text-dark);padding:.5rem .6rem;border-radius:6px;font:inherit;font-size:.92rem}
+.bud input[type=number]{text-align:right}
+.bud input:focus-visible,.bud button:focus-visible{outline:2px solid var(--gold-bright);outline-offset:1px}
+.bud button{font:inherit;cursor:pointer}
+.del{background:transparent;border:1px solid #cdd5e2;color:var(--text-muted);border-radius:6px}
+.del:hover{color:#b3402a;border-color:#b3402a}
+.add{background:transparent;border:1px dashed var(--gold-accent);color:var(--primary-blue);padding:.4rem .8rem;border-radius:6px;font-size:.88rem;margin-top:4px}
+.add:hover{background:rgba(197,160,89,.12)}
+.total{display:flex;justify-content:space-between;margin-top:.8rem;padding-top:.7rem;border-top:1px solid var(--line);font-weight:700;color:var(--primary-blue)}
+.side{position:sticky;top:16px}
+.chartbox{display:flex;justify-content:center;position:relative;padding:.4rem 0}
+.chartbox svg{max-width:300px;width:100%;height:auto}
+.center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;text-align:center}
+.center b{font-family:var(--font-title);font-size:1.5rem;color:var(--primary-blue)}
+.center small{color:var(--text-muted);font-size:.78rem}
+.legend{list-style:none;margin-top:.8rem}
+.legend li{display:grid;grid-template-columns:14px 1fr auto auto;gap:10px;align-items:center;padding:.4rem 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.legend i{width:12px;height:12px;border-radius:3px;display:block}
+.legend .pct{color:var(--text-muted);min-width:46px;text-align:right}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:.9rem}
+.kpi{background:var(--bg-subtle);border-radius:8px;padding:.6rem .8rem}
+.kpi small{display:block;color:var(--text-muted);font-size:.78rem}
+.kpi b{font-size:1.15rem;color:var(--primary-blue)}
+.kpi.bad b{color:#b3402a}
+.ref{font-size:.85rem;color:var(--text-muted);margin-top:.9rem}
+.warn{display:none;background:#fdf0ec;border:1px solid #D9826B;border-radius:8px;padding:.6rem .8rem;font-size:.88rem;margin-bottom:.9rem;color:#7a2e1c}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-top:.5rem}
+.tools button{background:var(--bg-subtle);border:1px solid #cdd5e2;color:var(--primary-blue);padding:.45rem .9rem;border-radius:6px;font-size:.88rem}
+.tools button:hover{border-color:var(--gold-accent)}
+.disc{font-size:.8rem;color:var(--text-muted);margin-top:1rem}
+@media(max-width:860px){.grid{grid-template-columns:1fr}.side{position:static}}
+
+.embedded .intro,.embedded .back{display:none}
+.embedded .bud{padding:.5rem 1rem 1rem}
+.back{display:inline-block;margin-bottom:1rem;color:var(--primary-blue);font-weight:600;text-decoration:none;font-size:.9rem}
+.back:hover{color:var(--gold-accent)}
+.foot{text-align:center;color:var(--text-muted);font-size:.8rem;margin-top:1rem}
+.embedded .foot{display:none}
+@media(max-width:860px){.side{position:static}}
+</style>
+</head>
+<body class="no-intro">
+<main class="bud"><a class="back" href="index.html">← Retour au site EikoFinance</a>
+
+  <div class="intro"><h1>Suivi de budget</h1>
+  <p class="lead">Saisissez vos revenus et vos dépenses du mois. Le camembert montre où part votre argent et ce qu’il vous reste pour vos loisirs ou pour investir. Vos données restent sur votre appareil.</p></div>
+
+  <div class="grid">
+    <div>
+      <section class="panel">
+        <h2>Revenus</h2>
+        <p class="hint">Montants nets, par mois.</p>
+        <div id="g-rev"></div>
+        <div class="total"><span>Total des revenus</span><span id="t-rev">0 €</span></div>
+      </section>
+      <section class="panel">
+        <h2>Logement</h2>
+        <p class="hint">Loyer ou crédit, charges de copropriété, taxe foncière lissée, assurance habitation.</p>
+        <div id="g-log"></div>
+        <div class="total"><span>Total logement</span><span id="t-log">0 €</span></div>
+      </section>
+      <section class="panel">
+        <h2>Charges fixes</h2>
+        <p class="hint">Ce qui revient chaque mois : électricité, internet, mobile, abonnements, assurances, transport.</p>
+        <div id="g-fix"></div>
+        <div class="total"><span>Total charges fixes</span><span id="t-fix">0 €</span></div>
+      </section>
+      <section class="panel">
+        <h2>Charges variables</h2>
+        <p class="hint">Ce qui change d’un mois à l’autre : courses, carburant, santé, restaurants.</p>
+        <div id="g-var"></div>
+        <div class="total"><span>Total charges variables</span><span id="t-var">0 €</span></div>
+      </section>
+      <section class="panel">
+        <h2>Reste à vivre</h2>
+        <p class="hint">Indiquez la part à investir ou épargner. Le reste devient votre budget loisirs.</p>
+        <div class="row single">
+          <label for="inv" style="align-self:center">Investissement / épargne prévu</label>
+          <input id="inv" type="number" min="0" step="10" inputmode="decimal">
+        </div>
+        <div class="tools">
+          <button type="button" id="reset">Remettre l’exemple</button>
+          <button type="button" id="clear">Tout effacer</button>
+        </div>
+      </section>
+    </div>
+
+    <aside class="side">
+      <section class="panel">
+        <h2>Répartition de vos revenus</h2>
+        <div class="warn" id="warn"></div>
+        <div class="kpis">
+          <div class="kpi"><small>Reste à vivre</small><b id="k-rest">0 €</b></div>
+          <div class="kpi"><small>Taux d’épargne</small><b id="k-save">0 %</b></div>
+        </div>
+        <div class="chartbox">
+          <svg viewBox="0 0 200 200" id="donut" role="img" aria-label="Camembert de la répartition du budget"></svg>
+          <div class="center"><b id="c-pct">0 %</b><small>du revenu dépensé</small></div>
+        </div>
+        <ul class="legend" id="legend"></ul>
+        <p class="ref">Repère : la règle <strong>50 / 30 / 20</strong> vise environ 50 % pour les besoins (logement, charges fixes, courses), 30 % pour les envies et 20 % pour l’épargne. C’est un point de départ, à adapter à votre situation.</p>
+        <p class="disc">Outil pédagogique : il ne constitue pas un conseil financier personnalisé.</p>
+      </section>
+    </aside>
+  </div>
+
+<p class="foot">© 2026 EikoFinance. Outil pédagogique : il ne constitue pas un conseil financier personnalisé.</p>
+</main>
+<script>
+/* Suivi de budget */
+(function(){
+  var KEY='eiko-budget-v1';
+  var COLORS={log:'#C5A059',fix:'#102A56',var:'#6F8FC4',inv:'#2F8F6B',loi:'#D9826B'};
+  var EXAMPLE={
+    rev:[{n:'Salaire net',v:2200},{n:'Autres revenus',v:0}],
+    log:[{n:'Loyer ou crédit',v:750},{n:'Charges et assurance habitation',v:60}],
+    fix:[{n:'Électricité',v:70},{n:'Internet et mobile',v:45},{n:'Abonnements (streaming, sport)',v:35},{n:'Assurance auto',v:55},{n:'Transport',v:60}],
+    var:[{n:'Courses alimentaires',v:320},{n:'Carburant',v:90},{n:'Santé',v:30}],
+    inv:200
+  };
+  var state;
+  function load(){try{var s=localStorage.getItem(KEY);if(s)return JSON.parse(s);}catch(e){}return JSON.parse(JSON.stringify(EXAMPLE));}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+  function eur(n){return Math.round(n).toLocaleString('fr-FR')+' €';}
+  function sum(a){return a.reduce(function(t,x){return t+(+x.v||0);},0);}
+  var GROUPS=[['rev','g-rev','Ajouter un revenu','Nom du revenu'],['log','g-log','Ajouter une ligne','Nom de la ligne'],['fix','g-fix','Ajouter une charge fixe','Nom de la charge'],['var','g-var','Ajouter une charge variable','Nom de la dépense']];
+
+  function renderGroup(k,id,addLabel,ph){
+    var box=document.getElementById(id);box.innerHTML='';
+    state[k].forEach(function(item,i){
+      var r=document.createElement('div');r.className='row';
+      var n=document.createElement('input');n.type='text';n.value=item.n;n.placeholder=ph;n.setAttribute('aria-label',ph);
+      n.oninput=function(){state[k][i].n=n.value;save();};
+      var v=document.createElement('input');v.type='number';v.min='0';v.step='1';v.inputMode='decimal';v.value=item.v;v.setAttribute('aria-label','Montant en euros');
+      v.oninput=function(){state[k][i].v=parseFloat(v.value)||0;save();update();};
+      var d=document.createElement('button');d.type='button';d.className='del';d.textContent='×';d.setAttribute('aria-label','Supprimer la ligne');
+      d.onclick=function(){state[k].splice(i,1);save();renderAll();};
+      r.appendChild(n);r.appendChild(v);r.appendChild(d);box.appendChild(r);
+    });
+    var a=document.createElement('button');a.type='button';a.className='add';a.textContent='+ '+addLabel;
+    a.onclick=function(){state[k].push({n:'',v:0});save();renderGroup(k,id,addLabel,ph);var rows=box.querySelectorAll('.row');rows[rows.length-1].querySelector('input').focus();};
+    box.appendChild(a);
+  }
+  function renderAll(){GROUPS.forEach(function(g){renderGroup(g[0],g[1],g[2],g[3]);});document.getElementById('inv').value=state.inv;update();}
+
+  function update(){
+    var rev=sum(state.rev),log=sum(state.log),fix=sum(state.fix),vr=sum(state.var);
+    var spent=log+fix+vr,rest=rev-spent,inv=Math.max(0,+state.inv||0);
+    document.getElementById('t-rev').textContent=eur(rev);
+    document.getElementById('t-log').textContent=eur(log);
+    document.getElementById('t-fix').textContent=eur(fix);
+    document.getElementById('t-var').textContent=eur(vr);
+    var kr=document.getElementById('k-rest');kr.textContent=eur(rest);
+    kr.parentNode.className='kpi'+(rest<0?' bad':'');
+    var invShown=Math.min(inv,Math.max(rest,0));
+    document.getElementById('k-save').textContent=(rev>0?Math.round(invShown/rev*100):0)+' %';
+    var w=document.getElementById('warn');
+    if(rest<0){w.style.display='block';w.textContent='Vos dépenses dépassent vos revenus. Réduisez une ou plusieurs lignes pour retrouver un reste à vivre positif.';}
+    else if(inv>rest){w.style.display='block';w.textContent='Votre objectif d’investissement dépasse le reste à vivre. Baissez-le ou réduisez vos dépenses.';}
+    else w.style.display='none';
+    document.getElementById('c-pct').textContent=(rev>0?Math.round(spent/rev*100):0)+' %';
+    var parts=[
+      {k:'log',l:'Logement',v:log},{k:'fix',l:'Charges fixes',v:fix},{k:'var',l:'Charges variables',v:vr},
+      {k:'inv',l:'Investissement / épargne',v:invShown},{k:'loi',l:'Loisirs',v:Math.max(0,rest-invShown)}
+    ];
+    var total=parts.reduce(function(t,p){return t+p.v;},0);
+    drawDonut(parts,total);
+    var lg=document.getElementById('legend');lg.innerHTML='';
+    parts.forEach(function(p){
+      var li=document.createElement('li');
+      li.innerHTML='<i style="background:'+COLORS[p.k]+'"></i><span>'+p.l+'</span><b>'+eur(p.v)+'</b><span class="pct">'+(total>0?(p.v/total*100).toFixed(0):0)+' %</span>';
+      lg.appendChild(li);
+    });
+  }
+
+  function drawDonut(parts,total){
+    var svg=document.getElementById('donut'),cx=100,cy=100,R=84,r=52,out='';
+    if(total<=0){out='<circle cx="100" cy="100" r="68" fill="none" stroke="#e3e8f0" stroke-width="32"/>';}
+    else{
+      var a0=-Math.PI/2,live=parts.filter(function(p){return p.v>0;});
+      live.forEach(function(p){
+        if(live.length===1){out+='<circle cx="100" cy="100" r="68" fill="none" stroke="'+COLORS[p.k]+'" stroke-width="32"><title>'+p.l+'</title></circle>';return;}
+        var frac=p.v/total,a1=a0+frac*2*Math.PI,large=frac>0.5?1:0;
+        var x0=cx+R*Math.cos(a0),y0=cy+R*Math.sin(a0),x1=cx+R*Math.cos(a1),y1=cy+R*Math.sin(a1);
+        var x2=cx+r*Math.cos(a1),y2=cy+r*Math.sin(a1),x3=cx+r*Math.cos(a0),y3=cy+r*Math.sin(a0);
+        out+='<path d="M'+x0+' '+y0+' A'+R+' '+R+' 0 '+large+' 1 '+x1+' '+y1+' L'+x2+' '+y2+' A'+r+' '+r+' 0 '+large+' 0 '+x3+' '+y3+' Z" fill="'+COLORS[p.k]+'" stroke="#fff" stroke-width="2"><title>'+p.l+' : '+eur(p.v)+'</title></path>';
+        a0=a1;
+      });
+    }
+    svg.innerHTML=out;
+  }
+
+  document.getElementById('inv').oninput=function(){state.inv=parseFloat(this.value)||0;save();update();};
+  document.getElementById('reset').onclick=function(){state=JSON.parse(JSON.stringify(EXAMPLE));save();renderAll();};
+  document.getElementById('clear').onclick=function(){state={rev:[{n:'Salaire net',v:0}],log:[{n:'Loyer ou crédit',v:0}],fix:[{n:'',v:0}],var:[{n:'Courses alimentaires',v:0}],inv:0};save();renderAll();};
+  state=load();renderAll();
+})();
+
+/* Intégration : mode encadré et hauteur automatique */
+(function(){
+  var emb=window.self!==window.top;
+  if(emb)document.documentElement.classList.add('embedded');
+  function send(){if(emb)parent.postMessage({eikoBudgetH:document.documentElement.scrollHeight},'*');}
+  window.addEventListener('load',send);window.addEventListener('resize',send);
+  if(window.ResizeObserver)new ResizeObserver(send).observe(document.body);
+  setTimeout(send,300);
+})();
+</script>
+</body>
+</html>

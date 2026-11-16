@@ -3,152 +3,199 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Portefeuille 60/40, Permanent Portfolio de Harry Browne, All Weather de Ray Dalio, Golden Butterfly, trois fonds : composition, logique, forces et limites.">
 <title>Les portefeuilles historiques - EikoFinance</title>
+<meta name="description" content="Portefeuille 60/40, Permanent Portfolio de Harry Browne, All Weather de Ray Dalio, Golden Butterfly, trois fonds : composition, logique, forces et limites.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/lesson.css">
+<link rel="stylesheet" href="css/scene.css">
+<link rel="stylesheet" href="css/cartes.css">
 <style>
-:root{--line:rgba(16,42,86,.14)}
-.lesson{max-width:1050px;margin:0 auto;padding:2.2rem 5% 3rem}
-.lesson h1{font-family:var(--font-title);font-size:1.8rem;color:var(--primary-blue);letter-spacing:1px;margin-bottom:.6rem;line-height:1.3}
-.lesson h2{font-family:var(--font-title);font-size:1.3rem;color:var(--primary-blue);margin:2.4rem 0 .6rem}
-.lesson p{color:var(--text-muted);max-width:75ch;margin-bottom:.9rem}
-.lesson p strong{color:var(--text-dark)}
-.banner{height:140px;border-radius:8px;margin-bottom:1.4rem;background:linear-gradient(120deg,var(--primary-blue),#1d4580);border-bottom:4px solid var(--gold-accent);display:flex;align-items:center;padding:0 1.6rem;color:#fff;font-family:var(--font-title);font-size:1.1rem;letter-spacing:1px}
-.pf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:1.4rem;margin-top:1rem}
-.pf{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold-accent);border-radius:8px;padding:1.3rem;box-shadow:0 4px 12px rgba(0,0,0,.04)}
-.pf h3{font-family:var(--font-title);color:var(--primary-blue);font-size:1.15rem}
+.pf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.3rem;margin:1rem 0 2rem}
+.pf{background:#fff;border:1px solid rgba(16,42,86,.14);border-top:4px solid var(--gold-accent);border-radius:8px;padding:1.2rem;box-shadow:0 4px 12px rgba(0,0,0,.04)}
+.pf h3{margin-top:0;font-family:var(--font-title);color:var(--primary-blue);font-size:1.12rem}
 .pf .by{font-size:.82rem;color:var(--text-muted);margin-bottom:.8rem}
 .pf .viz{display:flex;gap:14px;align-items:center;margin-bottom:.8rem}
 .pf svg{width:120px;height:120px;flex:none}
-.pf ul.lg{list-style:none;font-size:.88rem;flex:1}
+.pf ul.lg{list-style:none;margin:0;padding:0;font-size:.88rem;flex:1}
 .pf ul.lg li{display:flex;align-items:center;gap:8px;padding:2px 0}
 .pf ul.lg i{width:11px;height:11px;border-radius:3px;flex:none}
 .pf ul.lg b{margin-left:auto;color:var(--primary-blue)}
-.pf p{font-size:.92rem;margin-bottom:.6rem}
-.pf .pros,.pf .cons{font-size:.9rem;color:var(--text-muted);padding-left:1rem;margin-bottom:.5rem;border-left:3px solid #2F8F6B}
+.pf p{font-size:.92rem;margin:0 0 .6rem}
+.pf .pros,.pf .cons{font-size:.9rem;color:var(--text-muted);padding-left:.8rem;margin-bottom:.5rem;border-left:3px solid #2F8F6B}
 .pf .cons{border-left-color:#D9826B}
 .pf .pros b{color:#2F8F6B}.pf .cons b{color:#b3402a}
-.scroll{overflow-x:auto}
-table{border-collapse:collapse;width:100%;min-width:560px;font-size:.92rem}
-th,td{border-bottom:1px solid var(--line);padding:.6rem .7rem;text-align:left;vertical-align:top}
-th{background:var(--bg-subtle);color:var(--primary-blue)}
-.bars{margin-top:1rem}
+.bars{margin:1rem 0 .4rem}
 .bar{display:grid;grid-template-columns:170px 1fr;gap:12px;align-items:center;margin-bottom:10px;font-size:.9rem}
-.bar .track{display:flex;height:26px;border-radius:5px;overflow:hidden;border:1px solid var(--line)}
+.bar .track{display:flex;height:26px;border-radius:5px;overflow:hidden;border:1px solid rgba(16,42,86,.14)}
 .bar .track span{display:block;height:100%}
-.keys{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.85rem;color:var(--text-muted);margin:.6rem 0 0}
+.keys{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.85rem;color:var(--text-muted);margin:.6rem 0 1.2rem}
 .keys i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
 @media(max-width:600px){.bar{grid-template-columns:1fr;gap:4px}}
-.note{background:var(--bg-subtle);border-left:4px solid var(--gold-accent);border-radius:6px;padding:.9rem 1.1rem;margin:1.2rem 0;color:var(--text-muted);font-size:.92rem;max-width:80ch}
-.note strong{color:var(--primary-blue)}
-.quiz{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold-accent);border-radius:8px;padding:1.2rem 1.4rem;margin-top:1rem}
-.q{margin-bottom:1.3rem}
-.q p.qt{font-weight:700;color:var(--text-dark);margin-bottom:.5rem}
-.q button{display:block;width:100%;text-align:left;font:inherit;font-size:.92rem;background:var(--bg-subtle);border:1px solid #cdd5e2;border-radius:6px;padding:.55rem .8rem;margin-bottom:6px;cursor:pointer;color:var(--text-dark)}
-.q button:hover:not(:disabled){border-color:var(--gold-accent)}
-.q button.ok{background:#e6f4ee;border-color:#2F8F6B}
-.q button.ko{background:#fdf0ec;border-color:#D9826B}
-.q .why{display:none;font-size:.88rem;color:var(--text-muted);margin-top:.3rem}
-.score{font-weight:700;color:var(--primary-blue)}
-.lesson button:focus-visible{outline:2px solid var(--gold-bright);outline-offset:2px}
-.nav-end{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:2.2rem}
-.nav-end a{background:linear-gradient(45deg,#C5A059,#D4AF37);color:#0A1C3B;font-weight:700;font-size:.95rem;text-decoration:none;border:0;padding:.75rem 1.6rem;border-radius:4px;display:inline-block;transition:transform .2s ease,box-shadow .2s ease}
-.nav-end a:hover,.nav-end a:focus-visible{transform:translateY(-2px);box-shadow:0 6px 15px rgba(197,160,89,.35);color:#0A1C3B}
 </style>
+<script src="js/site.js" defer></script>
 </head>
-<body class="no-intro">
+<body>
 <header>
   <div class="logo-container">
     <img src="images/logo.jpg" alt="Logo Eiko Finance" class="logo-img">
     <span class="logo-text">EIKO FINANCE</span>
   </div>
-  <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-  <nav></nav>
+  <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+  <!-- Menu : généré par js/site.js (liste de secours si JavaScript est désactivé) -->
+  <nav>
+    <ul>
+      <li><a href="index.html#comprendre">Comprendre</a></li>
+      <li><a href="index.html#investir">Investir</a></li>
+      <li><a href="index.html#planifier">Planifier</a></li>
+      <li><a href="index.html#optimiser">Optimiser</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
-<main class="lesson">
-  <div class="banner" role="img" aria-label="Bandeau de la leçon">Cinq façons de répartir son argent, testées par le temps</div>
-  <h1>Les portefeuilles historiques</h1>
-  <p>Depuis des décennies, des investisseurs ont proposé des <strong>répartitions toutes faites</strong> : quelques classes d’actifs, des pourcentages fixes, une règle de rééquilibrage. Les connaître permet de comprendre une idée centrale : <strong>aucun actif ne gagne dans tous les environnements</strong>, donc on les combine.</p>
-  <p>Cette leçon présente cinq modèles connus. Ce sont des repères pédagogiques, pas des recommandations personnalisées.</p>
+<main>
+  <p class="crumbs"><a href="index.html">Accueil</a> › <a href="index.html#planifier">Planifier</a> › Les portefeuilles historiques</p>
 
-  <h2>Les cinq portefeuilles</h2>
-  <div class="pf-grid" id="grid"></div>
+  <section class="scene scene-hero img-portefeuille">
+    <h1>Les portefeuilles historiques : cinq façons de répartir son argent</h1>
+    <p>Du 60/40 au Permanent Portfolio : des répartitions toutes faites, testées par le temps, pour comprendre pourquoi on combine plusieurs actifs.</p>
+    <a href="#portefeuilles" class="btn-gold">Voir les cinq portefeuilles</a>
+  </section>
 
-  <h2>Comparer d’un coup d’œil</h2>
-  <p>Chaque barre représente 100 % du portefeuille. Remarquez la part des actions : elle va d’environ un quart à plus de la moitié, et c’est elle qui explique l’essentiel des différences de rendement et de baisse.</p>
-  <div class="bars" id="bars"></div>
-  <div class="keys" id="keys"></div>
+  <section class="card-grid" aria-label="Sommaire de la page">
+    <a class="card" href="#portefeuilles"><h3>Les cinq portefeuilles</h3><p>Composition, idée directrice, force et limite.</p></a>
+    <a class="card" href="#comparer"><h3>Comparer</h3><p>Cinq répartitions côte à côte.</p></a>
+    <a class="card" href="#saisons"><h3>Les quatre saisons</h3><p>L'idée de Harry Browne.</p></a>
+    <a class="card" href="#limites"><h3>Les limites</h3><p>Ce que 2022 a rappelé.</p></a>
+    <a class="card" href="#quiz"><h3>Teste-toi</h3><p>Quatre questions pour vérifier.</p></a>
+  </section>
 
-  <h2>L’idée de Harry Browne : quatre saisons</h2>
-  <p>Le Permanent Portfolio part d’un constat : l’économie traverse quatre grands environnements, et on ne sait pas lequel viendra. On place donc un quart du capital sur l’actif qui s’y comporte le mieux.</p>
-  <div class="scroll"><table>
-    <thead><tr><th>Environnement</th><th>Actif qui le protège</th><th>Pourquoi</th></tr></thead>
-    <tbody>
-      <tr><td>Prospérité</td><td>Actions</td><td>Les entreprises gagnent plus quand la croissance est forte.</td></tr>
-      <tr><td>Inflation</td><td>Or</td><td>Il a servi de réserve de valeur quand la monnaie perd de son pouvoir d’achat.</td></tr>
-      <tr><td>Déflation</td><td>Obligations d’État longues</td><td>Quand les prix et les taux baissent, leur valeur monte.</td></tr>
-      <tr><td>Récession, tension sur le crédit</td><td>Liquidités</td><td>Elles ne perdent pas de valeur et permettent de saisir les occasions.</td></tr>
-    </tbody>
-  </table></div>
+  <article class="chapitre">
 
-  <h2>Le point commun, et la limite</h2>
-  <p>Tous ces portefeuilles reposent sur la <strong>diversification entre actifs qui ne réagissent pas de la même façon</strong> et sur un <strong>rééquilibrage régulier</strong> (souvent une fois par an) : on revend un peu de ce qui a monté pour racheter ce qui a baissé.</p>
-  <div class="note"><strong>La leçon de 2022.</strong> Cette année-là, les actions et les obligations longues ont baissé en même temps, parce que les taux montaient vite. Les portefeuilles riches en obligations longues, comme le Permanent Portfolio et l’All Weather, en ont souffert. Le modèle « toutes saisons » n’est pas à l’abri : la corrélation entre actifs change avec le contexte. C’est le même mécanisme que dans la leçon « Liquidité et marchés ».</div>
-  <p>Deux précisions avant de copier un modèle : les chiffres publiés viennent presque tous de <strong>simulations sur le marché américain, en dollars</strong>, et les performances passées ne préjugent pas des performances futures. En France, l’enveloppe compte aussi : certains actifs (or, obligations longues américaines, matières premières) ne s’achètent pas dans un PEA. Voir la leçon sur les enveloppes fiscales.</p>
+    <h2 id="portefeuilles">Les cinq portefeuilles</h2>
+    <p class="accroche">« Aucun actif ne gagne dans tous les environnements : alors on les combine. »</p>
+    <p>Depuis des décennies, des investisseurs ont proposé des <strong>répartitions toutes faites</strong> : quelques classes d'actifs, des pourcentages fixes, une règle de rééquilibrage. Voici cinq modèles connus. Ce sont des repères pédagogiques, pas des recommandations personnalisées.</p>
+    <div class="pf-grid" id="grid"></div>
 
-  <h2>Testez-vous</h2>
-  <div class="quiz" id="quiz"></div>
+    <h2 id="comparer">Comparer d'un coup d'œil</h2>
+    <p>Chaque barre représente 100 % du portefeuille. Regarde la part des actions : elle va d'environ un quart à plus de la moitié, et c'est elle qui explique l'essentiel des différences de rendement et de baisse.</p>
+    <div class="bars" id="bars"></div>
+    <div class="keys" id="keys"></div>
 
-  <div class="nav-end">
-    <a href="portefeuille.html">← Construire son portefeuille</a>
-    <a href="biais-investisseur.html">Les biais de l’investisseur →</a>
-  </div>
+    <h2 id="saisons">L'idée de Harry Browne : quatre saisons</h2>
+    <p>Le Permanent Portfolio part d'un constat : l'économie traverse quatre grands environnements, et personne ne sait lequel viendra. On place donc un quart du capital sur l'actif qui s'y comporte le mieux.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Environnement</th><th>Actif qui le protège</th><th>Pourquoi</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Prospérité</th><td>Actions</td><td>Les entreprises gagnent plus quand la croissance est forte.</td></tr>
+          <tr><th scope="row">Inflation</th><td>Or</td><td>Il a servi de réserve de valeur quand la monnaie perd de son pouvoir d'achat.</td></tr>
+          <tr><th scope="row">Déflation</th><td>Obligations d'État longues</td><td>Quand les prix et les taux baissent, leur valeur monte.</td></tr>
+          <tr><th scope="row">Récession, tension sur le crédit</th><td>Liquidités</td><td>Elles ne perdent pas de valeur et permettent de saisir les occasions.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="retenir">
+      <strong>3 idées à retenir</strong>
+      <ul>
+        <li>Combiner des actifs qui ne réagissent pas de la même façon réduit les mauvaises surprises.</li>
+        <li>Rééquilibrer régulièrement (souvent une fois par an) : on revend un peu de ce qui a monté pour racheter ce qui a baissé.</li>
+        <li>Même les portefeuilles « toutes saisons » ont des saisons difficiles.</li>
+      </ul>
+    </div>
+
+    <h2 id="limites">Le point commun, et la limite</h2>
+    <p>Tous ces portefeuilles reposent sur la <strong>diversification entre actifs</strong> et sur un <strong>rééquilibrage régulier</strong>. Mais la diversification ne protège pas de tout.</p>
+    <div class="alerte"><strong>La leçon de 2022 :</strong> cette année-là, les actions et les obligations longues ont baissé en même temps, parce que les taux montaient vite. Les portefeuilles riches en obligations longues, comme le Permanent Portfolio et l'All Weather, en ont souffert. C'est le mécanisme décrit dans la page <a href="liquidite-marches.html">Liquidité et marchés</a> : la corrélation entre actifs change avec le contexte.</div>
+    <p>Deux précisions avant de copier un modèle. Les chiffres publiés viennent presque tous de <strong>simulations sur le marché américain, en dollars</strong>, et les performances passées ne préjugent pas des performances futures. En France, l'enveloppe compte aussi : certains actifs (or, obligations longues américaines, matières premières) ne s'achètent pas dans un PEA. Voir la page <a href="fiscalite.html">Fiscalité &amp; Enveloppes</a>. Pour tester un portefeuille avec tes propres hypothèses, utilise la <a href="monte-carlo.html">simulation de Monte Carlo</a>.</p>
+
+    <h3>Le jargon traduit</h3>
+    <dl class="glossaire">
+      <dt>Rééquilibrage</dt><dd>Ramener le portefeuille vers sa répartition cible en vendant ce qui a monté et en rachetant ce qui a baissé.</dd>
+      <dt>Parité des risques</dt><dd>Répartir le risque, et non les montants, entre les actifs : les actifs peu volatils pèsent donc davantage.</dd>
+      <dt>Obligation longue</dt><dd>Une obligation à échéance lointaine : son prix réagit fortement aux variations de taux.</dd>
+    </dl>
+
+    <h3 id="quiz">Teste-toi</h3>
+    <div class="q" data-good="1">
+      <p>1. Comment est réparti le Permanent Portfolio de Harry Browne ?</p>
+      <button>60 % actions, 40 % obligations</button>
+      <button>25 % actions, 25 % obligations longues, 25 % or, 25 % liquidités</button>
+      <button>30 % actions, 55 % obligations, 15 % or et matières premières</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="2">
+      <p>2. Pourquoi l'All Weather contient-il beaucoup plus d'obligations que d'actions ?</p>
+      <button>Parce que les obligations rapportent toujours plus</button>
+      <button>Parce que Ray Dalio évite les actions</button>
+      <button>Parce qu'il équilibre les risques et non les montants</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="0">
+      <p>3. Qu'a montré l'année 2022 pour ces portefeuilles ?</p>
+      <button>Que actions et obligations longues peuvent baisser ensemble</button>
+      <button>Que l'or baisse toujours quand les taux montent</button>
+      <button>Que les liquidités perdent forcément de la valeur</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="2">
+      <p>4. Qu'ont tous ces portefeuilles en commun ?</p>
+      <button>Ils battent toujours le marché actions</button>
+      <button>Ils s'achètent tous dans un PEA</button>
+      <button>Des pourcentages fixés à l'avance et un rééquilibrage régulier</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <details><summary>Voir les explications</summary>
+      <ol>
+        <li>Quatre parts égales, une par grande situation économique : prospérité, déflation, inflation, récession.</li>
+        <li>Les obligations sont moins volatiles : il en faut davantage pour qu'elles pèsent autant que les actions dans le risque total.</li>
+        <li>La hausse rapide des taux a pénalisé les obligations longues en même temps que les actions : la diversification protège, sans garantir.</li>
+        <li>Une répartition cible fixée à l'avance, puis un rééquilibrage, souvent une fois par an.</li>
+      </ol>
+    </details>
+
+    <div class="pager">
+      <a href="portefeuille.html">← Construire son portefeuille</a>
+      <a class="next" href="antifragilite.html">L'antifragilité d'un portefeuille →</a>
+    </div>
+  </article>
+
 </main>
 
 <footer>
-  <p>© 2026 EikoFinance. Tous droits réservés.</p>
+  <p>&copy; 2026 EikoFinance. Tous droits réservés.</p>
   <p>Contact : <a href="mailto:contacteikofinance@gmail.com">contacteikofinance@gmail.com</a></p>
 </footer>
-
-<script src="js/site.js"></script>
+<script src="js/lesson.js"></script>
 <script>
-(function(){
-  var t=document.querySelector('.menu-toggle'),n=document.querySelector('header nav');
-  if(t&&n)t.addEventListener('click',function(){var o=n.classList.toggle('mobile-open');t.setAttribute('aria-expanded',o?'true':'false');});
-})();
-
 (function(){
   var C={act:['Actions','#102A56'],sc:['Actions petites valeurs','#3E63A8'],ol:['Obligations longues','#8FB0DD'],oc:['Obligations courtes ou moyennes','#C3D5EE'],or:['Or','#C5A059'],mp:['Matières premières','#B5651D'],liq:['Liquidités','#2F8F6B'],ous:['Actions internationales','#3E63A8']};
   var P=[
-    {n:'Le 60/40',by:'Le classique des conseillers',
-     w:[['act',60],['oc',40]],
-     p:'60 % en actions pour la croissance, 40 % en obligations pour amortir les chutes. C’est la référence à laquelle les autres modèles se comparent.',
+    {n:'Le 60/40',by:'Le classique des conseillers',w:[['act',60],['oc',40]],
+     p:'60 % en actions pour la croissance, 40 % en obligations pour amortir les chutes. C\u2019est la référence à laquelle les autres modèles se comparent.',
      pro:'Simple, bon marché, facile à rééquilibrer.',
-     con:'Dépend de la bonne tenue des obligations quand les actions baissent, ce qui n’a pas été le cas en 2022.'},
-    {n:'Le Permanent Portfolio',by:'Harry Browne, années 1980',
-     w:[['act',25],['ol',25],['or',25],['liq',25]],
+     con:'Dépend de la bonne tenue des obligations quand les actions baissent, ce qui n\u2019a pas été le cas en 2022.'},
+    {n:'Le Permanent Portfolio',by:'Harry Browne, années 1980',w:[['act',25],['ol',25],['or',25],['liq',25]],
      p:'Quatre parts égales, une par environnement économique : prospérité, déflation, inflation, récession. Rééquilibrage une fois par an.',
      pro:'Baisses historiquement modérées, aucune prévision économique nécessaire.',
-     con:'Seulement un quart en actions : le rendement est plus faible en forte hausse boursière. Mal à l’aise quand actions et obligations longues baissent ensemble.'},
-    {n:'L’All Weather',by:'Ray Dalio, Bridgewater',
-     w:[['act',30],['ol',40],['oc',15],['or',7.5],['mp',7.5]],
-     p:'Construit sur la parité des risques : on équilibre les risques, pas les montants. Les obligations, moins volatiles, pèsent donc plus lourd que les actions. La répartition ci-contre est la version publique la plus citée : Bridgewater n’a jamais publié de recette officielle.',
-     pro:'Pensé pour amortir les chocs de croissance et d’inflation.',
-     con:'55 % d’obligations : très sensible à la hausse des taux. Matières premières et or peuvent rester plats longtemps.'},
-    {n:'Le Golden Butterfly',by:'Variante du Permanent Portfolio',
-     w:[['act',20],['sc',20],['ol',20],['oc',20],['or',20]],
-     p:'Cinq parts égales : actions, petites valeurs, obligations longues, obligations courtes, or. Plus d’actions que le Permanent Portfolio, avec un biais vers les petites valeurs.',
-     pro:'Garde l’esprit « toutes saisons » avec un peu plus de croissance.',
-     con:'Les petites valeurs sont plus volatiles ; le modèle reste moins connu et moins étudié.'},
-    {n:'Les trois fonds',by:'Les Bogleheads, école de John Bogle',
-     w:[['act',40],['ous',20],['oc',40]],
-     p:'Un fonds d’actions du pays, un fonds d’actions internationales, un fonds d’obligations. Selon l’âge et le risque accepté, la part d’actions varie en général de 60 à 80 %. L’exemple ci-contre est une illustration à 60 % d’actions.',
+     con:'Seulement un quart en actions : rendement plus faible en forte hausse boursière. Mal à l\u2019aise quand actions et obligations longues baissent ensemble.'},
+    {n:'L\u2019All Weather',by:'Ray Dalio, Bridgewater',w:[['act',30],['ol',40],['oc',15],['or',7.5],['mp',7.5]],
+     p:'Construit sur la parité des risques : on équilibre les risques, pas les montants. Les obligations, moins volatiles, pèsent donc plus lourd que les actions. C\u2019est la version publique la plus citée : Bridgewater n\u2019a jamais publié de recette officielle.',
+     pro:'Pensé pour amortir les chocs de croissance et d\u2019inflation.',
+     con:'55 % d\u2019obligations : très sensible à la hausse des taux. Matières premières et or peuvent rester plats longtemps.'},
+    {n:'Le Golden Butterfly',by:'Variante du Permanent Portfolio',w:[['act',20],['sc',20],['ol',20],['oc',20],['or',20]],
+     p:'Cinq parts égales : actions, petites valeurs, obligations longues, obligations courtes, or. Plus d\u2019actions que le Permanent Portfolio, avec un biais vers les petites valeurs.',
+     pro:'Garde l\u2019esprit « toutes saisons » avec un peu plus de croissance.',
+     con:'Les petites valeurs sont plus volatiles ; le modèle est moins connu et moins étudié.'},
+    {n:'Les trois fonds',by:'Les Bogleheads, école de John Bogle',w:[['act',40],['ous',20],['oc',40]],
+     p:'Un fonds d\u2019actions du pays, un fonds d\u2019actions internationales, un fonds d\u2019obligations. La part d\u2019actions varie en général de 60 à 80 % selon l\u2019âge et le risque accepté. L\u2019exemple ci-contre est une illustration à 60 % d\u2019actions.',
      pro:'Très peu de frais, très simple, grande diversification géographique.',
-     con:'Pas de protection spécifique contre l’inflation, ni d’or.'}
+     con:'Pas de protection spécifique contre l\u2019inflation, ni d\u2019or.'}
   ];
   function arc(cx,cy,R,r,a0,a1){
     var l=(a1-a0)>Math.PI?1:0;
@@ -180,32 +227,6 @@ th{background:var(--bg-subtle);color:var(--primary-blue)}
     bars.appendChild(row);
   });
   document.getElementById('keys').innerHTML=Object.keys(used).map(function(k){return '<span><i style="background:'+C[k][1]+'"></i>'+C[k][0]+'</span>';}).join('');
-
-  var Q=[
-    {q:'Comment est réparti le Permanent Portfolio de Harry Browne ?',o:['60 % actions, 40 % obligations','25 % actions, 25 % obligations longues, 25 % or, 25 % liquidités','30 % actions, 55 % obligations, 15 % or et matières premières'],a:1,w:'Quatre parts égales, une par grande situation économique : prospérité, déflation, inflation, récession.'},
-    {q:'Pourquoi l’All Weather contient-il beaucoup plus d’obligations que d’actions ?',o:['Parce que les obligations rapportent toujours plus','Parce qu’il équilibre les risques et non les montants','Parce que Ray Dalio évite les actions'],a:1,w:'Les obligations sont moins volatiles : il en faut davantage pour qu’elles pèsent autant que les actions dans le risque total.'},
-    {q:'Qu’a montré l’année 2022 pour ces portefeuilles ?',o:['Que l’or baisse toujours quand les taux montent','Que actions et obligations longues peuvent baisser ensemble','Que les liquidités perdent forcément de la valeur'],a:1,w:'La hausse rapide des taux a pénalisé les obligations longues en même temps que les actions : la diversification n’est pas une garantie.'},
-    {q:'Qu’ont tous ces portefeuilles en commun ?',o:['Ils battent toujours le marché actions','Des pourcentages fixes et un rééquilibrage régulier','Ils s’achètent tous dans un PEA'],a:1,w:'Une répartition cible fixée à l’avance, puis un rééquilibrage, souvent une fois par an.'}
-  ];
-  var qz=document.getElementById('quiz'),done=0,good=0;
-  var sc=document.createElement('p');sc.className='score';
-  Q.forEach(function(x,i){
-    var b=document.createElement('div');b.className='q';
-    b.innerHTML='<p class="qt">'+(i+1)+'. '+x.q+'</p>';
-    var why=document.createElement('p');why.className='why';why.textContent=x.w;
-    var btns=x.o.map(function(t,j){
-      var e=document.createElement('button');e.type='button';e.textContent=t;
-      e.onclick=function(){
-        btns.forEach(function(bb,k){bb.disabled=true;if(k===x.a)bb.classList.add('ok');});
-        if(j!==x.a)e.classList.add('ko');else good++;
-        why.style.display='block';done++;
-        if(done===Q.length)sc.textContent='Score : '+good+' / '+Q.length;
-      };
-      b.appendChild(e);return e;
-    });
-    b.appendChild(why);qz.appendChild(b);
-  });
-  qz.appendChild(sc);
 })();
 </script>
 </body>

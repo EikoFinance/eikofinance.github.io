@@ -3,137 +3,183 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Fragile, robuste ou antifragile ? Comment un portefeuille réagit aux chocs, et pourquoi garder des munitions compte autant que diversifier.">
 <title>L'antifragilité d'un portefeuille - EikoFinance</title>
+<meta name="description" content="Fragile, robuste ou antifragile ? Comment un portefeuille réagit aux chocs, et pourquoi garder des munitions compte autant que diversifier.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/lesson.css">
+<link rel="stylesheet" href="css/scene.css">
+<link rel="stylesheet" href="css/cartes.css">
 <style>
-:root{--line:rgba(16,42,86,.14)}
-.lesson{max-width:1050px;margin:0 auto;padding:2.2rem 5% 3rem}
-.lesson h1{font-family:var(--font-title);font-size:1.8rem;color:var(--primary-blue);letter-spacing:1px;margin-bottom:.6rem;line-height:1.3}
-.lesson h2{font-family:var(--font-title);font-size:1.3rem;color:var(--primary-blue);margin:2.4rem 0 .6rem}
-.lesson p{color:var(--text-muted);max-width:75ch;margin-bottom:.9rem}
-.lesson p strong{color:var(--text-dark)}
-.banner{height:140px;border-radius:8px;margin-bottom:1.4rem;background:linear-gradient(120deg,var(--primary-blue),#1d4580);border-bottom:4px solid var(--gold-accent);display:flex;align-items:center;padding:0 1.6rem;color:#fff;font-family:var(--font-title);font-size:1.1rem;letter-spacing:1px}
-.trio{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-top:1rem}
-.tr{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold-accent);border-radius:8px;padding:1.1rem 1.2rem;box-shadow:0 4px 12px rgba(0,0,0,.04)}
-.tr h3{font-family:var(--font-title);color:var(--primary-blue);font-size:1.1rem;margin-bottom:.3rem}
-.tr p{font-size:.92rem;margin-bottom:.4rem}
+.trio{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin:1rem 0 1.6rem}
+.tr{background:#fff;border:1px solid rgba(16,42,86,.14);border-top:4px solid var(--gold-accent);border-radius:8px;padding:1.1rem 1.2rem;box-shadow:0 4px 12px rgba(0,0,0,.04)}
+.tr h3{margin-top:0;font-family:var(--font-title);color:var(--primary-blue);font-size:1.1rem}
+.tr p{font-size:.92rem;margin:0 0 .4rem}
 .tr .eg{font-size:.85rem;color:var(--primary-blue)}
 .tr.f{border-top-color:#D9826B}.tr.r{border-top-color:#6F8FC4}.tr.a{border-top-color:#2F8F6B}
-.scroll{overflow-x:auto}
-table{border-collapse:collapse;width:100%;min-width:640px;font-size:.9rem}
-th,td{border:1px solid #fff;padding:.55rem .6rem;text-align:center}
-th{background:var(--bg-subtle);color:var(--primary-blue);font-size:.84rem}
-td.nm{text-align:left;font-weight:700;color:var(--primary-blue);background:var(--bg-subtle);cursor:pointer}
-td.nm:hover{background:#e8edf5}
-tr.sel td.nm{box-shadow:inset 4px 0 0 var(--gold-accent)}
-td.v{font-weight:700}
+#tab{border-collapse:collapse;width:100%;min-width:640px;font-size:.9rem}
+#tab th,#tab td{border:1px solid #fff;padding:.55rem .6rem;text-align:center}
+#tab th{background:var(--bg-subtle);color:var(--primary-blue);font-size:.84rem}
+#tab td.nm{text-align:left;font-weight:700;color:var(--primary-blue);background:var(--bg-subtle);cursor:pointer}
+#tab td.nm:hover{background:#e8edf5}
+#tab tr.sel td.nm{box-shadow:inset 4px 0 0 var(--gold-accent)}
+#tab td.v{font-weight:700}
+#tab td.nm:focus-visible{outline:2px solid var(--gold-bright);outline-offset:2px}
 .c1{background:#f4b9a8;color:#6b1f0f}.c2{background:#fbdcd1;color:#6b1f0f}.c3{background:#eef1f6;color:#4B5563}.c4{background:#cdeadb;color:#14573a}.c5{background:#9fd8bb;color:#14573a}
-.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.82rem;color:var(--text-muted);margin:.6rem 0 1rem}
-.legend span{display:inline-flex;align-items:center;gap:5px}
-.legend i{width:14px;height:14px;border-radius:3px;display:inline-block}
-.detail{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold-accent);border-radius:8px;padding:1.1rem 1.3rem}
-.detail h3{font-family:var(--font-title);color:var(--primary-blue);font-size:1.1rem;margin-bottom:.2rem}
+.lgd{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.82rem;color:var(--text-muted);margin:.6rem 0 1rem}
+.lgd span{display:inline-flex;align-items:center;gap:5px}
+.lgd i{width:14px;height:14px;border-radius:3px;display:inline-block}
+.detail{background:#fff;border:1px solid rgba(16,42,86,.14);border-top:4px solid var(--gold-accent);border-radius:8px;padding:1.1rem 1.3rem;margin-bottom:1.4rem}
+.detail h3{margin-top:0;font-family:var(--font-title);color:var(--primary-blue);font-size:1.1rem}
 .detail .mix{font-size:.88rem;color:var(--text-muted);margin-bottom:.6rem}
-.detail dl{display:grid;grid-template-columns:auto 1fr;gap:.3rem 1rem;font-size:.92rem;margin-bottom:.7rem}
-.detail dt{color:var(--text-muted)}.detail dd{font-weight:700;color:var(--primary-blue)}
-.detail p{font-size:.92rem}
-.note{background:var(--bg-subtle);border-left:4px solid var(--gold-accent);border-radius:6px;padding:.9rem 1.1rem;margin:1.2rem 0;color:var(--text-muted);font-size:.92rem;max-width:80ch}
-.note strong{color:var(--primary-blue)}
-.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin-top:1rem}
-.rules div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:1rem 1.1rem}
+.detail dl{display:grid;grid-template-columns:auto 1fr;gap:.3rem 1rem;font-size:.92rem;margin:0 0 .7rem}
+.detail dt{color:var(--text-muted)}.detail dd{margin:0;font-weight:700;color:var(--primary-blue)}
+.detail p{font-size:.92rem;margin:0}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin:1rem 0 1.6rem}
+.rules div{background:#fff;border:1px solid rgba(16,42,86,.14);border-radius:8px;padding:1rem 1.1rem}
 .rules b{display:block;color:var(--primary-blue);margin-bottom:.3rem;font-family:var(--font-title);font-size:1rem}
 .rules span{font-size:.9rem;color:var(--text-muted)}
-.quiz{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold-accent);border-radius:8px;padding:1.2rem 1.4rem;margin-top:1rem}
-.qq{margin-bottom:1.3rem}
-.qq p.qt{font-weight:700;color:var(--text-dark);margin-bottom:.5rem}
-.qq button{display:block;width:100%;text-align:left;font:inherit;font-size:.92rem;background:var(--bg-subtle);border:1px solid #cdd5e2;border-radius:6px;padding:.55rem .8rem;margin-bottom:6px;cursor:pointer;color:var(--text-dark)}
-.qq button:hover:not(:disabled){border-color:var(--gold-accent)}
-.qq button.ok{background:#e6f4ee;border-color:#2F8F6B}
-.qq button.ko{background:#fdf0ec;border-color:#D9826B}
-.qq .why{display:none;font-size:.88rem;color:var(--text-muted)}
-.score{font-weight:700;color:var(--primary-blue)}
-.lesson button:focus-visible,td.nm:focus-visible{outline:2px solid var(--gold-bright);outline-offset:2px}
-.nav-end{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:2.2rem}
-.nav-end a{background:linear-gradient(45deg,#C5A059,#D4AF37);color:#0A1C3B;font-weight:700;font-size:.95rem;text-decoration:none;border:0;padding:.75rem 1.6rem;border-radius:4px;display:inline-block;transition:transform .2s ease,box-shadow .2s ease}
-.nav-end a:hover,.nav-end a:focus-visible{transform:translateY(-2px);box-shadow:0 6px 15px rgba(197,160,89,.35);color:#0A1C3B}
 </style>
+<script src="js/site.js" defer></script>
 </head>
-<body class="no-intro">
+<body>
 <header>
   <div class="logo-container">
     <img src="images/logo.jpg" alt="Logo Eiko Finance" class="logo-img">
     <span class="logo-text">EIKO FINANCE</span>
   </div>
-  <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-  <nav></nav>
+  <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+  <!-- Menu : généré par js/site.js (liste de secours si JavaScript est désactivé) -->
+  <nav>
+    <ul>
+      <li><a href="index.html#comprendre">Comprendre</a></li>
+      <li><a href="index.html#investir">Investir</a></li>
+      <li><a href="index.html#planifier">Planifier</a></li>
+      <li><a href="index.html#optimiser">Optimiser</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
-<main class="lesson">
-  <div class="banner" role="img" aria-label="Bandeau de la leçon">Résister au choc, ou en tirer parti ?</div>
-  <h1>L’antifragilité d’un portefeuille</h1>
-  <p>Diversifier, c’est déjà se protéger. Mais une question plus profonde se pose : <strong>que devient mon portefeuille quand le désordre arrive ?</strong> L’essayiste Nassim Taleb a proposé trois mots pour y répondre.</p>
+<main>
+  <p class="crumbs"><a href="index.html">Accueil</a> › <a href="index.html#planifier">Planifier</a> › L'antifragilité d'un portefeuille</p>
 
-  <div class="trio">
-    <div class="tr f"><h3>Fragile</h3><p>Le choc fait très mal, et la perte est difficile à rattraper. Plus la secousse est forte, plus les dégâts augmentent.</p><p class="eg">Exemple : un portefeuille concentré sur un seul actif, ou financé à crédit.</p></div>
-    <div class="tr r"><h3>Robuste</h3><p>Le choc passe et le portefeuille revient à peu près à l’état initial. Il encaisse, sans progresser.</p><p class="eg">Exemple : un portefeuille bien diversifié entre plusieurs classes d’actifs.</p></div>
-    <div class="tr a"><h3>Antifragile</h3><p>Le désordre apporte un bénéfice : on perd peu, et on garde de quoi acheter à bas prix quand les autres vendent.</p><p class="eg">Exemple : beaucoup de réserves sûres, et un petit pari à fort potentiel.</p></div>
-  </div>
+  <section class="scene scene-hero img-sobre">
+    <h1>L'antifragilité d'un portefeuille : résister au choc, ou en tirer parti ?</h1>
+    <p>Fragile, robuste, antifragile : comment un portefeuille réagit au désordre, et pourquoi garder des réserves compte autant que diversifier.</p>
+    <a href="#tableau" class="btn-gold">Voir le tableau des chocs</a>
+  </section>
 
-  <h2>Comment réagissent les portefeuilles ?</h2>
-  <p>Le tableau ci-dessous compare cinq répartitions face à cinq situations. Cliquez sur une ligne pour la détailler. C’est une <strong>simulation simplifiée</strong> : chaque classe d’actifs reçoit une note qualitative de −3 à +3 par scénario, et le tableau en fait la moyenne pondérée. Ce ne sont pas des rendements réels.</p>
-  <div class="scroll"><table id="tab" aria-label="Impact de cinq scénarios sur cinq portefeuilles"></table></div>
-  <div class="legend"><span><i class="c1"></i>Choc fort</span><span><i class="c2"></i>Choc marqué</span><span><i class="c3"></i>Résiste</span><span><i class="c4"></i>Profite</span><span><i class="c5"></i>Profite nettement</span></div>
-  <div class="detail" id="detail" aria-live="polite"></div>
+  <section class="card-grid" aria-label="Sommaire de la page">
+    <a class="card" href="#mots"><h3>Trois mots</h3><p>Fragile, robuste, antifragile.</p></a>
+    <a class="card" href="#tableau"><h3>Le tableau des chocs</h3><p>Cinq portefeuilles, cinq situations.</p></a>
+    <a class="card" href="#principes"><h3>Trois principes</h3><p>Ce qu'il faut retenir.</p></a>
+    <a class="card" href="#quiz"><h3>Teste-toi</h3><p>Quatre questions pour vérifier.</p></a>
+  </section>
 
-  <div class="note"><strong>Ce que le tableau montre, et ce qu’il ne dit pas.</strong> Les portefeuilles « toutes saisons » encaissent bien un krach des actions, mais souffrent d’une hausse brutale des taux, comme en 2022. Le portefeuille prudent avec un petit pari ne souffre pas beaucoup, mais il est pénalisé par l’inflation. Aucune répartition ne gagne partout. Et attention : l’antifragilité est une <strong>manière de réfléchir</strong>, pas une mesure. Personne ne peut annoncer qu’un portefeuille « est antifragile » avec un chiffre.</div>
+  <article class="chapitre">
 
-  <h2>Trois principes à retenir</h2>
-  <div class="rules">
-    <div><b>1. Éviter la perte irrécupérable</b><span>Une baisse de 50 % demande un gain de 100 % pour revenir au point de départ. Le levier et les dettes peuvent forcer à vendre au pire moment.</span></div>
-    <div><b>2. Garder des munitions</b><span>Des liquidités permettent de racheter quand les prix chutent. C’est la réserve de précaution du premier étage de la pyramide financière, vue sous un autre angle.</span></div>
-    <div><b>3. Limiter les paris à une petite part</b><span>Si un pari risqué échoue, on perd peu. S’il réussit, le gain compte. L’asymétrie est là : une perte plafonnée, un gain ouvert.</span></div>
-  </div>
+    <h2 id="mots">Trois mots à distinguer</h2>
+    <p class="accroche">« Que devient ton portefeuille quand le désordre arrive ? »</p>
+    <p>Diversifier, c'est déjà se protéger. Mais une question plus profonde se pose : <strong>comment réagit un portefeuille face au choc ?</strong> L'essayiste Nassim Taleb a proposé trois mots pour y répondre.</p>
+    <div class="trio">
+      <div class="tr f"><h3>Fragile</h3><p>Le choc fait très mal, et la perte est difficile à rattraper. Plus la secousse est forte, plus les dégâts augmentent.</p><p class="eg">Exemple : un portefeuille concentré sur un seul actif, ou financé à crédit.</p></div>
+      <div class="tr r"><h3>Robuste</h3><p>Le choc passe et le portefeuille revient à peu près à l'état initial. Il encaisse, sans progresser.</p><p class="eg">Exemple : un portefeuille bien diversifié entre plusieurs classes d'actifs.</p></div>
+      <div class="tr a"><h3>Antifragile</h3><p>Le désordre apporte un bénéfice : on perd peu, et on garde de quoi acheter à bas prix quand les autres vendent.</p><p class="eg">Exemple : beaucoup de réserves sûres, et un petit pari à fort potentiel.</p></div>
+    </div>
 
-  <h2>Testez-vous</h2>
-  <div class="quiz" id="quiz"></div>
+    <h2 id="tableau">Comment réagissent les portefeuilles ?</h2>
+    <p>Le tableau compare cinq répartitions face à cinq situations. Clique sur une ligne pour la détailler. C'est une <strong>simulation simplifiée</strong> : chaque classe d'actifs reçoit une note qualitative de −3 à +3 par scénario, et le tableau en fait la moyenne pondérée. Ce ne sont pas des rendements réels.</p>
+    <div class="tablewrap"><table id="tab" aria-label="Impact de cinq scénarios sur cinq portefeuilles"></table></div>
+    <div class="lgd"><span><i class="c1"></i>Choc fort</span><span><i class="c2"></i>Choc marqué</span><span><i class="c3"></i>Résiste</span><span><i class="c4"></i>Profite</span><span><i class="c5"></i>Profite nettement</span></div>
+    <div class="detail" id="detail" aria-live="polite"></div>
 
-  <div class="nav-end">
-    <a href="portefeuilles-historiques.html">← Les portefeuilles historiques</a>
-    <a href="monte-carlo.html">Simulation Monte Carlo →</a>
-  </div>
+    <div class="alerte"><strong>Ce que le tableau montre, et ce qu'il ne dit pas :</strong> les portefeuilles « toutes saisons » encaissent bien un krach des actions, mais souffrent d'une hausse brutale des taux, comme en 2022. Le portefeuille prudent avec un petit pari ne souffre pas beaucoup, mais l'inflation le pénalise. Aucune répartition ne gagne partout. Et l'antifragilité est une <strong>manière de réfléchir</strong>, pas une mesure : personne ne peut annoncer qu'un portefeuille « est antifragile » avec un chiffre. Pour voir les portefeuilles de référence, lis <a href="portefeuilles-historiques.html">Les portefeuilles historiques</a>.</div>
+
+    <h2 id="principes">Trois principes à retenir</h2>
+    <div class="rules">
+      <div><b>1. Éviter la perte irrécupérable</b><span>Une baisse de 50 % demande un gain de 100 % pour revenir au point de départ. Le levier et les dettes peuvent forcer à vendre au pire moment.</span></div>
+      <div><b>2. Garder des munitions</b><span>Des liquidités permettent de racheter quand les prix chutent. C'est la réserve de précaution du premier étage de la <a href="pyramide-finance.html">pyramide financière</a>, vue sous un autre angle.</span></div>
+      <div><b>3. Limiter les paris à une petite part</b><span>Si un pari risqué échoue, tu perds peu. S'il réussit, le gain compte. L'asymétrie est là : une perte plafonnée, un gain ouvert.</span></div>
+    </div>
+    <p>Pour tester ton propre portefeuille avec des hypothèses chiffrées, passe à la page suivante : la <a href="monte-carlo.html">simulation de Monte Carlo</a>.</p>
+
+    <h3>Le jargon traduit</h3>
+    <dl class="glossaire">
+      <dt>Antifragile</dt><dd>Qui tire un bénéfice du désordre, au lieu seulement de lui résister.</dd>
+      <dt>Barbell (haltère)</dt><dd>Une répartition en deux blocs : une très grande part sûre, et une petite part très risquée à fort potentiel.</dd>
+      <dt>Munitions</dt><dd>Les liquidités disponibles pour acheter quand les prix chutent.</dd>
+    </dl>
+
+    <h3 id="quiz">Teste-toi</h3>
+    <div class="q" data-good="2">
+      <p>1. Qu'est-ce qui distingue un portefeuille antifragile d'un portefeuille robuste ?</p>
+      <button>Il ne subit jamais de pertes</button>
+      <button>Il contient uniquement de l'or</button>
+      <button>Il peut tirer un bénéfice du désordre, par exemple en rachetant à bas prix</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="0">
+      <p>2. Pourquoi les liquidités comptent-elles dans cette approche ?</p>
+      <button>Elles permettent d'acheter quand les prix chutent</button>
+      <button>Elles rapportent le plus</button>
+      <button>Elles protègent de l'inflation</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="2">
+      <p>3. Que montre l'exemple de 2022 pour les portefeuilles « toutes saisons » ?</p>
+      <button>Qu'ils sont invulnérables</button>
+      <button>Que l'or baisse toujours</button>
+      <button>Qu'une hausse brutale des taux peut les pénaliser, à cause des obligations longues</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="0">
+      <p>4. Peut-on dire d'un portefeuille, chiffre à l'appui, qu'il « est antifragile » ?</p>
+      <button>Non, c'est une grille de réflexion, pas une mesure</button>
+      <button>Oui, avec un ratio précis</button>
+      <button>Oui, si son rendement dépasse 10 %</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <details><summary>Voir les explications</summary>
+      <ol>
+        <li>Un portefeuille robuste encaisse le choc. Un portefeuille antifragile garde de quoi en profiter.</li>
+        <li>Ce sont les munitions : sans réserves disponibles, on ne peut pas saisir les occasions d'un krach. En revanche, elles perdent du pouvoir d'achat en cas d'inflation.</li>
+        <li>Actions et obligations longues ont baissé ensemble : la diversification protège, sans garantir.</li>
+        <li>L'antifragilité décrit une propriété qualitative. Le tableau de cette leçon est une simulation simplifiée, pas une mesure.</li>
+      </ol>
+    </details>
+
+    <div class="pager">
+      <a href="portefeuilles-historiques.html">← Les portefeuilles historiques</a>
+      <a class="next" href="monte-carlo.html">Simulation Monte Carlo →</a>
+    </div>
+  </article>
+
 </main>
 
 <footer>
-  <p>© 2026 EikoFinance. Tous droits réservés.</p>
+  <p>&copy; 2026 EikoFinance. Tous droits réservés.</p>
   <p>Contact : <a href="mailto:contacteikofinance@gmail.com">contacteikofinance@gmail.com</a></p>
 </footer>
-
-<script src="js/site.js"></script>
+<script src="js/lesson.js"></script>
 <script>
 (function(){
-  var t=document.querySelector('.menu-toggle'),n=document.querySelector('header nav');
-  if(t&&n)t.addEventListener('click',function(){var o=n.classList.toggle('mobile-open');t.setAttribute('aria-expanded',o?'true':'false');});
-})();
-
-(function(){
-  /* Notes qualitatives illustratives, de -3 à +3, par classe d'actifs et par scénario */
   var S=['Krach des actions','Hausse brutale des taux','Inflation forte','Récession, déflation','Longue période calme'];
   var A={act:[-3,-2,-1,-2,3],ol:[1,-3,-3,3,0],om:[1,-2,-2,2,0],cc:[0,0,-1,1,0],or:[1,-1,2,0,-1],mp:[-1,1,3,-3,0],sp:[-3,-3,-2,-3,3]};
   var P=[
     {n:'100 % actions',mix:'Actions 100 %',w:{act:100},cash:0,v:'Fragile',
-     d:'Tout dépend d’un seul moteur. Excellent quand tout va bien, très exposé au premier krach, et sans réserve pour en profiter.'},
+     d:'Tout dépend d\u2019un seul moteur. Excellent quand tout va bien, très exposé au premier krach, et sans réserve pour en profiter.'},
     {n:'60/40',mix:'Actions 60 %, obligations moyennes 40 %',w:{act:60,om:40},cash:0,v:'Fragile à robuste',
-     d:'Les obligations amortissent un krach, mais pas une hausse des taux ni l’inflation, deux situations où elles baissent avec les actions.'},
+     d:'Les obligations amortissent un krach, mais pas une hausse des taux ni l\u2019inflation, deux situations où elles baissent avec les actions.'},
     {n:'Permanent Portfolio',mix:'Actions 25 %, obligations longues 25 %, or 25 %, liquidités 25 %',w:{act:25,ol:25,or:25,cc:25},cash:25,v:'Robuste',
      d:'Pensé pour les quatre saisons. Encaisse bien un krach, souffre de la hausse brutale des taux à cause des obligations longues. Un quart en liquidités donne quelques munitions.'},
     {n:'All Weather',mix:'Actions 30 %, obligations longues 40 %, moyennes 15 %, or 7,5 %, matières premières 7,5 %',w:{act:30,ol:40,om:15,or:7.5,mp:7.5},cash:0,v:'Robuste',
-     d:'Bien équilibré face aux chocs de croissance et d’inflation modérés, mais très exposé aux taux (55 % d’obligations) et sans liquidités en réserve.'},
-    {n:'Prudent + petit pari',mix:'Liquidités et obligations courtes 85 %, actions à fort potentiel 15 %',w:{cc:85,sp:15},cash:85,v:'Plus proche de l’antifragile',
-     d:'Perte plafonnée dans les chocs de marché, et beaucoup de munitions pour racheter à bas prix. Mais l’inflation grignote la partie sûre, et le petit pari peut tout perdre. C’est un exemple pédagogique, pas un conseil.'}
+     d:'Bien équilibré face aux chocs de croissance et d\u2019inflation modérés, mais très exposé aux taux (55 % d\u2019obligations) et sans liquidités en réserve.'},
+    {n:'Prudent + petit pari',mix:'Liquidités et obligations courtes 85 %, actions à fort potentiel 15 %',w:{cc:85,sp:15},cash:85,v:'Plus proche de l\u2019antifragile',
+     d:'Perte plafonnée dans les chocs de marché, et beaucoup de munitions pour racheter à bas prix. Mais l\u2019inflation grignote la partie sûre, et le petit pari peut tout perdre. C\u2019est un exemple pédagogique, pas un conseil.'}
   ];
   function score(p,j){var s=0;for(var k in p.w)s+=p.w[k]*A[k][j];return s/100;}
   function cls(x){return x<=-1.5?'c1':x<=-0.5?'c2':x<0.5?'c3':x<1.5?'c4':'c5';}
@@ -152,31 +198,6 @@ td.v{font-weight:700}
   tab.addEventListener('click',function(e){var c=e.target.closest('td.nm');if(c){sel=+c.getAttribute('data-i');draw();}});
   tab.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){var c=e.target.closest('td.nm');if(c){e.preventDefault();sel=+c.getAttribute('data-i');draw();tab.querySelector('tr.sel td.nm').focus();}}});
   draw();
-
-  var Q=[
-    {q:'Qu’est-ce qui distingue un portefeuille antifragile d’un portefeuille robuste ?',o:['Il ne subit jamais de pertes','Il peut tirer un bénéfice du désordre, par exemple en rachetant à bas prix','Il contient uniquement de l’or'],a:1,w:'Un portefeuille robuste encaisse le choc. Un portefeuille antifragile garde de quoi en profiter.'},
-    {q:'Pourquoi les liquidités comptent-elles dans cette approche ?',o:['Elles rapportent le plus','Elles permettent d’acheter quand les prix chutent','Elles protègent de l’inflation'],a:1,w:'Ce sont les munitions : sans réserves disponibles, on ne peut pas saisir les occasions d’un krach. En revanche, elles perdent du pouvoir d’achat en cas d’inflation.'},
-    {q:'Que montre l’exemple de 2022 pour les portefeuilles « toutes saisons » ?',o:['Qu’ils sont invulnérables','Qu’une hausse brutale des taux peut les pénaliser, à cause des obligations longues','Que l’or baisse toujours'],a:1,w:'Actions et obligations longues ont baissé ensemble : la diversification protège, sans garantir.'},
-    {q:'Peut-on dire d’un portefeuille, chiffre à l’appui, qu’il « est antifragile » ?',o:['Oui, avec un ratio précis','Non, c’est une grille de réflexion, pas une mesure','Oui, si son rendement dépasse 10 %'],a:1,w:'L’antifragilité décrit une propriété qualitative. Le tableau de cette leçon est une simulation simplifiée, pas une mesure.'}
-  ];
-  var qz=document.getElementById('quiz'),done=0,good=0,sc=document.createElement('p');sc.className='score';
-  Q.forEach(function(x,i){
-    var b=document.createElement('div');b.className='qq';
-    b.innerHTML='<p class="qt">'+(i+1)+'. '+x.q+'</p>';
-    var why=document.createElement('p');why.className='why';why.textContent=x.w;
-    var bs=x.o.map(function(tx,j){
-      var e=document.createElement('button');e.type='button';e.textContent=tx;
-      e.onclick=function(){
-        bs.forEach(function(bb,k){bb.disabled=true;if(k===x.a)bb.classList.add('ok');});
-        if(j!==x.a)e.classList.add('ko');else good++;
-        why.style.display='block';done++;
-        if(done===Q.length)sc.textContent='Score : '+good+' / '+Q.length;
-      };
-      b.appendChild(e);return e;
-    });
-    b.appendChild(why);qz.appendChild(b);
-  });
-  qz.appendChild(sc);
 })();
 </script>
 </body>

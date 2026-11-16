@@ -3,154 +3,199 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="La pyramide de Maslow appliquée à la finance personnelle : quatre étages pour savoir par où commencer et ce qui vient ensuite.">
 <title>La pyramide financière - EikoFinance</title>
+<meta name="description" content="La pyramide de Maslow appliquée à la finance personnelle : quatre étages pour savoir par où commencer et ce qui vient ensuite.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/lesson.css">
+<link rel="stylesheet" href="css/scene.css">
+<link rel="stylesheet" href="css/cartes.css">
 <style>
-:root{--line:rgba(16,42,86,.14)}
-.lesson{max-width:1050px;margin:0 auto;padding:2.2rem 5% 3rem}
-.lesson h1{font-family:var(--font-title);font-size:1.8rem;color:var(--primary-blue);letter-spacing:1px;margin-bottom:.6rem;line-height:1.3}
-.lesson h2{font-family:var(--font-title);font-size:1.3rem;color:var(--primary-blue);margin:2.4rem 0 .6rem}
-.lesson p{color:var(--text-muted);max-width:75ch;margin-bottom:.9rem}
-.lesson p strong{color:var(--text-dark)}
-.banner{height:140px;border-radius:8px;margin-bottom:1.4rem;background:linear-gradient(120deg,var(--primary-blue),#1d4580);border-bottom:4px solid var(--gold-accent);display:flex;align-items:center;padding:0 1.6rem;color:#fff;font-family:var(--font-title);font-size:1.1rem;letter-spacing:1px}
-.split{display:grid;grid-template-columns:minmax(260px,.9fr) 1.1fr;gap:1.6rem;align-items:start;margin-top:1rem}
+.split{display:grid;grid-template-columns:minmax(260px,.9fr) 1.1fr;gap:1.6rem;align-items:start;margin:1rem 0 1.6rem}
 @media(max-width:800px){.split{grid-template-columns:1fr}}
 .pyr{display:flex;flex-direction:column;align-items:center;gap:6px}
 .pyr button{font:inherit;border:0;cursor:pointer;color:#fff;font-weight:700;padding:.9rem .5rem;text-align:center;transition:transform .15s}
 .pyr button small{display:block;font-weight:500;font-size:.76rem;opacity:.9}
 .pyr button:hover{transform:scale(1.02)}
-.pyr button[aria-pressed=true]{outline:3px solid var(--gold-bright);outline-offset:2px}
-.pyr button:focus-visible{outline:3px solid var(--gold-bright);outline-offset:2px}
+.pyr button[aria-pressed=true],.pyr button:focus-visible{outline:3px solid var(--gold-bright);outline-offset:2px}
 .f4{width:46%;background:#C5A059;clip-path:polygon(50% 0,100% 100%,0 100%);padding-top:1.6rem!important;color:var(--dark-blue)!important}
 .f3{width:70%;background:#6F8FC4;clip-path:polygon(18% 0,82% 0,100% 100%,0 100%)}
 .f2{width:86%;background:#3E63A8;clip-path:polygon(12% 0,88% 0,100% 100%,0 100%)}
 .f1{width:100%;background:#102A56;clip-path:polygon(8% 0,92% 0,100% 100%,0 100%)}
-.panel{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold-accent);border-radius:8px;padding:1.2rem 1.4rem;box-shadow:0 4px 12px rgba(0,0,0,.04)}
-.panel h3{font-family:var(--font-title);color:var(--primary-blue);font-size:1.15rem;margin-bottom:.2rem}
-.panel .q{font-style:italic;color:var(--text-muted);margin-bottom:.8rem}
-.panel ul{margin:0 0 .8rem 1.1rem;color:var(--text-muted);font-size:.93rem}
-.panel li{margin-bottom:.3rem}
-.panel .go{display:flex;flex-wrap:wrap;gap:8px}
-.panel .go a{font-size:.85rem;font-weight:600;color:var(--primary-blue);text-decoration:none;border:1px solid var(--gold-accent);border-radius:6px;padding:.3rem .7rem}
-.panel .go a:hover{background:var(--bg-subtle)}
-.panel .pit{background:var(--bg-subtle);border-left:4px solid #D9826B;border-radius:6px;padding:.6rem .8rem;font-size:.88rem;color:var(--text-muted);margin-bottom:.8rem}
-.panel .pit b{color:#b3402a}
-.chk{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:1rem}
-.chk fieldset{border:1px solid var(--line);border-radius:8px;padding:.9rem 1rem;background:#fff}
+.fpanel{background:#fff;border:1px solid rgba(16,42,86,.14);border-top:4px solid var(--gold-accent);border-radius:8px;padding:1.2rem 1.4rem;box-shadow:0 4px 12px rgba(0,0,0,.04)}
+.fpanel h3{margin-top:0;font-family:var(--font-title);color:var(--primary-blue);font-size:1.15rem}
+.fpanel .qq{font-style:italic;color:var(--text-muted);margin:0 0 .8rem}
+.fpanel ul{margin:0 0 .8rem 1.1rem;color:var(--text-muted);font-size:.93rem}
+.fpanel li{margin-bottom:.3rem}
+.fpanel .go{display:flex;flex-wrap:wrap;gap:8px}
+.fpanel .go a{font-size:.85rem;font-weight:600;color:var(--primary-blue);text-decoration:none;border:1px solid var(--gold-accent);border-radius:6px;padding:.3rem .7rem}
+.fpanel .go a:hover{background:var(--bg-subtle)}
+.fpanel .pit{background:var(--bg-subtle);border-left:4px solid #D9826B;border-radius:6px;padding:.6rem .8rem;font-size:.88rem;color:var(--text-muted);margin-bottom:.8rem}
+.fpanel .pit b{color:#b3402a}
+.chk{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin:1rem 0}
+.chk fieldset{border:1px solid rgba(16,42,86,.14);border-radius:8px;padding:.9rem 1rem;background:#fff;margin:0}
 .chk legend{font-family:var(--font-title);color:var(--primary-blue);font-size:.98rem;padding:0 .4rem}
 .chk label{display:flex;gap:8px;align-items:flex-start;font-size:.9rem;color:var(--text-muted);margin:.4rem 0;cursor:pointer}
 .chk input{margin-top:.25rem;accent-color:var(--primary-blue)}
 .meter{height:7px;background:#e3e8f0;border-radius:4px;margin-top:.6rem;overflow:hidden}
 .meter i{display:block;height:100%;background:var(--gold-accent);width:0;transition:width .3s}
-.verdict{margin-top:1.1rem;background:var(--bg-subtle);border-left:4px solid var(--gold-accent);border-radius:6px;padding:.9rem 1.1rem;color:var(--text-muted);font-size:.95rem;max-width:80ch}
+.verdict{margin:1rem 0 1.4rem;background:var(--bg-subtle);border-left:4px solid var(--gold-accent);border-radius:6px;padding:.9rem 1.1rem;color:var(--text-muted);font-size:.95rem;max-width:80ch}
 .verdict strong{color:var(--primary-blue)}
-.note{background:var(--bg-subtle);border-left:4px solid var(--gold-accent);border-radius:6px;padding:.9rem 1.1rem;margin:1.2rem 0;color:var(--text-muted);font-size:.92rem;max-width:80ch}
-.note strong{color:var(--primary-blue)}
-.quiz{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold-accent);border-radius:8px;padding:1.2rem 1.4rem;margin-top:1rem}
-.qq{margin-bottom:1.3rem}
-.qq p.qt{font-weight:700;color:var(--text-dark);margin-bottom:.5rem}
-.qq button{display:block;width:100%;text-align:left;font:inherit;font-size:.92rem;background:var(--bg-subtle);border:1px solid #cdd5e2;border-radius:6px;padding:.55rem .8rem;margin-bottom:6px;cursor:pointer;color:var(--text-dark)}
-.qq button:hover:not(:disabled){border-color:var(--gold-accent)}
-.qq button.ok{background:#e6f4ee;border-color:#2F8F6B}
-.qq button.ko{background:#fdf0ec;border-color:#D9826B}
-.qq .why{display:none;font-size:.88rem;color:var(--text-muted)}
-.score{font-weight:700;color:var(--primary-blue)}
-.nav-end{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:2.2rem}
-.nav-end a{background:linear-gradient(45deg,#C5A059,#D4AF37);color:#0A1C3B;font-weight:700;font-size:.95rem;text-decoration:none;border:0;padding:.75rem 1.6rem;border-radius:4px;display:inline-block;transition:transform .2s ease,box-shadow .2s ease}
-.nav-end a:hover,.nav-end a:focus-visible{transform:translateY(-2px);box-shadow:0 6px 15px rgba(197,160,89,.35);color:#0A1C3B}
 </style>
+<script src="js/site.js" defer></script>
 </head>
-<body class="no-intro">
+<body>
 <header>
   <div class="logo-container">
     <img src="images/logo.jpg" alt="Logo Eiko Finance" class="logo-img">
     <span class="logo-text">EIKO FINANCE</span>
   </div>
-  <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-  <nav></nav>
+  <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+  <!-- Menu : généré par js/site.js (liste de secours si JavaScript est désactivé) -->
+  <nav>
+    <ul>
+      <li><a href="index.html#comprendre">Comprendre</a></li>
+      <li><a href="index.html#investir">Investir</a></li>
+      <li><a href="index.html#planifier">Planifier</a></li>
+      <li><a href="index.html#optimiser">Optimiser</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
-<main class="lesson">
-  <div class="banner" role="img" aria-label="Bandeau de la leçon">Par où commencer, et dans quel ordre ?</div>
-  <h1>La pyramide financière</h1>
-  <p>En 1943, le psychologue Abraham Maslow a proposé de classer les besoins humains en étages : on s’occupe d’abord de la survie et de la sécurité, puis de besoins plus élevés. Appliquée à l’argent, cette image donne un <strong>ordre de priorité</strong>. Beaucoup de gens choisissent un placement avant d’avoir stabilisé leur budget : c’est construire le toit avant les fondations.</p>
-  <p>Cliquez sur un étage pour voir ce qu’il contient, puis testez votre propre situation plus bas.</p>
+<main>
+  <p class="crumbs"><a href="index.html">Accueil</a> › <a href="index.html#planifier">Planifier</a> › La pyramide financière</p>
 
-  <div class="split">
-    <div class="pyr" role="group" aria-label="Les quatre étages de la pyramide">
-      <button type="button" class="f4" data-f="3" aria-pressed="false">4. Libérer<small>et transmettre</small></button>
-      <button type="button" class="f3" data-f="2" aria-pressed="false">3. Faire croître<small>investir et diversifier</small></button>
-      <button type="button" class="f2" data-f="1" aria-pressed="false">2. Stabiliser<small>projets et proches</small></button>
-      <button type="button" class="f1" data-f="0" aria-pressed="true">1. Sécuriser<small>budget, dettes, réserve</small></button>
+  <section class="scene scene-hero img-sobre">
+    <h1>La pyramide financière : par où commencer ?</h1>
+    <p>La pyramide de Maslow appliquée à l'argent : quatre étages pour fixer tes priorités, et un test pour situer ton prochain pas.</p>
+    <a href="#pyramide" class="btn-gold">Découvrir la pyramide</a>
+  </section>
+
+  <section class="card-grid" aria-label="Sommaire de la page">
+    <a class="card" href="#pyramide"><h3>Les quatre étages</h3><p>De la sécurité à la transmission.</p></a>
+    <a class="card" href="#test"><h3>Où en es-tu ?</h3><p>Un test pour situer ton prochain pas.</p></a>
+    <a class="card" href="#quiz"><h3>Teste-toi</h3><p>Quatre questions pour vérifier.</p></a>
+  </section>
+
+  <article class="chapitre">
+
+    <h2 id="pyramide">Les quatre étages de la pyramide</h2>
+    <p class="accroche">« On ne construit pas le toit avant les fondations. »</p>
+    <p>En 1943, le psychologue Abraham Maslow a proposé de classer les besoins humains en étages : on s'occupe d'abord de la survie et de la sécurité, puis de besoins plus élevés. Appliquée à l'argent, cette image donne un <strong>ordre de priorité</strong>. Beaucoup de gens choisissent un placement avant d'avoir stabilisé leur budget : c'est construire le toit avant les fondations. Clique sur un étage pour voir ce qu'il contient.</p>
+
+    <div class="split">
+      <div class="pyr" role="group" aria-label="Les quatre étages de la pyramide">
+        <button type="button" class="f4" data-f="3" aria-pressed="false">4. Libérer<small>et transmettre</small></button>
+        <button type="button" class="f3" data-f="2" aria-pressed="false">3. Faire croître<small>investir et diversifier</small></button>
+        <button type="button" class="f2" data-f="1" aria-pressed="false">2. Stabiliser<small>projets et proches</small></button>
+        <button type="button" class="f1" data-f="0" aria-pressed="true">1. Sécuriser<small>budget, dettes, réserve</small></button>
+      </div>
+      <div class="fpanel" id="detail" aria-live="polite"></div>
     </div>
-    <div class="panel" id="detail" aria-live="polite"></div>
-  </div>
 
-  <div class="note"><strong>Une grille de lecture, pas une loi.</strong> Chez Maslow aussi, les besoins ne se satisfont pas strictement dans l’ordre, et la pyramide est discutée. Dans la vie réelle, on peut avancer sur deux étages en même temps. Mais certaines règles tiennent : investir en ayant des dettes chères ou sans réserve oblige à vendre au pire moment.</div>
+    <div class="alerte"><strong>Une grille de lecture, pas une loi :</strong> chez Maslow aussi, les besoins ne se satisfont pas strictement dans l'ordre, et la pyramide est discutée. Dans la vie réelle, tu peux avancer sur deux étages en même temps. Mais certaines règles tiennent : investir en ayant des dettes chères ou sans réserve oblige à vendre au pire moment.</div>
 
-  <h2>Où en êtes-vous ?</h2>
-  <p>Cochez ce qui est déjà vrai pour vous. Rien n’est enregistré en dehors de votre navigateur.</p>
-  <div class="chk" id="chk"></div>
-  <div class="verdict" id="verdict"></div>
+    <h2 id="test">Où en es-tu ?</h2>
+    <p>Coche ce qui est déjà vrai pour toi. Rien n'est enregistré en dehors de ton navigateur.</p>
+    <div class="chk" id="chk"></div>
+    <div class="verdict" id="verdict"></div>
 
-  <h2>Testez-vous</h2>
-  <div class="quiz" id="quiz"></div>
+    <div class="retenir">
+      <strong>3 idées à retenir</strong>
+      <ul>
+        <li>Chaque étage prépare le suivant : la réserve de précaution rend l'investissement supportable.</li>
+        <li>La pyramide fixe des priorités, elle ne se suit pas à la lettre.</li>
+        <li>Les étages 3 et 4 reposent sur la durée : plus tôt tu t'y mets, plus c'est simple.</li>
+      </ul>
+    </div>
 
-  <div class="nav-end">
-    <a href="suivi-budget.html">← Suivi de budget</a>
-    <a href="frais.html">Les frais →</a>
-  </div>
+    <h3 id="quiz">Teste-toi</h3>
+    <div class="q" data-good="1">
+      <p>1. Selon cette pyramide, par quoi commence-t-on ?</p>
+      <button>Choisir un ETF</button>
+      <button>Connaître son budget, rembourser les dettes chères et constituer une réserve</button>
+      <button>Préparer sa transmission</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="0">
+      <p>2. Pourquoi investir avant d'avoir une réserve est-il risqué ?</p>
+      <button>Parce qu'un imprévu oblige à vendre, parfois en pleine baisse</button>
+      <button>Parce que les placements sont toujours perdants</button>
+      <button>Parce que c'est interdit</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="2">
+      <p>3. La pyramide de Maslow s'applique-t-elle à la lettre à la finance ?</p>
+      <button>Oui, on ne peut jamais avancer sur deux étages à la fois</button>
+      <button>Non, elle ne sert à rien</button>
+      <button>Non, c'est une grille de lecture : on peut avancer sur deux étages, mais certaines bases restent prioritaires</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="1">
+      <p>4. Qu'ont en commun les étages 3 et 4 ?</p>
+      <button>Ils ne concernent que les patrimoines élevés</button>
+      <button>Ils se préparent avant tout par la régularité et le temps</button>
+      <button>Ils excluent la fiscalité</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <details><summary>Voir les explications</summary>
+      <ol>
+        <li>Le premier étage met de l'argent de côté pour les imprévus. Sans lui, un placement risque d'être vendu au mauvais moment.</li>
+        <li>Le risque vient de la contrainte de vendre, pas du placement en soi.</li>
+        <li>C'est un repère pour fixer des priorités, pas une loi stricte.</li>
+        <li>Investir, préparer sa retraite et transmettre reposent sur la durée : plus on s'y prend tôt, plus c'est simple.</li>
+      </ol>
+    </details>
+
+    <div class="pager">
+      <a href="suivi-budget.html">← Suivi de budget</a>
+      <a class="next" href="frais.html">Les frais →</a>
+    </div>
+  </article>
+
 </main>
 
 <footer>
-  <p>© 2026 EikoFinance. Tous droits réservés.</p>
+  <p>&copy; 2026 EikoFinance. Tous droits réservés.</p>
   <p>Contact : <a href="mailto:contacteikofinance@gmail.com">contacteikofinance@gmail.com</a></p>
 </footer>
-
-<script src="js/site.js"></script>
+<script src="js/lesson.js"></script>
 <script>
 (function(){
-  var t=document.querySelector('.menu-toggle'),n=document.querySelector('header nav');
-  if(t&&n)t.addEventListener('click',function(){var o=n.classList.toggle('mobile-open');t.setAttribute('aria-expanded',o?'true':'false');});
-})();
-
-(function(){
   var F=[
-    {t:'1. Sécuriser',q:'Puis-je encaisser un imprévu sans m’endetter ?',
+    {t:'1. Sécuriser',q:'Puis-je encaisser un imprévu sans m\u2019endetter ?',
      li:['Connaître ses revenus et ses dépenses du mois, ligne par ligne','Rembourser les dettes chères : crédit à la consommation, découvert, crédit renouvelable','Constituer une réserve de précaution, souvent évaluée à plusieurs mois de dépenses','Avoir les assurances de base : habitation, responsabilité civile, santé complémentaire'],
-     pit:'Investir avant d’avoir une réserve : au premier imprévu, il faut vendre, parfois en pleine baisse.',
+     pit:'Investir avant d\u2019avoir une réserve : au premier imprévu, il faut vendre, parfois en pleine baisse.',
      go:[['Budget et épargne de précaution','budget-epargne.html'],['Suivi de budget','suivi-budget.html']],
-     c:['Je connais mes revenus et mes dépenses du mois','Je n’ai pas de dette chère en cours','J’ai une réserve de plusieurs mois de dépenses','Mes assurances de base sont en place']},
-    {t:'2. Stabiliser',q:'Mon quotidien et mes proches sont-ils à l’abri ?',
-     li:['Un logement dont le coût reste supportable, même si les revenus baissent','Une épargne régulière, mise de côté dès l’arrivée du salaire','Des projets datés et chiffrés (voiture, travaux, études des enfants)','La protection de la famille : prévoyance, bénéficiaires désignés'],
-     pit:'Un projet sans date ni montant reste un vœu : il n’entre jamais dans le budget.',
-     go:[['L’immobilier','immobilier.html'],['Intérêts composés','interets-composes.html']],
-     c:['Mon logement reste supportable si mes revenus baissent','J’épargne chaque mois, de façon automatique','Mes projets sont datés et chiffrés','Mes proches sont protégés si j’ai un imprévu']},
+     c:['Je connais mes revenus et mes dépenses du mois','Je n\u2019ai pas de dette chère en cours','J\u2019ai une réserve de plusieurs mois de dépenses','Mes assurances de base sont en place']},
+    {t:'2. Stabiliser',q:'Mon quotidien et mes proches sont-ils à l\u2019abri ?',
+     li:['Un logement dont le coût reste supportable, même si les revenus baissent','Une épargne régulière, mise de côté dès l\u2019arrivée du salaire','Des projets datés et chiffrés (voiture, travaux, études des enfants)','La protection de la famille : prévoyance, bénéficiaires désignés'],
+     pit:'Un projet sans date ni montant reste un vœu : il n\u2019entre jamais dans le budget.',
+     go:[['L\u2019immobilier','immobilier.html'],['Intérêts composés','interets-composes.html']],
+     c:['Mon logement reste supportable si mes revenus baissent','J\u2019épargne chaque mois, de façon automatique','Mes projets sont datés et chiffrés','Mes proches sont protégés si j\u2019ai un imprévu']},
     {t:'3. Faire croître',q:'Mon argent travaille-t-il pour moi, à un risque que je supporte ?',
-     li:['Choisir une répartition adaptée à son horizon et à sa tolérance aux baisses','Diversifier : plusieurs classes d’actifs, plusieurs zones, plusieurs entreprises','Surveiller les frais, qui rongent le rendement année après année','Investir régulièrement et garder son sang-froid dans les krachs'],
+     li:['Choisir une répartition adaptée à son horizon et à sa tolérance aux baisses','Diversifier : plusieurs classes d\u2019actifs, plusieurs zones, plusieurs entreprises','Surveiller les frais, qui rongent le rendement année après année','Investir régulièrement et garder son sang-froid dans les krachs'],
      pit:'Chercher le placement miracle au lieu de diversifier, ou vendre par peur au plus bas.',
-     go:[['Les frais','frais.html'],['Construire son portefeuille','portefeuille.html'],['Les portefeuilles historiques','portefeuilles-historiques.html'],['Les biais de l’investisseur','biais-investisseur.html'],['Simulation Monte Carlo','monte-carlo.html']],
-     c:['Je sais ce que je possède et dans quelle enveloppe','Je connais les frais de mes placements','Mon portefeuille est diversifié selon mon horizon','J’investis régulièrement, même quand les marchés baissent']},
+     go:[['Les frais','frais.html'],['Construire son portefeuille','portefeuille.html'],['Les portefeuilles historiques','portefeuilles-historiques.html'],['Les biais de l\u2019investisseur','biais-investisseur.html'],['Simulation Monte Carlo','monte-carlo.html']],
+     c:['Je sais ce que je possède et dans quelle enveloppe','Je connais les frais de mes placements','Mon portefeuille est diversifié selon mon horizon','J\u2019investis régulièrement, même quand les marchés baissent']},
     {t:'4. Libérer et transmettre',q:'Ma situation me donne-t-elle le choix de mon temps, et prépare-t-elle la suite ?',
-     li:['Estimer sa retraite et l’écart à combler','Construire des revenus complémentaires, du capital qui produit des revenus','Optimiser la fiscalité de ses placements','Organiser la transmission : donations, succession, clause bénéficiaire'],
-     pit:'Attendre le dernier moment : la transmission et la retraite se préparent des années à l’avance.',
+     li:['Estimer sa retraite et l\u2019écart à combler','Construire des revenus complémentaires, du capital qui produit des revenus','Optimiser la fiscalité de ses placements','Organiser la transmission : donations, succession, clause bénéficiaire'],
+     pit:'Attendre le dernier moment : la transmission et la retraite se préparent des années à l\u2019avance.',
      go:[['Préparer sa retraite','retraite.html'],['Placements et enveloppes fiscales','fiscalite.html'],['Transmission et dons','transmission.html']],
-     c:['J’ai estimé ma retraite et l’écart à combler','J’ai identifié des revenus complémentaires possibles','Je connais la fiscalité de mes placements','J’ai pensé à ma transmission (donation, clause bénéficiaire)']}
+     c:['J\u2019ai estimé ma retraite et l\u2019écart à combler','J\u2019ai identifié des revenus complémentaires possibles','Je connais la fiscalité de mes placements','J\u2019ai pensé à ma transmission (donation, clause bénéficiaire)']}
   ];
   var det=document.getElementById('detail'),btns=document.querySelectorAll('.pyr button');
   function show(i){
     var f=F[i];
-    det.innerHTML='<h3>'+f.t+'</h3><p class="q">'+f.q+'</p><ul>'+f.li.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul><div class="pit"><b>Piège classique.</b> '+f.pit+'</div><div class="go">'+f.go.map(function(g){return '<a href="'+g[1]+'">'+g[0]+'</a>';}).join('')+'</div>';
+    det.innerHTML='<h3>'+f.t+'</h3><p class="qq">'+f.q+'</p><ul>'+f.li.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul><div class="pit"><b>Piège classique.</b> '+f.pit+'</div><div class="go">'+f.go.map(function(g){return '<a href="'+g[1]+'">'+g[0]+'</a>';}).join('')+'</div>';
     btns.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-f')==String(i)?'true':'false');});
   }
   btns.forEach(function(b){b.addEventListener('click',function(){show(+b.getAttribute('data-f'));});});
   show(0);
-
-  /* Auto-évaluation */
   var KEY='eiko-pyramide-v1',st;
   try{st=JSON.parse(localStorage.getItem(KEY))||{};}catch(e){st={};}
   var box=document.getElementById('chk');
@@ -176,35 +221,9 @@
     });
     var v=document.getElementById('verdict');
     if(next<0)v.innerHTML='<strong>Les quatre étages sont solides.</strong> Il reste à entretenir : revoir sa situation une fois par an, et ajuster quand la vie change.';
-    else v.innerHTML='<strong>Votre prochain étage : '+F[next].t+'.</strong> C’est là qu’un effort aura le plus d’effet. Les leçons associées sont indiquées dans le détail de l’étage ci-dessus.';
+    else v.innerHTML='<strong>Ton prochain étage : '+F[next].t+'.</strong> C\u2019est là qu\u2019un effort aura le plus d\u2019effet. Les leçons associées sont indiquées dans le détail de l\u2019étage, plus haut.';
   }
   update();
-
-  /* Quiz */
-  var Q=[
-    {q:'Selon cette pyramide, par quoi commence-t-on ?',o:['Choisir un ETF','Connaître son budget, rembourser les dettes chères et constituer une réserve','Préparer sa transmission'],a:1,w:'Le premier étage met l’argent de côté pour les imprévus. Sans lui, un placement risque d’être vendu au mauvais moment.'},
-    {q:'Pourquoi investir avant d’avoir une réserve est-il risqué ?',o:['Parce que les placements sont toujours perdants','Parce qu’un imprévu oblige à vendre, parfois en pleine baisse','Parce que c’est interdit'],a:1,w:'Le risque vient de la contrainte de vendre, pas du placement en soi.'},
-    {q:'La pyramide de Maslow s’applique-t-elle à la lettre à la finance ?',o:['Oui, on ne peut jamais avancer sur deux étages à la fois','Non, c’est une grille de lecture : on peut avancer sur deux étages, mais certaines bases restent prioritaires','Non, elle ne sert à rien'],a:1,w:'C’est un repère pour fixer des priorités, pas une loi stricte.'},
-    {q:'Quel est le point commun des étages 3 et 4 ?',o:['Ils se préparent avant tout par la régularité et le temps','Ils ne concernent que les patrimoines élevés','Ils excluent la fiscalité'],a:0,w:'Investir, préparer sa retraite et transmettre reposent sur la durée : plus on s’y prend tôt, plus c’est simple.'}
-  ];
-  var qz=document.getElementById('quiz'),done=0,good=0,sc=document.createElement('p');sc.className='score';
-  Q.forEach(function(x,i){
-    var b=document.createElement('div');b.className='qq';
-    b.innerHTML='<p class="qt">'+(i+1)+'. '+x.q+'</p>';
-    var why=document.createElement('p');why.className='why';why.textContent=x.w;
-    var bs=x.o.map(function(t,j){
-      var e=document.createElement('button');e.type='button';e.textContent=t;
-      e.onclick=function(){
-        bs.forEach(function(bb,k){bb.disabled=true;if(k===x.a)bb.classList.add('ok');});
-        if(j!==x.a)e.classList.add('ko');else good++;
-        why.style.display='block';done++;
-        if(done===Q.length)sc.textContent='Score : '+good+' / '+Q.length;
-      };
-      b.appendChild(e);return e;
-    });
-    b.appendChild(why);qz.appendChild(b);
-  });
-  qz.appendChild(sc);
 })();
 </script>
 </body>
