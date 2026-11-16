@@ -73,20 +73,29 @@
 }
 .scene[data-motion="pan"]::before { animation-name: scene-pan; animation-duration: 45s; }
 
-/* Le voile marine garantit la lisibilité du texte */
+/* Voile marine LÉGER : plus dense au centre, derrière le texte, et presque transparent sur les bords,
+   pour laisser respirer l'image. Trois réglages par image : --veil-c (centre), --veil-t (haut), --veil-b (bas). */
+.scene {
+    --veil-c: 0.42;
+    --veil-t: 0.14;
+    --veil-b: 0.34;
+}
 .scene::after {
     content: "";
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(180deg, rgba(10, 28, 59, 0.50) 0%, rgba(10, 28, 59, 0.84) 100%);
+    background:
+        radial-gradient(ellipse 72% 64% at 50% 50%, rgba(10, 28, 59, var(--veil-c)) 0%, rgba(10, 28, 59, 0) 100%),
+        linear-gradient(180deg, rgba(10, 28, 59, var(--veil-t)) 0%, rgba(10, 28, 59, var(--veil-b)) 100%);
 }
 
 /* Reflet doré qui traverse l'image (réservé à l'or) */
 .scene--gleam::after {
     background:
         linear-gradient(115deg, transparent 42%, rgba(212, 175, 55, 0.20) 50%, transparent 58%) 130% 0 / 260% 100% no-repeat,
-        linear-gradient(180deg, rgba(10, 28, 59, 0.50) 0%, rgba(10, 28, 59, 0.84) 100%);
+        radial-gradient(ellipse 72% 64% at 50% 50%, rgba(10, 28, 59, var(--veil-c)) 0%, rgba(10, 28, 59, 0) 100%),
+        linear-gradient(180deg, rgba(10, 28, 59, var(--veil-t)) 0%, rgba(10, 28, 59, var(--veil-b)) 100%);
     animation: scene-gleam 14s ease-in-out infinite;
 }
 
@@ -99,8 +108,8 @@
     to   { transform: scale(1.08) translate3d(4%, 0, 0); }
 }
 @keyframes scene-gleam {
-    0%, 15%  { background-position: 130% 0, 0 0; }
-    75%, 100% { background-position: -30% 0, 0 0; }
+    0%, 15%  { background-position: 130% 0, 0 0, 0 0; }
+    75%, 100% { background-position: -30% 0, 0 0, 0 0; }
 }
 
 /* ---------- Bandeau d'en-tête de leçon ---------- */
@@ -123,13 +132,15 @@
     color: #FFFFFF;
     max-width: 900px;
     margin: 0 auto 1rem;
+    text-shadow: 0 2px 14px rgba(10, 28, 59, 0.55), 0 1px 3px rgba(10, 28, 59, 0.45);
 }
 .scene-hero p {
     max-width: 680px;
     margin: 0 auto 1.6rem;
     font-size: 1.06rem;
     line-height: 1.6;
-    color: #D8E0EE;
+    color: #F1F5FB;
+    text-shadow: 0 1px 10px rgba(10, 28, 59, 0.60), 0 1px 3px rgba(10, 28, 59, 0.45);
 }
 
 /* ---------- Bandeau décoratif en tête de chapitre ---------- */
@@ -139,14 +150,7 @@
     border-radius: 8px;
     border-bottom: 3px solid var(--gold-accent);
 }
-.scene-banner::after {
-    background: linear-gradient(180deg, rgba(10, 28, 59, 0.05) 0%, rgba(10, 28, 59, 0.55) 100%);
-}
-.scene-banner.scene--gleam::after {
-    background:
-        linear-gradient(115deg, transparent 42%, rgba(212, 175, 55, 0.20) 50%, transparent 58%) 130% 0 / 260% 100% no-repeat,
-        linear-gradient(180deg, rgba(10, 28, 59, 0.05) 0%, rgba(10, 28, 59, 0.55) 100%);
-}
+.scene-banner { --veil-c: 0; --veil-t: 0; --veil-b: 0.30; }
 
 @media (max-width: 768px) {
     .scene-hero { min-height: 340px; padding: 3rem 1rem 2.2rem; }
@@ -158,7 +162,7 @@
 /* ---------- Carte du monde derrière la courbe des cycles ---------- */
 /* voile plus dense en haut (titre) et en bas (légende), plus léger au milieu (courbe) */
 .hero-art.scene::after {
-    background: linear-gradient(180deg, rgba(10, 28, 59, 0.76) 0%, rgba(10, 28, 59, 0.46) 50%, rgba(10, 28, 59, 0.78) 100%);
+    background: linear-gradient(180deg, rgba(10, 28, 59, 0.58) 0%, rgba(10, 28, 59, 0.30) 50%, rgba(10, 28, 59, 0.60) 100%);
 }
 
 /* ---------- Défilement continu (image-tuile dont les bords se fondent dans le fond) ---------- */
@@ -179,39 +183,45 @@
 }
 /* L'illustration est lumineuse : voile un peu plus dense pour garder le texte lisible */
 .hero-art.scene[data-motion="loop"]::after {
-    background: linear-gradient(180deg, rgba(5, 20, 46, 0.90) 0%, rgba(5, 20, 46, 0.68) 50%, rgba(5, 20, 46, 0.88) 100%);
+    background: linear-gradient(180deg, rgba(5, 20, 46, 0.76) 0%, rgba(5, 20, 46, 0.52) 50%, rgba(5, 20, 46, 0.74) 100%);
 }
 
-/* Billets et pièces : image très colorée, voile plus dense pour garder le titre lisible */
-.scene-hero.img-retraite::after,
-.scene-hero.img-budget::after,
-.scene-hero.img-immobilier::after,
-.scene-hero.img-monnaie::after {
-    background: linear-gradient(180deg, rgba(10, 28, 59, 0.70) 0%, rgba(10, 28, 59, 0.86) 100%);
+/* Billets et pièces : image très colorée, voile un peu plus présent (mais léger) pour garder le titre lisible */
+.scene-hero.img-retraite,
+.scene-hero.img-budget,
+.scene-hero.img-immobilier,
+.scene-hero.img-monnaie {
+    --veil-c: 0.54;
+    --veil-t: 0.24;
+    --veil-b: 0.46;
 }
 
 /* Obligations, fiscalité, transmission (papier clair), SCPI (ville au crépuscule) et trading (salle de marché au couchant) : voile dense pour garder le titre lisible */
-.scene-hero.img-obligations::after,
-.scene-hero.img-scpi::after,
-.scene-hero.img-fiscalite::after,
-.scene-hero.img-transmission::after,
-.scene-hero.img-trading::after,
-.scene-hero.img-pe::after,
-.scene-hero.img-macro::after,
-.scene-hero.img-etudes::after,
-.scene-hero.img-montecarlo::after,
-.scene-hero.img-interets::after,
-.scene-hero.img-matieres::after,
-.scene-hero.img-cycliques::after,
-.scene-hero.img-histoire::after,
-.scene-hero.img-analyse::after,
-.scene-hero.img-liquidite::after {
-    background: linear-gradient(180deg, rgba(10, 28, 59, 0.70) 0%, rgba(10, 28, 59, 0.86) 100%);
+.scene-hero.img-obligations,
+.scene-hero.img-scpi,
+.scene-hero.img-fiscalite,
+.scene-hero.img-transmission,
+.scene-hero.img-trading,
+.scene-hero.img-pe,
+.scene-hero.img-macro,
+.scene-hero.img-etudes,
+.scene-hero.img-montecarlo,
+.scene-hero.img-interets,
+.scene-hero.img-matieres,
+.scene-hero.img-cycliques,
+.scene-hero.img-histoire,
+.scene-hero.img-analyse,
+.scene-hero.img-liquidite {
+    --veil-c: 0.54;
+    --veil-t: 0.24;
+    --veil-b: 0.46;
 }
 
 /* Champ pétrolier au couchant : ciel clair, voile plus dense pour garder le titre lisible */
-.scene-hero.img-brent::after {
-    background: linear-gradient(180deg, rgba(10, 28, 59, 0.68) 0%, rgba(10, 28, 59, 0.86) 100%);
+.scene-hero.img-brent {
+    --veil-c: 0.54;
+    --veil-t: 0.24;
+    --veil-b: 0.46;
 }
 
 /* Cadrage de la banderole « Construire son portefeuille » : on descend l'image pour montrer le graphique en camembert et le stylo */
