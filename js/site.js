@@ -16,6 +16,8 @@
             desc: "Du troc aux monnaies d'aujourd'hui : étalon-or, Bretton Woods, économie de la dette, QE et QT." },
           { title: 'Liquidité et marchés', file: 'liquidite-marches.html',
             desc: "M1, M2, M3, quête de rendement, appels de marge : pourquoi même les actifs « opposés » peuvent baisser ensemble." },
+          { title: 'La vitesse de circulation de la monnaie', file: 'vitesse-monnaie.html',
+            desc: "L'équation des échanges, les théories de Fisher, Keynes et Friedman, ce que les données ont vérifié, et le test de 2020-2022." },
           { title: "L'économie et les cycles", file: 'economie-cycles.html',
             desc: 'Un parcours en quatre étapes de 5 minutes, du quotidien aux grands mécanismes.' },
           { title: 'Géopolitique & rapports de force', file: 'geopolitique.html',
