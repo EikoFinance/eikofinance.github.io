@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Budget et épargne de précaution - EikoFinance</title>
-<meta name="description" content="Établir son budget, rembourser les dettes chères, constituer une épargne de précaution (combien, où la placer) avant d'investir.">
+<meta name="description" content="Établir son budget, rembourser les dettes chères, constituer une épargne de précaution, puis des leviers simples pour épargner plus et ajouter un revenu.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -34,6 +34,18 @@
 .frise .date{display:block;font-weight:700;color:#0A1C3B;font-size:1.02rem}
 .frise p{margin:.25rem 0 0}
 .note-hist{font-size:.9rem;color:#4a5568;margin-top:.4rem}
+
+.lev{background:#fff;border:1px solid #D9DEE5;border-top:4px solid #C5A059;border-radius:8px;padding:1.1rem 1.3rem;margin:1.2rem 0 1.6rem;box-shadow:0 4px 12px rgba(0,0,0,.04)}
+.lev .top{display:grid;grid-template-columns:1fr 130px;gap:.5rem 1rem;align-items:center;margin-bottom:.9rem;font-size:.92rem}
+.lev .top label{font-weight:600}
+.lev input[type=number]{width:100%;padding:.45rem .6rem;border:1px solid #cdd5e2;border-radius:6px;font:inherit;text-align:right}
+.lev .row{display:grid;grid-template-columns:24px 1fr 110px;gap:.5rem .8rem;align-items:center;padding:.5rem 0;border-top:1px solid #eef1f6;font-size:.92rem}
+.lev .row small{display:block;color:#4B5563;font-size:.8rem}
+.lev .row input[type=checkbox]{width:18px;height:18px;accent-color:#102A56}
+.lev .res{margin-top:1rem;background:#F4F6F9;border-left:4px solid #C5A059;border-radius:6px;padding:.9rem 1.1rem}
+.lev .res .big{font-family:Cinzel,serif;font-size:1.5rem;color:#102A56}
+.lev .res p{margin:.3rem 0 0;font-size:.92rem;color:#4B5563}
+@media(max-width:600px){.lev .top{grid-template-columns:1fr}.lev .row{grid-template-columns:24px 1fr}.lev .row input[type=number]{grid-column:2}}
 </style>
 </head>
 <body>
@@ -48,7 +60,7 @@
     <ul>
       <li><a href="index.html#comprendre">Comprendre</a></li>
       <li><a href="index.html#investir">Investir</a></li>
-      <li><a href="index.html#mesurer">Mesurer</a></li>
+      <li><a href="index.html#planifier">Planifier</a></li>
       <li><a href="index.html#optimiser">Optimiser</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -56,11 +68,11 @@
 </header>
 
 <main>
-  <p class="crumbs"><a href="index.html">Accueil</a> › <a href="index.html#comprendre">Comprendre</a> › Budget et épargne de précaution</p>
+  <p class="crumbs"><a href="index.html">Accueil</a> › <a href="index.html#planifier">Planifier</a> › Budget et épargne de précaution</p>
 
   <section class="scene scene-hero img-sobre img-budget">
     <h1>Budget et épargne de précaution : les bases avant d'investir</h1>
-    <p>Savoir où va son argent, rembourser les dettes chères, constituer une réserve : la méthode pour pouvoir investir sans risquer de vendre au pire moment.</p>
+    <p>Savoir où va son argent, rembourser les dettes chères, constituer une réserve, puis des leviers simples pour épargner plus et ajouter un revenu : la méthode pour faire le premier pas.</p>
     <a href="#pourquoi" class="btn-gold">Commencer</a>
   </section>
 
@@ -70,12 +82,15 @@
     <a class="card" href="#dettes"><h3>Les dettes chères</h3><p>Un rendement sans risque.</p></a>
     <a class="card" href="#precaution"><h3>L'épargne de précaution</h3><p>Combien, et sur quel livret.</p></a>
     <a class="card" href="#plan"><h3>Un plan en six étapes</h3><p>Constituer sa réserve.</p></a>
+    <a class="card" href="#epargner"><h3>Épargner plus</h3><p>Des leviers simples, un seul effort.</p></a>
+    <a class="card" href="#revenus"><h3>Gagner plus</h3><p>Un revenu ponctuel ou régulier.</p></a>
+    <a class="card" href="#premier-pas"><h3>Ton premier pas</h3><p>Un plan de 30 minutes et un calculateur.</p></a>
     <a class="card" href="#investir"><h3>Quand investir ?</h3><p>Une logique plutôt qu'une règle.</p></a>
-    <a class="card" href="#quiz"><h3>Teste-toi</h3><p>Neuf questions pour vérifier.</p></a>
+    <a class="card" href="#quiz"><h3>Teste-toi</h3><p>Douze questions pour vérifier.</p></a>
   </section>
 
   <article class="chapitre" id="lecon">
-    <p class="accroche">Avant de se demander dans quoi investir, il faut savoir <strong>combien</strong> on peut investir, et ce qui se passe si la vie dérape : une panne de voiture, une perte d'emploi, une facture imprévue. Cette leçon donne la méthode : d'abord un budget qui tient, ensuite une réserve qui protège.</p>
+    <p class="accroche">Avant de se demander dans quoi investir, il faut savoir <strong>combien</strong> on peut investir, et ce qui se passe si la vie dérape : une panne de voiture, une perte d'emploi, une facture imprévue. Cette leçon donne la méthode : d'abord un budget qui tient, ensuite une réserve qui protège, puis des leviers concrets pour épargner davantage ou ajouter un revenu, afin de faire le premier pas sans attendre.</p>
 
     <h2 id="pourquoi">Pourquoi commencer par là ?</h2>
     <p class="accroche">Parce qu'investir l'argent dont on a besoin à court terme est la meilleure façon de perdre.</p>
@@ -98,6 +113,7 @@
       <svg viewBox="0 0 420 182" role="img" aria-label="Deux façons de répartir un revenu de 2 200 euros : 50/30/20 et 60/20/20" xmlns="http://www.w3.org/2000/svg" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="11"><text x="210" y="14" text-anchor="middle" font-size="11" fill="#0A1C3B" font-weight="700">Revenu net de 2 200 € par mois, réparti de deux façons</text><text x="110" y="53" text-anchor="end" font-size="10.5" fill="#0A1C3B" font-weight="400">Règle 50/30/20</text><rect x="118.0" y="30.0" width="142.5" height="34.0" rx="0" fill="#0A1C3B" stroke="none" stroke-width="1"/><text x="189.25" y="45" text-anchor="middle" font-size="10.5" fill="#fff" font-weight="700">1 100 €</text><text x="189.25" y="58" text-anchor="middle" font-size="9.5" fill="#fff" font-weight="400">50 %</text><rect x="260.5" y="30.0" width="85.5" height="34.0" rx="0" fill="#C5A059" stroke="none" stroke-width="1"/><text x="303.25" y="45" text-anchor="middle" font-size="10.5" fill="#0A1C3B" font-weight="700">660 €</text><text x="303.25" y="58" text-anchor="middle" font-size="9.5" fill="#0A1C3B" font-weight="400">30 %</text><rect x="346.0" y="30.0" width="57.0" height="34.0" rx="0" fill="#2e7d4f" stroke="none" stroke-width="1"/><text x="374.5" y="45" text-anchor="middle" font-size="10.5" fill="#fff" font-weight="700">440 €</text><text x="374.5" y="58" text-anchor="middle" font-size="9.5" fill="#fff" font-weight="400">20 %</text><text x="110" y="115" text-anchor="end" font-size="10.5" fill="#0A1C3B" font-weight="400">Loyer élevé : 60/20/20</text><rect x="118.0" y="92.0" width="171.0" height="34.0" rx="0" fill="#0A1C3B" stroke="none" stroke-width="1"/><text x="203.5" y="107" text-anchor="middle" font-size="10.5" fill="#fff" font-weight="700">1 320 €</text><text x="203.5" y="120" text-anchor="middle" font-size="9.5" fill="#fff" font-weight="400">60 %</text><rect x="289.0" y="92.0" width="57.0" height="34.0" rx="0" fill="#C5A059" stroke="none" stroke-width="1"/><text x="317.5" y="107" text-anchor="middle" font-size="10.5" fill="#0A1C3B" font-weight="700">440 €</text><text x="317.5" y="120" text-anchor="middle" font-size="9.5" fill="#0A1C3B" font-weight="400">20 %</text><rect x="346.0" y="92.0" width="57.0" height="34.0" rx="0" fill="#2e7d4f" stroke="none" stroke-width="1"/><text x="374.5" y="107" text-anchor="middle" font-size="10.5" fill="#fff" font-weight="700">440 €</text><text x="374.5" y="120" text-anchor="middle" font-size="9.5" fill="#fff" font-weight="400">20 %</text><rect x="118.0" y="160.0" width="12.0" height="10.0" rx="0" fill="#0A1C3B" stroke="none" stroke-width="1"/><text x="134" y="169" text-anchor="start" font-size="10" fill="#0A1C3B" font-weight="400">Besoins</text><rect x="202.0" y="160.0" width="12.0" height="10.0" rx="0" fill="#C5A059" stroke="none" stroke-width="1"/><text x="218" y="169" text-anchor="start" font-size="10" fill="#0A1C3B" font-weight="400">Envies</text><rect x="278.0" y="160.0" width="12.0" height="10.0" rx="0" fill="#2e7d4f" stroke="none" stroke-width="1"/><text x="294" y="169" text-anchor="start" font-size="10" fill="#0A1C3B" font-weight="400">Épargne et dettes</text></svg>
       <figcaption>Exemple fictif : 2 200 € de revenu net. Avec un loyer élevé, les besoins passent à 1 320 € et les envies sont ramenées à 440 €.</figcaption>
     </figure>
+    <p>Pour faire ce calcul sans papier, utilise l'<a href="suivi-budget.html">outil de suivi de budget</a> : tu saisis tes revenus et tes dépenses, et un camembert montre la répartition et ton reste à vivre.</p>
     <p class="note-hist"><strong>Deux pièges :</strong> un budget trop strict est abandonné au bout de quelques semaines (garde une marge pour les envies), et un budget sans ligne « imprévus » se brise au premier coup dur.</p>
 
     <h2 id="dettes">Les dettes chères d'abord</h2>
@@ -161,21 +177,102 @@
     </div>
     <p class="note-hist">Durées calculées sans les intérêts, pour un objectif basé sur 1 500 € de dépenses essentielles par mois. Elles montrent surtout qu'il est inutile d'attendre d'avoir la réserve complète pour commencer : la régularité compte plus que le montant mensuel.</p>
 
+
+    <h2 id="epargner">Épargner plus : des leviers simples</h2>
+    <p class="accroche">Le plus efficace n'est pas de se priver partout, mais d'agir une seule fois sur ce qui revient chaque mois.</p>
+    <p>Supprimer un café change peu de chose. Renégocier une assurance, résilier un abonnement oublié ou alléger un gros poste a un effet <strong>chaque mois, sans effort supplémentaire</strong>. Le principe : s'attaquer d'abord aux <strong>gros postes</strong> (logement, transports, alimentation, assurances), puis aux <strong>dépenses automatiques</strong> (abonnements, frais).</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Levier</th><th>Comment faire</th><th>Type de gain</th></tr></thead>
+        <tbody>
+          <tr><td>Faire le tri dans les abonnements</td><td>Relis trois mois de relevé : streaming, applications, salle de sport, options de box ou de téléphone. Résilie ce que tu n'as pas utilisé le mois dernier.</td><td>Chaque mois</td></tr>
+          <tr><td>Comparer ses assurances</td><td>L'assurance auto, l'assurance habitation et la mutuelle santé se résilient à tout moment après un an de contrat, sans frais. Le nouvel assureur peut s'occuper des démarches. Compare les offres une fois par an.</td><td>Chaque mois</td></tr>
+          <tr><td>Comparer énergie, box et mobile</td><td>Utilise un comparateur indépendant (par exemple celui du Médiateur national de l'énergie, énergie-info.fr, pour l'énergie), et demande un geste à ton fournisseur actuel avant de partir.</td><td>Chaque mois</td></tr>
+          <tr><td>Vérifier ses frais bancaires</td><td>Tenue de compte, carte, agios, assurances accessoires : repère-les sur le relevé et compare avec d'autres banques.</td><td>Chaque mois</td></tr>
+          <tr><td>Alléger l'alimentation</td><td>Planifie les repas de la semaine, fais une liste, compare les prix au kilo, cuisine les restes.</td><td>Chaque mois</td></tr>
+          <tr><td>Différer les gros achats</td><td>Attends 48 heures (ou plusieurs semaines pour un gros achat) avant de payer. Regarde d'abord l'occasion ou le reconditionné.</td><td>Dépense évitée</td></tr>
+          <tr><td>Automatiser l'épargne</td><td>Un virement le jour de la paie, même petit. Ce qui n'est pas sur le compte courant se dépense moins.</td><td>Régularité</td></tr>
+          <tr><td>Mettre de côté une part des hausses</td><td>À chaque augmentation, prime ou fin de crédit, vire une partie (par exemple la moitié) vers l'épargne et profite du reste. C'est une astuce, pas une règle.</td><td>Chaque mois</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note-hist"><strong>Moins cher n'est pas toujours mieux :</strong> compare les garanties (franchises, remboursements, exclusions) et pas seulement le prix, surtout pour une mutuelle ou une assurance auto.</p>
+
+    <h2 id="revenus">Gagner plus : ajouter un revenu</h2>
+    <p class="accroche">Réduire ses dépenses a une limite. Augmenter ses revenus demande du temps et de la prudence, mais ouvre plus de marge.</p>
+    <p>Il existe deux familles de revenus complémentaires : ceux qui servent à <strong>remplir vite la réserve</strong> (ponctuels), et ceux qui <strong>augmentent durablement ta capacité d'épargne</strong> (réguliers). Dans les deux cas, <strong>ce qui est gagné doit être déclaré selon les règles</strong>.</p>
+
+    <h3>Les revenus ponctuels</h3>
+    <ul class="liste">
+      <li><strong>Vendre ce que tu n'utilises plus</strong> (vêtements, meubles, matériel, vide-grenier, plateformes d'occasion). Les ventes d'objets personnels dont on se débarrasse ne sont en général pas imposables, mais acheter pour revendre devient une activité. Les plateformes transmettent au fisc un récapitulatif au-delà de certains seuils (de l'ordre de 30 ventes et 2 000 € par an), ce qui ne rend pas la vente imposable en soi. Pour les bijoux, métaux précieux, objets d'art et de collection, des règles particulières existent.</li>
+      <li><strong>Vérifier tes droits à des aides.</strong> Le simulateur officiel <strong>mesdroitssociaux.gouv.fr</strong> est gratuit, sans création de compte, et estime en quelques minutes les droits à plusieurs dizaines d'aides nationales et locales (prime d'activité, aides au logement, etc.). La prime d'activité a été revalorisée au 1er avril 2026. Une simulation donne une estimation : la demande se fait ensuite auprès de l'organisme concerné, comme la CAF.</li>
+      <li><strong>Rendre un service ponctuel</strong> : bricolage, jardinage, cours particuliers, jobs saisonniers. Ces revenus sont déclarables.</li>
+      <li><strong>Affecter les « extras »</strong> : prime, remboursement, cadeau d'argent, à la réserve (étape 5 du plan ci-dessus).</li>
+    </ul>
+
+    <h3>Les revenus réguliers</h3>
+    <ul class="liste">
+      <li><strong>Négocier ou faire évoluer son revenu principal</strong> : demander une augmentation ou une prime en préparant des arguments, se former pour évoluer, changer de poste ou d'employeur.</li>
+      <li><strong>Une activité complémentaire en micro-entreprise.</strong> Les cotisations sociales se calculent en <em>pourcentage du chiffre d'affaires encaissé</em> : en 2026, 12,3 % pour la vente de marchandises et 21,2 % pour les prestations de services commerciales ou artisanales. Sans chiffre d'affaires, il n'y a pas de cotisations. Le plafond annuel est de 83 600 € pour les prestations de services (2026-2028). Attention : le chiffre d'affaires n'est pas ton gain. Il faut retrancher les cotisations, les frais et l'impôt sur le revenu. Vérifie aussi ton contrat de travail (clause d'exclusivité ou de non-concurrence).</li>
+      <li><strong>Partager des frais ou louer ce qui dort</strong> : le covoiturage en partage de frais n'est pas imposable sous conditions, et louer une chambre, un garage ou une place de parking génère des revenus à déclarer (voir <a href="immobilier-fiscalite.html">Immobilier : impôts et transmission</a>).</li>
+    </ul>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Idée</th><th>Rapidité de mise en place</th><th>Régulier ?</th><th>Point d'attention</th></tr></thead>
+        <tbody>
+          <tr><td>Vendre des objets</td><td>Rapide</td><td>Non</td><td>Ne pas devenir revendeur sans le savoir</td></tr>
+          <tr><td>Vérifier ses droits aux aides</td><td>Rapide</td><td>Selon la situation</td><td>Une simulation n'est pas un droit acquis</td></tr>
+          <tr><td>Rendre des services</td><td>Moyenne</td><td>Possible</td><td>Déclarer, vérifier l'assurance</td></tr>
+          <tr><td>Négocier son revenu</td><td>Selon l'employeur</td><td>Oui</td><td>Préparer ses arguments</td></tr>
+          <tr><td>Micro-entreprise complémentaire</td><td>Plus longue</td><td>Oui</td><td>Cotisations, temps, contrat de travail</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alerte"><strong>Méfie-toi des promesses de revenus faciles :</strong> formations coûteuses, « méthodes » miracles, signaux de trading, pyramides de recrutement, offres de travail à domicile qui demandent de payer d'abord. Un vrai revenu complémentaire s'appuie sur une compétence, un bien ou un service réels, et ne demande pas d'avance d'argent. Si l'idée est de gagner en bourse, relis d'abord <a href="trading.html">Le trading</a> : ce n'est pas un revenu régulier garanti.</div>
+
+    <h2 id="premier-pas">Ton premier pas : un plan de 30 minutes</h2>
+    <p class="accroche">Pas besoin de tout changer. Un petit geste aujourd'hui vaut mieux qu'un grand plan jamais lancé.</p>
+    <ol class="etapes">
+      <li><strong>Ouvre ton relevé bancaire</strong> des trois derniers mois (5 minutes).</li>
+      <li><strong>Entoure trois lignes</strong> : un abonnement à résilier, une assurance ou un contrat à comparer, un frais à vérifier (10 minutes).</li>
+      <li><strong>Programme un virement automatique</strong> vers ton livret, le jour de la paie, même de 20 € (5 minutes).</li>
+      <li><strong>Lance une simulation de droits</strong> sur mesdroitssociaux.gouv.fr (5 minutes).</li>
+      <li><strong>Choisis un objet à vendre</strong> cette semaine et verse le montant sur ta réserve (5 minutes).</li>
+    </ol>
+    <p>Pour mesurer l'effet, le calculateur ci-dessous compare le temps nécessaire pour constituer ta réserve avec et sans ces leviers. <strong>Remplace les montants d'exemple par les tiens</strong> : ils sont fictifs.</p>
+
+    <div class="lev" id="lev">
+      <div class="top">
+        <label for="lv-base">Ton épargne mensuelle actuelle (€)</label><input type="number" id="lv-base" min="0" step="10" value="200">
+        <label for="lv-goal">Ton objectif de réserve (€)</label><input type="number" id="lv-goal" min="0" step="100" value="4500">
+      </div>
+      <div id="lv-list"></div>
+      <div class="res" aria-live="polite">
+        <div class="big" id="lv-big"></div>
+        <p id="lv-detail"></p>
+      </div>
+    </div>
+    <p class="note-hist">Calcul simplifié, sans les intérêts. Les gains récurrents (abonnements, assurances, banque, alimentation, revenu régulier) s'ajoutent chaque mois à ton épargne ; le gain ponctuel est versé une seule fois sur la réserve.</p>
+
     <h2 id="investir">Quand commencer à investir ?</h2>
     <p class="accroche">Il n'y a pas de règle unique, mais une logique.</p>
     <p>On peut commencer à investir quand le budget tient, les dettes chères sont remboursées, et une réserve suffisante est en place. Beaucoup de personnes commencent à investir un peu avant de l'avoir complètement constituée, une fois une première réserve en place, tout en continuant de l'alimenter. L'essentiel est de <strong>ne jamais investir l'argent dont on peut avoir besoin à court terme</strong>. Les projets à échéance proche (voyage, voiture, apport) restent sur des supports sans risque, dans des livrets dédiés.</p>
 
     <div class="retenir" id="retenir">
-      <strong>3 idées à retenir</strong>
+      <strong>5 idées à retenir</strong>
       <ul>
         <li>Un budget, c'est des revenus moins des dépenses, y compris les dépenses annuelles lissées sur douze mois. Le plus simple est de se payer en premier, par un virement automatique.</li>
         <li>L'épargne de précaution se calcule en mois de dépenses essentielles (de 2 à 6 mois, plus pour un indépendant), et se place sur un livret disponible et sans risque.</li>
         <li>L'ordre habituel : budget, dettes chères, réserve, puis investissement. L'argent dont on peut avoir besoin à court terme ne s'investit pas.</li>
+        <li>Pour épargner plus, agis une fois sur ce qui revient chaque mois : abonnements, assurances, frais, gros postes.</li>
+        <li>Pour gagner plus, commence par le plus simple (vendre, vérifier ses droits) et déclare tout revenu complémentaire.</li>
       </ul>
     </div>
 
-    <div class="alerte"><strong>À savoir :</strong> contenu pédagogique, pas un conseil personnalisé. Les repères (nombre de mois, répartition 50/30/20) sont des guides à adapter à ta situation. Les taux des livrets sont ceux en vigueur depuis le 1er août 2026 et sont révisés chaque semestre.</div>
-    <p class="note-hist"><strong>Sources :</strong> taux et plafonds des livrets réglementés au 1er août 2026 (Banque de France, ministère de l'Économie) ; règle 50/30/20, Elizabeth Warren et Amelia Warren Tyagi, <em>All Your Worth</em> (2005) ; garantie des dépôts, Fonds de garantie des dépôts et de résolution.</p>
+    <div class="alerte"><strong>À savoir :</strong> contenu pédagogique, pas un conseil personnalisé. Les repères (nombre de mois, répartition 50/30/20) sont des guides à adapter à ta situation. Les taux des livrets sont ceux en vigueur depuis le 1er août 2026 et sont révisés chaque semestre. Les règles fiscales et sociales (micro-entreprise, ventes d'occasion, aides) évoluent : vérifie-les sur les sites officiels avant de te lancer.</div>
+    <p class="note-hist"><strong>Sources :</strong> taux et plafonds des livrets réglementés au 1er août 2026 (Banque de France, ministère de l'Économie) ; règle 50/30/20, Elizabeth Warren et Amelia Warren Tyagi, <em>All Your Worth</em> (2005) ; garantie des dépôts, Fonds de garantie des dépôts et de résolution ; résiliation des assurances (Code des assurances, service-public.fr) ; cotisations et plafonds de la micro-entreprise 2026 (economie.gouv.fr, service-public.fr) ; ventes d'objets d'occasion (service-public.fr) ; simulateur mesdroitssociaux.gouv.fr (economie.gouv.fr).</p>
 
     <h3>Le jargon traduit</h3>
     <dl class="glossaire">
@@ -188,6 +285,10 @@
       <dt>Plafond</dt><dd>Le montant maximal qu'on peut déposer sur un livret.</dd>
       <dt>Dette chère</dt><dd>Une dette dont le taux est élevé, comme un découvert ou un crédit renouvelable.</dd>
       <dt>Se payer en premier</dt><dd>Mettre de côté son épargne dès la paie, avant de dépenser le reste.</dd>
+      <dt>Résiliation à tout moment</dt><dd>La possibilité de quitter une assurance auto, habitation ou une mutuelle après un an de contrat, sans frais.</dd>
+      <dt>Chiffre d'affaires</dt><dd>Les sommes encaissées avant déduction des cotisations et des frais : ce n'est pas le gain réel.</dd>
+      <dt>Micro-entreprise</dt><dd>Un statut simplifié pour une petite activité indépendante, avec des cotisations calculées en pourcentage du chiffre d'affaires.</dd>
+      <dt>Revenu complémentaire</dt><dd>Un revenu qui s'ajoute au revenu principal, ponctuel ou régulier.</dd>
     </dl>
 
     <h3 id="quiz">Teste-toi</h3>
@@ -255,7 +356,29 @@
       <div class="fb" aria-live="polite"></div>
     </div>
 
-    <div class="pager"><a href="courants.html">← Les courants de pensée économique</a><a class="next" href="portefeuille.html">Construire son portefeuille →</a></div>
+    <div class="q" data-good="2">
+      <p>10. À partir de quand peut-on résilier une assurance auto ou habitation à tout moment, sans frais ?</p>
+      <button>Jamais, avant l'échéance annuelle</button>
+      <button>Dès le premier mois</button>
+      <button>Après un an de contrat</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="0">
+      <p>11. Vendre ses anciens vêtements sur une plateforme d'occasion, c'est en général…</p>
+      <button>Non imposable pour des objets personnels dont on se débarrasse</button>
+      <button>Toujours imposable</button>
+      <button>Interdit</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="1">
+      <p>12. En micro-entreprise, les cotisations sociales se calculent…</p>
+      <button>Sur un forfait fixe, quel que soit le chiffre d'affaires</button>
+      <button>En pourcentage du chiffre d'affaires encaissé</button>
+      <button>Sur le bénéfice net uniquement</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+
+    <div class="pager"><a href="index.html#planifier">← Retour à Planifier</a><a class="next" href="suivi-budget.html">Suivi de budget →</a></div>
   </article>
 </main>
 
@@ -264,5 +387,41 @@
   <p>Contact : <a href="mailto:contacteikofinance@gmail.com">contacteikofinance@gmail.com</a></p>
 </footer>
 <script src="js/lesson.js"></script>
+<script>
+(function(){
+  var L=[
+    {t:'Faire le tri dans les abonnements',v:15,r:true},
+    {t:'Renégocier ou changer d\u2019assurance',v:20,r:true},
+    {t:'Réduire les frais bancaires',v:5,r:true},
+    {t:'Alléger l\u2019alimentation',v:40,r:true},
+    {t:'Revenu complémentaire régulier',v:100,r:true},
+    {t:'Vendre des objets (une fois)',v:150,r:false}
+  ];
+  var box=document.getElementById('lv-list');
+  L.forEach(function(x,i){
+    var row=document.createElement('div');row.className='row';
+    row.innerHTML='<input type="checkbox" id="lc'+i+'" aria-label="Activer ce levier"><label for="lc'+i+'">'+x.t+'<small>'+(x.r?'Gain chaque mois (exemple fictif)':'Gain ponctuel (exemple fictif)')+'</small></label><input type="number" id="lv'+i+'" min="0" step="5" value="'+x.v+'" aria-label="Montant en euros">';
+    box.appendChild(row);
+  });
+  function n(id){return Math.max(0,parseFloat(document.getElementById(id).value)||0);}
+  function fmt(v){return Math.round(v).toLocaleString('fr-FR')+' \u20ac';}
+  function mois(m){return m===Infinity?'\u2014':Math.ceil(m)+' mois';}
+  function upd(){
+    var base=n('lv-base'),goal=n('lv-goal'),rec=0,lump=0;
+    L.forEach(function(x,i){if(document.getElementById('lc'+i).checked){if(x.r)rec+=n('lv'+i);else lump+=n('lv'+i);}});
+    var before=base>0?goal/base:Infinity;
+    var after=(base+rec)>0?Math.max(goal-lump,0)/(base+rec):Infinity;
+    document.getElementById('lv-big').textContent=(rec===0&&lump===0)?'Ta r\u00e9serve en '+mois(before)+' au rythme actuel':'Ta r\u00e9serve en '+mois(after)+' au lieu de '+mois(before);
+    var d='\u00c9pargne mensuelle : '+fmt(base)+' \u2192 '+fmt(base+rec)+'. Gain r\u00e9current : '+fmt(rec)+' par mois, soit '+fmt(rec*12)+' par an.';
+    if(lump>0)d+=' Gain ponctuel : '+fmt(lump)+' vers\u00e9 sur la r\u00e9serve.';
+    if(before!==Infinity&&after!==Infinity&&after<before)d+=' Tu gagnes environ '+Math.round(before-after)+' mois.';
+    if(rec===0&&lump===0)d='Coche un ou plusieurs leviers, et remplace les montants d\u2019exemple par les tiens.';
+    document.getElementById('lv-detail').textContent=d;
+  }
+  document.getElementById('lev').addEventListener('input',upd);
+  document.getElementById('lev').addEventListener('change',upd);
+  upd();
+})();
+</script>
 </body>
 </html>
