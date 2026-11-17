@@ -52,6 +52,7 @@
 .img-biais { --img: url(../images/scene-biais.webp); }
 .img-immobilier { --img: url(../images/scene-immobilier.webp); }
 .img-liquidite  { --img: url(../images/scene-liquidite.webp); }
+.img-pyramide   { --img: url(../images/scene-pyramide.webp); }
 
 .scene {
     position: relative;
@@ -223,6 +224,10 @@
     --veil-t: 0.24;
     --veil-b: 0.46;
 }
+
+/* Cadrage de la banderole « La pyramide financière » : on remonte l'image pour garder les visages du couple dans le cadre */
+.scene-hero.img-pyramide::before { background-position: center 22%; }
+@media (max-width: 768px) { .scene-hero.img-pyramide::before { background-position: 14% 30%; } }
 
 /* Cadrage de la banderole « Construire son portefeuille » : on descend l'image pour montrer le graphique en camembert et le stylo */
 .scene-hero.img-portefeuille::before { background-position: center 80%; }
