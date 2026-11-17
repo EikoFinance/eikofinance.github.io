@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La vitesse de circulation de la monnaie - EikoFinance</title>
+<meta name="description" content="La vitesse de circulation de la monnaie : équation des échanges, théories de Fisher, Keynes et Friedman, ce que les données ont vérifié, et le test de 2020-2022.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/lesson.css">
+<link rel="stylesheet" href="css/scene.css">
+<link rel="stylesheet" href="css/cartes.css">
+<style>
+.bars{margin:1rem 0 .4rem}
+.vb{display:grid;grid-template-columns:200px 1fr 52px;gap:12px;align-items:center;margin-bottom:10px;font-size:.92rem}
+.vb .track{height:26px;background:#eef1f6;border-radius:5px;overflow:hidden}
+.vb .track span{display:block;height:100%;border-radius:5px}
+.vb b{color:var(--primary-blue);text-align:right}
+@media(max-width:600px){.vb{grid-template-columns:1fr 1fr;gap:4px}.vb .track{grid-column:1/3}}
+.calc{background:#fff;border:1px solid rgba(16,42,86,.14);border-top:4px solid var(--gold-accent);border-radius:8px;padding:1.2rem 1.4rem;margin:1rem 0 1.6rem;box-shadow:0 4px 12px rgba(0,0,0,.04)}
+.presets{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1rem}
+.presets button{font:inherit;font-size:.85rem;font-weight:600;color:var(--primary-blue);background:#fff;border:1px solid var(--gold-accent);border-radius:6px;padding:.35rem .75rem;cursor:pointer}
+.presets button:hover,.presets button[aria-pressed=true]{background:var(--bg-subtle)}
+.sl{display:grid;grid-template-columns:1fr 70px;gap:4px 12px;align-items:center;margin-bottom:.8rem;font-size:.92rem}
+.sl label{color:var(--text-dark);font-weight:600}
+.sl output{text-align:right;font-weight:700;color:var(--primary-blue)}
+.sl input{grid-column:1/3;width:100%;accent-color:var(--primary-blue)}
+.res{margin-top:.6rem;background:var(--bg-subtle);border-left:4px solid var(--gold-accent);border-radius:6px;padding:.9rem 1.1rem}
+.res .big{font-family:var(--font-title);font-size:1.7rem;color:var(--primary-blue)}
+.res p{margin:.3rem 0 0;font-size:.92rem;color:var(--text-muted)}
+.res .eq{font-size:.85rem;color:var(--text-muted)}
+</style>
+<script src="js/site.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="logo-container">
+    <img src="images/logo.jpg" alt="Logo Eiko Finance" class="logo-img">
+    <span class="logo-text">EIKO FINANCE</span>
+  </div>
+  <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+  <!-- Menu : généré par js/site.js (liste de secours si JavaScript est désactivé) -->
+  <nav>
+    <ul>
+      <li><a href="index.html#comprendre">Comprendre</a></li>
+      <li><a href="index.html#investir">Investir</a></li>
+      <li><a href="index.html#planifier">Planifier</a></li>
+      <li><a href="index.html#optimiser">Optimiser</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <p class="crumbs"><a href="index.html">Accueil</a> › <a href="index.html#comprendre">Comprendre</a> › La vitesse de circulation de la monnaie</p>
+
+  <section class="scene scene-hero img-sobre">
+    <h1>La vitesse de circulation de la monnaie : ce que les données ont vérifié</h1>
+    <p>Combien de fois un même euro change-t-il de mains ? De Fisher à Friedman, les théories, leurs preuves, leurs limites, et le test de 2020-2022.</p>
+    <a href="#definition" class="btn-gold">Comprendre l'équation</a>
+  </section>
+
+  <section class="card-grid" aria-label="Sommaire de la page">
+    <a class="card" href="#definition"><h3>Définition</h3><p>L'équation des échanges M × V = P × Y.</p></a>
+    <a class="card" href="#theories"><h3>Les théories</h3><p>Fisher, Keynes, Friedman face aux données.</p></a>
+    <a class="card" href="#preuves"><h3>Ce qui est vérifié</h3><p>Les preuves, et leurs limites.</p></a>
+    <a class="card" href="#chiffres"><h3>Les chiffres</h3><p>La vitesse américaine depuis 1997.</p></a>
+    <a class="card" href="#covid"><h3>2020-2022</h3><p>Le test grandeur nature.</p></a>
+    <a class="card" href="#calculateur"><h3>Calculateur</h3><p>Teste l'équation toi-même.</p></a>
+    <a class="card" href="#consequences"><h3>Les conséquences</h3><p>Banques centrales et investisseur.</p></a>
+  </section>
+
+  <article class="chapitre">
+
+    <h2 id="definition">Qu'est-ce que la vitesse de circulation ?</h2>
+    <p class="accroche">« Combien de fois, en un an, un même euro change-t-il de mains ? »</p>
+    <p>Imagine 100 € dans l'économie. Si chaque euro sert en moyenne trois fois dans l'année pour acheter quelque chose, il s'échange pour 300 € de biens et de services. Ce « 3 » est la <strong>vitesse de circulation</strong> de la monnaie, notée <strong>V</strong>.</p>
+    <p>L'économiste américain Irving Fisher en a fait une équation célèbre, l'<strong>équation des échanges</strong> :</p>
+    <p style="text-align:center;font-size:1.3rem;font-family:var(--font-title);color:var(--primary-blue)"><strong>M × V = P × Y</strong></p>
+    <p>M est la masse monétaire, V la vitesse, P le niveau des prix et Y la production réelle. Le produit P × Y est le PIB nominal. Attention : <strong>V n'est pas observée directement</strong>. On la calcule par division : c'est le PIB nominal divisé par la masse monétaire. C'est donc un rapport qui mélange tout ce qui échappe à M et à Y : les habitudes de paiement, la confiance, les taux d'intérêt.</p>
+    <p>Cette équation est une identité comptable : elle est toujours vraie. Elle devient une <strong>théorie</strong> quand on ajoute une hypothèse sur V. C'est là que les économistes se divisent.</p>
+
+    <h2 id="theories">Les grandes théories, et ce que disent les données</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Théorie</th><th>Hypothèse sur la vitesse</th><th>Verdict des données</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Quantitative classique (Fisher)</th><td>V est stable à court terme : si M double, les prix doublent à production inchangée.</td><td>Vérifiée seulement à long terme. À court terme, V bouge trop.</td></tr>
+          <tr><th scope="row">Cambridge</th><td>Les gens gardent une fraction fixe k de leur revenu en monnaie (k = 1/V).</td><td>Même logique, même limite : k n'est pas fixe.</td></tr>
+          <tr><th scope="row">Préférence pour la liquidité (Keynes)</th><td>V varie avec les taux d'intérêt : quand les taux sont bas, détenir de la monnaie coûte peu, donc V baisse.</td><td>Bien confirmée : la vitesse suit les taux, avec des décalages.</td></tr>
+          <tr><th scope="row">Quantitative moderne (Friedman)</th><td>La demande de monnaie est une fonction stable du revenu durable : V est instable en apparence, mais prévisible.</td><td>Valide jusqu'aux années 1970, mise en défaut dans les années 1980.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Dans les années 1980, la vitesse de la monnaie américaine a décroché de la tendance sur laquelle tout le monde comptait. Une étude de l'économiste William Poole (1987) montre que les taux d'intérêt, montés après guerre puis tombés dans les années 1980, expliquent une grande part de ce mouvement. D'autres travaux y ajoutent l'innovation financière et la déréglementation, qui ont changé la façon de détenir sa monnaie.</p>
+
+    <h2 id="preuves">Ce que les données ont vérifié</h2>
+    <ul class="liste">
+      <li><strong>À long terme, monnaie et inflation vont de pair.</strong> Une étude de référence de la Réserve fédérale de Minneapolis (McCandless et Weber, 1995) a comparé 110 pays sur 30 ans : la croissance de la masse monétaire et l'inflation évoluent presque une pour une.</li>
+      <li><strong>La monnaie ne crée pas de croissance durable.</strong> Dans la même étude, la croissance de la monnaie et celle de la production réelle ne sont pas corrélées. C'est ce qu'on appelle la <em>neutralité de la monnaie</em> à long terme.</li>
+      <li><strong>Les hyperinflations confirment le mécanisme.</strong> Quand les prix s'envolent, chacun se débarrasse de sa monnaie le plus vite possible : V explose, et l'inflation s'emballe encore plus.</li>
+    </ul>
+    <p>Mais la théorie a aussi des limites claires :</p>
+    <ul class="liste">
+      <li>Dans les pays à inflation faible (moins de 10 % par an en moyenne), le lien entre monnaie et inflation est faible : une étude de 2005 sur environ 160 pays le montre.</li>
+      <li>À court terme, le lien est ténu. Dans les données mensuelles américaines, la corrélation est faible, de l'ordre de 0,20 selon un manuel d'économie qui reprend ces séries.</li>
+      <li>Une vitesse constante est une hypothèse abandonnée : V dépend des taux, de la confiance et des technologies de paiement.</li>
+    </ul>
+    <div class="alerte"><strong>Un bémol :</strong> une corrélation n'est pas une cause. Que la monnaie et les prix évoluent ensemble n'indique pas lequel entraîne l'autre, ni si un troisième facteur joue (un choc de guerre qui pousse à la fois la dépense publique, la création monétaire et les prix, par exemple).</div>
+
+    <h2 id="chiffres">La vitesse aux États-Unis en chiffres</h2>
+    <p>La Fed de Saint-Louis publie la vitesse de la monnaie M2 (PIB nominal divisé par M2). Trois repères suffisent pour voir la tendance :</p>
+    <div class="bars">
+      <div class="vb"><span>Sommet : 3e trimestre 1997</span><div class="track"><span style="width:87.6%;background:#C5A059"></span></div><b>2,19</b></div>
+      <div class="vb"><span>Creux : 2e trimestre 2020</span><div class="track"><span style="width:45.2%;background:#102A56"></span></div><b>1,13</b></div>
+      <div class="vb"><span>Dernier point : 3e trimestre 2026</span><div class="track"><span style="width:56.7%;background:#6F8FC4"></span></div><b>1,42</b></div>
+    </div>
+    <p>En 23 ans, la vitesse a presque été divisée par deux, puis elle s'est stabilisée autour de 1,4 depuis 2025. Les points intermédiaires ne sont pas tracés ici : la courbe complète est consultable sur le site de la Fed de Saint-Louis (série M2V).</p>
+    <p>Pourquoi cette baisse ? Les explications avancées par les économistes combinent la <strong>baisse des taux d'intérêt</strong> (détenir de la monnaie coûte moins cher), l'<strong>entrée dans M2 de produits d'épargne</strong> plus liquides (fonds monétaires, comptes d'épargne), et en 2020 un <strong>réflexe de précaution</strong> : face à l'incertitude, ménages et entreprises ont gardé leur argent.</p>
+
+    <h2 id="covid">Le test grandeur nature : 2020-2022</h2>
+    <p>En 2020, la masse monétaire M2 américaine a bondi, avec un pic de près de 27 % sur un an en février 2021, sous l'effet des aides publiques et des achats d'actifs de la banque centrale. En parallèle, la vitesse s'est effondrée à son plus bas niveau. Puis l'inflation est repartie : l'indice des prix à la consommation a atteint 9,1 % sur un an en juin 2022. Deux lectures s'opposent.</p>
+    <p><strong>La lecture monétaire.</strong> Le pic d'inflation est arrivé environ 18 mois après le pic de croissance de M2, ce que la Fed de Saint-Louis rapproche des « retards longs et variables » de Friedman. Une étude de la Banque des règlements internationaux (2024) trouve que la croissance de la monnaie a bien aidé à prévoir l'inflation de 2021-2022 dans plusieurs pays. La baisse de M2 en 2022-2023 et celle de l'inflation, avec décalage, vont dans le même sens.</p>
+    <p><strong>La lecture par l'offre et les chocs.</strong> Pour d'autres, l'inflation vient surtout des chaînes d'approvisionnement perturbées, de l'énergie, de la reprise brutale de la demande et des politiques budgétaires. La banque centrale américaine a longtemps accordé peu de poids à la masse monétaire dans ses décisions, ce qui a alimenté le débat. Et la vitesse, très instable, rend les prévisions fondées sur M peu fiables.</p>
+    <p>Il n'existe pas de consensus tranché : les économistes continuent de débattre du poids respectif de ces causes. Les deux lectures s'accordent sur un point : la vitesse est un maillon que l'on ne peut pas ignorer.</p>
+
+    <h2 id="calculateur">Teste l'équation toi-même</h2>
+    <p>Choisis un scénario, ou règle les curseurs. L'outil calcule l'inflation implicite par l'équation M × V = P × Y. Ce sont des scénarios <strong>illustratifs</strong> : ils montrent le mécanisme, pas des prévisions.</p>
+    <div class="calc">
+      <div class="presets" role="group" aria-label="Scénarios">
+        <button type="button" data-p="0" aria-pressed="true">Équilibre</button>
+        <button type="button" data-p="1" aria-pressed="false">Vitesse en chute (inspiré de 2020)</button>
+        <button type="button" data-p="2" aria-pressed="false">Retour de la vitesse</button>
+        <button type="button" data-p="3" aria-pressed="false">Hyperinflation</button>
+      </div>
+      <div class="sl"><label for="gm">Croissance de la masse monétaire (M)</label><output id="om"></output><input type="range" id="gm" min="-10" max="100" step="1"></div>
+      <div class="sl"><label for="gv">Variation de la vitesse (V)</label><output id="ov"></output><input type="range" id="gv" min="-40" max="100" step="1"></div>
+      <div class="sl"><label for="gy">Croissance de la production réelle (Y)</label><output id="oy"></output><input type="range" id="gy" min="-10" max="10" step="1"></div>
+      <div class="res" aria-live="polite">
+        <div class="big" id="inf">3 %</div>
+        <div class="eq" id="eq"></div>
+        <p id="msg"></p>
+      </div>
+    </div>
+
+    <h2 id="consequences">Les aboutissants : ce que cela change</h2>
+    <ul class="liste">
+      <li><strong>Pour les banques centrales.</strong> Depuis les années 1980, la plupart ont délaissé les objectifs de masse monétaire au profit des taux d'intérêt, justement parce que la vitesse était trop imprévisible. Après 2008, des programmes massifs de création monétaire (voir <a href="monnaie.html">l'histoire de la monnaie</a> pour le QE) n'ont pas déclenché d'inflation immédiate, notamment parce que la vitesse a baissé.</li>
+      <li><strong>Pour toi, en tant qu'investisseur.</strong> La croissance de la masse monétaire et la vitesse sont des indicateurs parmi d'autres, pas des boules de cristal. Une forte croissance monétaire accompagnée d'une vitesse qui se redresse est un signal à surveiller, surtout dans les pays à forte inflation. Pour voir comment les marchés réagissent à l'excès de liquidité, lis <a href="liquidite-marches.html">Liquidité et marchés</a>.</li>
+      <li><strong>Pour comprendre le débat économique.</strong> Cette question oppose depuis un siècle Fisher, Keynes et Friedman : voir <a href="courants.html">les courants de pensée économique</a>. Et pour les grands indicateurs, <a href="macro.html">la macroéconomie</a>.</li>
+    </ul>
+
+    <div class="retenir">
+      <strong>5 idées à retenir</strong>
+      <ul>
+        <li>La vitesse mesure combien de fois la monnaie sert à acheter. C'est un rapport calculé, pas une donnée directe.</li>
+        <li>À long terme, monnaie et inflation vont de pair, surtout quand l'inflation est forte.</li>
+        <li>À court terme, la vitesse varie avec les taux, la confiance et l'innovation financière : le lien devient incertain.</li>
+        <li>La vitesse américaine de M2 a presque été divisée par deux entre 1997 et 2020, puis s'est stabilisée.</li>
+        <li>L'épisode 2020-2022 est lu de deux façons : retard monétaire pour les uns, chocs d'offre et de demande pour les autres.</li>
+      </ul>
+    </div>
+
+    <h3>Le jargon traduit</h3>
+    <dl class="glossaire">
+      <dt>Vitesse de circulation (V)</dt><dd>Le nombre moyen de fois où une unité de monnaie est utilisée pour un achat sur une période.</dd>
+      <dt>Masse monétaire M2</dt><dd>La monnaie en circulation, les dépôts à vue et les placements très liquides comme les comptes d'épargne et certains fonds monétaires.</dd>
+      <dt>Préférence pour la liquidité</dt><dd>Le désir de garder de la monnaie plutôt que des placements : il augmente quand les taux baissent et que l'incertitude monte.</dd>
+      <dt>Neutralité de la monnaie</dt><dd>L'idée qu'à long terme, la quantité de monnaie change les prix mais pas la production réelle.</dd>
+      <dt>Retards longs et variables</dt><dd>L'expression de Friedman : l'effet de la monnaie sur les prix arrive après un délai qui change d'un épisode à l'autre.</dd>
+    </dl>
+
+    <h3 id="quiz">Teste-toi</h3>
+    <div class="q" data-good="0">
+      <p>1. Que mesure la vitesse de circulation de la monnaie ?</p>
+      <button>Le nombre moyen de fois où une unité de monnaie sert à acheter des biens et services sur une période</button>
+      <button>La rapidité d'un virement bancaire</button>
+      <button>Le niveau du taux directeur</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="1">
+      <p>2. Que montre l'étude de la Fed de Minneapolis sur 110 pays ?</p>
+      <button>Que monnaie et inflation n'ont aucun lien</button>
+      <button>Qu'à long terme, la croissance de la monnaie et l'inflation évoluent presque une pour une</button>
+      <button>Que la monnaie crée de la croissance durable</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="2">
+      <p>3. Comment a évolué la vitesse de M2 américaine depuis 1997 ?</p>
+      <button>Elle est restée stable autour de 2</button>
+      <button>Elle a augmenté sans interruption</button>
+      <button>Elle est passée de 2,19 à un creux de 1,13 en 2020, puis s'est stabilisée vers 1,4</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="0">
+      <p>4. Pourquoi l'hypothèse d'une vitesse constante est-elle abandonnée ?</p>
+      <button>Parce que la vitesse varie avec les taux d'intérêt, la confiance et l'innovation financière</button>
+      <button>Parce que la monnaie n'existe plus</button>
+      <button>Parce que l'équation des échanges est fausse</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <details><summary>Voir les explications</summary>
+      <ol>
+        <li>V est le PIB nominal divisé par la masse monétaire : le nombre de rotations moyen de chaque unité de monnaie.</li>
+        <li>La corrélation est proche de 1 à long terme, surtout quand l'inflation est élevée. Elle est bien plus faible à court terme et dans les pays à inflation basse.</li>
+        <li>Sommet de 2,19 au 3e trimestre 1997, creux de 1,13 au 2e trimestre 2020, dernier point de 1,42 au 3e trimestre 2026.</li>
+        <li>L'équation M × V = P × Y reste vraie, c'est une identité. C'est l'hypothèse d'une vitesse fixe qui ne tient pas.</li>
+      </ol>
+    </details>
+
+    <div class="pager">
+      <a href="liquidite-marches.html">← Liquidité et marchés</a>
+      <a class="next" href="economie-cycles.html">L'économie et les cycles →</a>
+    </div>
+  </article>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 EikoFinance. Tous droits réservés.</p>
+  <p>Contact : <a href="mailto:contacteikofinance@gmail.com">contacteikofinance@gmail.com</a></p>
+</footer>
+<script src="js/lesson.js"></script>
+<script>
+(function(){
+  var P=[
+    {m:5,v:0,y:2,t:'Équilibre'},
+    {m:25,v:-25,y:-3,t:'Vitesse en chute'},
+    {m:5,v:10,y:3,t:'Retour de la vitesse'},
+    {m:100,v:60,y:-5,t:'Hyperinflation'}
+  ];
+  var ids=['gm','gv','gy'],el={};
+  ids.forEach(function(i){el[i]=document.getElementById(i);});
+  var out={gm:document.getElementById('om'),gv:document.getElementById('ov'),gy:document.getElementById('oy')};
+  function sign(n){return (n>0?'+':'')+n+' %';}
+  function upd(){
+    var m=+el.gm.value,v=+el.gv.value,y=+el.gy.value;
+    out.gm.textContent=sign(m);out.gv.textContent=sign(v);out.gy.textContent=sign(y);
+    var p=((1+m/100)*(1+v/100)/(1+y/100)-1)*100;
+    var r=Math.round(p*10)/10;
+    document.getElementById('inf').textContent=(r>0?'+':'')+String(r).replace('.',',')+' % de prix';
+    document.getElementById('eq').textContent='P = (1 '+(m>=0?'+':'−')+' '+Math.abs(m)+' %) × (1 '+(v>=0?'+':'−')+' '+Math.abs(v)+' %) ÷ (1 '+(y>=0?'+':'−')+' '+Math.abs(y)+' %)';
+    var msg;
+    if(r<=-1)msg='Les prix baisseraient : c\u2019est de la déflation. Même avec une monnaie abondante, une vitesse très faible ou une forte contraction de la production peut tirer les prix vers le bas.';
+    else if(r<4)msg='Les prix évoluent modérément : la monnaie, la vitesse et la production se compensent à peu près.';
+    else if(r<20)msg='L\u2019inflation devient sensible : la monnaie et la vitesse progressent plus vite que la production.';
+    else msg='Inflation très forte, proche de l\u2019emballement : chacun cherche à dépenser sa monnaie avant qu\u2019elle ne perde de la valeur, ce qui fait grimper V.';
+    document.getElementById('msg').textContent=msg;
+  }
+  ids.forEach(function(i){el[i].addEventListener('input',function(){
+    document.querySelectorAll('.presets button').forEach(function(b){b.setAttribute('aria-pressed','false');});upd();});});
+  document.querySelectorAll('.presets button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var s=P[+b.getAttribute('data-p')];
+      el.gm.value=s.m;el.gv.value=s.v;el.gy.value=s.y;
+      document.querySelectorAll('.presets button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+      upd();
+    });
+  });
+  el.gm.value=P[0].m;el.gv.value=P[0].v;el.gy.value=P[0].y;upd();
+})();
+</script>
+</body>
+</html>
