@@ -53,6 +53,7 @@
 .img-immobilier { --img: url(../images/scene-immobilier.webp); }
 .img-liquidite  { --img: url(../images/scene-liquidite.webp); }
 .img-pyramide   { --img: url(../images/scene-pyramide.webp); }
+.img-vitesse    { --img: url(../images/scene-vitesse.webp); }
 
 .scene {
     position: relative;
@@ -224,6 +225,10 @@
     --veil-t: 0.24;
     --veil-b: 0.46;
 }
+
+/* Cadrage de la banderole « La vitesse de la monnaie » : l'allée centrale reste libre pour le titre */
+.scene-hero.img-vitesse::before { background-position: center 58%; }
+@media (max-width: 768px) { .scene-hero.img-vitesse::before { background-position: 8% 58%; } }
 
 /* Cadrage de la banderole « La pyramide financière » : on remonte l'image pour garder les visages du couple dans le cadre */
 .scene-hero.img-pyramide::before { background-position: center 22%; }
