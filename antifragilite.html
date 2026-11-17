@@ -42,6 +42,9 @@
 .rules div{background:#fff;border:1px solid rgba(16,42,86,.14);border-radius:8px;padding:1rem 1.1rem}
 .rules b{display:block;color:var(--primary-blue);margin-bottom:.3rem;font-family:var(--font-title);font-size:1rem}
 .rules span{font-size:.9rem;color:var(--text-muted)}
+
+.arbre-map td:first-child,.arbre-map th:first-child{width:36%}
+.arbre-map td:first-child{font-weight:700;color:var(--primary-blue)}
 </style>
 <script src="js/site.js" defer></script>
 </head>
@@ -67,28 +70,48 @@
 <main>
   <p class="crumbs"><a href="index.html">Accueil</a> › <a href="index.html#planifier">Planifier</a> › L'antifragilité d'un portefeuille</p>
 
-  <section class="scene scene-hero img-sobre">
+  <section class="scene scene-hero img-antifragilite">
     <h1>L'antifragilité d'un portefeuille : résister au choc, ou en tirer parti ?</h1>
-    <p>Fragile, robuste, antifragile : comment un portefeuille réagit au désordre, et pourquoi garder des réserves compte autant que diversifier.</p>
-    <a href="#tableau" class="btn-gold">Voir le tableau des chocs</a>
+    <p>Un arbre, le vent, la taille et les saisons : une image simple pour comprendre comment un portefeuille réagit au désordre, et pourquoi garder des réserves compte autant que diversifier.</p>
+    <a href="#arbre" class="btn-gold">Découvrir l'image de l'arbre</a>
   </section>
 
   <section class="card-grid" aria-label="Sommaire de la page">
+    <a class="card" href="#arbre"><h3>L'arbre et le jardinier</h3><p>Le vent, la taille, les saisons.</p></a>
     <a class="card" href="#mots"><h3>Trois mots</h3><p>Fragile, robuste, antifragile.</p></a>
     <a class="card" href="#tableau"><h3>Le tableau des chocs</h3><p>Cinq portefeuilles, cinq situations.</p></a>
     <a class="card" href="#principes"><h3>Trois principes</h3><p>Ce qu'il faut retenir.</p></a>
-    <a class="card" href="#quiz"><h3>Teste-toi</h3><p>Quatre questions pour vérifier.</p></a>
+    <a class="card" href="#quiz"><h3>Teste-toi</h3><p>Six questions pour vérifier.</p></a>
   </section>
 
   <article class="chapitre">
+
+    <h2 id="arbre">Ce que nous apprend un arbre</h2>
+    <p class="accroche">« Un arbre qui n'a jamais connu le vent reste frêle. »</p>
+    <p>Quand on plante un jeune arbre, on l'attache souvent à un tuteur pour qu'il pousse droit. Mais les jardiniers savent qu'il faut le <strong>retirer au bout d'un an ou deux</strong>. Pourquoi ? Parce que le mouvement dans le vent <strong>épaissit le tronc</strong> et pousse les racines à descendre plus profond. Un arbre tenu trop longtemps rigide reste mince et casse plus facilement. Le nom savant de ce phénomène est la <em>thigmomorphogenèse</em>.</p>
+    <p>Mais attention à la dose : pendant les premiers mois, quand les racines s'installent, un arbre qui bouge trop peut se déraciner. Et une tempête extrême abat même un arbre solide. <strong>Le stress renforce quand il est dosé et que l'arbre peut s'en remettre.</strong> Voilà l'idée de l'antifragilité, que le penseur Nassim Taleb a rendue célèbre.</p>
+    <div class="tablewrap">
+      <table class="arbre-map">
+        <thead><tr><th>Dans le jardin</th><th>Dans ton portefeuille</th></tr></thead>
+        <tbody>
+          <tr><td>Le vent, léger et régulier, épaissit le tronc</td><td>Les petites baisses régulières. Si tu gardes le cap, tu apprends à les supporter au lieu de vendre par peur.</td></tr>
+          <tr><td>Le tuteur, utile au début, puis retiré</td><td>La réserve de précaution et les protections de départ. Les garder pour toujours (tout en liquidités, jamais de risque) affaiblit le potentiel et expose à l'inflation.</td></tr>
+          <tr><td>La taille, dosée et au bon moment</td><td>Le rééquilibrage et le tri : on coupe ce qui a trop poussé ou ne mène nulle part, pour concentrer la sève. Trop de taille, trop d'opérations, et frais et impôts affaiblissent.</td></tr>
+          <tr><td>Les saisons, y compris l'hiver</td><td>Les cycles économiques. Beaucoup d'arbres des climats tempérés ont besoin d'un repos hivernal pour refleurir. On ne supprime pas l'hiver, on s'y prépare : voir <a href="economie-cycles.html">l'économie et les cycles</a>.</td></tr>
+          <tr><td>Les racines profondes</td><td>La réserve, la diversification, l'horizon long : ce qu'on ne voit pas, et qui tient quand tout bouge.</td></tr>
+          <tr><td>La tempête extrême qui déracine</td><td>Le levier, la concentration, les dettes. Un stress hors dose ne renforce pas : il détruit.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="alerte"><strong>Une image, pas une preuve :</strong> la métaphore de l'arbre aide à réfléchir, elle ne démontre rien sur un portefeuille précis. Un arbre n'est pas non plus indestructible, et un portefeuille encore moins. Le tableau plus bas montre ce que cela donne sur des répartitions réelles, dans une simulation simplifiée.</div>
 
     <h2 id="mots">Trois mots à distinguer</h2>
     <p class="accroche">« Que devient ton portefeuille quand le désordre arrive ? »</p>
     <p>Diversifier, c'est déjà se protéger. Mais une question plus profonde se pose : <strong>comment réagit un portefeuille face au choc ?</strong> L'essayiste Nassim Taleb a proposé trois mots pour y répondre.</p>
     <div class="trio">
-      <div class="tr f"><h3>Fragile</h3><p>Le choc fait très mal, et la perte est difficile à rattraper. Plus la secousse est forte, plus les dégâts augmentent.</p><p class="eg">Exemple : un portefeuille concentré sur un seul actif, ou financé à crédit.</p></div>
-      <div class="tr r"><h3>Robuste</h3><p>Le choc passe et le portefeuille revient à peu près à l'état initial. Il encaisse, sans progresser.</p><p class="eg">Exemple : un portefeuille bien diversifié entre plusieurs classes d'actifs.</p></div>
-      <div class="tr a"><h3>Antifragile</h3><p>Le désordre apporte un bénéfice : on perd peu, et on garde de quoi acheter à bas prix quand les autres vendent.</p><p class="eg">Exemple : beaucoup de réserves sûres, et un petit pari à fort potentiel.</p></div>
+      <div class="tr f"><h3>Fragile</h3><p>Le choc fait très mal, et la perte est difficile à rattraper. Plus la secousse est forte, plus les dégâts augmentent.</p><p class="eg">Dans le jardin : un arbre jamais exposé au vent, au tronc frêle. Dans ton portefeuille : tout sur un seul actif, ou financé à crédit.</p></div>
+      <div class="tr r"><h3>Robuste</h3><p>Le choc passe et le portefeuille revient à peu près à l'état initial. Il encaisse, sans progresser.</p><p class="eg">Dans le jardin : un vieux chêne bien enraciné. Dans ton portefeuille : une répartition diversifiée entre plusieurs classes d'actifs.</p></div>
+      <div class="tr a"><h3>Antifragile</h3><p>Le désordre apporte un bénéfice : on perd peu, et on garde de quoi acheter à bas prix quand les autres vendent.</p><p class="eg">Dans le jardin : un arbre taillé avec soin et exposé au vent à petites doses. Dans ton portefeuille : beaucoup de réserves sûres, et un petit pari à fort potentiel.</p></div>
     </div>
 
     <h2 id="tableau">Comment réagissent les portefeuilles ?</h2>
@@ -101,9 +124,9 @@
 
     <h2 id="principes">Trois principes à retenir</h2>
     <div class="rules">
-      <div><b>1. Éviter la perte irrécupérable</b><span>Une baisse de 50 % demande un gain de 100 % pour revenir au point de départ. Le levier et les dettes peuvent forcer à vendre au pire moment.</span></div>
-      <div><b>2. Garder des munitions</b><span>Des liquidités permettent de racheter quand les prix chutent. C'est la réserve de précaution du premier étage de la <a href="pyramide-finance.html">pyramide financière</a>, vue sous un autre angle.</span></div>
-      <div><b>3. Limiter les paris à une petite part</b><span>Si un pari risqué échoue, tu perds peu. S'il réussit, le gain compte. L'asymétrie est là : une perte plafonnée, un gain ouvert.</span></div>
+      <div><b>1. Éviter la perte irrécupérable</b><span>Une baisse de 50 % demande un gain de 100 % pour revenir au point de départ. Le levier et les dettes peuvent forcer à vendre au pire moment. Un arbre déraciné ne repousse pas.</span></div>
+      <div><b>2. Garder des munitions</b><span>Des liquidités permettent de racheter quand les prix chutent. C'est la réserve de précaution du premier étage de la <a href="pyramide-finance.html">pyramide financière</a>, vue sous un autre angle. Ce sont les racines profondes.</span></div>
+      <div><b>3. Limiter les paris à une petite part</b><span>Si un pari risqué échoue, tu perds peu. S'il réussit, le gain compte. L'asymétrie est là : une perte plafonnée, un gain ouvert. On taille une petite branche sans risquer le tronc.</span></div>
     </div>
     <p>Pour tester ton propre portefeuille avec des hypothèses chiffrées, passe à la page suivante : la <a href="monte-carlo.html">simulation de Monte Carlo</a>.</p>
 
@@ -112,6 +135,8 @@
       <dt>Antifragile</dt><dd>Qui tire un bénéfice du désordre, au lieu seulement de lui résister.</dd>
       <dt>Barbell (haltère)</dt><dd>Une répartition en deux blocs : une très grande part sûre, et une petite part très risquée à fort potentiel.</dd>
       <dt>Munitions</dt><dd>Les liquidités disponibles pour acheter quand les prix chutent.</dd>
+      <dt>Thigmomorphogenèse</dt><dd>Le mot savant pour dire qu'un arbre se renforce quand il bouge dans le vent.</dd>
+      <dt>Hormèse</dt><dd>L'idée qu'une petite dose de stress renforce un organisme, alors qu'une forte dose lui nuit.</dd>
     </dl>
 
     <h3 id="quiz">Teste-toi</h3>
@@ -143,14 +168,31 @@
       <button>Oui, si son rendement dépasse 10 %</button>
       <div class="fb" aria-live="polite"></div>
     </div>
+    <div class="q" data-good="1">
+      <p>5. Pourquoi retire-t-on le tuteur d'un jeune arbre au bout d'un an ou deux ?</p>
+      <button>Parce que le tuteur coûte trop cher</button>
+      <button>Parce que le mouvement dans le vent épaissit le tronc et développe les racines</button>
+      <button>Parce que l'arbre n'a plus besoin d'eau</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="2">
+      <p>6. Que montre la tempête extrême dans la métaphore de l'arbre ?</p>
+      <button>Qu'un stress, même énorme, finit toujours par renforcer</button>
+      <button>Que les arbres n'ont pas besoin de racines</button>
+      <button>Qu'un stress ne renforce que s'il est dosé : trop fort, il détruit</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
     <details><summary>Voir les explications</summary>
       <ol>
         <li>Un portefeuille robuste encaisse le choc. Un portefeuille antifragile garde de quoi en profiter.</li>
         <li>Ce sont les munitions : sans réserves disponibles, on ne peut pas saisir les occasions d'un krach. En revanche, elles perdent du pouvoir d'achat en cas d'inflation.</li>
         <li>Actions et obligations longues ont baissé ensemble : la diversification protège, sans garantir.</li>
         <li>L'antifragilité décrit une propriété qualitative. Le tableau de cette leçon est une simulation simplifiée, pas une mesure.</li>
+        <li>Un tuteur trop longtemps en place donne un tronc frêle : le mouvement dans le vent le renforce, d'où l'idée de le retirer après un à deux ans.</li>
+        <li>Le stress ne renforce que s'il est dosé et récupérable. Une tempête extrême, comme un levier excessif en bourse, détruit.</li>
       </ol>
     </details>
+    <p class="note-hist">Sources : recommandations de jardinage et d'arboriculture sur le tuteurage (par exemple le programme Master Gardener de l'Université de Californie) ; Nassim Nicholas Taleb, <em>Antifragile</em> (2012). Les notes de la simulation sont des estimations qualitatives de l'auteur du site.</p>
 
     <div class="pager">
       <a href="portefeuilles-historiques.html">← Les portefeuilles historiques</a>
