@@ -55,6 +55,7 @@
 .img-pyramide   { --img: url(../images/scene-pyramide.webp); }
 .img-vitesse    { --img: url(../images/scene-vitesse.webp); }
 .img-antifragilite { --img: url(../images/scene-antifragilite.webp); }
+.img-suivi-budget { --img: url(../images/scene-suivi-budget.webp); }
 
 .scene {
     position: relative;
@@ -226,6 +227,10 @@
     --veil-t: 0.24;
     --veil-b: 0.46;
 }
+
+/* Cadrage de la banderole « Suivi de budget » : le couple reste à gauche dans le cadre, le jardin au centre garde le titre lisible */
+.scene-hero.img-suivi-budget::before { background-position: center 38%; }
+@media (max-width: 768px) { .scene-hero.img-suivi-budget::before { background-position: 14% 36%; } }
 
 /* Cadrage de la banderole « L'antifragilité » : on garde le visage de la jardinière en haut à gauche, le centre (verrière et allée) reste libre pour le titre */
 .scene-hero.img-antifragilite::before { background-position: center 28%; }
