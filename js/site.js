@@ -81,7 +81,7 @@
       {
         id: 'planifier',
         title: 'Planifier',
-        tagline: 'Construire, mesurer et décider avec des chiffres',
+        tagline: 'Construire, mesurer et décider',
         items: [
           { title: 'Budget et épargne de précaution', file: 'budget-epargne.html',
             desc: "Établir son budget, rembourser les dettes chères, constituer une réserve avant d'investir." },
