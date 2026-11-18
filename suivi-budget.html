@@ -44,12 +44,13 @@
 
   <section class="scene scene-hero img-suivi-budget">
     <h1>Suivi de budget : savoir où part ton argent</h1>
-    <p>Saisis tes revenus, ton logement, tes charges fixes et variables. Le camembert montre la répartition, et ce qu'il te reste pour tes loisirs ou pour investir.</p>
+    <p>Saisis tes revenus, ton logement, tes charges fixes et variables. Le camembert montre la répartition, le calendrier place tes dates de salaire et de prélèvements, et une courbe suit le solde de ton compte au fil du mois.</p>
     <a href="#outil" class="btn-gold">Ouvrir le suivi</a>
   </section>
 
   <section class="card-grid" aria-label="Sommaire de la page">
     <a class="card" href="#outil"><h3>Le suivi en ligne</h3><p>Remplis ton budget dans ton navigateur.</p></a>
+    <a class="card" href="#calendrier"><h3>Calendrier et courbe</h3><p>Tes dates, et le solde jour après jour.</p></a>
     <a class="card" href="#utiliser"><h3>Comment l'utiliser</h3><p>Les étapes, dans le bon ordre.</p></a>
     <a class="card" href="#reperes"><h3>Les repères</h3><p>La règle 50 / 30 / 20 et ses limites.</p></a>
   </section>
@@ -65,13 +66,15 @@
     <a class="simulator-open" href="outil-budget.html" target="_blank" rel="noopener">Ouvrir le suivi dans un nouvel onglet</a>
 
     <details>
-      <summary>Les cinq blocs de l'outil, en un coup d'œil</summary>
+      <summary>Les blocs de l'outil, en un coup d'œil</summary>
       <ul class="liste">
         <li><strong>Revenus</strong> : ton salaire net et tes autres revenus du mois.</li>
         <li><strong>Logement</strong> : loyer ou crédit, charges de copropriété, assurance habitation.</li>
         <li><strong>Charges fixes</strong> : ce qui revient chaque mois, comme l'électricité, internet, le mobile, les abonnements et les assurances.</li>
         <li><strong>Charges variables</strong> : ce qui change d'un mois à l'autre, comme les courses, le carburant, la santé et les restaurants.</li>
         <li><strong>Reste à vivre</strong> : tu fixes la part à investir ou épargner, et le reste devient ton budget loisirs.</li>
+        <li><strong>Calendrier du mois</strong> : tu places la date d'arrivée du salaire et celles des prélèvements.</li>
+        <li><strong>Courbe du solde</strong> : elle descend à mesure des dépenses et remonte à l'arrivée d'un revenu.</li>
       </ul>
     </details>
 
@@ -81,8 +84,19 @@
       <li>Ajoute le <strong>logement</strong>, puis chaque <strong>charge fixe</strong>. Tu peux ajouter, renommer ou supprimer des lignes.</li>
       <li>Estime tes <strong>charges variables</strong> avec ton relevé bancaire des derniers mois, pas de mémoire.</li>
       <li>Regarde le <strong>reste à vivre</strong> et le camembert, puis fixe la part que tu veux investir ou épargner.</li>
+      <li>Indique le <strong>jour du mois</strong> de chaque ligne (salaire, loyer, prélèvements) : elles apparaissent dans le calendrier. Tu peux aussi cliquer sur un jour pour y ajouter un événement.</li>
+      <li>Renseigne le <strong>solde de ton compte au 1er du mois</strong>, puis lis la courbe : elle montre le point le plus bas du mois, et si ton compte risque de passer sous zéro avant l'arrivée du salaire.</li>
       <li>Si les dépenses dépassent les revenus, l'outil t'avertit : c'est le signal pour réduire une ligne avant de penser à investir.</li>
     </ul>
+
+    <h2 id="calendrier">Le calendrier et la courbe du solde</h2>
+    <p>Un budget mensuel donne des totaux, mais pas le <strong>moment</strong> où l'argent sort. Or c'est souvent le calendrier qui met un compte en difficulté : le loyer et les prélèvements tombent en début de mois, le salaire arrive à la fin. La courbe montre ce trajet : elle <strong>descend à mesure des dépenses</strong>, remonte quand un revenu arrive, et signale le point le plus bas du mois.</p>
+    <ul class="liste">
+      <li>Les dates se <strong>répètent chaque mois</strong> : tu peux naviguer d'un mois à l'autre avec les flèches.</li>
+      <li>Les dépenses sans jour précisé (courses, carburant, santé) sont <strong>réparties régulièrement</strong> sur le mois, et les revenus sans jour sont placés au 1er.</li>
+      <li>Si la courbe passe sous zéro, tu peux déplacer une date de prélèvement (quand ta banque le permet), garder une marge sur ton compte, ou lisser une dépense.</li>
+    </ul>
+    <div class="alerte"><strong>Une projection, pas un relevé :</strong> la courbe est calculée à partir de ce que tu saisis, elle ne se connecte pas à ta banque. Elle sert à anticiper, pas à remplacer le suivi de ton compte réel.</div>
 
     <h2 id="reperes">Les repères : la règle 50 / 30 / 20</h2>
     <p>Une règle simple vise environ <strong>50 %</strong> du revenu pour les besoins (logement, charges fixes, courses), <strong>30 %</strong> pour les envies et <strong>20 %</strong> pour l'épargne. C'est un point de départ, à adapter à ta situation : dans une grande ville, le logement pèse souvent bien plus de 50 % pour de nombreux foyers.</p>

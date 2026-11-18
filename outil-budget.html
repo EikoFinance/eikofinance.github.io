@@ -53,6 +53,45 @@
 .disc{font-size:.8rem;color:var(--text-muted);margin-top:1rem}
 @media(max-width:860px){.grid{grid-template-columns:1fr}.side{position:static}}
 
+
+.row{grid-template-columns:1fr 100px 64px 34px}
+.row.single{grid-template-columns:1fr 120px}
+@media(max-width:520px){.row{grid-template-columns:1fr 84px 38px}.row>input[type=text]{grid-column:1/-1}.row{margin-bottom:12px}}
+.cal-wrap{margin-top:1.4rem}
+.calnav{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:.4rem 0 .8rem}
+.calnav b{font-family:var(--font-title);color:var(--primary-blue);font-size:1.1rem;min-width:11ch;text-align:center}
+.calnav button,.cal-add button{background:var(--bg-subtle);border:1px solid #cdd5e2;border-radius:6px;padding:.4rem .8rem;color:var(--primary-blue);font-weight:600;cursor:pointer}
+.calnav button:hover,.cal-add button:hover{border-color:var(--gold-accent)}
+.cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.cal .wd{font-size:.76rem;font-weight:700;color:var(--text-muted);text-align:center;padding:.2rem 0}
+.cd{min-width:0;min-height:78px;background:#fff;border:1px solid #dfe4ec;border-radius:6px;padding:4px 5px;text-align:left;cursor:pointer;font:inherit;color:var(--text-dark);display:block}
+.cd:hover{border-color:var(--gold-accent)}
+.cd.off{background:transparent;border-color:transparent;cursor:default}
+.cd .dn{font-size:.78rem;font-weight:700;color:var(--primary-blue)}
+.cd.today .dn{background:var(--primary-blue);color:#fff;border-radius:10px;padding:0 6px}
+.cd.sel{outline:2px solid var(--gold-bright);outline-offset:0;background:#fffaf0}
+.chip{display:block;font-size:.68rem;line-height:1.25;border-radius:3px;padding:1px 4px;margin-top:2px;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.k-rev{background:#2F8F6B}.k-log{background:#C5A059;color:#0A1C3B}.k-fix{background:#102A56}.k-var{background:#6F8FC4}
+.more{font-size:.66rem;color:var(--text-muted);margin-top:2px}
+@media(max-width:640px){.cd{min-height:46px;padding:3px}.chip{font-size:0;height:7px;width:7px;border-radius:50%;display:inline-block;margin:3px 1px 0;padding:0}.more{display:none}}
+.keys2{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.8rem;color:var(--text-muted);margin:.7rem 0}
+.keys2 i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px}
+.dayp{background:var(--bg-subtle);border-radius:8px;padding:.8rem 1rem;margin:.8rem 0 1.2rem}
+.dayp h3{font-family:var(--font-title);color:var(--primary-blue);font-size:1rem;margin-bottom:.4rem}
+.dayp ul{list-style:none;margin:0 0 .6rem;font-size:.9rem}
+.dayp li{display:flex;gap:8px;align-items:center;padding:2px 0}
+.dayp li i{width:10px;height:10px;border-radius:3px;flex:none}
+.dayp li b{margin-left:auto}
+.cal-add{display:grid;grid-template-columns:130px 1fr 100px auto;gap:8px;align-items:center}
+@media(max-width:640px){.cal-add{grid-template-columns:1fr 1fr}.cal-add button{grid-column:1/3}}
+.cal-add select{padding:.45rem .5rem;border:1px solid #cdd5e2;border-radius:6px;font:inherit;background:#fff}
+.start{display:grid;grid-template-columns:1fr 130px;gap:8px 12px;align-items:center;margin:.6rem 0 1rem;font-size:.92rem}
+.start label{font-weight:600}
+#curve{width:100%;height:auto;max-width:none;display:block}
+#cal-sum{margin-top:.6rem;font-size:.92rem;color:var(--text-dark)}
+#cal-sum.bad{color:#b3402a}
+.cal-wrap h3{font-family:var(--font-title);color:var(--primary-blue);font-size:1.05rem;margin:1.2rem 0 .3rem}
+.cal-wrap .dayp h3{margin:0 0 .4rem;font-size:1rem}
 .embedded .intro,.embedded .back{display:none}
 .embedded .bud{padding:.5rem 1rem 1rem}
 .back{display:inline-block;margin-bottom:1rem;color:var(--primary-blue);font-weight:600;text-decoration:none;font-size:.9rem}
@@ -66,13 +105,13 @@
 <main class="bud"><a class="back" href="index.html">← Retour au site EikoFinance</a>
 
   <div class="intro"><h1>Suivi de budget</h1>
-  <p class="lead">Saisissez vos revenus et vos dépenses du mois. Le camembert montre où part votre argent et ce qu’il vous reste pour vos loisirs ou pour investir. Vos données restent sur votre appareil.</p></div>
+  <p class="lead">Saisis tes revenus et tes dépenses du mois. Le camembert montre où part ton argent et ce qu’il te reste pour tes loisirs ou pour investir. Un calendrier et une courbe montrent ensuite le solde de ton compte jour après jour. Tes données restent sur ton appareil.</p></div>
 
   <div class="grid">
     <div>
       <section class="panel">
         <h2>Revenus</h2>
-        <p class="hint">Montants nets, par mois.</p>
+        <p class="hint">Montants nets, par mois. Le jour du mois est facultatif : il place la ligne dans le calendrier plus bas.</p>
         <div id="g-rev"></div>
         <div class="total"><span>Total des revenus</span><span id="t-rev">0 €</span></div>
       </section>
@@ -96,7 +135,7 @@
       </section>
       <section class="panel">
         <h2>Reste à vivre</h2>
-        <p class="hint">Indiquez la part à investir ou épargner. Le reste devient votre budget loisirs.</p>
+        <p class="hint">Indique la part à investir ou épargner. Le reste devient ton budget loisirs.</p>
         <div class="row single">
           <label for="inv" style="align-self:center">Investissement / épargne prévu</label>
           <input id="inv" type="number" min="0" step="10" inputmode="decimal">
@@ -110,7 +149,7 @@
 
     <aside class="side">
       <section class="panel">
-        <h2>Répartition de vos revenus</h2>
+        <h2>Répartition de tes revenus</h2>
         <div class="warn" id="warn"></div>
         <div class="kpis">
           <div class="kpi"><small>Reste à vivre</small><b id="k-rest">0 €</b></div>
@@ -121,11 +160,34 @@
           <div class="center"><b id="c-pct">0 %</b><small>du revenu dépensé</small></div>
         </div>
         <ul class="legend" id="legend"></ul>
-        <p class="ref">Repère : la règle <strong>50 / 30 / 20</strong> vise environ 50 % pour les besoins (logement, charges fixes, courses), 30 % pour les envies et 20 % pour l’épargne. C’est un point de départ, à adapter à votre situation.</p>
+        <p class="ref">Repère : la règle <strong>50 / 30 / 20</strong> vise environ 50 % pour les besoins (logement, charges fixes, courses), 30 % pour les envies et 20 % pour l’épargne. C’est un point de départ, à adapter à ta situation.</p>
         <p class="disc">Outil pédagogique : il ne constitue pas un conseil financier personnalisé.</p>
       </section>
     </aside>
   </div>
+
+  <section class="panel cal-wrap" id="calendrier">
+    <h2>Calendrier du mois</h2>
+    <p class="hint">Indique le jour de chaque ligne dans les blocs ci-dessus, ou clique sur un jour pour y ajouter un événement. Les dates se répètent chaque mois.</p>
+    <div class="calnav">
+      <button type="button" id="cal-prev" aria-label="Mois précédent">‹</button>
+      <b id="cal-title" aria-live="polite"></b>
+      <button type="button" id="cal-next" aria-label="Mois suivant">›</button>
+      <button type="button" id="cal-today">Aujourd’hui</button>
+    </div>
+    <div class="cal" id="cal"></div>
+    <div class="keys2"><span><i style="background:#2F8F6B"></i>Revenu</span><span><i style="background:#C5A059"></i>Logement</span><span><i style="background:#102A56"></i>Charge fixe</span><span><i style="background:#6F8FC4"></i>Charge variable</span></div>
+    <div class="dayp" id="cal-day" aria-live="polite"></div>
+
+    <h3>Solde de ton compte au fil du mois</h3>
+    <div class="start">
+      <label for="start">Solde de ton compte au 1er du mois (€)</label>
+      <input id="start" type="number" step="10" inputmode="decimal">
+    </div>
+    <svg id="curve" viewBox="0 0 700 290" role="img" aria-label="Courbe du solde du compte au fil du mois"></svg>
+    <p id="cal-sum" aria-live="polite"></p>
+    <p class="hint">Les lignes sans jour sont réparties régulièrement sur le mois (dépenses) ou placées au 1er (revenus). Plus tes dates sont précises, plus la courbe est fidèle. Ce n’est pas un suivi de ton compte réel : c’est une projection simple à partir de tes saisies.</p>
+  </section>
 
 <p class="foot">© 2026 EikoFinance. Outil pédagogique : il ne constitue pas un conseil financier personnalisé.</p>
 </main>
@@ -134,18 +196,22 @@
 (function(){
   var KEY='eiko-budget-v1';
   var COLORS={log:'#C5A059',fix:'#102A56',var:'#6F8FC4',inv:'#2F8F6B',loi:'#D9826B'};
+  var TYPES={rev:['Revenu','#2F8F6B'],log:['Logement','#C5A059'],fix:['Charge fixe','#102A56'],var:['Charge variable','#6F8FC4']};
   var EXAMPLE={
-    rev:[{n:'Salaire net',v:2200},{n:'Autres revenus',v:0}],
-    log:[{n:'Loyer ou crédit',v:750},{n:'Charges et assurance habitation',v:60}],
-    fix:[{n:'Électricité',v:70},{n:'Internet et mobile',v:45},{n:'Abonnements (streaming, sport)',v:35},{n:'Assurance auto',v:55},{n:'Transport',v:60}],
+    rev:[{n:'Salaire net',v:2200,d:27},{n:'Autres revenus',v:0}],
+    log:[{n:'Loyer ou crédit',v:750,d:5},{n:'Charges et assurance habitation',v:60,d:10}],
+    fix:[{n:'Électricité',v:70,d:12},{n:'Internet et mobile',v:45,d:15},{n:'Abonnements (streaming, sport)',v:35,d:18},{n:'Assurance auto',v:55,d:20},{n:'Transport',v:60,d:1}],
     var:[{n:'Courses alimentaires',v:320},{n:'Carburant',v:90},{n:'Santé',v:30}],
-    inv:200
+    inv:200,start:1500
   };
   var state;
-  function load(){try{var s=localStorage.getItem(KEY);if(s)return JSON.parse(s);}catch(e){}return JSON.parse(JSON.stringify(EXAMPLE));}
+  var today=new Date(),view={y:today.getFullYear(),m:today.getMonth()},selDay=today.getDate();
+  function clone(o){return JSON.parse(JSON.stringify(o));}
+  function load(){try{var s=localStorage.getItem(KEY);if(s)return JSON.parse(s);}catch(e){}return clone(EXAMPLE);}
   function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
   function eur(n){return Math.round(n).toLocaleString('fr-FR')+' €';}
   function sum(a){return a.reduce(function(t,x){return t+(+x.v||0);},0);}
+  function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
   var GROUPS=[['rev','g-rev','Ajouter un revenu','Nom du revenu'],['log','g-log','Ajouter une ligne','Nom de la ligne'],['fix','g-fix','Ajouter une charge fixe','Nom de la charge'],['var','g-var','Ajouter une charge variable','Nom de la dépense']];
 
   function renderGroup(k,id,addLabel,ph){
@@ -153,18 +219,21 @@
     state[k].forEach(function(item,i){
       var r=document.createElement('div');r.className='row';
       var n=document.createElement('input');n.type='text';n.value=item.n;n.placeholder=ph;n.setAttribute('aria-label',ph);
-      n.oninput=function(){state[k][i].n=n.value;save();};
+      n.oninput=function(){state[k][i].n=n.value;save();renderCal();};
       var v=document.createElement('input');v.type='number';v.min='0';v.step='1';v.inputMode='decimal';v.value=item.v;v.setAttribute('aria-label','Montant en euros');
       v.oninput=function(){state[k][i].v=parseFloat(v.value)||0;save();update();};
+      var dy=document.createElement('input');dy.type='number';dy.min='1';dy.max='31';dy.step='1';dy.inputMode='numeric';dy.placeholder='Jour';
+      dy.value=(item.d>=1&&item.d<=31)?item.d:'';dy.setAttribute('aria-label','Jour du mois (facultatif)');
+      dy.oninput=function(){var d=parseInt(dy.value,10);state[k][i].d=(d>=1&&d<=31)?d:null;save();update();};
       var d=document.createElement('button');d.type='button';d.className='del';d.textContent='×';d.setAttribute('aria-label','Supprimer la ligne');
       d.onclick=function(){state[k].splice(i,1);save();renderAll();};
-      r.appendChild(n);r.appendChild(v);r.appendChild(d);box.appendChild(r);
+      r.appendChild(n);r.appendChild(v);r.appendChild(dy);r.appendChild(d);box.appendChild(r);
     });
     var a=document.createElement('button');a.type='button';a.className='add';a.textContent='+ '+addLabel;
-    a.onclick=function(){state[k].push({n:'',v:0});save();renderGroup(k,id,addLabel,ph);var rows=box.querySelectorAll('.row');rows[rows.length-1].querySelector('input').focus();};
+    a.onclick=function(){state[k].push({n:'',v:0,d:null});save();renderGroup(k,id,addLabel,ph);var rows=box.querySelectorAll('.row');rows[rows.length-1].querySelector('input').focus();};
     box.appendChild(a);
   }
-  function renderAll(){GROUPS.forEach(function(g){renderGroup(g[0],g[1],g[2],g[3]);});document.getElementById('inv').value=state.inv;update();}
+  function renderAll(){GROUPS.forEach(function(g){renderGroup(g[0],g[1],g[2],g[3]);});document.getElementById('inv').value=state.inv;document.getElementById('start').value=(state.start===undefined?'':state.start);update();}
 
   function update(){
     var rev=sum(state.rev),log=sum(state.log),fix=sum(state.fix),vr=sum(state.var);
@@ -178,8 +247,8 @@
     var invShown=Math.min(inv,Math.max(rest,0));
     document.getElementById('k-save').textContent=(rev>0?Math.round(invShown/rev*100):0)+' %';
     var w=document.getElementById('warn');
-    if(rest<0){w.style.display='block';w.textContent='Vos dépenses dépassent vos revenus. Réduisez une ou plusieurs lignes pour retrouver un reste à vivre positif.';}
-    else if(inv>rest){w.style.display='block';w.textContent='Votre objectif d’investissement dépasse le reste à vivre. Baissez-le ou réduisez vos dépenses.';}
+    if(rest<0){w.style.display='block';w.textContent='Tes dépenses dépassent tes revenus. Réduis une ou plusieurs lignes pour retrouver un reste à vivre positif.';}
+    else if(inv>rest){w.style.display='block';w.textContent='Ton objectif d’investissement dépasse le reste à vivre. Baisse-le ou réduis tes dépenses.';}
     else w.style.display='none';
     document.getElementById('c-pct').textContent=(rev>0?Math.round(spent/rev*100):0)+' %';
     var parts=[
@@ -194,6 +263,7 @@
       li.innerHTML='<i style="background:'+COLORS[p.k]+'"></i><span>'+p.l+'</span><b>'+eur(p.v)+'</b><span class="pct">'+(total>0?(p.v/total*100).toFixed(0):0)+' %</span>';
       lg.appendChild(li);
     });
+    renderCal();
   }
 
   function drawDonut(parts,total){
@@ -213,9 +283,107 @@
     svg.innerHTML=out;
   }
 
+  /* ---------- Calendrier et courbe du solde ---------- */
+  function dim(y,m){return new Date(y,m+1,0).getDate();}
+  function events(y,m){
+    var N=dim(y,m),ev=[],spread=0;
+    ['rev','log','fix','var'].forEach(function(k){state[k].forEach(function(it){
+      var v=+it.v||0;if(v<=0)return;
+      var d=parseInt(it.d,10);
+      if(d>=1&&d<=31)ev.push({k:k,n:it.n||TYPES[k][0],v:v,day:Math.min(d,N)});
+      else if(k==='rev')ev.push({k:k,n:it.n||'Revenu',v:v,day:1,assumed:true});
+      else spread+=v;
+    });});
+    return {N:N,ev:ev,spread:spread};
+  }
+  function series(E){
+    var b=+state.start||0,per=E.spread/E.N,bal=[b];
+    for(var d=1;d<=E.N;d++){
+      E.ev.forEach(function(e){if(e.day===d)b+=(e.k==='rev'?e.v:-e.v);});
+      b-=per;bal.push(b);
+    }
+    return bal;
+  }
+  function monthLabel(){var t=new Date(view.y,view.m,1).toLocaleDateString('fr-FR',{month:'long',year:'numeric'});return t.charAt(0).toUpperCase()+t.slice(1);}
+  function renderCal(){
+    var E=events(view.y,view.m),N=E.N;
+    if(selDay>N)selDay=N;
+    document.getElementById('cal-title').textContent=monthLabel();
+    var off=(new Date(view.y,view.m,1).getDay()+6)%7,h='';
+    ['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'].forEach(function(w){h+='<div class="wd">'+w+'</div>';});
+    for(var i=0;i<off;i++)h+='<div class="cd off"></div>';
+    for(var d=1;d<=N;d++){
+      var evs=E.ev.filter(function(e){return e.day===d;});
+      var isT=(view.y===today.getFullYear()&&view.m===today.getMonth()&&d===today.getDate());
+      var chips=evs.slice(0,2).map(function(e){return '<span class="chip k-'+e.k+'">'+esc(e.n)+'</span>';}).join('');
+      if(evs.length>2)chips+='<span class="more">+'+(evs.length-2)+'</span>';
+      h+='<button type="button" class="cd'+(isT?' today':'')+(d===selDay?' sel':'')+'" data-d="'+d+'" aria-label="'+d+' '+monthLabel()+(evs.length?' : '+evs.length+' événement'+(evs.length>1?'s':''):'')+'"><span class="dn">'+d+'</span>'+chips+'</button>';
+    }
+    document.getElementById('cal').innerHTML=h;
+    renderDay(E);
+    drawCurve(E);
+  }
+  function renderDay(E){
+    var evs=E.ev.filter(function(e){return e.day===selDay;});
+    var dt=new Date(view.y,view.m,selDay).toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'});
+    var h='<h3>'+dt.charAt(0).toUpperCase()+dt.slice(1)+'</h3>';
+    if(evs.length){h+='<ul>'+evs.map(function(e){return '<li><i style="background:'+TYPES[e.k][1]+'"></i>'+esc(e.n)+(e.assumed?' (jour non précisé)':'')+'<b>'+(e.k==='rev'?'+':'−')+eur(e.v)+'</b></li>';}).join('')+'</ul>';}
+    else h+='<p class="hint" style="margin:0 0 .6rem">Aucun événement ce jour.</p>';
+    h+='<div class="cal-add"><select id="ad-t" aria-label="Type"><option value="rev">Revenu</option><option value="log">Logement</option><option value="fix" selected>Charge fixe</option><option value="var">Charge variable</option></select><input id="ad-n" type="text" placeholder="Nom (ex. salaire, loyer)" aria-label="Nom"><input id="ad-v" type="number" min="0" step="1" placeholder="Montant" inputmode="decimal" aria-label="Montant en euros"><button type="button" id="ad-b">Ajouter</button></div>';
+    document.getElementById('cal-day').innerHTML=h;
+    document.getElementById('ad-b').onclick=function(){
+      var t=document.getElementById('ad-t').value,n=document.getElementById('ad-n').value.trim(),v=parseFloat(document.getElementById('ad-v').value)||0;
+      if(v<=0){document.getElementById('ad-v').focus();return;}
+      state[t].push({n:n||TYPES[t][0],v:v,d:selDay});save();renderAll();
+    };
+  }
+  function niceStep(x){var p=Math.pow(10,Math.floor(Math.log(x)/Math.LN10)),f=x/p;return (f<=1?1:f<=2?2:f<=5?5:10)*p;}
+  function drawCurve(E){
+    var N=E.N,bal=series(E),cv=document.getElementById('curve'),W=Math.max(300,Math.round(cv.getBoundingClientRect().width||700)),H=(W<520?250:290),L=(W<520?48:58),R=14,T=18,B=34;
+    cv.setAttribute('viewBox','0 0 '+W+' '+H);
+    var mn=Math.min.apply(null,bal.concat([0])),mx=Math.max.apply(null,bal.concat([0]));
+    if(mx-mn<100){mx+=50;mn-=50;}
+    var pad=(mx-mn)*0.08;mx+=pad;if(mn<0)mn-=pad;
+    var step=niceStep((mx-mn)/4);
+    function X(i){return L+i/N*(W-L-R);}
+    function Y(v){return T+(mx-v)/(mx-mn)*(H-T-B);}
+    var o='';
+    var t0=Math.ceil(mn/step)*step;
+    for(var tv=t0;tv<=mx;tv+=step){
+      o+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+Y(tv)+'" y2="'+Y(tv)+'" stroke="#e3e8f0"/>';
+      o+='<text x="'+(L-8)+'" y="'+(Y(tv)+4)+'" text-anchor="end" font-size="11" fill="#4B5563">'+Math.round(tv).toLocaleString('fr-FR')+'</text>';
+    }
+    if(mn<0)o+='<rect x="'+L+'" y="'+Y(0)+'" width="'+(W-L-R)+'" height="'+(Y(mn)-Y(0))+'" fill="rgba(217,130,107,.12)"/>';
+    o+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+Y(0)+'" y2="'+Y(0)+'" stroke="#9fb0cc" stroke-dasharray="4 4"/>';
+    for(var d=1;d<=N;d++){if(d===1||d%5===0||d===N)o+='<text x="'+X(d)+'" y="'+(H-12)+'" text-anchor="middle" font-size="11" fill="#4B5563">'+d+'</text>';}
+    var pts=bal.map(function(v,i){return X(i).toFixed(1)+','+Y(v).toFixed(1);}).join(' ');
+    o+='<polygon points="'+X(0)+','+Y(Math.max(mn,0))+' '+pts+' '+X(N)+','+Y(Math.max(mn,0))+'" fill="rgba(16,42,86,.07)"/>';
+    o+='<polyline points="'+pts+'" fill="none" stroke="#102A56" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>';
+    var days={};E.ev.forEach(function(e){days[e.day]=days[e.day]||{rev:false,list:[]};if(e.k==='rev')days[e.day].rev=true;days[e.day].list.push((e.k==='rev'?'+':'−')+eur(e.v)+' '+e.n);});
+    Object.keys(days).forEach(function(k){var d=+k,i=d;o+='<circle cx="'+X(i).toFixed(1)+'" cy="'+Y(bal[i]).toFixed(1)+'" r="4.2" fill="'+(days[k].rev?'#2F8F6B':'#C5A059')+'" stroke="#fff" stroke-width="1.5"><title>Jour '+d+' : '+esc(days[k].list.join(' ; '))+' ; solde '+eur(bal[i])+'</title></circle>';});
+    var mi=1;for(var q=1;q<=N;q++){if(bal[q]<bal[mi])mi=q;}
+    var ax=X(mi),ay=Y(bal[mi]);
+    o+='<circle cx="'+ax.toFixed(1)+'" cy="'+ay.toFixed(1)+'" r="6" fill="none" stroke="'+(bal[mi]<0?'#b3402a':'#D9826B')+'" stroke-width="2.4"/>';
+    var anchor=ax>W*0.55?'end':(ax<L+90?'start':'middle');
+    var lx=(anchor==='end'?ax-12:ax);
+    o+='<text x="'+lx.toFixed(1)+'" y="'+(ay+(bal[mi]<(mx+mn)/2?-18:20)).toFixed(1)+'" text-anchor="'+anchor+'" font-size="12" font-weight="700" fill="'+(bal[mi]<0?'#b3402a':'#102A56')+'">Point bas : '+eur(bal[mi])+'</text>';
+    document.getElementById('curve').innerHTML=o;
+    var s=document.getElementById('cal-sum');
+    var msg='Solde le plus bas : '+eur(bal[mi])+' le '+mi+' du mois. Solde en fin de mois : '+eur(bal[N])+'.';
+    if(bal[mi]<0){msg+=' Ton solde passe sous zéro : décale une date de prélèvement si ta banque le permet, ou garde une marge sur ton compte.';s.className='bad';}
+    else s.className='';
+    s.textContent=msg;
+  }
+  document.getElementById('cal').addEventListener('click',function(e){var c=e.target.closest('.cd[data-d]');if(c){selDay=+c.getAttribute('data-d');renderCal();var s=document.querySelector('.cd.sel');if(s)s.focus();}});
+  document.getElementById('cal-prev').onclick=function(){view.m--;if(view.m<0){view.m=11;view.y--;}renderCal();};
+  document.getElementById('cal-next').onclick=function(){view.m++;if(view.m>11){view.m=0;view.y++;}renderCal();};
+  document.getElementById('cal-today').onclick=function(){view={y:today.getFullYear(),m:today.getMonth()};selDay=today.getDate();renderCal();};
+  var rz;window.addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(renderCal,150);});
+  document.getElementById('start').oninput=function(){state.start=parseFloat(this.value)||0;save();renderCal();};
+
   document.getElementById('inv').oninput=function(){state.inv=parseFloat(this.value)||0;save();update();};
-  document.getElementById('reset').onclick=function(){state=JSON.parse(JSON.stringify(EXAMPLE));save();renderAll();};
-  document.getElementById('clear').onclick=function(){state={rev:[{n:'Salaire net',v:0}],log:[{n:'Loyer ou crédit',v:0}],fix:[{n:'',v:0}],var:[{n:'Courses alimentaires',v:0}],inv:0};save();renderAll();};
+  document.getElementById('reset').onclick=function(){state=clone(EXAMPLE);save();renderAll();};
+  document.getElementById('clear').onclick=function(){state={rev:[{n:'Salaire net',v:0,d:null}],log:[{n:'Loyer ou crédit',v:0,d:null}],fix:[{n:'',v:0,d:null}],var:[{n:'Courses alimentaires',v:0,d:null}],inv:0,start:0};save();renderAll();};
   state=load();renderAll();
 })();
 
