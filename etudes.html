@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Études de cas - EikoFinance</title>
-<meta name="description" content="Huit profils d'épargnants : épargne seule, ETF, stock picking, SCPI, matières premières, crypto, actifs corrélés, objets de collection. Comparer les approches pour comprendre risques, rendements et limites.">
+<meta name="description" content="Neuf profils d'épargnants : épargne seule, ETF, stock picking, SCPI, matières premières, crypto, actifs corrélés, objets de collection, multi-devises. Comparer les approches pour comprendre risques, rendements et limites.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -57,10 +57,21 @@ figcaption{font-size:.9rem;color:var(--text-muted);text-align:center;margin-top:
 .retenir li{margin-bottom:.4rem}
 .alerte{background:#fff8e6;border:1px solid var(--gold-accent);border-radius:8px;padding:.9rem 1.1rem;font-size:.95rem;margin:1.5rem 0}
 .tablewrap{overflow-x:auto;margin:1.2rem 0}
-table{border-collapse:collapse;width:100%;min-width:1180px;font-size:.93rem}
-th,td{border:1px solid #d9dee5;padding:.55rem .7rem;text-align:left;vertical-align:top}
+table{border-collapse:collapse;width:100%;min-width:0;font-size:.93rem}
+th,td{border:1px solid #d9dee5;padding:.5rem .4rem;text-align:center;vertical-align:middle}
 th{background:var(--primary-blue);color:#fff;font-weight:600}
 tbody th{background:var(--bg-subtle);color:var(--primary-blue)}
+.score thead th{font-size:.78rem;line-height:1.2}
+.score tbody th{text-align:left;font-size:.88rem;padding-left:.7rem}
+.score tbody th a{color:inherit;text-decoration:none}
+.score tbody th a:hover{text-decoration:underline}
+.pt{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;color:#fff;font-weight:700;font-size:.82rem;line-height:1;vertical-align:middle}
+.pt.ok{background:#2e7d4f}.pt.mid{background:#b9780f}.pt.ko{background:#b3402e}.pt.na{background:#e3e7ee;color:#6b7280}
+.score sup{font-size:.65rem;color:var(--text-muted);margin-left:1px}
+.score .short{display:none}
+.pts-legend{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;font-size:.88rem;color:var(--text-muted);margin:.6rem 0 1rem}
+.pts-legend span{display:inline-flex;align-items:center;gap:.4rem}
+@media(max-width:640px){.score .full{display:none}.score .short{display:inline}.score thead th.vh{writing-mode:vertical-rl;transform:rotate(180deg);height:8.8rem;white-space:nowrap;padding:.4rem .2rem}.pt{width:22px;height:22px;font-size:.72rem}.score tbody th{font-size:.76rem;padding-left:.4rem}.score th,.score td{padding:.4rem .15rem}}
 .q{border:1px solid #d9dee5;border-radius:8px;padding:1rem;margin:.9rem 0}
 .q p{font-weight:700;margin-bottom:.6rem}
 .q button{display:block;width:100%;text-align:left;margin:.35rem 0;padding:.6rem .8rem;border:1px solid #d9dee5;border-radius:6px;background:#fff;font:inherit;color:var(--text-dark);cursor:pointer}
@@ -98,8 +109,8 @@ tbody th{background:var(--bg-subtle);color:var(--primary-blue)}
   <p class="crumbs"><a href="index.html">Accueil</a> › <a href="index.html#optimiser">Optimiser</a> › Études de cas</p>
 
   <section class="scene scene-hero img-etudes">
-    <h1>Études de cas : huit façons de faire travailler son argent</h1>
-    <p>Même point de départ, huit stratégies très différentes. On compare ce qu'elles demandent, ce qu'elles peuvent rapporter, et ce qu'elles peuvent coûter.</p>
+    <h1>Études de cas : neuf façons de faire travailler son argent</h1>
+    <p>Même point de départ, neuf stratégies très différentes. On compare ce qu'elles demandent, ce qu'elles peuvent rapporter, et ce qu'elles peuvent coûter.</p>
     <a href="#intro" class="btn-gold">Découvrir les profils</a>
   </section>
 
@@ -112,13 +123,14 @@ tbody th{background:var(--bg-subtle);color:var(--primary-blue)}
     <a class="card" href="#cas6"><h3>Léa, full crypto</h3><p>Une jeune investisseuse 100 % crypto.</p></a>
     <a class="card" href="#cas7"><h3>Thomas, la fausse diversification</h3><p>Quatre lignes, un seul pari.</p></a>
     <a class="card" href="#cas8"><h3>Inès, la collectionneuse</h3><p>Or, vin et montres : full tangible.</p></a>
+    <a class="card" href="#cas9"><h3>Nora, les quatre devises</h3><p>100 % monnaie : euro, dollar, franc suisse, yuan.</p></a>
   </section>
 
   <article class="chapitre">
 
-    <h2 id="intro">Le même départ, huit chemins</h2>
+    <h2 id="intro">Le même départ, neuf chemins</h2>
     <p class="accroche">« Avec la même somme, que se passe-t-il selon ce que j'en fais ? »</p>
-    <p>Pour comparer à armes égales, imaginons huit personnes qui disposent de la même somme au départ et la placent sur la même durée. Ce qui les distingue, ce n'est pas la somme, mais <strong>ce qu'elles en font</strong>.</p>
+    <p>Pour comparer à armes égales, imaginons neuf personnes qui disposent de la même somme au départ et la placent sur la même durée. Ce qui les distingue, ce n'est pas la somme, mais <strong>ce qu'elles en font</strong>.</p>
 
 
     <div class="alerte"><strong>À savoir :</strong> ces profils sont des illustrations pédagogiques, pas des prévisions ni des promesses. Les personnages sont fictifs. Ce contenu ne constitue pas un conseil en investissement, et tout placement hors livrets comporte un risque de perte en capital.</div>
@@ -169,9 +181,22 @@ tbody th{background:var(--bg-subtle);color:var(--primary-blue)}
     <div class="profil"><p><strong>Son choix :</strong> elle investit uniquement dans l'immobilier via des SCPI, des sociétés qui achètent et louent des bureaux, commerces, entrepôts, cliniques… et lui reversent les loyers.</p></div>
     <p>Claire reçoit des revenus réguliers sans gérer de locataires. Le taux de distribution moyen des SCPI s'est établi à 4,91 % en 2025 selon l'ASPIM (un chiffre brut, avant impôts), nettement au-dessus des livrets.</p>
     <p>En contrepartie, les frais d'entrée sont souvent de 8 à 12 %, la liquidité est limitée (la revente n'est pas garantie), le capital n'est pas garanti, et les loyers sont imposés comme des revenus fonciers, au barème de l'impôt sur le revenu, plus les prélèvements sociaux. Surtout, toute son épargne dépend d'<strong>une seule classe d'actifs</strong> : l'immobilier. Pour approfondir : la page <a href="scpi.html">SCPI</a>.</p>
+    <h3>Deux concentrations cachées : la monnaie et la démographie</h3>
+    <p><strong>Une seule monnaie.</strong> Les parts de Claire et ses loyers sont libellés en euros. Si l'euro perd du pouvoir d'achat (inflation) ou de la valeur face à d'autres monnaies, tout son patrimoine suit. Quelques SCPI possèdent des immeubles hors zone euro, mais la grande majorité reste investie en Europe et libellée en euros.</p>
+    <p><strong>Une seule démographie.</strong> L'immobilier dépend de la population qui l'occupe, et la pyramide des âges européenne change. Au 1er janvier 2025, 22 % des habitants de l'Union européenne avaient 65 ans ou plus, avec un peu plus de trois personnes en âge de travailler pour une personne de 65 ans et plus. Selon les projections d'Eurostat, la population de l'Union atteindrait un pic vers la fin des années 2020 avant de décliner, et la population en âge de travailler diminuerait chaque année jusqu'en 2050. Ce sont des projections, pas des certitudes.</p>
+    <p>Cela doit amener une réflexion sur <strong>l'offre et la demande futures</strong>, pour chaque type d'immeuble :</p>
+    <ul class="liste">
+      <li><strong>Santé et résidences seniors</strong> : la demande est soutenue par le vieillissement, mais elle dépend des opérateurs et des financements publics.</li>
+      <li><strong>Bureaux</strong> : moins de personnes en âge de travailler et plus de télétravail pèsent sur la demande de surfaces.</li>
+      <li><strong>Commerces et logistique</strong> : la consommation et le commerce en ligne déplacent la demande d'un type d'immeuble à l'autre.</li>
+      <li><strong>Logements</strong> : plus de ménages d'une seule personne, donc d'autres besoins, avec une offre qui dépend de la construction et de la rénovation.</li>
+      <li><strong>L'offre</strong> : immeubles neufs, immeubles anciens à rénover, vacance. Un immeuble peut perdre de la valeur si l'offre dépasse la demande.</li>
+      <li><strong>Le territoire</strong> : les régions ne vieillissent pas au même rythme, et une grande métropole n'a pas la même évolution qu'une zone rurale.</li>
+    </ul>
+    <p>Une SCPI n'est donc pas un pari sur « l'immobilier » en général, mais sur l'équilibre futur entre l'offre et la demande d'un type de bien, dans un territoire précis.</p>
     <div class="duo">
       <div class="pour"><h3>Points forts</h3><ul><li>Revenus réguliers</li><li>Aucune gestion locative</li><li>Diversification entre plusieurs biens</li></ul></div>
-      <div class="contre"><h3>Points faibles</h3><ul><li>Frais d'entrée élevés</li><li>Liquidité limitée</li><li>Fiscalité parfois lourde</li><li>Un seul type d'actif</li></ul></div>
+      <div class="contre"><h3>Points faibles</h3><ul><li>Frais d'entrée élevés</li><li>Liquidité limitée</li><li>Fiscalité parfois lourde</li><li>Un seul type d'actif</li><li>Une seule monnaie : l'euro</li><li>Dépendance à la démographie et à l'équilibre offre / demande</li></ul></div>
     </div>
     <div class="ctx"><h3>Dans quel contexte économique ?</h3><p class="vol">Volatilité typique : faible (apparente)* (ordre de grandeur annuel)</p><ul><li><span class="b mid">Mitigé</span><span><strong>Forte inflation</strong> : les loyers sont souvent indexés et peuvent suivre les prix, mais la hausse des taux qui l'accompagne pèse sur la valeur des immeubles.</span></li><li><span class="b ko">Défavorable</span><span><strong>Récession ou crise</strong> : vacance locative et pression sur les loyers, surtout pour les bureaux et les commerces ; certains secteurs (santé, logistique) sont réputés plus résilients.</span></li><li><span class="b ko">Défavorable</span><span><strong>Hausse des taux</strong> : les valeurs immobilières reculent, le crédit coûte plus cher aux SCPI endettées, et les placements sans risque deviennent plus attractifs.</span></li><li><span class="b ok">Favorable</span><span><strong>Baisse des taux</strong> : les valorisations immobilières sont soutenues et le crédit est moins cher.</span></li><li><span class="b mid">Mitigé</span><span><strong>Tension géopolitique</strong> : peu d'exposition directe, sauf pour les pays et secteurs concernés.</span></li></ul><p class="verdict"><strong>En résumé :</strong> viable en période de taux stables ou en baisse ; la correction de 2023 à 2025 a montré sa sensibilité à la hausse des taux. *La valeur des parts est fixée par expertise, donc lissée.</p></div>
     <div class="retenir"><strong>L'idée à retenir</strong><ul><li>Les SCPI sont un placement de long terme (en général 8 à 10 ans minimum), qui convient comme complément de revenus. Un taux affiché élevé ne dit rien des frais, de la fiscalité ni du prix de revente.</li></ul></div>
@@ -209,7 +234,7 @@ tbody th{background:var(--bg-subtle);color:var(--primary-blue)}
     <p>Compter les lignes ne mesure pas la diversification : ce qui compte, c'est <strong>ce que contiennent les fonds et la façon dont les actifs réagissent ensemble</strong>. C'est le piège que l'on voyait déjà chez Sarah avec deux ETF qui se recoupent, mais en plus marqué. Et la corrélation entre actifs risqués tend à augmenter justement dans les crises, au moment où l'on aurait le plus besoin que l'un compense l'autre.</p>
     <div class="duo">
       <div class="pour"><h3>Points forts</h3><ul><li>Fort potentiel quand la technologie progresse</li><li>Peu de thèmes, facile à suivre</li><li>Les ETF restent peu chers et faciles à vendre</li></ul></div>
-      <div class="contre"><h3>Points faibles</h3><ul><li>Un seul pari déguisé en quatre</li><li>Baisses simultanées des quatre lignes</li><li>Recoupement entre fonds et actions en direct</li><li>Forte sensibilité aux taux et à l'appétit pour le risque</li><li>Concentration sur un secteur et sur un pays</li></ul></div>
+      <div class="contre"><h3>Points faibles</h3><ul><li>Un seul pari déguisé en quatre</li><li>Baisses simultanées des quatre lignes</li><li>Recoupement entre fonds et actions en direct</li><li>Forte sensibilité aux taux et à l'appétit pour le risque</li><li>Concentration sur un secteur et sur un pays</li><li>Exposition quasi totale au dollar</li></ul></div>
     </div>
     <div class="ctx"><h3>Dans quel contexte économique ?</h3><p class="vol">Volatilité typique : 20 à 35 %, davantage avec la crypto (ordre de grandeur annuel)</p><ul><li><span class="b ko">Défavorable</span><span><strong>Forte inflation et hausse rapide des taux</strong> : les valorisations élevées des entreprises de croissance sont sensibles aux taux. En 2022, les actions technologiques et les cryptomonnaies ont reculé en même temps.</span></li><li><span class="b ko">Défavorable</span><span><strong>Récession ou crise</strong> : les actifs risqués ont tendance à baisser ensemble, donc les lignes censées se compenser ne se compensent pas.</span></li><li><span class="b ok">Favorable</span><span><strong>Croissance et baisse des taux</strong> : c'est le contexte le plus favorable à ce type de portefeuille, comme en 2020-2021 pour la technologie et la crypto.</span></li><li><span class="b ok">Favorable</span><span><strong>Abondance de liquidités et appétit pour le risque</strong> : les quatre lignes en profitent ensemble, ce qui donne l'impression que la diversification fonctionne.</span></li><li><span class="b mid">Mitigé</span><span><strong>Tension géopolitique</strong> : tout dépend des entreprises et des chaînes d'approvisionnement concernées (composants électroniques, par exemple), et de la réglementation.</span></li></ul><p class="verdict"><strong>En résumé :</strong> très performant quand le moteur technologique tourne, très vulnérable quand il cale, car les lignes baissent ensemble. Le nombre de lignes cache un risque concentré.</p></div>
     <div class="retenir"><strong>L'idée à retenir</strong><ul><li>Avant de se croire diversifié, pose-toi trois questions : que contiennent réellement mes fonds (leurs principales lignes sont publiées) ? Dans quels pays, secteurs et devises suis-je exposé ? Comment ces actifs ont-ils réagi ensemble lors de la dernière crise ? Voir <a href="portefeuille.html">Construire son portefeuille</a> et <a href="portefeuilles-historiques.html">Les portefeuilles historiques</a>.</li></ul></div>
@@ -228,31 +253,51 @@ tbody th{background:var(--bg-subtle);color:var(--primary-blue)}
     <div class="ctx"><h3>Dans quel contexte économique ?</h3><p class="vol">Volatilité typique : difficile à mesurer, lissée par le faible nombre de transactions* (ordre de grandeur annuel)</p><ul><li><span class="b mid">Mitigé</span><span><strong>Forte inflation</strong> : l'or a souvent servi de réserve de valeur ; le vin et les montres suivent moins clairement, et la hausse des taux qui accompagne l'inflation a pesé sur leurs prix après 2022.</span></li><li><span class="b mid">Mitigé</span><span><strong>Récession ou crise</strong> : l'or est souvent recherché ; en revanche, la demande de vin et de montres de luxe recule et une vente rapide impose un rabais.</span></li><li><span class="b ko">Défavorable</span><span><strong>Hausse des taux et dollar fort</strong> : ces actifs ne rapportent rien, et deviennent moins attractifs quand les placements sans risque rapportent davantage. Vin et montres ont corrigé après 2022.</span></li><li><span class="b ok">Favorable</span><span><strong>Baisse des taux et abondance de liquidités</strong> : c'est le contexte le plus favorable, comme pendant la vague de 2020-2022 qui a porté le vin et les montres.</span></li><li><span class="b mid">Mitigé</span><span><strong>Tension géopolitique</strong> : l'or est souvent recherché ; le vin et les montres dépendent d'acheteurs internationaux et peuvent être touchés par des droits de douane (par exemple américains en 2025).</span></li></ul><p class="verdict"><strong>En résumé :</strong> une collection peut procurer du plaisir et, pour l'or, une réserve de valeur ; comme unique patrimoine, elle manque de liquidité et de revenus, et reste liée au cycle des liquidités. *Peu de transactions, donc des prix connus par expertise ou par ventes rares.</p></div>
     <div class="retenir"><strong>L'idée à retenir</strong><ul><li>Diversifier, ce n'est pas seulement détenir des actifs différents : c'est aussi pouvoir vendre quand on en a besoin, sans trop de frais. La liquidité, les frais de sortie et l'absence de revenu comptent autant que le nombre d'actifs.</li></ul></div>
 
+    <!-- CAS 9 -->
+    <h2 id="cas9">Cas 9 : Nora, 100 % monnaie en quatre devises</h2>
+    <div class="profil"><p><strong>Son choix :</strong> elle ne détient ni actions, ni immobilier, ni objets : tout son patrimoine est en monnaie, réparti en quatre devises : des euros, des dollars américains, des francs suisses et des yuans, sur des comptes et des dépôts.</p></div>
+    <p>Nora a compris un risque que beaucoup oublient : <strong>une monnaie n'est pas immuable</strong>. Elle peut perdre du pouvoir d'achat par l'inflation, ou de la valeur face aux autres monnaies. En répartissant son argent sur quatre devises, elle ne dépend plus d'une seule. Le capital reste disponible, et il n'est pas exposé aux krachs boursiers.</p>
+    <p>Mais cette stratégie a des limites. D'abord, <strong>une monnaie qui n'est pas investie ne fait pas croître le patrimoine</strong> : elle rapporte seulement les intérêts de sa devise, et l'inflation grignote la valeur de chaque monnaie. Ensuite, les taux d'intérêt diffèrent d'une devise à l'autre, et une devise très rémunérée peut aussi perdre de la valeur face aux autres : le résultat dépend à la fois des taux et des variations de change. Pour quelqu'un qui dépense en euros, chaque fois que l'euro se renforce, la valeur de ses autres devises baisse.</p>
+    <p>Reste le cadre pratique : conversions avec des écarts de change, garantie des dépôts limitée (dans l'Union européenne, 100 000 € par déposant et par banque ; les règles sont différentes ailleurs), comptes à l'étranger à déclarer à l'administration fiscale, et, pour le yuan, une monnaie dont les mouvements de capitaux sont encadrés par l'État chinois.</p>
+    <div class="duo">
+      <div class="pour"><h3>Points forts</h3><ul><li>Aucune exposition aux marchés actions</li><li>Plusieurs monnaies et plusieurs établissements</li><li>Protection partielle contre l'affaiblissement d'une seule monnaie</li><li>Capital disponible rapidement</li></ul></div>
+      <div class="contre"><h3>Points faibles</h3><ul><li>Pas de croissance du capital au-delà des intérêts</li><li>L'inflation érode toutes les monnaies</li><li>Risque de change pour qui dépense en euros</li><li>Frais et écarts de conversion</li><li>Garantie des dépôts limitée, règles variables selon le pays</li><li>Restrictions possibles sur le yuan</li></ul></div>
+    </div>
+    <div class="ctx"><h3>Dans quel contexte économique ?</h3><p class="vol">Volatilité typique : environ 5 à 10 % pour les taux de change entre grandes devises (ordre de grandeur annuel)</p><ul><li><span class="b mid">Mitigé</span><span><strong>Forte inflation</strong> : si l'inflation est mondiale, toutes les monnaies perdent du pouvoir d'achat ; si elle est propre à une zone, détenir d'autres devises peut aider.</span></li><li><span class="b ok">Favorable</span><span><strong>Récession ou crise</strong> : le franc suisse et le dollar sont souvent recherchés en période de stress, le capital reste disponible. Le yuan est moins protecteur.</span></li><li><span class="b ok">Favorable</span><span><strong>Hausse des taux</strong> : les dépôts en devises rapportent davantage. Les taux varient beaucoup d'une devise à l'autre.</span></li><li><span class="b mid">Mitigé</span><span><strong>Baisse des taux</strong> : le rendement des dépôts diminue, alors que la valeur des monnaies peut aussi bouger.</span></li><li><span class="b mid">Mitigé</span><span><strong>Tension géopolitique</strong> : le franc suisse et le dollar sont souvent recherchés, mais le yuan peut être touché par des restrictions (contrôle des capitaux, sanctions).</span></li></ul><p class="verdict"><strong>En résumé :</strong> très faible risque de marché, mais aucun moteur de croissance : plus un coussin de sécurité qu'une stratégie de long terme. Le résultat dépend des taux, des taux de change et de l'inflation.</p></div>
+    <div class="retenir"><strong>L'idée à retenir</strong><ul><li>Diversifier ses monnaies protège d'un risque, celui d'une seule monnaie, mais ne fait pas croître le patrimoine. Le <strong>risque monétaire</strong> concerne aussi les autres profils : celui qui détient tout en euros (Marc, Claire) ou presque tout en dollars (Thomas) est lui aussi concentré sur une monnaie.</li></ul></div>
+
     <h2>Le contexte change tout : l'exemple de 2022</h2>
     <p>En 2022, l'inflation est repartie fortement et les banques centrales ont relevé leurs taux très rapidement. Cette année-là, les actions mondiales, les obligations et les cryptomonnaies ont toutes reculé en même temps. Les livrets sont restés sous le niveau de l'inflation, donc l'épargne a perdu du pouvoir d'achat. L'énergie et certaines matières premières, elles, ont progressé, et l'or est resté à peu près stable. Les vins fins et les montres de luxe d'occasion, eux, ont commencé une longue correction après leur pic de 2022.</p>
-    <p>Aucune stratégie n'a été gagnante sur tous les plans. C'est le message de ces huit profils : chacun est favorisé par certains contextes et pénalisé par d'autres, et c'est pourquoi beaucoup d'épargnants en combinent plusieurs. Attention : ces lectures sont des <strong>tendances</strong>, pas des lois. Les marchés anticipent souvent les événements, et un même contexte peut avoir des effets différents selon son ampleur et sa durée. Pour approfondir : <a href="macro.html">Macroéconomie</a> et <a href="geopolitique.html">Géopolitique</a>.</p>
+    <p>Aucune stratégie n'a été gagnante sur tous les plans. C'est le message de ces neuf profils : chacun est favorisé par certains contextes et pénalisé par d'autres, et c'est pourquoi beaucoup d'épargnants en combinent plusieurs. Attention : ces lectures sont des <strong>tendances</strong>, pas des lois. Les marchés anticipent souvent les événements, et un même contexte peut avoir des effets différents selon son ampleur et sa durée. Pour approfondir : <a href="macro.html">Macroéconomie</a> et <a href="geopolitique.html">Géopolitique</a>.</p>
 
-    <h2>Les huit profils côte à côte</h2>
+    <h2>Les neuf profils d'un coup d'œil</h2>
+    <p>Chaque pastille se lit du point de vue de l'épargnant : <strong>vert, c'est un avantage sur ce critère</strong>, rouge un inconvénient. Les chiffres et les nuances sont détaillés dans chaque cas ci-dessus.</p>
+    <div class="pts-legend"><span><span class="pt ok">✓</span> Favorable</span><span><span class="pt mid">≈</span> Mitigé</span><span><span class="pt ko">✕</span> Défavorable</span><span><span class="pt na">–</span> Sans objet</span></div>
     <div class="tablewrap">
-      <table>
-        <thead><tr><th></th><th>Marc : épargne</th><th>Sarah : ETF</th><th>Julien : stock picking</th><th>Claire : SCPI</th><th>Hugo : matières premières</th><th>Léa : crypto</th><th>Thomas : actifs corrélés</th><th>Inès : collection</th></tr></thead>
+      <table class="score">
+        <thead><tr><th scope="col">Profil</th><th scope="col" class="vh">Sécurité du capital</th><th scope="col" class="vh">Stabilité des prix</th><th scope="col" class="vh">Disponibilité</th><th scope="col" class="vh">Revenus réguliers</th><th scope="col" class="vh"><span class="full">Diversification des actifs</span><span class="short">Actifs variés</span></th><th scope="col" class="vh"><span class="full">Diversification des monnaies</span><span class="short">Monnaies variées</span></th><th scope="col" class="vh">Simplicité</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Risque de perte</th><td>Très faible</td><td>Moyen à élevé</td><td>Élevé</td><td>Moyen</td><td>Élevé</td><td>Très élevé</td><td>Élevé</td><td>Moyen à élevé</td></tr>
-          <tr><th scope="row">Volatilité annualisée (ordre de grandeur)</th><td>≈ 0 %</td><td>≈ 15 %</td><td>20 à 30 %</td><td>Faible (apparente)</td><td>15 à 35 %</td><td>60 à 80 % et plus</td><td>20 à 35 %, davantage avec la crypto</td><td>Difficile à mesurer (apparente faible)</td></tr>
-          <tr><th scope="row">Disponibilité</th><td>Immédiate</td><td>Rapide</td><td>Rapide</td><td>Limitée</td><td>Rapide (ETC, ETF)</td><td>Rapide (selon la plateforme)</td><td>Rapide</td><td>Variable : rapide pour l'or, lente pour vin et montres</td></tr>
-          <tr><th scope="row">Revenus réguliers</th><td>Intérêts</td><td>Selon l'ETF</td><td>Dividendes</td><td>Loyers</td><td>Aucun</td><td>Aucun</td><td>Faibles</td><td>Aucun</td></tr>
-          <tr><th scope="row">Diversification</th><td>Sans objet</td><td>Large</td><td>Faible</td><td>Moyenne</td><td>Faible à moyenne</td><td>Très faible</td><td>Apparente, en réalité faible</td><td>Apparente : trois actifs, un même cycle</td></tr>
-          <tr><th scope="row">Temps demandé</th><td>Aucun</td><td>Très peu</td><td>Beaucoup</td><td>Peu</td><td>Moyen</td><td>Moyen</td><td>Moyen</td><td>Moyen (stockage, authentification)</td></tr>
-          <tr><th scope="row">Fiscalité</th><td>Livrets exonérés</td><td>Selon l'enveloppe</td><td>Selon l'enveloppe</td><td>Revenus fonciers</td><td>Variable selon le support</td><td>Flat tax à la vente</td><td>Selon l'enveloppe, flat tax pour la crypto</td><td>Propre à chaque objet</td></tr>
+          <tr><th scope="row"><a href="#cas1">Marc · épargne</a></th><td><span class="pt ok" role="img" aria-label="Favorable" title="Favorable">✓</span></td><td><span class="pt ok" role="img" aria-label="Favorable" title="Favorable">✓</span></td><td><span class="pt ok" role="img" aria-label="Favorable" title="Favorable">✓</span></td><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td><td><span class="pt na" role="img" aria-label="Sans objet" title="Sans objet">–</span></td><td><span class="pt ko" role="img" aria-label="Défavorable" title="Défavorable">✕</span></td><td><span class="pt ok" role="img" aria-label="Favorable" title="Favorable">✓</span></td></tr>
+          <tr><th scope="row"><a href="#cas2">Sarah · ETF</a></th><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td><td><span class="pt ok" role="img" aria-label="Favorable" title="Favorable">✓</span></td><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td><td><span class="pt ok" role="img" aria-label="Favorable" title="Favorable">✓</span></td><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td><td><span class="pt ok" role="img" aria-label="Favorable" title="Favorable">✓</span></td></tr>
+          <tr><th scope="row"><a href="#cas3">Julien · stock picking</a></th><td><span class="pt ko" role="img" aria-label="Défavorable" title="Défavorable">✕</span></td><td><span class="pt ko" role="img" aria-label="Défavorable" title="Défavorable">✕</span></td><td><span class="pt ok" role="img" aria-label="Favorable" title="Favorable">✓</span></td><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td><td><span class="pt ko" role="img" aria-label="Défavorable" title="Défavorable">✕</span></td><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td><td><span class="pt ko" role="img" aria-label="Défavorable" title="Défavorable">✕</span></td></tr>
+          <tr><th scope="row"><a href="#cas4">Claire · SCPI</a></th><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td><td><span class="pt ok" role="img" aria-label="Favorable" title="Favorable">✓</span><sup>*</sup></td><td><span class="pt ko" role="img" aria-label="Défavorable" title="Défavorable">✕</span></td><td><span class="pt ok" role="img" aria-label="Favorable" title="Favorable">✓</span></td><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td><td><span class="pt ko" role="img" aria-label="Défavorable" title="Défavorable">✕</span></td><td><span class="pt ok" role="img" aria-label="Favorable" title="Favorable">✓</span></td></tr>
+          <tr><th scope="row"><a href="#cas5">Hugo · matières premières</a></th><td><span class="pt ko" role="img" aria-label="Défavorable" title="Défavorable">✕</span></td><td><span class="pt ko" role="img" aria-label="Défavorable" title="Défavorable">✕</span></td><td><span class="pt ok" role="img" aria-label="Favorable" title="Favorable">✓</span></td><td><span class="pt ko" role="img" aria-label="Défavorable" title="Défavorable">✕</span></td><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td></tr>
+          <tr><th scope="row"><a href="#cas6">Léa · crypto</a></th><td><span class="pt ko" role="img" aria-label="Défavorable" title="Défavorable">✕</span></td><td><span class="pt ko" role="img" aria-label="Défavorable" title="Défavorable">✕</span></td><td><span class="pt ok" role="img" aria-label="Favorable" title="Favorable">✓</span></td><td><span class="pt ko" role="img" aria-label="Défavorable" title="Défavorable">✕</span></td><td><span class="pt ko" role="img" aria-label="Défavorable" title="Défavorable">✕</span></td><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td></tr>
+          <tr><th scope="row"><a href="#cas7">Thomas · actifs corrélés</a></th><td><span class="pt ko" role="img" aria-label="Défavorable" title="Défavorable">✕</span></td><td><span class="pt ko" role="img" aria-label="Défavorable" title="Défavorable">✕</span></td><td><span class="pt ok" role="img" aria-label="Favorable" title="Favorable">✓</span></td><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td><td><span class="pt ko" role="img" aria-label="Défavorable" title="Défavorable">✕</span></td><td><span class="pt ko" role="img" aria-label="Défavorable" title="Défavorable">✕</span></td><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td></tr>
+          <tr><th scope="row"><a href="#cas8">Inès · collection</a></th><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td><td><span class="pt ok" role="img" aria-label="Favorable" title="Favorable">✓</span><sup>*</sup></td><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td><td><span class="pt ko" role="img" aria-label="Défavorable" title="Défavorable">✕</span></td><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td></tr>
+          <tr><th scope="row"><a href="#cas9">Nora · quatre devises</a></th><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td><td><span class="pt ok" role="img" aria-label="Favorable" title="Favorable">✓</span></td><td><span class="pt ok" role="img" aria-label="Favorable" title="Favorable">✓</span></td><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td><td><span class="pt ok" role="img" aria-label="Favorable" title="Favorable">✓</span></td><td><span class="pt mid" role="img" aria-label="Mitigé" title="Mitigé">≈</span></td></tr>
         </tbody>
       </table>
     </div>
+    <p class="vol" style="font-size:.88rem;color:var(--text-muted)">* Stabilité apparente : la valeur des parts de SCPI et des objets de collection est fixée par expertise ou par des ventes rares, donc lissée (voir les cas 4 et 8). La fiscalité dépend de l'enveloppe et du pays : voir la page <a href="fiscalite.html">Fiscalité</a>.</p>
 
-    <h2>Ce que ces huit histoires nous apprennent</h2>
+    <h2>Ce que ces neuf histoires nous apprennent</h2>
     <ul class="liste">
       <li><strong>Il n'y a pas de bonne réponse unique.</strong> Chaque stratégie répond à un besoin, un horizon et une tolérance au risque différents.</li>
       <li><strong>Mettre tous ses œufs dans le même panier est risqué</strong>, que ce soit une seule action, un seul secteur ou… un seul livret.</li>
       <li><strong>Compter les lignes ne mesure pas la diversification</strong> : ce qui compte, c'est la façon dont les actifs réagissent ensemble, surtout en cas de crise.</li>
+      <li><strong>Une seule monnaie est aussi une concentration</strong> : tout en euros (Marc, Claire) ou presque tout en dollars (Thomas) expose à l'inflation et aux variations de change d'une seule devise. Diversifier les monnaies protège de ce risque, mais ne fait pas croître le patrimoine (Nora).</li>
+      <li><strong>La démographie pèse sur l'offre et la demande</strong> : pour un actif réel comme l'immobilier, il faut se demander qui occupera les biens dans vingt ans, et en quel nombre.</li>
       <li><strong>Pouvoir vendre compte autant que posséder</strong> : liquidité, frais de sortie et absence de revenu limitent même les actifs concrets.</li>
       <li><strong>Aucune stratégie n'est favorable dans tous les contextes économiques</strong> : inflation, récession, hausse ou baisse des taux avantagent et pénalisent des profils différents.</li>
       <li><strong>Beaucoup d'épargnants combinent</strong> : livrets pour la sécurité, ETF pour la croissance, et éventuellement un peu de stock picking, de SCPI ou d'objets de collection en complément.</li>
@@ -317,6 +362,21 @@ tbody th{background:var(--bg-subtle);color:var(--primary-blue)}
       <button>Ses actifs sont garantis par l'État</button>
       <button>Ses actifs versent des dividendes élevés</button>
       <button>Vendre vite est difficile pour le vin et les montres, et aucun de ses actifs ne rapporte de revenu</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+
+    <div class="q" data-good="1">
+      <p>9. Pourquoi Nora n'est-elle pas à l'abri avec quatre devises ?</p>
+      <button>Parce que ses devises sont garanties par la banque centrale européenne</button>
+      <button>Parce que l'inflation érode chaque monnaie et que le résultat dépend des taux et des variations de change</button>
+      <button>Parce que le change n'a aucun effet sur un patrimoine</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="2">
+      <p>10. Au-delà de l'immobilier, quelle double concentration caractérise Claire ?</p>
+      <button>Une exposition à plusieurs monnaies et à plusieurs pays</button>
+      <button>Aucune : la diversification est complète</button>
+      <button>Une seule monnaie, l'euro, et une forte dépendance à la démographie et à l'offre et la demande futures</button>
       <div class="fb" aria-live="polite"></div>
     </div>
 
