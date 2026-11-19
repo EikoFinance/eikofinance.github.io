@@ -117,7 +117,7 @@
           { title: 'Préparer sa retraite', file: 'retraite.html',
             desc: "Système français, estimation de la pension, écart à combler, PER et autres outils : un projet chiffré." },
           { title: 'Études de cas', file: 'etudes.html',
-            desc: "Huit profils d'épargnants comparés : livrets, ETF, stock picking, SCPI, matières premières, crypto, actifs corrélés et objets de collection." }
+            desc: "Neuf profils d'épargnants comparés : livrets, ETF, stock picking, SCPI, matières premières, crypto, actifs corrélés, objets de collection et multi-devises." }
         ]
       }
     ],
