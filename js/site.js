@@ -75,7 +75,9 @@
           { title: 'Le trading', file: 'trading.html',
             desc: 'Day trading, CFD, levier : ce que disent les chiffres et comment limiter les risques.' },
           { title: 'Analyse graphique', file: 'analyse-graphique.html',
-            desc: 'Bougies japonaises, théorie de Dow, figures, supports et résistances, gaps, moyennes mobiles, RSI, MACD.' }
+            desc: 'Bougies japonaises, théorie de Dow, figures, supports et résistances, gaps, moyennes mobiles, RSI, MACD.' },
+          { title: 'Didacticiel Trading View', file: 'didacticiel-tradingview.html',
+            desc: 'Pas à pas : afficher un actif, les bougies, les moyennes mobiles, le RSI, le volume et le MACD sur TradingView.' }
         ]
       },
       {
