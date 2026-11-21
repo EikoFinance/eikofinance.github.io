@@ -77,7 +77,9 @@
           { title: 'Analyse graphique', file: 'analyse-graphique.html',
             desc: 'Bougies japonaises, théorie de Dow, figures, supports et résistances, gaps, moyennes mobiles, RSI, MACD.' },
           { title: 'Didacticiel Trading View', file: 'didacticiel-tradingview.html',
-            desc: 'Pas à pas : afficher un actif, les bougies, les moyennes mobiles, le RSI, le volume et le MACD sur TradingView.' }
+            desc: 'Partie 1, pas à pas : afficher un actif, les bougies, les moyennes mobiles, le RSI, le volume et le MACD sur TradingView.' },
+          { title: 'Didacticiel Trading View : aller plus loin', file: 'didacticiel-tradingview-avance.html',
+            desc: 'Partie 2 : liste de surveillance, lignes de support et de tendance, alertes de prix, Fibonacci, screener et trading papier.' }
         ]
       },
       {
@@ -128,7 +130,7 @@
     ]
   };
   window.EIKO_SITE = SITE;
-
+ 
   /* ---------- Outils ---------- */
   function h(tag, props, kids) {
     var e = document.createElement(tag);
@@ -142,19 +144,19 @@
   function link(file, title, isActive) {
     return h('a', isActive ? { href: file, text: title, class: 'active' } : { href: file, text: title });
   }
-
+ 
   var page = location.pathname.split('/').pop() || 'index.html';
   var isHome = page === 'index.html';
   var current = SITE.branches.filter(function (b) {
     return b.items.some(function (i) { return i.file === page; });
   })[0];
-
+ 
   /* ---------- Menu ---------- */
   function buildNav() {
     var nav = document.querySelector('header nav');
     if (!nav) return;
     var ul = h('ul');
-
+ 
     /* Sur l'accueil, l'arbre remplace le menu : seul le contact reste en haut */
     if (!isHome) {
       SITE.branches.forEach(function (b) {
@@ -181,7 +183,7 @@
       ul.appendChild(h('li', {}, [link(x.file, x.title, x.file === page)]));
     });
     nav.replaceChildren(ul);
-
+ 
     /* Le logo ramène à l'accueil */
     var logo = document.querySelector('header .logo-container');
     if (logo && !isHome) {
@@ -192,23 +194,23 @@
       logo.addEventListener('keydown', function (e) { if (e.key === 'Enter') location.href = 'index.html'; });
     }
   }
-
+ 
   /* ---------- Accueil : cinq boutons, chacun donne accès à ses leçons ---------- */
   function buildTree() {
     var box = document.querySelector('[data-eiko="tree"]');
     if (!box) return;
-
+ 
     var roots = h('div', { class: 'roots', role: 'group', 'aria-label': 'Choisissez un chemin' });
     var branches = h('div', { class: 'branches' });
     var views = {};
-
+ 
     SITE.branches.forEach(function (b) {
       var btn = h('button', {
         type: 'button', class: 'root', 'data-id': b.id,
         'aria-expanded': 'false', 'aria-controls': 'branch-' + b.id
       }, [h('span', { class: 'root-title', text: b.title }), h('small', { text: b.tagline })]);
       roots.appendChild(btn);
-
+ 
       var list = h('ol', { class: 'leaves' });
       list.style.setProperty('--n', b.items.length);
       b.items.forEach(function (it, j) {
@@ -228,10 +230,10 @@
       branches.appendChild(br);
       views[b.id] = { btn: btn, br: br };
     });
-
+ 
     box.appendChild(roots);
     box.appendChild(branches);
-
+ 
     var openId = null;
     function close() {
       if (!openId) return;
@@ -247,14 +249,14 @@
       box.classList.add('has-open');
       openId = id;
     }
-
+ 
     SITE.branches.forEach(function (b) {
       views[b.id].btn.addEventListener('click', function () {
         if (openId === b.id) { close(); history.replaceState(null, '', location.pathname); }
         else { open(b.id); history.replaceState(null, '', '#' + b.id); }
       });
     });
-
+ 
     /* Un lien du type index.html#investir ouvre directement le bon chemin */
     function fromHash() {
       var id = location.hash.replace('#', '');
@@ -267,7 +269,7 @@
     window.addEventListener('hashchange', fromHash);
     fromHash();
   }
-
+ 
   function init() {
     buildNav();
     buildTree();
@@ -276,3 +278,4 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 })();
+ 
