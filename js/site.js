@@ -12,21 +12,21 @@
         title: 'Comprendre',
         tagline: "L'argent, l'économie et le monde",
         items: [
-          { title: "L'histoire de la monnaie", file: 'monnaie.html',
+          { title: "L'histoire de la monnaie", file: 'monnaie.html', niveau: 'Débutant',
             desc: "Du troc aux monnaies d'aujourd'hui : étalon-or, Bretton Woods, économie de la dette, QE et QT." },
-          { title: 'Liquidité et marchés', file: 'liquidite-marches.html',
+          { title: 'Liquidité et marchés', file: 'liquidite-marches.html', niveau: 'Avancé',
             desc: "M1, M2, M3, quête de rendement, appels de marge : pourquoi même les actifs « opposés » peuvent baisser ensemble." },
-          { title: 'La vitesse de circulation de la monnaie', file: 'vitesse-monnaie.html',
+          { title: 'La vitesse de circulation de la monnaie', file: 'vitesse-monnaie.html', niveau: 'Avancé',
             desc: "L'équation des échanges, les théories de Fisher, Keynes et Friedman, ce que les données ont vérifié, et le test de 2020-2022." },
-          { title: "L'économie et les cycles", file: 'economie-cycles.html',
+          { title: "L'économie et les cycles", file: 'economie-cycles.html', niveau: 'Débutant',
             desc: 'Un parcours en quatre étapes de 5 minutes, du quotidien aux grands mécanismes.' },
-          { title: 'Géopolitique & rapports de force', file: 'geopolitique.html',
+          { title: 'Géopolitique & rapports de force', file: 'geopolitique.html', niveau: 'Intermédiaire',
             desc: 'Commerce, énergie, monnaies, technologie : comment les tensions entre pays touchent les prix.' },
-          { title: 'La macroéconomie', file: 'macro.html',
+          { title: 'La macroéconomie', file: 'macro.html', niveau: 'Intermédiaire',
             desc: "Indicateurs, taux, dette : le tableau de bord d'un pays et les leviers des banques centrales." },
-          { title: 'Les courants de pensée économique', file: 'courants.html',
+          { title: 'Les courants de pensée économique', file: 'courants.html', niveau: 'Intermédiaire',
             desc: 'Capitalisme, socialisme, Smith, Marx, Keynes, Friedman, Hayek, Schumpeter : pourquoi les experts divergent.' },
-          { title: "Les biais de l'investisseur", file: 'biais-investisseur.html',
+          { title: "Les biais de l'investisseur", file: 'biais-investisseur.html', niveau: 'Débutant',
             desc: "Aversion à la perte, excès de confiance, effet de troupeau : pourquoi on se trompe, et comment s'en protéger." }
         ]
       },
@@ -35,35 +35,40 @@
         title: 'Investir',
         tagline: 'Actions, immobilier, crypto et autres actifs',
         items: [
-          { title: "L'histoire des marchés", file: 'histoire-marches.html',
+          { title: "L'histoire des marchés", file: 'histoire-marches.html', niveau: 'Débutant',
             desc: "De l'OTC médiéval aux marchés électroniques : mille ans de Bourse, de bulles et de krachs." },
-          { title: 'Actions', file: 'actions.html',
+          { title: 'Actions', file: 'actions.html', niveau: 'Débutant',
             desc: "Posséder un morceau d'entreprise." },
-          { title: 'Obligations', file: 'obligations.html',
+          { title: 'Obligations', file: 'obligations.html', niveau: 'Débutant',
             desc: 'Prêter de l\'argent, contre intérêts.' },
-          { title: 'ETF', file: 'etf.html',
+          { title: 'ETF', file: 'etf.html', niveau: 'Débutant',
             desc: 'Un panier diversifié en un seul achat.' },
-          { title: 'Or & argent', file: 'or-argent.html',
+          { title: 'Or & argent', file: 'or-argent.html', niveau: 'Débutant',
             desc: 'Des valeurs refuges, sans revenu.' },
-          { title: 'Matières premières', file: 'matieres-premieres.html',
+          { title: 'Matières premières', file: 'matieres-premieres.html', niveau: 'Intermédiaire',
             desc: 'Hard et soft commodities : pétrole, métaux, céréales, café, et comment y investir.' },
-          { title: 'Valeurs cycliques', file: 'valeurs-cycliques.html',
+          { title: 'Valeurs cycliques', file: 'valeurs-cycliques.html', niveau: 'Intermédiaire',
             desc: 'Ces entreprises qui suivent la conjoncture.' },
-          { title: 'Cryptomonnaies', file: 'crypto.html',
+          { title: 'Cryptomonnaies', file: 'crypto.html', niveau: 'Intermédiaire', sources: [
+              { title: 'AMF : site officiel de l\'Autorité des marchés financiers', url: 'https://www.amf-france.org' },
+              { title: 'impots.gouv.fr : textes et barèmes officiels', url: 'https://www.impots.gouv.fr' }
+            ],
             desc: 'Bitcoin, Ethereum, stablecoins : fonctionnement, risques et fiscalité.' },
-          { title: "L'immobilier", file: 'immobilier.html',
+          { title: "L'immobilier", file: 'immobilier.html', niveau: 'Intermédiaire',
             desc: "Résidence principale, logement locatif, crédit, rentabilité nette et risques : raisonner en investisseur." },
-          { title: 'SCPI', file: 'scpi.html',
+          { title: 'SCPI', file: 'scpi.html', niveau: 'Intermédiaire', sources: [
+              { title: 'AMF : site officiel de l\'Autorité des marchés financiers', url: 'https://www.amf-france.org' }
+            ],
             desc: "L'immobilier en pierre-papier : frais, avantages et limites." },
-          { title: 'Vin', file: 'vin.html',
+          { title: 'Vin', file: 'vin.html', niveau: 'Intermédiaire',
             desc: 'Du primeur à la cave.' },
-          { title: 'Montres', file: 'montres.html',
+          { title: 'Montres', file: 'montres.html', niveau: 'Intermédiaire',
             desc: 'Marché secondaire et authenticité.' },
-          { title: 'Art', file: 'art.html',
+          { title: 'Art', file: 'art.html', niveau: 'Intermédiaire',
             desc: 'Un marché opaque.' },
-          { title: 'Autos de collection', file: 'autos-collection.html',
+          { title: 'Autos de collection', file: 'autos-collection.html', niveau: 'Intermédiaire',
             desc: 'Passion et coûts.' },
-          { title: 'Private equity', file: 'private-equity.html',
+          { title: 'Private equity', file: 'private-equity.html', niveau: 'Avancé',
             desc: 'Financer des entreprises non cotées.' }
         ]
       },
@@ -72,13 +77,20 @@
         title: 'Trading',
         tagline: 'Lire les marchés, maîtriser le risque',
         items: [
-          { title: 'Le trading', file: 'trading.html',
+          { title: 'Le trading', file: 'trading.html', niveau: 'Débutant', sources: [
+              { title: 'AMF : site officiel de l\'Autorité des marchés financiers', url: 'https://www.amf-france.org' }
+            ],
             desc: 'Day trading, CFD, levier : ce que disent les chiffres et comment limiter les risques.' },
-          { title: 'Analyse graphique', file: 'analyse-graphique.html',
+          { title: 'Analyse graphique', file: 'analyse-graphique.html', niveau: 'Intermédiaire',
             desc: 'Bougies japonaises, théorie de Dow, figures, supports et résistances, gaps, moyennes mobiles, RSI, MACD.' },
-          { title: 'Didacticiel Trading View', file: 'didacticiel-tradingview.html',
+          { title: 'Didacticiel Trading View', file: 'didacticiel-tradingview.html', niveau: 'Débutant', maj: 'novembre 2026', sources: [
+              { title: 'TradingView : offres et limites à jour', url: 'https://www.tradingview.com/pricing/' }
+            ],
             desc: 'Partie 1, pas à pas : afficher un actif, les bougies, les moyennes mobiles, le RSI, le volume et le MACD sur TradingView.' },
-          { title: 'Didacticiel Trading View : aller plus loin', file: 'didacticiel-tradingview-avance.html',
+          { title: 'Didacticiel Trading View : aller plus loin', file: 'didacticiel-tradingview-avance.html', niveau: 'Intermédiaire', maj: 'novembre 2026', sources: [
+              { title: 'TradingView : offres et limites à jour', url: 'https://www.tradingview.com/pricing/' },
+              { title: 'AMF : site officiel de l\'Autorité des marchés financiers', url: 'https://www.amf-france.org' }
+            ],
             desc: 'Partie 2 : liste de surveillance, lignes de support et de tendance, alertes de prix, Fibonacci, screener et trading papier.' }
         ]
       },
@@ -87,23 +99,23 @@
         title: 'Planifier',
         tagline: 'Construire, mesurer et décider',
         items: [
-          { title: 'Budget et épargne de précaution', file: 'budget-epargne.html',
+          { title: 'Budget et épargne de précaution', file: 'budget-epargne.html', niveau: 'Débutant',
             desc: "Établir son budget, rembourser les dettes chères, constituer une réserve avant d'investir." },
-          { title: 'Suivi de budget', file: 'suivi-budget.html',
+          { title: 'Suivi de budget', file: 'suivi-budget.html', niveau: 'Débutant',
             desc: "Revenus, logement, charges fixes et variables, reste à vivre : un camembert pour voir où part votre argent." },
-          { title: 'La pyramide financière', file: 'pyramide-finance.html',
+          { title: 'La pyramide financière', file: 'pyramide-finance.html', niveau: 'Débutant',
             desc: "La pyramide de Maslow appliquée à l'argent : quatre étages pour savoir par où commencer, et un test pour situer votre prochain pas." },
-          { title: 'Les frais', file: 'frais.html',
+          { title: 'Les frais', file: 'frais.html', niveau: 'Débutant',
             desc: "Frais d'entrée, de gestion, de transaction, cachés : les repérer, les comparer et en mesurer l'effet." },
-          { title: 'Construire son portefeuille', file: 'portefeuille.html',
+          { title: 'Construire son portefeuille', file: 'portefeuille.html', niveau: 'Intermédiaire',
             desc: "Diversification, allocation, rééquilibrage, horizon, passif ou actif, en une fois ou progressivement : une méthode." },
-          { title: 'Les portefeuilles historiques', file: 'portefeuilles-historiques.html',
+          { title: 'Les portefeuilles historiques', file: 'portefeuilles-historiques.html', niveau: 'Intermédiaire',
             desc: "60/40, Permanent Portfolio de Browne, All Weather de Dalio, Golden Butterfly, trois fonds : composition, logique et limites." },
-          { title: "L'antifragilité d'un portefeuille", file: 'antifragilite.html',
+          { title: "L'antifragilité d'un portefeuille", file: 'antifragilite.html', niveau: 'Avancé',
             desc: "Fragile, robuste ou antifragile ? Comment un portefeuille réagit aux chocs, et pourquoi garder des munitions compte autant que diversifier." },
-          { title: 'Simulation Monte Carlo', file: 'monte-carlo.html',
+          { title: 'Simulation Monte Carlo', file: 'monte-carlo.html', niveau: 'Avancé',
             desc: "Le simulateur en ligne et l'application Android qui testent des milliers d'évolutions possibles d'un portefeuille." },
-          { title: 'Intérêts composés', file: 'interets-composes.html',
+          { title: 'Intérêts composés', file: 'interets-composes.html', niveau: 'Débutant',
             desc: 'Voir comment le temps et la régularité font grandir un capital.' }
         ]
       },
@@ -112,15 +124,27 @@
         title: 'Optimiser',
         tagline: 'Fiscalité, enveloppes et transmission',
         items: [
-          { title: 'Placements et enveloppes fiscales', file: 'fiscalite.html',
+          { title: 'Placements et enveloppes fiscales', file: 'fiscalite.html', niveau: 'Intermédiaire', sources: [
+              { title: 'impots.gouv.fr : textes et barèmes officiels', url: 'https://www.impots.gouv.fr' },
+              { title: 'service-public.gouv.fr : fiches officielles', url: 'https://www.service-public.gouv.fr' }
+            ],
             desc: 'PEA, compte-titres, assurance-vie, PER : où placer, et avec quelle fiscalité.' },
-          { title: 'Transmission et dons', file: 'transmission.html',
+          { title: 'Transmission et dons', file: 'transmission.html', niveau: 'Intermédiaire', sources: [
+              { title: 'impots.gouv.fr : textes et barèmes officiels', url: 'https://www.impots.gouv.fr' },
+              { title: 'service-public.gouv.fr : fiches officielles', url: 'https://www.service-public.gouv.fr' }
+            ],
             desc: 'Donations et succession : préparer et organiser la transmission.' },
-          { title: 'Immobilier : impôts et transmission', file: 'immobilier-fiscalite.html',
+          { title: 'Immobilier : impôts et transmission', file: 'immobilier-fiscalite.html', niveau: 'Avancé', sources: [
+              { title: 'impots.gouv.fr : textes et barèmes officiels', url: 'https://www.impots.gouv.fr' },
+              { title: 'service-public.gouv.fr : fiches officielles', url: 'https://www.service-public.gouv.fr' }
+            ],
             desc: "Revenus locatifs, plus-value, démembrement, SCI : limiter l'impôt et transmettre un bien locatif." },
-          { title: 'Préparer sa retraite', file: 'retraite.html',
+          { title: 'Préparer sa retraite', file: 'retraite.html', niveau: 'Intermédiaire', sources: [
+              { title: 'info-retraite.fr : le portail officiel de la retraite', url: 'https://www.info-retraite.fr' },
+              { title: 'service-public.gouv.fr : fiches officielles', url: 'https://www.service-public.gouv.fr' }
+            ],
             desc: "Système français, estimation de la pension, écart à combler, PER et autres outils : un projet chiffré." },
-          { title: 'Études de cas', file: 'etudes.html',
+          { title: 'Études de cas', file: 'etudes.html', niveau: 'Intermédiaire',
             desc: "Neuf profils d'épargnants comparés : livrets, ETF, stock picking, SCPI, matières premières, crypto, actifs corrélés, objets de collection et multi-devises." }
         ]
       }
@@ -145,11 +169,32 @@
     return h('a', isActive ? { href: file, text: title, class: 'active' } : { href: file, text: title });
   }
 
+  function levelBadge(niveau) {
+    var cls = { 'Débutant': 'debutant', 'Intermédiaire': 'intermediaire', 'Avancé': 'avance' }[niveau] || 'debutant';
+    return h('span', { class: 'niveau niveau-' + cls, text: niveau });
+  }
+  function injectStyles() {
+    if (document.getElementById('eiko-extra-style')) return;
+    document.head.appendChild(h('style', { id: 'eiko-extra-style', text:
+      '.avertissement{background:#f6f1e4;border-left:5px solid #c9a24b;border-radius:6px;padding:.8rem 1rem;margin:1rem 0 1.4rem;font-size:.92rem;line-height:1.6;color:#1c2433}' +
+      '.avertissement p{margin:0}.avertissement strong{color:#0b1f3a}.avertissement a{color:#13305a;font-weight:600}' +
+      '.avertissement .avertissement-meta{margin-top:.4rem;font-size:.85rem;color:#4a5568}' +
+      '.niveau{display:inline-block;font-family:inherit;font-size:.72rem;font-weight:700;letter-spacing:.02em;padding:.1rem .55rem;border-radius:999px;margin-left:.5rem;vertical-align:middle;border:1px solid;line-height:1.5}' +
+      '.niveau-debutant{background:#e8f3ea;color:#1d5a2c;border-color:#9bc7a5}' +
+      '.niveau-intermediaire{background:#fff4dc;color:#7a5200;border-color:#e3c27a}' +
+      '.niveau-avance{background:#fbe9e7;color:#8a2b1b;border-color:#e3a99f}' +
+      '.sources{margin-top:2rem}.sources ul{line-height:1.8}' }));
+  }
+
   var page = location.pathname.split('/').pop() || 'index.html';
   var isHome = page === 'index.html';
   var current = SITE.branches.filter(function (b) {
     return b.items.some(function (i) { return i.file === page; });
   })[0];
+  var item = null;
+  SITE.branches.forEach(function (b) {
+    b.items.forEach(function (i) { if (i.file === page) item = i; });
+  });
 
   /* ---------- Menu ---------- */
   function buildNav() {
@@ -219,6 +264,7 @@
           h('h3', {}, [h('a', { href: it.file, text: it.title })]),
           h('p', { text: it.desc })
         ]);
+        if (it.niveau) li.querySelector('h3').appendChild(levelBadge(it.niveau));
         if (it.sub) {
           var chips = h('div', { class: 'leaf-sub' });
           it.sub.forEach(function (s) { chips.appendChild(h('a', { href: s.file, text: s.title })); });
@@ -283,9 +329,7 @@
     if (NO_NOTICE.indexOf(page) !== -1) return;
     var main = document.querySelector('main');
     if (!main || main.querySelector('.avertissement')) return;
-    document.head.appendChild(h('style', { id: 'eiko-notice-style', text:
-      '.avertissement{background:#f6f1e4;border-left:5px solid #c9a24b;border-radius:6px;padding:.8rem 1rem;margin:1rem 0 1.4rem;font-size:.92rem;line-height:1.6;color:#1c2433}' +
-      '.avertissement p{margin:0}.avertissement strong{color:#0b1f3a}.avertissement a{color:#13305a;font-weight:600}' }));
+    injectStyles();
     var box = h('aside', { class: 'avertissement', role: 'note', 'aria-label': 'Avertissement' }, [
       h('p', {}, [
         h('strong', { text: NOTICE.lead }),
@@ -293,11 +337,31 @@
         h('a', { href: NOTICE.file, text: NOTICE.more + ' \u2192' })
       ])
     ]);
+    if (item && (item.niveau || item.maj)) {
+      var bits = [];
+      if (item.niveau) bits.push('Niveau : ' + item.niveau);
+      if (item.maj) bits.push('Mis à jour : ' + item.maj);
+      box.appendChild(h('p', { class: 'avertissement-meta', text: bits.join(' \u00b7 ') }));
+    }
     var hero = main.querySelector('.scene-hero');
     var art = main.querySelector('article.chapitre');
     if (hero) hero.parentNode.insertBefore(box, hero.nextSibling);
     else if (art) art.parentNode.insertBefore(box, art);
     else main.insertBefore(box, main.firstChild);
+  }
+
+  function addSources() {
+    if (!item || !item.sources || !item.sources.length) return;
+    var art = document.querySelector('article.chapitre');
+    if (!art || art.querySelector('.sources')) return;
+    injectStyles();
+    var ul = h('ul');
+    item.sources.forEach(function (src) {
+      ul.appendChild(h('li', {}, [h('a', { href: src.url, target: '_blank', rel: 'noopener', text: src.title })]));
+    });
+    var box = h('section', { class: 'sources' }, [h('h2', { text: 'Sources et pour aller plus loin' }), ul]);
+    var pager = art.querySelector('.pager');
+    if (pager) art.insertBefore(box, pager); else art.appendChild(box);
   }
 
   function addFooterLink() {
@@ -309,7 +373,9 @@
   function init() {
     buildNav();
     buildTree();
+    injectStyles();
     addNotice();
+    addSources();
     addFooterLink();
     document.querySelectorAll('.subnav').forEach(function (n) { n.remove(); });
   }
