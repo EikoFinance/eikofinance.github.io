@@ -91,7 +91,12 @@
               { title: 'TradingView : offres et limites à jour', url: 'https://www.tradingview.com/pricing/' },
               { title: 'AMF : site officiel de l\'Autorité des marchés financiers', url: 'https://www.amf-france.org' }
             ],
-            desc: 'Partie 2 : liste de surveillance, lignes de support et de tendance, alertes de prix, Fibonacci, screener et trading papier.' }
+            desc: 'Partie 2 : liste de surveillance, lignes de support et de tendance, alertes de prix, Fibonacci, bandes de Bollinger et ATR, screener et trading papier.' },
+          { title: 'Gérer son risque', file: 'gestion-risque.html', niveau: 'Intermédiaire', maj: 'novembre 2026',
+            sources: [
+              { title: 'AMF : site officiel de l\'Autorité des marchés financiers', url: 'https://www.amf-france.org' }
+            ],
+            desc: "Taille de position, stop-loss, ratio gain/risque, levier et journal de trading : décider combien on peut perdre avant d'entrer." }
         ]
       },
       {
