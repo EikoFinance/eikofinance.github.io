@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Didacticiel Trading View - EikoFinance</title>
-<meta name="description" content="Didacticiel pas à pas pour prendre en main TradingView : choisir un actif, régler la durée des bougies, ajouter moyennes mobiles, RSI, volume et MACD.">
+<title>Didacticiel Trading View (1/2) - EikoFinance</title>
+<meta name="description" content="Didacticiel pas à pas pour prendre en main TradingView : choisir un actif, régler la durée des bougies, ajouter moyennes mobiles, RSI, volume et MACD, puis choisir la bonne période selon son style.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,25 +15,13 @@
 <link rel="stylesheet" href="css/cartes.css">
 <script src="js/site.js" defer></script>
 <style>
-.graph{margin:1.1rem 0 1.6rem;text-align:center}
-.graph svg{width:100%;max-width:560px;height:auto;background:#fff;border:1px solid #D9DEE5;border-radius:8px}
-.graph figcaption{font-size:.86rem;color:#4a5568;margin-top:.45rem;line-height:1.5}
-.fig-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin:1.1rem 0 1.6rem}
-.fig-grid .graph{margin:0}
-.fig-grid h4{margin:.5rem 0 .1rem;font-size:.95rem}
-.partie{margin:2.4rem 0 .6rem;padding:.55rem 1rem;background:#0A1C3B;color:#fff;border-left:5px solid #C5A059;border-radius:4px;font-family:Cinzel,serif;font-size:1.15rem;letter-spacing:.03em}
-.chapitre ol.etapes{margin:0 0 1rem 1.3rem;line-height:1.7}
 .tablewrap{overflow-x:auto;margin:1rem 0 1.4rem}
 .tablewrap table{border-collapse:collapse;width:100%;min-width:420px}
 .tablewrap th,.tablewrap td{border:1px solid #D9DEE5;padding:.55rem .7rem;text-align:left;vertical-align:top}
 .tablewrap th{background:#0A1C3B;color:#fff}
 .tablewrap tr:nth-child(even) td{background:#F7F9FC}
-.frise{list-style:none;margin:1.2rem 0 1.6rem;padding:0 0 0 1.1rem;border-left:3px solid #C5A059}
-.frise li{position:relative;margin:0 0 1.15rem;line-height:1.7}
-.frise li::before{content:"";position:absolute;left:calc(-1.1rem - 7px);top:.55rem;width:11px;height:11px;border-radius:50%;background:#0A1C3B;border:2px solid #C5A059}
-.frise .date{display:block;font-weight:700;color:#0A1C3B;font-size:1.02rem}
-.frise p{margin:.25rem 0 0}
-.note-hist{font-size:.9rem;color:#4a5568;margin-top:.4rem}
+.chapitre ol.etapes{margin:0 0 1rem 1.3rem;line-height:1.7}
+.chapitre h3{color:#13305a;font-size:1.08rem;margin:1.4rem 0 .3rem}
 .chapitre .bar{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;background:#0b1f3a;padding:.7rem;border-radius:6px;margin:1rem 0;font-size:.9rem}
 .chapitre .bar span{background:#13305a;color:#f6f1e4;padding:.3rem .8rem;border-radius:4px;border:1px solid transparent}
 .chapitre .bar .on{border-color:#c9a24b;color:#c9a24b;font-weight:700}
@@ -64,16 +52,16 @@
 </header>
 
 <main>
-  <p class="crumbs"><a href="index.html">Accueil</a> › <a href="index.html#trading">Trading</a> › Didacticiel Trading View</p>
+  <p class="crumbs"><a href="index.html">Accueil</a> › <a href="index.html#trading">Trading</a> › Didacticiel Trading View (1/2)</p>
 
   <section class="scene scene-hero img-analyse img-tradingview">
     <h1>Didacticiel Trading View</h1>
-    <p>Six réglages pour lire un graphique : choisir un actif, régler la durée d’une bougie, ajouter des moyennes mobiles, le RSI, le volume et le MACD. Puis quelles durées de bougie choisir selon votre style. Environ 20 minutes, gratuit, sans rien acheter.</p>
+    <p>Partie 1 : six étapes pour afficher et lire un graphique. Choisir un actif, régler la durée d’une bougie, afficher des moyennes mobiles, le RSI, le volume et le MACD, puis choisir la bonne période selon votre style. Environ 20 minutes, avec un compte gratuit : les limites de l’offre gratuite sont signalées au fil des étapes.</p>
     <a href="#avant" class="btn-gold">Commencer</a>
   </section>
 
   <section class="card-grid" aria-label="Sommaire de la leçon">
-    <a class="card" href="#avant"><h3>Avant de commencer</h3><p>Ouvrir un graphique et lire l'écran.</p></a>
+    <a class="card" href="#avant"><h3>Avant de commencer</h3><p>Ouvrir un graphique et connaître les limites du gratuit.</p></a>
     <a class="card" href="#etape1"><h3>Étape 1 : trouver un actif</h3><p>Chercher et ouvrir un actif.</p></a>
     <a class="card" href="#etape2"><h3>Étape 2 : la durée des bougies</h3><p>Régler la période de chaque bougie.</p></a>
     <a class="card" href="#etape3"><h3>Étape 3 : moyennes mobiles</h3><p>Afficher une ou deux moyennes.</p></a>
@@ -87,138 +75,153 @@
   </section>
 
   <article class="chapitre" id="lecon">
-    <p class="accroche">Un pas-à-pas pour prendre en main la plateforme de graphiques TradingView. Les notions utilisées (bougies, moyennes mobiles, RSI, volume, MACD) sont expliquées dans <a href="analyse-graphique.html">Analyse graphique</a> : ce didacticiel montre comment les afficher.</p>
+    <p class="accroche">Un pas-à-pas pour prendre en main la plateforme de graphiques TradingView. Les notions utilisées (bougies, moyennes mobiles, RSI, volume, MACD) sont expliquées dans <a href="analyse-graphique.html">Analyse graphique</a> : ce didacticiel montre comment les afficher. La <a href="didacticiel-tradingview-avance.html">partie 2</a> couvre la liste de surveillance, les lignes, les alertes, Fibonacci, le screener et le trading papier.</p>
 
     <h2 id="avant">Avant de commencer</h2>
-<p>TradingView est un site de graphiques de marché. Rendez-vous sur <a href="https://fr.tradingview.com" rel="noopener" target="_blank">fr.tradingview.com</a>, créez un compte gratuit (ou continuez sans compte), puis ouvrez un graphique via le bouton <strong>Produits → Graphiques</strong>.</p>
-<p>L’écran se lit ainsi : en haut, la barre de réglages (actif, durée des bougies, indicateurs) ; au centre, le graphique ; à gauche, la boîte à outils de dessin, que nous laissons de côté aujourd’hui.</p>
-<div aria-hidden="true" class="bar"><span class="on">AAPL</span><span>1J</span><span>Indicateurs</span><small>la barre du haut</small></div>
-<div class="astuce">Les intitulés peuvent varier un peu selon la langue de l’interface et les mises à jour du site. Si un bouton a changé de nom, cherchez l’équivalent : l’idée reste la même.</div>
+<p>TradingView est un site de graphiques de marché. Rendez-vous sur <a href="https://fr.tradingview.com" target="_blank" rel="noopener">fr.tradingview.com</a>, créez un compte gratuit (ou continuez sans compte), puis ouvrez un graphique via le bouton <strong>Produits → Graphiques</strong>.</p>
+  <p>L’écran se lit ainsi : en haut, la barre de réglages (actif, durée des bougies, indicateurs) ; au centre, le graphique ; à gauche, la boîte à outils de dessin ; à droite, la liste de surveillance et les alertes (voir la <a href="didacticiel-tradingview-avance.html">partie 2</a>).</p>
+  <div class="bar" aria-hidden="true"><span class="on">AAPL</span><span>1J</span><span>Indicateurs</span><small>la barre du haut</small></div>
+  <div class="astuce">Les intitulés peuvent varier un peu selon la langue de l’interface et les mises à jour du site. Si un bouton a changé de nom, cherchez l’équivalent : l’idée reste la même.</div>
+
+<h3>Ce que permet l’offre gratuite (Basic)</h3>
+<p>TradingView propose une offre gratuite (appelée <em>Basic</em>) suffisante pour apprendre, mais limitée. Voici les principales limites au moment de la rédaction (novembre 2026) :</p>
+<div class="tablewrap"><table>
+<tr><th>Fonction</th><th>Offre gratuite</th></tr>
+<tr><td>Graphiques par onglet</td><td>1</td></tr>
+<tr><td>Indicateurs par graphique</td><td><strong>2 seulement</strong> (chaque moyenne mobile, RSI, MACD ou volume ajouté compte dans cette limite)</td></tr>
+<tr><td>Outils de dessin (lignes, supports, tendances)</td><td>Tous disponibles</td></tr>
+<tr><td>Liste de surveillance</td><td>Une seule liste, de taille limitée</td></tr>
+<tr><td>Alertes</td><td>3 alertes de prix actives, sans alerte sur indicateurs ni sur dessins, d’une durée limitée</td></tr>
+<tr><td>Screener et trading papier</td><td>Disponibles (fonctions avancées réservées aux offres payantes)</td></tr>
+<tr><td>Profil de volume (<em>Volume Profile</em>)</td><td>Non inclus (offres payantes)</td></tr>
+</table></div>
+<div class="astuce">En pratique, avec l’offre gratuite, choisissez <strong>deux indicateurs à la fois</strong> selon ce que vous voulez analyser : par exemple une MM200 et le RSI. Les étapes 3 à 6 vous apprennent à tous les afficher ; vous pourrez les remplacer l’un par l’autre. Ces limites évoluent : vérifiez-les sur la page des tarifs de TradingView.</div>
 
     <h2 id="etape1">Étape 1 – Trouver un actif</h2>
 <ol class="etapes">
-<li>Cliquez sur le <strong>nom du symbole</strong> tout en haut à gauche du graphique (au début, il affiche souvent un actif par défaut).</li>
-<li>Tapez un nom ou un ticker : « Apple », « Bitcoin », « CAC 40 », « Or ».</li>
-<li>Choisissez dans la liste la ligne qui correspond, en regardant la <strong>bourse indiquée à droite</strong>.</li>
-</ol>
-<div aria-hidden="true" class="bar"><span class="on">🔍 AAPL – Apple Inc. – NASDAQ</span></div>
-<p>Le même actif existe souvent sur plusieurs places de cotation, avec des prix et des horaires différents. Pour une action, prenez la place principale (NASDAQ pour Apple, Euronext Paris pour une valeur française).</p>
-<div class="tablewrap"><table>
-<tr><th>Actif</th><th>Ce que vous pouvez taper</th></tr>
-<tr><td>Action américaine</td><td>AAPL, MSFT</td></tr>
-<tr><td>Bitcoin</td><td>BTCUSD ou BTCEUR</td></tr>
-<tr><td>Or</td><td>XAUUSD (once d’or en dollars)</td></tr>
-<tr><td>Indice français</td><td>CAC 40</td></tr>
-</table></div>
+    <li>Cliquez sur le <strong>nom du symbole</strong> tout en haut à gauche du graphique (au début, il affiche souvent un actif par défaut).</li>
+    <li>Tapez un nom ou un ticker : « Apple », « Bitcoin », « CAC 40 », « Or ».</li>
+    <li>Choisissez dans la liste la ligne qui correspond, en regardant la <strong>bourse indiquée à droite</strong>.</li>
+  </ol>
+  <div class="bar" aria-hidden="true"><span class="on">🔍 AAPL – Apple Inc. – NASDAQ</span></div>
+  <p>Le même actif existe souvent sur plusieurs places de cotation, avec des prix et des horaires différents. Pour une action, prenez la place principale (NASDAQ pour Apple, Euronext Paris pour une valeur française).</p>
+  <div class="tablewrap"><table>
+    <tr><th>Actif</th><th>Ce que vous pouvez taper</th></tr>
+    <tr><td>Action américaine</td><td>AAPL, MSFT</td></tr>
+    <tr><td>Bitcoin</td><td>BTCUSD ou BTCEUR</td></tr>
+    <tr><td>Or</td><td>XAUUSD (once d’or en dollars)</td></tr>
+    <tr><td>Indice français</td><td>CAC 40</td></tr>
+  </table></div>
 
     <h2 id="etape2">Étape 2 – Choisir la durée de chaque bougie</h2>
 <p>Une bougie résume ce qui s’est passé sur une période : le prix à l’ouverture, le plus haut, le plus bas et la clôture. C’est vous qui choisissez la durée de cette période.</p>
-<ol class="etapes">
-<li>Dans la barre du haut, à droite du symbole, cliquez sur le bouton de l’<strong>intervalle</strong> (il affiche par exemple « 1J » ou « 1D »).</li>
-<li>Choisissez une durée dans la liste.</li>
-</ol>
-<div aria-hidden="true" class="bar"><span>AAPL</span><span>1m</span><span>15m</span><span>1h</span><span>4h</span><span class="on">1J</span><span>1S</span><span>1M</span></div>
-<div class="tablewrap"><table>
-<tr><th>Choix</th><th>1 bougie =</th><th>Pour quoi faire ?</th></tr>
-<tr><td>1m à 15m</td><td>1 à 15 minutes</td><td>Court terme, très agité : à éviter pour débuter</td></tr>
-<tr><td>1h, 4h</td><td>1 ou 4 heures</td><td>Suivre une tendance de quelques jours</td></tr>
-<tr><td><strong>1J</strong></td><td>1 jour</td><td><strong>Le bon point de départ</strong> : lisible, calme</td></tr>
-<tr><td>1S, 1M</td><td>1 semaine, 1 mois</td><td>Vue d’ensemble sur plusieurs années</td></tr>
-</table></div>
-<div class="astuce">Raccourci : sur le graphique, tapez <kbd>1</kbd> puis <kbd>Entrée</kbd> pour passer à 1 minute, ou <kbd>D</kbd> puis <kbd>Entrée</kbd> pour le journalier. Une bougie verte (ou creuse selon le réglage) signifie que le prix a monté sur la période ; une rouge, qu’il a baissé.</div>
+  <ol class="etapes">
+    <li>Dans la barre du haut, à droite du symbole, cliquez sur le bouton de l’<strong>intervalle</strong> (il affiche par exemple « 1J » ou « 1D »).</li>
+    <li>Choisissez une durée dans la liste.</li>
+  </ol>
+  <div class="bar" aria-hidden="true"><span>AAPL</span><span>1m</span><span>15m</span><span>1h</span><span>4h</span><span class="on">1J</span><span>1S</span><span>1M</span></div>
+  <div class="tablewrap"><table>
+    <tr><th>Choix</th><th>1 bougie =</th><th>Pour quoi faire ?</th></tr>
+    <tr><td>1m à 15m</td><td>1 à 15 minutes</td><td>Court terme, très agité : à éviter pour débuter</td></tr>
+    <tr><td>1h, 4h</td><td>1 ou 4 heures</td><td>Suivre une tendance de quelques jours</td></tr>
+    <tr><td><strong>1J</strong></td><td>1 jour</td><td><strong>Le bon point de départ</strong> : lisible, calme</td></tr>
+    <tr><td>1S, 1M</td><td>1 semaine, 1 mois</td><td>Vue d’ensemble sur plusieurs années</td></tr>
+  </table></div>
+  <div class="astuce">Raccourci : sur le graphique, tapez <kbd>1</kbd> puis <kbd>Entrée</kbd> pour passer à 1 minute, ou <kbd>D</kbd> puis <kbd>Entrée</kbd> pour le journalier. Une bougie verte (ou creuse selon le réglage) signifie que le prix a monté sur la période ; une rouge, qu’il a baissé.</div>
 
     <h2 id="etape3">Étape 3 – Afficher une ou deux moyennes mobiles</h2>
 <p>Une moyenne mobile lisse les variations : à chaque bougie, elle calcule la moyenne des N dernières clôtures. Elle montre la direction générale du prix sans le bruit quotidien.</p>
-<ol class="etapes">
-<li>Cliquez sur <strong>Indicateurs</strong> dans la barre du haut.</li>
-<li>Tapez « Moving Average » (ou « Moyenne mobile ») dans la recherche.</li>
-<li>Cliquez sur <strong>Moving Average</strong> : une ligne apparaît sur le graphique.</li>
-<li>Pour la régler, passez la souris sur son nom en haut à gauche du graphique et cliquez sur l’<strong>engrenage</strong>. Onglet <em>Paramètres</em> : changez la <strong>Longueur</strong>. Onglet <em>Style</em> : changez la couleur.</li>
-<li>Pour une deuxième moyenne, répétez l’opération avec une autre longueur.</li>
-</ol>
-<div aria-hidden="true" class="bar"><span class="on">MA 50 (bleu)</span><span class="on">MA 200 (or)</span><small>deux moyennes sur le même graphique</small></div>
-<div class="tablewrap"><table>
-<tr><th>Longueur</th><th>Ce qu’elle montre</th></tr>
-<tr><td>50</td><td>La tendance de moyen terme (environ 2 à 3 mois en journalier)</td></tr>
-<tr><td>200</td><td>La tendance de fond (environ 10 mois en journalier)</td></tr>
-</table></div>
-<p><strong>Lecture simple :</strong> prix au-dessus de la moyenne = tendance plutôt haussière ; en dessous = plutôt baissière. Quand la moyenne 50 passe au-dessus de la 200, on parle de « croisement doré » ; dans l’autre sens, de « croisement de la mort ». Ce sont des repères classiques, jamais des garanties.</p>
-<div class="astuce">Si une seule moyenne suffit pour débuter, deux (50 et 200) donnent déjà une lecture complète. Au-delà, le graphique devient illisible.</div>
+  <ol class="etapes">
+    <li>Cliquez sur <strong>Indicateurs</strong> dans la barre du haut.</li>
+    <li>Tapez « Moving Average » (ou « Moyenne mobile ») dans la recherche.</li>
+    <li>Cliquez sur <strong>Moving Average</strong> : une ligne apparaît sur le graphique.</li>
+    <li>Pour la régler, passez la souris sur son nom en haut à gauche du graphique et cliquez sur l’<strong>engrenage</strong>. Onglet <em>Paramètres</em> : changez la <strong>Longueur</strong>. Onglet <em>Style</em> : changez la couleur.</li>
+    <li>Pour une deuxième moyenne, répétez l’opération avec une autre longueur.</li>
+  </ol>
+  <div class="bar" aria-hidden="true"><span class="on">MA 50 (bleu)</span><span class="on">MA 200 (or)</span><small>deux moyennes sur le même graphique</small></div>
+  <div class="tablewrap"><table>
+    <tr><th>Longueur</th><th>Ce qu’elle montre</th></tr>
+    <tr><td>50</td><td>La tendance de moyen terme (environ 2 à 3 mois en journalier)</td></tr>
+    <tr><td>200</td><td>La tendance de fond (environ 10 mois en journalier)</td></tr>
+  </table></div>
+  <p><strong>Lecture simple :</strong> prix au-dessus de la moyenne = tendance plutôt haussière ; en dessous = plutôt baissière. Quand la moyenne 50 passe au-dessus de la 200, on parle de « croisement doré » ; dans l’autre sens, de « croisement de la mort ». Ce sont des repères classiques, jamais des garanties.</p>
+  <div class="astuce">Si une seule moyenne suffit pour débuter, deux (50 et 200) donnent déjà une lecture complète. Au-delà, le graphique devient illisible.</div>
 
     <h2 id="etape4">Étape 4 – Ajouter le RSI</h2>
 <p>Le RSI (<em>Relative Strength Index</em>) est une courbe qui oscille entre 0 et 100 et mesure la vigueur récente des hausses par rapport aux baisses. Contrairement aux moyennes mobiles, il s’affiche dans un <strong>cadre séparé, sous le graphique</strong>.</p>
-<ol class="etapes">
-<li>Cliquez sur <strong>Indicateurs</strong>.</li>
-<li>Tapez « RSI » et choisissez <strong>Relative Strength Index</strong>.</li>
-<li>Le réglage standard est une <strong>longueur de 14</strong> : gardez-le pour débuter.</li>
-</ol>
-<p>Deux lignes horizontales apparaissent, à 70 et à 30 :</p>
-<div class="tablewrap"><table>
-<tr><th>Zone</th><th>Lecture classique</th></tr>
-<tr><td>RSI au-dessus de 70</td><td>« Surachat » : la hausse a été rapide, un repli devient plus probable</td></tr>
-<tr><td>RSI en dessous de 30</td><td>« Survente » : la baisse a été rapide, un rebond devient plus probable</td></tr>
-<tr><td>Entre 30 et 70</td><td>Zone neutre</td></tr>
-</table></div>
-<div class="alerte"><strong>Attention :</strong> dans une forte tendance, le RSI peut rester au-dessus de 70 (ou sous 30) pendant des semaines. Un RSI à 75 n’est donc pas un signal de vente automatique. On l’utilise pour confirmer ce que montrent déjà le prix et les moyennes mobiles.</div>
+  <ol class="etapes">
+    <li>Cliquez sur <strong>Indicateurs</strong>.</li>
+    <li>Tapez « RSI » et choisissez <strong>Relative Strength Index</strong>.</li>
+    <li>Le réglage standard est une <strong>longueur de 14</strong> : gardez-le pour débuter.</li>
+  </ol>
+  <p>Deux lignes horizontales apparaissent, à 70 et à 30 :</p>
+  <div class="tablewrap"><table>
+    <tr><th>Zone</th><th>Lecture classique</th></tr>
+    <tr><td>RSI au-dessus de 70</td><td>« Surachat » : la hausse a été rapide, un repli devient plus probable</td></tr>
+    <tr><td>RSI en dessous de 30</td><td>« Survente » : la baisse a été rapide, un rebond devient plus probable</td></tr>
+    <tr><td>Entre 30 et 70</td><td>Zone neutre</td></tr>
+  </table></div>
+  <div class="alerte"><strong>Attention :</strong> dans une forte tendance, le RSI peut rester au-dessus de 70 (ou sous 30) pendant des semaines. Un RSI à 75 n’est donc pas un signal de vente automatique. On l’utilise pour confirmer ce que montrent déjà le prix et les moyennes mobiles.</div>
 
     <h2 id="etape5">Étape 5 – Afficher le volume</h2>
 <p>Le volume est le nombre de titres échangés pendant une bougie. Le prix dit <em>où</em> le marché va ; le volume dit <em>avec quelle conviction</em>.</p>
-<ol class="etapes">
-<li>Cliquez sur <strong>Indicateurs</strong>, tapez « Volume » et choisissez <strong>Volume</strong>.</li>
-<li>Des barres apparaissent sous le graphique, de la même couleur que les bougies. Sur beaucoup d’actions, elles sont déjà affichées par défaut.</li>
-</ol>
-<div class="tablewrap"><table>
-<tr><th>Ce que vous voyez</th><th>Lecture classique</th></tr>
-<tr><td>Prix qui monte, volume qui monte</td><td>Mouvement soutenu par de nombreux acteurs</td></tr>
-<tr><td>Prix qui monte, volume qui baisse</td><td>Hausse qui s’essouffle</td></tr>
-<tr><td>Cassure d’un niveau avec un gros volume</td><td>Cassure plus crédible qu’avec un volume faible</td></tr>
-<tr><td>Pic de volume exceptionnel après une longue tendance</td><td>Possible fin de mouvement (à confirmer)</td></tr>
-</table></div>
-<div class="alerte"><strong>À savoir :</strong> sur le forex et certains indices, il n’y a pas de volume réel (TradingView affiche alors un volume de ticks, voire rien). En crypto, le volume dépend de la plateforme d’échange choisie.</div>
+  <ol class="etapes">
+    <li>Cliquez sur <strong>Indicateurs</strong>, tapez « Volume » et choisissez <strong>Volume</strong>.</li>
+    <li>Des barres apparaissent sous le graphique, de la même couleur que les bougies. Sur beaucoup d’actions, elles sont déjà affichées par défaut.</li>
+  </ol>
+  <div class="tablewrap"><table>
+    <tr><th>Ce que vous voyez</th><th>Lecture classique</th></tr>
+    <tr><td>Prix qui monte, volume qui monte</td><td>Mouvement soutenu par de nombreux acteurs</td></tr>
+    <tr><td>Prix qui monte, volume qui baisse</td><td>Hausse qui s’essouffle</td></tr>
+    <tr><td>Cassure d’un niveau avec un gros volume</td><td>Cassure plus crédible qu’avec un volume faible</td></tr>
+    <tr><td>Pic de volume exceptionnel après une longue tendance</td><td>Possible fin de mouvement (à confirmer)</td></tr>
+  </table></div>
+  <div class="alerte"><strong>À savoir :</strong> sur le forex et certains indices, il n’y a pas de volume réel (TradingView affiche alors un volume de ticks, voire rien). En crypto, le volume dépend de la plateforme d’échange choisie.</div>
+<div class="astuce"><strong>Pour aller plus loin :</strong> le <em>Volume Profile</em> (profil de volume) affiche les volumes échangés <strong>par niveau de prix</strong> et non par date, sous forme d’histogramme horizontal. Il révèle les prix où le marché a le plus échangé, souvent proches de supports et de résistances importants. Il n’est pas disponible avec l’offre gratuite : à partir d’une offre payante, il se trouve dans <strong>Indicateurs</strong> (« Volume Profile Visible Range »). Avec l’offre gratuite, le volume classique et vos propres lignes (<a href="didacticiel-tradingview-avance.html#etape8">partie 2, étape 8</a>) restent un bon point de départ.</div>
 
     <h2 id="etape6">Étape 6 – Ajouter le MACD</h2>
 <p>Le MACD (<em>Moving Average Convergence Divergence</em>) mesure l’<strong>élan</strong> d’une tendance : est-elle en train de s’accélérer ou de s’essouffler ? Comme le RSI, il s’affiche dans un cadre séparé sous le graphique.</p>
-<ol class="etapes">
-<li>Cliquez sur <strong>Indicateurs</strong>, tapez « MACD » et choisissez <strong>Moving Average Convergence Divergence</strong>.</li>
-<li>Gardez les réglages standard : <strong>12, 26, 9</strong>.</li>
-</ol>
-<div class="tablewrap"><table>
-<tr><th>Élément</th><th>Ce que c’est</th></tr>
-<tr><td>Ligne MACD</td><td>L’écart entre une moyenne mobile exponentielle rapide (12) et une lente (26)</td></tr>
-<tr><td>Ligne de signal</td><td>Une moyenne (9) de la ligne MACD, plus lente</td></tr>
-<tr><td>Histogramme</td><td>L’écart entre les deux lignes : des barres qui grandissent montrent un élan qui s’accélère</td></tr>
-</table></div>
-<ul>
-<li><strong>Croisement :</strong> la ligne MACD passe au-dessus de la ligne de signal = élan plutôt haussier ; en dessous = plutôt baissier.</li>
-<li><strong>Ligne zéro :</strong> MACD au-dessus de zéro = tendance plutôt haussière ; en dessous = plutôt baissière.</li>
-<li><strong>Divergence :</strong> le prix signe un nouveau sommet mais pas le MACD = la hausse perd de la force.</li>
-</ul>
-<div class="alerte">Le MACD est calculé sur le passé, donc il réagit avec retard, et il donne beaucoup de faux croisements quand le prix stagne. Pour débuter, retenez : le RSI repère les excès, le MACD mesure l’élan. Un seul des deux suffit au départ.</div>
+  <ol class="etapes">
+    <li>Cliquez sur <strong>Indicateurs</strong>, tapez « MACD » et choisissez <strong>Moving Average Convergence Divergence</strong>.</li>
+    <li>Gardez les réglages standard : <strong>12, 26, 9</strong>.</li>
+  </ol>
+  <div class="tablewrap"><table>
+    <tr><th>Élément</th><th>Ce que c’est</th></tr>
+    <tr><td>Ligne MACD</td><td>L’écart entre une moyenne mobile exponentielle rapide (12) et une lente (26)</td></tr>
+    <tr><td>Ligne de signal</td><td>Une moyenne (9) de la ligne MACD, plus lente</td></tr>
+    <tr><td>Histogramme</td><td>L’écart entre les deux lignes : des barres qui grandissent montrent un élan qui s’accélère</td></tr>
+  </table></div>
+  <ul>
+    <li><strong>Croisement :</strong> la ligne MACD passe au-dessus de la ligne de signal = élan plutôt haussier ; en dessous = plutôt baissier.</li>
+    <li><strong>Ligne zéro :</strong> MACD au-dessus de zéro = tendance plutôt haussière ; en dessous = plutôt baissière.</li>
+    <li><strong>Divergence :</strong> le prix signe un nouveau sommet mais pas le MACD = la hausse perd de la force.</li>
+  </ul>
+  <div class="alerte">Le MACD est calculé sur le passé, donc il réagit avec retard, et il donne beaucoup de faux croisements quand le prix stagne. Pour débuter, retenez : le RSI repère les excès, le MACD mesure l’élan. Un seul des deux suffit au départ.</div>
 
     <h2 id="moyennes">Les moyennes mobiles que tout le monde surveille</h2>
 <p>Dans le jargon, les « whales » (baleines) sont les gros acteurs : fonds, institutions, et en crypto les très gros portefeuilles. Personne ne connaît leurs réglages exacts. Les moyennes ci-dessous sont surtout les plus <strong>regardées</strong> : leur influence vient en partie du fait que beaucoup de monde réagit au même niveau au même moment.</p>
-<div class="tablewrap"><table>
-<tr><th>Moyenne</th><th>Période du graphique</th><th>Horizon approximatif</th><th>Usage</th></tr>
-<tr><td>MM20</td><td>1J</td><td>1 mois de Bourse</td><td>Tendance rapide, référence des swing traders</td></tr>
-<tr><td>MM50</td><td>1J</td><td>2 à 3 mois</td><td>Tendance de moyen terme, très suivie par les fonds</td></tr>
-<tr><td><strong>MM200</strong></td><td>1J</td><td>Environ 10 mois</td><td>La frontière haussier / baissier de long terme la plus citée</td></tr>
-<tr><td><strong>MM50</strong></td><td><strong>1S</strong> (hebdomadaire)</td><td>Environ 1 an</td><td>Tendance de fond, pour les investisseurs de long terme</td></tr>
-<tr><td>MM200</td><td>1S</td><td>Environ 4 ans</td><td>Repère de très long terme ; sur le Bitcoin, la moyenne à 200 semaines est souvent citée comme plancher historique, sans garantie pour l’avenir</td></tr>
-</table></div>
-<div class="astuce"><strong>Astuce :</strong> pour voir la MM50 hebdomadaire sur un graphique journalier, ouvrez les réglages de la moyenne, onglet <em>Paramètres</em> (ou <em>Entrées</em>), et cherchez le champ de période (<em>Timeframe</em>) : choisissez « 1 semaine » et gardez la longueur à 50. Si le champ n’existe pas, passez simplement le graphique en 1S et ajoutez une MM50.</div>
+  <div class="tablewrap"><table>
+    <tr><th>Moyenne</th><th>Période du graphique</th><th>Horizon approximatif</th><th>Usage</th></tr>
+    <tr><td>MM20</td><td>1J</td><td>1 mois de Bourse</td><td>Tendance rapide, référence des swing traders</td></tr>
+    <tr><td>MM50</td><td>1J</td><td>2 à 3 mois</td><td>Tendance de moyen terme, très suivie par les fonds</td></tr>
+    <tr><td><strong>MM200</strong></td><td>1J</td><td>Environ 10 mois</td><td>La frontière haussier / baissier de long terme la plus citée</td></tr>
+    <tr><td><strong>MM50</strong></td><td><strong>1S</strong> (hebdomadaire)</td><td>Environ 1 an</td><td>Tendance de fond, pour les investisseurs de long terme</td></tr>
+    <tr><td>MM200</td><td>1S</td><td>Environ 4 ans</td><td>Repère de très long terme ; sur le Bitcoin, la moyenne à 200 semaines est souvent citée comme plancher historique, sans garantie pour l’avenir</td></tr>
+  </table></div>
+  <div class="astuce"><strong>Astuce :</strong> pour voir la MM50 hebdomadaire sur un graphique journalier, ouvrez les réglages de la moyenne, onglet <em>Paramètres</em> (ou <em>Entrées</em>), et cherchez le champ de période (<em>Timeframe</em>) : choisissez « 1 semaine » et gardez la longueur à 50. Si le champ n’existe pas, passez simplement le graphique en 1S et ajoutez une MM50.</div>
 
     <h2 id="periodes">Quelle période choisir selon votre style ?</h2>
 <p>On ne regarde jamais une seule période. La méthode la plus courante consiste à partir de la période <strong>supérieure</strong> pour juger la direction générale, puis à descendre sur une période <strong>inférieure</strong> pour choisir le bon moment. Un rapport de 4 à 6 entre les deux est une bonne règle (1S → 1J → 4h, ou 1h → 15m).</p>
-<div class="tablewrap"><table>
-<tr><th>Style</th><th>Durée de détention</th><th>Bougie pour agir</th><th>Bougie pour le contexte</th><th>Moyennes utiles</th></tr>
-<tr><td>Day trading</td><td>De quelques minutes à la journée</td><td>5m, 15m</td><td>1h, puis 4h</td><td>MM20 et MM50 sur la période d’action</td></tr>
-<tr><td>Swing trading</td><td>De quelques jours à quelques semaines</td><td>4h, 1J</td><td>1S</td><td>MM20, MM50, MM200 en 1J</td></tr>
-<tr><td>Investissement long terme</td><td>Plusieurs années</td><td>1S</td><td>1M</td><td>MM50 et MM200 en 1S</td></tr>
-</table></div>
-<div class="alerte"><strong>Réalité du terrain :</strong> les études de l’AMF montrent qu’une large majorité de particuliers perdent de l’argent sur le trading à court terme (CFD, forex). Le day trading exige du temps, de la discipline, des actifs très liquides et beaucoup de sang-froid. Le swing trading laisse plus de temps pour décider, ce qui convient mieux à quelqu’un qui n’est pas devant son écran toute la journée. Pour apprendre, le journalier reste la meilleure école.</div>
+  <div class="tablewrap"><table>
+    <tr><th>Style</th><th>Durée de détention</th><th>Bougie pour agir</th><th>Bougie pour le contexte</th><th>Moyennes utiles</th></tr>
+    <tr><td>Day trading</td><td>De quelques minutes à la journée</td><td>5m, 15m</td><td>1h, puis 4h</td><td>MM20 et MM50 sur la période d’action</td></tr>
+    <tr><td>Swing trading</td><td>De quelques jours à quelques semaines</td><td>4h, 1J</td><td>1S</td><td>MM20, MM50, MM200 en 1J</td></tr>
+    <tr><td>Investissement long terme</td><td>Plusieurs années</td><td>1S</td><td>1M</td><td>MM50 et MM200 en 1S</td></tr>
+  </table></div>
+  <div class="alerte"><strong>Réalité du terrain :</strong> les études de l’AMF montrent qu’une large majorité de particuliers perdent de l’argent sur le trading à court terme (CFD, forex). Le day trading exige du temps, de la discipline, des actifs très liquides et beaucoup de sang-froid. Le swing trading laisse plus de temps pour décider, ce qui convient mieux à quelqu’un qui n’est pas devant son écran toute la journée. Pour apprendre, le journalier reste la meilleure école.</div>
 
     <h2 id="resultat">Résultat et erreurs à éviter</h2>
-<p>Vous avez maintenant un graphique avec : un actif, des bougies de durée choisie, deux moyennes mobiles, le RSI, le volume et le MACD. Pour retrouver cette configuration plus tard, créez un compte et sauvegardez-la via le menu <strong>Enregistrer</strong> en haut du graphique.</p>
+<p>Vous savez maintenant afficher un graphique avec : un actif, des bougies de durée choisie, des moyennes mobiles, le RSI, le volume et le MACD. Avec l’offre gratuite, seuls deux indicateurs sont affichables à la fois : choisissez ceux qui servent votre analyse. Pour retrouver cette configuration plus tard, créez un compte et sauvegardez-la via le menu <strong>Enregistrer</strong> en haut du graphique (l’offre gratuite conserve une seule mise en page).</p>
 <ul>
 <li>Empiler dix indicateurs : une ou deux moyennes mobiles, le volume et un oscillateur (RSI ou MACD) suffisent largement pour apprendre.</li>
 <li>Passer en bougies d’une minute trop tôt : le bruit y domine.</li>
@@ -233,7 +236,7 @@
 <details><summary>4. Le prix casse un niveau important avec un volume très faible : que penser ?</summary><p>La cassure est moins crédible. Un volume élevé indique que beaucoup d’acteurs participent au mouvement.</p></details>
 <details><summary>5. Quelle période pour juger la direction avant de faire du swing trading ?</summary><p>Le graphique hebdomadaire (1S) pour le contexte, puis le journalier ou le 4h pour agir.</p></details>
 
-    <div class="pager"><a href="analyse-graphique.html">← Analyse graphique</a><a class="next" href="budget-epargne.html">Planifier : budget et épargne de précaution →</a></div>
+    <div class="pager"><a href="analyse-graphique.html">← Analyse graphique</a><a class="next" href="didacticiel-tradingview-avance.html">Partie 2 : aller plus loin →</a></div>
   </article>
 </main>
 

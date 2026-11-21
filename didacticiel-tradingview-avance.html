@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Didacticiel Trading View (2/2) : aller plus loin - EikoFinance</title>
+<meta name="description" content="Suite du didacticiel TradingView : liste de surveillance, supports, résistances et tendances, alertes de prix, Fibonacci, échelle logarithmique, outil de mesure, screener et trading papier.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/lesson.css">
+<link rel="stylesheet" href="css/scene.css">
+<link rel="stylesheet" href="css/cartes.css">
+<script src="js/site.js" defer></script>
+<style>
+.tablewrap{overflow-x:auto;margin:1rem 0 1.4rem}
+.tablewrap table{border-collapse:collapse;width:100%;min-width:420px}
+.tablewrap th,.tablewrap td{border:1px solid #D9DEE5;padding:.55rem .7rem;text-align:left;vertical-align:top}
+.tablewrap th{background:#0A1C3B;color:#fff}
+.tablewrap tr:nth-child(even) td{background:#F7F9FC}
+.chapitre ol.etapes{margin:0 0 1rem 1.3rem;line-height:1.7}
+.chapitre h3{color:#13305a;font-size:1.08rem;margin:1.4rem 0 .3rem}
+.chapitre .bar{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;background:#0b1f3a;padding:.7rem;border-radius:6px;margin:1rem 0;font-size:.9rem}
+.chapitre .bar span{background:#13305a;color:#f6f1e4;padding:.3rem .8rem;border-radius:4px;border:1px solid transparent}
+.chapitre .bar .on{border-color:#c9a24b;color:#c9a24b;font-weight:700}
+.chapitre .bar small{color:#9fb0cc;margin-left:auto}
+.chapitre kbd{background:#e9edf4;border:1px solid #c5ccd8;border-bottom-width:2px;border-radius:4px;padding:0 .4em;font-size:.9em}
+.chapitre .astuce{background:#eef2f9;border:1px solid #13305a;border-radius:8px;padding:.8rem 1rem;margin:1rem 0;font-size:.95rem}
+.chapitre details{margin:.6rem 0;padding:.6rem .9rem}
+.chapitre summary{cursor:pointer;font-weight:700;color:#0b1f3a}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo-container">
+    <img src="images/logo.jpg" alt="Logo Eiko Finance" class="logo-img">
+    <span class="logo-text">EIKO FINANCE</span>
+  </div>
+  <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+  <!-- Menu : généré par js/site.js (liste de secours si JavaScript est désactivé) -->
+  <nav>
+    <ul>
+      <li><a href="index.html#comprendre">Comprendre</a></li>
+      <li><a href="index.html#investir">Investir</a></li>
+      <li><a href="index.html#mesurer">Mesurer</a></li>
+      <li><a href="index.html#optimiser">Optimiser</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <p class="crumbs"><a href="index.html">Accueil</a> › <a href="index.html#trading">Trading</a> › <a href="didacticiel-tradingview.html">Didacticiel Trading View</a> › Aller plus loin</p>
+
+  <section class="scene scene-hero img-analyse img-tradingview">
+    <h1>Didacticiel Trading View : aller plus loin</h1>
+    <p>Partie 2 : sept outils pour organiser et affiner votre analyse. Liste de surveillance, lignes de support, de résistance et de tendance, alertes de prix, Fibonacci, échelle logarithmique et mesure, screener, trading papier. Environ 30 minutes.</p>
+    <a href="#etape7" class="btn-gold">Commencer</a>
+  </section>
+
+  <section class="card-grid" aria-label="Sommaire de la leçon">
+    <a class="card" href="#etape7"><h3>Étape 7 : la liste de surveillance</h3><p>Créer et éditer sa watchlist.</p></a>
+    <a class="card" href="#etape8"><h3>Étape 8 : tracer ses lignes</h3><p>Supports, résistances et tendances.</p></a>
+    <a class="card" href="#etape9"><h3>Étape 9 : les alertes de prix</h3><p>Être prévenu sans surveiller l'écran.</p></a>
+    <a class="card" href="#etape10"><h3>Étape 10 : Fibonacci</h3><p>Repérer des zones de repli.</p></a>
+    <a class="card" href="#etape11"><h3>Étape 11 : échelle log et mesure</h3><p>Lire les grands mouvements.</p></a>
+    <a class="card" href="#etape12"><h3>Étape 12 : le screener</h3><p>Trouver des actifs selon des critères.</p></a>
+    <a class="card" href="#etape13"><h3>Étape 13 : le trading papier</h3><p>S'entraîner sans risque.</p></a>
+    <a class="card" href="#resultat"><h3>Résultat et erreurs</h3><p>Ce que vous savez faire, et les pièges.</p></a>
+    <a class="card" href="#quiz"><h3>Testez-vous</h3><p>Sept questions pour vérifier.</p></a>
+  </section>
+
+  <article class="chapitre" id="lecon">
+    <p class="accroche">Cette partie suppose que vous savez déjà afficher un actif et des indicateurs : voir la <a href="didacticiel-tradingview.html">partie 1</a>, qui présente aussi le tableau des limites de l’offre gratuite (alertes, liste de surveillance, indicateurs…).</p>
+
+    <h2 id="etape7">Étape 7 – Créer et éditer sa liste de surveillance</h2>
+<p>La liste de surveillance (<em>watchlist</em>) réunit les actifs que vous suivez, avec leur prix et leur variation du jour. Un clic sur une ligne affiche cet actif sur le graphique : plus besoin de retaper son nom.</p>
+  <div class="bar" aria-hidden="true"><span class="on">☰ Liste de surveillance</span><span>＋</span><small>panneau de droite</small></div>
+  <ol class="etapes">
+    <li><strong>Ouvrir la liste :</strong> dans la barre verticale à droite de l’écran, cliquez sur l’icône de la liste de surveillance (une liste ou une étoile selon la version).</li>
+    <li><strong>Ajouter un actif :</strong> cliquez sur le <strong>+</strong> en haut du panneau, tapez le nom ou le ticker, puis cliquez sur la ligne choisie (ou sur le + à droite de celle-ci). Vous pouvez en ajouter plusieurs à la suite.</li>
+    <li><strong>Retirer un actif :</strong> passez la souris sur la ligne et cliquez sur la <strong>croix</strong> qui apparaît à droite.</li>
+    <li><strong>Réorganiser :</strong> faites glisser une ligne pour la déplacer.</li>
+    <li><strong>Ajouter une section :</strong> cliquez sur les trois points du panneau (ou faites un clic droit dans la liste) et choisissez <strong>Ajouter une section</strong>. Les sections servent de titres : « Actions », « Crypto », « Matières premières ».</li>
+    <li><strong>Créer plusieurs listes (offres payantes) :</strong> cliquez sur le <strong>nom de la liste</strong> en haut du panneau, puis sur <strong>Créer une nouvelle liste</strong>. Le même menu permet de renommer, copier ou supprimer une liste. Avec l’offre gratuite, vous disposez d’une seule liste : utilisez alors les <strong>sections</strong> pour la structurer.</li>
+    <li><strong>Marquer un actif :</strong> clic droit sur une ligne, puis choisissez une couleur (drapeau) pour repérer vos actifs prioritaires.</li>
+  </ol>
+  <div class="astuce">Astuce : l’<strong>étoile</strong> à côté du nom d’un actif, en haut du graphique, ajoute ou retire l’actif de votre dernière liste utilisée. C’est le moyen le plus rapide.</div>
+  <div class="tablewrap"><table>
+    <tr><th>Colonne</th><th>Ce qu’elle montre</th></tr>
+    <tr><td>Dernier</td><td>Le dernier prix</td></tr>
+    <tr><td>Variation</td><td>L’écart depuis la clôture précédente, en valeur et en pourcentage</td></tr>
+  </table></div>
+  <p>Gardez votre liste courte (10 à 20 actifs) : au-delà, on ne regarde plus rien. L’offre gratuite limite le nombre de listes et d’actifs, donc créez un compte avant de la construire : sans compte, elle ne sera pas conservée.</p>
+
+    <h2 id="etape8">Étape 8 – Tracer ses lignes : supports, résistances et tendances</h2>
+<p>Les outils de dessin sont dans la <strong>barre verticale à gauche</strong> du graphique. Deux outils suffisent pour commencer : la ligne horizontale et la ligne de tendance.</p>
+  <div class="bar" aria-hidden="true"><span class="on">╱ Lignes de tendance</span><span>─ Ligne horizontale</span><small>barre de gauche</small></div>
+
+  <h3>La ligne horizontale : supports et résistances</h3>
+  <ul>
+    <li>Un <strong>support</strong> est un niveau sous le prix où celui-ci a déjà rebondi plusieurs fois.</li>
+    <li>Une <strong>résistance</strong> est un niveau au-dessus du prix où il a déjà buté plusieurs fois.</li>
+  </ul>
+  <ol class="etapes">
+    <li>Dans la barre de gauche, cliquez sur la première icône (les lignes) : un menu s’ouvre.</li>
+    <li>Choisissez <strong>Ligne horizontale</strong>.</li>
+    <li>Cliquez une fois sur le graphique, à la hauteur du niveau repéré : la ligne est posée.</li>
+  </ol>
+  <div class="astuce">Raccourci : <kbd>Alt</kbd> + <kbd>H</kbd> (<kbd>Option</kbd> + <kbd>H</kbd> sur Mac) pose une ligne horizontale à l’endroit où se trouve votre curseur.</div>
+
+  <h3>La ligne de tendance : tendance haussière et baissière</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Tendance</th><th>Où placer la ligne ?</th></tr>
+    <tr><td>Haussière</td><td>Reliez au moins <strong>deux creux de plus en plus hauts</strong>. La ligne passe sous le prix et joue le rôle de support incliné.</td></tr>
+    <tr><td>Baissière</td><td>Reliez au moins <strong>deux sommets de plus en plus bas</strong>. La ligne passe au-dessus du prix et joue le rôle de résistance inclinée.</td></tr>
+  </table></div>
+  <ol class="etapes">
+    <li>Dans le même menu, choisissez <strong>Ligne de tendance</strong>.</li>
+    <li>Cliquez sur le premier creux (ou sommet), puis sur le second : la ligne est tracée.</li>
+    <li>Pour la prolonger vers la droite, ouvrez ses réglages (double-clic sur la ligne) et cochez l’option d’extension vers la droite. Vous pouvez aussi choisir directement l’outil <strong>Rayon</strong> dans le même menu.</li>
+  </ol>
+  <div class="astuce">Raccourci : <kbd>Alt</kbd> + <kbd>T</kbd> (<kbd>Option</kbd> + <kbd>T</kbd> sur Mac) active la ligne de tendance. Activez aussi l’<strong>aimant</strong> dans la barre de gauche : il colle vos points sur les plus hauts, plus bas, ouvertures ou clôtures les plus proches.</div>
+
+  <h3>Modifier, déplacer, supprimer</h3>
+  <ul>
+    <li><strong>Sélectionner :</strong> cliquez sur la ligne. Une petite barre flottante apparaît.</li>
+    <li><strong>Déplacer :</strong> faites glisser la ligne, ou ses extrémités pour changer son inclinaison.</li>
+    <li><strong>Couleur, épaisseur, style :</strong> via la barre flottante (par exemple vert pour un support, rouge pour une résistance, tirets pour un niveau incertain).</li>
+    <li><strong>Supprimer :</strong> cliquez sur la corbeille de la barre flottante, ou sélectionnez la ligne puis appuyez sur <kbd>Suppr</kbd>.</li>
+    <li><strong>Verrouiller :</strong> le cadenas de la barre flottante empêche de déplacer la ligne par erreur.</li>
+  </ul>
+  <div class="alerte"><strong>À retenir :</strong> un support ou une résistance est une <em>zone</em>, pas un trait au pixel près : les mèches dépassent souvent un peu. Plus un niveau a été touché de fois sur une longue période (graphique journalier ou hebdomadaire), plus il compte. Un niveau cassé change souvent de rôle : une ancienne résistance devient un support. Les lignes sont enregistrées avec votre compte, par actif.</div>
+
+    <h2 id="etape9">Étape 9 – Programmer des alertes de prix</h2>
+<p>Une alerte vous prévient quand le prix atteint un niveau que vous avez choisi : vous n’avez plus besoin de rester devant le graphique. Elle se combine bien avec l’étape 8 : on pose une alerte sur chaque support ou résistance important.</p>
+<ol class="etapes">
+<li><strong>Ouvrir la fenêtre d’alerte :</strong> cliquez sur l’icône <strong>Alerte</strong> (une horloge) dans la barre de droite, puis sur <strong>Créer une alerte</strong>. Raccourci : <kbd>Alt</kbd> + <kbd>A</kbd> (<kbd>Option</kbd> + <kbd>A</kbd> sur Mac). Vous pouvez aussi survoler l’échelle de prix à droite du graphique et cliquer sur le <strong>+</strong> qui apparaît à la hauteur de votre curseur.</li>
+<li><strong>Choisir la condition :</strong> vérifiez que l’actif est le bon, puis choisissez la façon de franchir le niveau (voir le tableau ci-dessous) et saisissez la <strong>valeur</strong> du prix.</li>
+<li><strong>Choisir le déclenchement :</strong> <strong>Une seule fois</strong> (<em>Only Once</em>) est le plus simple pour débuter.</li>
+<li><strong>Choisir la notification :</strong> notification dans le navigateur, e-mail, son, ou notification sur le téléphone avec l’application TradingView.</li>
+<li>Donnez un <strong>nom</strong> à l’alerte (par exemple « AAPL résistance 190 »), puis cliquez sur <strong>Créer</strong>.</li>
+</ol>
+<div aria-hidden="true" class="bar"><span class="on">Alerte</span><span>AAPL</span><span>Croisement à la hausse</span><span>190</span><span>Une seule fois</span></div>
+<div class="tablewrap"><table>
+<tr><th>Condition</th><th>Pour quoi faire ?</th></tr>
+<tr><td>Croisement à la hausse (<em>Crossing Up</em>)</td><td>Être prévenu quand le prix <strong>passe au-dessus</strong> d’un niveau : cassure d’une résistance</td></tr>
+<tr><td>Croisement à la baisse (<em>Crossing Down</em>)</td><td>Être prévenu quand le prix <strong>passe en dessous</strong> d’un niveau : cassure d’un support</td></tr>
+<tr><td>Croisement (<em>Crossing</em>)</td><td>Être prévenu dans les deux sens</td></tr>
+</table></div>
+<h3>Gérer ses alertes</h3>
+<ul>
+<li>Dans la barre de droite, l’icône <strong>Alerte</strong> ouvre la liste de vos alertes : vous pouvez les modifier, les mettre en pause, les relancer ou les supprimer.</li>
+<li>Quand une alerte se déclenche, elle apparaît dans le journal de la même fenêtre.</li>
+</ul>
+<div class="astuce"><strong>Astuce :</strong> réglez l’alerte un peu <em>avant</em> le niveau (par exemple 1 % sous une résistance) pour avoir le temps d’ouvrir le graphique et d’analyser la situation, plutôt que d’être prévenu au dernier moment.</div>
+<div class="alerte"><strong>Limites de l’offre gratuite :</strong> trois alertes de prix actives en même temps, d’une durée limitée (environ un mois), sans alerte sur les indicateurs (par exemple « le RSI passe sous 30 ») ni sur les dessins (une ligne tracée à l’étape 8). Pour surveiller une de vos lignes, notez son prix et créez une alerte de prix à ce niveau. Une alerte ne passe jamais d’ordre : elle prévient seulement, la décision reste la vôtre.</div>
+
+    <h2 id="etape10">Étape 10 – Repérer des zones de repli avec Fibonacci</h2>
+<p>Après un mouvement marqué, le prix revient souvent sur une partie de son trajet avant de repartir : c’est un <strong>repli</strong>. Le retracement de Fibonacci découpe ce mouvement en niveaux (23,6 %, 38,2 %, 50 %, 61,8 %, 78,6 %) pour repérer où ce repli pourrait s’arrêter. L’outil est gratuit, comme tous les outils de dessin.</p>
+<ol class="etapes">
+<li>Dans la barre de gauche, ouvrez le menu des outils <strong>Fibonacci et Gann</strong>, puis choisissez <strong>Retracement de Fibonacci</strong>.</li>
+<li><strong>Tendance haussière :</strong> cliquez sur le creux de départ, puis sur le sommet atteint. Les niveaux apparaissent sous le sommet.</li>
+<li><strong>Tendance baissière :</strong> cliquez sur le sommet de départ, puis sur le creux atteint. Les niveaux apparaissent au-dessus du creux.</li>
+<li>Pour changer les niveaux ou les couleurs, double-cliquez sur l’outil : onglet <em>Style</em>.</li>
+</ol>
+<div class="tablewrap"><table>
+<tr><th>Niveau</th><th>Lecture classique</th></tr>
+<tr><td>38,2 % à 61,8 %</td><td>Zone de repli « normal » : la tendance peut repartir de là</td></tr>
+<tr><td>78,6 %</td><td>Repli profond : la tendance commence à s’affaiblir</td></tr>
+<tr><td>Au-delà de 100 %</td><td>Le mouvement de départ est entièrement effacé : le scénario est invalidé</td></tr>
+</table></div>
+<div class="alerte"><strong>À retenir :</strong> ces niveaux sont des zones d’attention, pas des garanties. Ils sont surveillés par beaucoup de monde, ce qui renforce leur effet, mais ils sont plus fiables quand ils coïncident avec un support ou une résistance (étape 8), une moyenne mobile (partie 1, étape 3) ou un pic de volume (partie 1, étape 5). Choisissez un mouvement net, bien visible en journalier ou en hebdomadaire.</div>
+
+    <h2 id="etape11">Étape 11 – Deux outils de lecture : échelle logarithmique et mesure</h2>
+<h3>L’échelle logarithmique</h3>
+<p>Par défaut, l’échelle de prix est linéaire : une même hauteur représente une même variation <em>en valeur</em>. En échelle logarithmique, une même hauteur représente une même variation <em>en pourcentage</em> : passer de 100 à 200 (+100 %) occupe la même hauteur que passer de 200 à 400. Sur plusieurs années, c’est la lecture la plus juste, en particulier pour le Bitcoin ou un indice qui a beaucoup progressé.</p>
+<ol class="etapes">
+<li>Repérez les petits boutons en bas à droite du graphique (<em>auto</em>, <em>%</em>, <em>log</em>).</li>
+<li>Cliquez sur <strong>log</strong> pour l’activer (de nouveau pour revenir en linéaire). Raccourci : <kbd>Alt</kbd> + <kbd>L</kbd> (<kbd>Option</kbd> + <kbd>L</kbd> sur Mac).</li>
+</ol>
+<div class="astuce">Utilisez le log sur les graphiques hebdomadaires ou mensuels couvrant de nombreuses années. Pour le court terme, la différence est faible : gardez l’échelle linéaire. Les lignes de tendance tracées sur de longues périodes doivent l’être sur l’échelle choisie.</div>
+<h3>L’outil de mesure</h3>
+<p>Il calcule en un geste la variation entre deux points : en prix, en pourcentage, en nombre de bougies et en durée. Utile pour mesurer l’ampleur d’une hausse ou d’une correction.</p>
+<ol class="etapes">
+<li>Maintenez la touche <kbd>Maj</kbd> enfoncée, cliquez sur le point de départ, puis cliquez sur le point d’arrivée.</li>
+<li>Une zone colorée affiche les valeurs. Cliquez ailleurs pour la faire disparaître. L’outil <strong>Règle</strong> du menu des outils de prévision et de mesure fait la même chose.</li>
+</ol>
+
+    <h2 id="etape12">Étape 12 – Trouver des actifs avec le screener</h2>
+<p>Un screener filtre des milliers d’actifs selon des critères que vous choisissez. Il sert à trouver des idées à étudier, puis à les ajouter à votre liste de surveillance.</p>
+<ol class="etapes">
+<li>Sur le site, ouvrez le menu <strong>Produits</strong>, puis <strong>Screeners</strong>, et choisissez le <strong>Screener d’actions</strong> (ou celui des cryptomonnaies).</li>
+<li>Choisissez le marché ou le pays (par exemple la France).</li>
+<li>Ajoutez des <strong>filtres</strong> : capitalisation, secteur, variation sur une période, volume échangé, dividende, ratios de valorisation…</li>
+<li>Cliquez sur l’en-tête d’une colonne pour trier les résultats.</li>
+<li>Cliquez sur une ligne pour ouvrir l’actif, puis ajoutez-le à votre liste de surveillance (étape 7).</li>
+</ol>
+<div class="astuce">Avec l’offre gratuite, le screener est disponible, mais avec un rafraîchissement plus lent et moins de fonctions que dans les offres payantes. Commencez avec deux ou trois filtres seulement : trop de critères ne laissent plus aucun résultat.</div>
+<div class="alerte">Le screener trie des actifs, il ne les recommande pas. Un bon résultat dans le tableau ne remplace ni l’analyse du graphique (parties 1 et 2) ni celle de l’entreprise. Les performances passées ne préjugent pas des performances futures.</div>
+
+    <h2 id="etape13">Étape 13 – S’entraîner en trading papier</h2>
+<p>Le trading papier (ou simulé) vous permet de passer des ordres d’achat et de vente avec de l’argent <strong>fictif</strong>, sur les vrais prix du marché. C’est la meilleure manière de tester tout ce qui précède sans risque.</p>
+<ol class="etapes">
+<li>Sous le graphique, ouvrez le <strong>Panneau de trading</strong> (bouton en bas de l’écran).</li>
+<li>Choisissez <strong>Paper Trading</strong> (trading papier) et cliquez sur <strong>Connecter</strong>. Un capital fictif vous est attribué.</li>
+<li>Passez un ordre depuis le panneau : achat ou vente, quantité, puis, si vous le souhaitez, un <strong>stop-loss</strong> (sortie en cas de perte) et un <strong>take-profit</strong> (sortie en cas de gain).</li>
+<li>Suivez vos positions et votre résultat dans le même panneau. Vous pouvez réinitialiser le compte pour recommencer.</li>
+</ol>
+<div class="astuce">Tenez un petit journal : l’actif, la raison de l’entrée, le niveau du stop, le résultat. Après quelques semaines, vous verrez quelles habitudes fonctionnent et lesquelles vous coûtent de l’argent.</div>
+<div class="alerte"><strong>Limites :</strong> certaines fonctions avancées sont réservées aux offres payantes, et un simulateur ne reproduit ni le stress d’une vraie perte ni tous les frais et décalages de prix d’un vrai courtier. De bons résultats en simulation ne garantissent donc pas les mêmes résultats avec de l’argent réel.</div>
+
+    <h2 id="resultat">Résultat et erreurs à éviter</h2>
+<p>Vous avez maintenant une liste de surveillance, vos propres lignes de support, de résistance et de tendance, des alertes de prix sur vos niveaux, des outils de lecture (Fibonacci, échelle logarithmique, mesure), un screener pour trouver des idées et un trading papier pour vous entraîner sans risque.</p>
+<ul>
+<li>Tracer trop de lignes : gardez les niveaux les plus nets, touchés plusieurs fois.</li>
+<li>Se fier à un seul outil : Fibonacci, supports et moyennes gagnent à se confirmer entre eux.</li>
+<li>Passer à l’argent réel sans s’être entraîné : le trading papier sert à cela.</li>
+</ul>
+<div class="alerte">Ce tutoriel est pédagogique. Il ne constitue ni un conseil en investissement ni une recommandation d’achat ou de vente. Le trading comporte un risque de perte en capital.</div>
+
+    <h2 id="quiz">Testez-vous</h2>
+<details><summary>1. Comment passer d’un actif à l’autre sans retaper son nom ?</summary><p>En l’ajoutant à la liste de surveillance : un clic sur sa ligne l’affiche sur le graphique.</p></details>
+<details><summary>2. Quels points relier pour tracer une ligne de tendance haussière ?</summary><p>Au moins deux creux de plus en plus hauts. La ligne passe sous le prix.</p></details>
+<details><summary>3. Une résistance est cassée vers le haut : que devient-elle souvent ?</summary><p>Un support : l’ancien plafond tend à devenir un plancher.</p></details>
+<details><summary>4. Pourquoi poser une alerte de prix sur une résistance plutôt que surveiller l’écran ?</summary><p>L’alerte vous prévient quand le prix atteint le niveau, sans rester devant le graphique. On la règle un peu avant le niveau pour avoir le temps d’analyser, et elle ne passe aucun ordre.</p></details>
+<details><summary>5. Vous tracez un retracement de Fibonacci sur une hausse : où placez-vous les deux points ?</summary><p>Le premier sur le creux de départ, le second sur le sommet atteint. Les niveaux de repli (38,2 %, 50 %, 61,8 %) apparaissent alors sous le sommet.</p></details>
+<details><summary>6. Que représente une même hauteur sur une échelle logarithmique ?</summary><p>Une même variation en pourcentage : passer de 100 à 200 occupe la même hauteur que passer de 200 à 400.</p></details>
+<details><summary>7. Quel est l’intérêt du trading papier ?</summary><p>Tester ses idées et ses réglages sur de vrais prix avec de l’argent fictif, sans risque. Les résultats réels peuvent toutefois différer, car la simulation ne reproduit pas l’émotion ni tous les frais.</p></details>
+
+    <div class="pager"><a href="didacticiel-tradingview.html">← Partie 1 : premiers pas</a><a class="next" href="budget-epargne.html">Planifier : budget et épargne de précaution →</a></div>
+  </article>
+</main>
+
+<footer>
+  <p>&copy; 2026 EikoFinance. Tous droits réservés.</p>
+  <p>Contact : <a href="mailto:contacteikofinance@gmail.com">contacteikofinance@gmail.com</a></p>
+</footer>
+<script src="js/lesson.js"></script>
+</body>
+</html>
