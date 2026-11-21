@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gérer son risque - EikoFinance</title>
+<meta name="description" content="Taille de position, stop-loss, ratio gain/risque, levier et journal de trading : décider combien on peut perdre avant d’entrer. Leçon pédagogique avec exemples chiffrés.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/lesson.css">
+<link rel="stylesheet" href="css/scene.css">
+<link rel="stylesheet" href="css/cartes.css">
+<script src="js/site.js" defer></script>
+<style>
+.tablewrap{overflow-x:auto;margin:1rem 0 1.4rem}
+.tablewrap table{border-collapse:collapse;width:100%;min-width:420px}
+.tablewrap th,.tablewrap td{border:1px solid #D9DEE5;padding:.55rem .7rem;text-align:left;vertical-align:top}
+.tablewrap th{background:#0A1C3B;color:#fff}
+.tablewrap tr:nth-child(even) td{background:#F7F9FC}
+.chapitre ol.etapes{margin:0 0 1rem 1.3rem;line-height:1.7}
+.chapitre h3{color:#13305a;font-size:1.08rem;margin:1.4rem 0 .3rem}
+.chapitre .bar{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;background:#0b1f3a;padding:.7rem;border-radius:6px;margin:1rem 0;font-size:.9rem}
+.chapitre .bar span{background:#13305a;color:#f6f1e4;padding:.3rem .8rem;border-radius:4px;border:1px solid transparent}
+.chapitre .bar .on{border-color:#c9a24b;color:#c9a24b;font-weight:700}
+.chapitre .bar small{color:#9fb0cc;margin-left:auto}
+.chapitre kbd{background:#e9edf4;border:1px solid #c5ccd8;border-bottom-width:2px;border-radius:4px;padding:0 .4em;font-size:.9em}
+.chapitre .astuce{background:#eef2f9;border:1px solid #13305a;border-radius:8px;padding:.8rem 1rem;margin:1rem 0;font-size:.95rem}
+.chapitre details{margin:.6rem 0;padding:.6rem .9rem}
+.chapitre summary{cursor:pointer;font-weight:700;color:#0b1f3a}
+</style>
+<style>.chapitre .formule{background:#fff;border:2px solid #c9a24b;border-radius:8px;padding:.8rem 1rem;margin:1rem 0;font-weight:700;text-align:center;color:#0b1f3a}</style>
+</head>
+<body>
+<header>
+  <div class="logo-container">
+    <img src="images/logo.jpg" alt="Logo Eiko Finance" class="logo-img">
+    <span class="logo-text">EIKO FINANCE</span>
+  </div>
+  <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+  <!-- Menu : généré par js/site.js (liste de secours si JavaScript est désactivé) -->
+  <nav>
+    <ul>
+      <li><a href="index.html#comprendre">Comprendre</a></li>
+      <li><a href="index.html#investir">Investir</a></li>
+      <li><a href="index.html#mesurer">Mesurer</a></li>
+      <li><a href="index.html#optimiser">Optimiser</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <p class="crumbs"><a href="index.html">Accueil</a> › <a href="index.html#trading">Trading</a> › Gérer son risque</p>
+
+  <section class="scene scene-hero img-analyse">
+    <h1>Gérer son risque</h1>
+    <p>Dans les marchés, on ne contrôle pas le prix, mais on peut décider à l’avance combien on accepte de perdre. Taille de position, stop-loss, ratio gain/risque, levier et journal : la méthode pour que quelques pertes ne ruinent pas un compte. Environ 20 minutes.</p>
+    <a href="#pourquoi" class="btn-gold">Commencer</a>
+  </section>
+
+  <section class="card-grid" aria-label="Sommaire de la leçon">
+    <a class="card" href="#pourquoi"><h3>Pourquoi la perte pèse plus</h3><p>L’arithmétique des pertes.</p></a>
+    <a class="card" href="#risque-trade"><h3>Le risque par opération</h3><p>Fixer sa perte maximale.</p></a>
+    <a class="card" href="#stop"><h3>Le stop-loss</h3><p>Où sortir si l’idée est fausse.</p></a>
+    <a class="card" href="#taille"><h3>La taille de position</h3><p>Une formule, un exemple.</p></a>
+    <a class="card" href="#ratio"><h3>Le ratio gain/risque</h3><p>Ce que gagne un trade, ce qu’il coûte.</p></a>
+    <a class="card" href="#levier"><h3>Le levier</h3><p>Il multiplie gains et pertes.</p></a>
+    <a class="card" href="#positions"><h3>Plusieurs positions à la fois</h3><p>Additionner les risques.</p></a>
+    <a class="card" href="#journal"><h3>Le journal de trading</h3><p>Mesurer pour progresser.</p></a>
+    <a class="card" href="#tradingview"><h3>Le faire sur TradingView</h3><p>L’outil position longue/courte.</p></a>
+    <a class="card" href="#checklist"><h3>La liste avant d’agir</h3><p>Sept questions à se poser.</p></a>
+    <a class="card" href="#quiz"><h3>Testez-vous</h3><p>Six questions pour vérifier.</p></a>
+  </section>
+
+  <article class="chapitre" id="lecon">
+    <p class="accroche">Cette leçon complète le <a href="didacticiel-tradingview.html">didacticiel TradingView</a> et l’<a href="analyse-graphique.html">analyse graphique</a> : on sait lire un graphique, reste à décider combien risquer. Les chiffres sont des exemples pédagogiques, pas des recommandations : chacun fixe ses propres limites selon sa situation.</p>
+
+    <h2 id="pourquoi">Pourquoi la perte pèse plus que le gain</h2>
+    <p>Une perte demande un gain plus grand pour être effacée. Perdre 50 % oblige à gagner 100 % pour revenir au point de départ, et plus la perte est profonde, plus la remontée devient difficile.</p>
+    <div class="tablewrap"><table>
+    <tr><th>Perte subie</th><th>Gain nécessaire pour revenir à l’équilibre</th></tr>
+    <tr><td>−10 %</td><td>+11 %</td></tr>
+    <tr><td>−20 %</td><td>+25 %</td></tr>
+    <tr><td>−30 %</td><td>+43 %</td></tr>
+    <tr><td>−50 %</td><td>+100 %</td></tr>
+    <tr><td>−75 %</td><td>+300 %</td></tr>
+    <tr><td>−90 %</td><td>+900 %</td></tr>
+    </table></div>
+    <p>Toute la gestion du risque part de là : <strong>d’abord limiter les pertes</strong>, les gains viennent ensuite.</p>
+
+    <h2 id="risque-trade">Fixer le risque par opération</h2>
+    <p>Le <strong>risque d’une opération</strong> est la somme que l’on perdrait si le prix atteignait le stop (voir plus bas), exprimée en pourcentage du capital. Beaucoup de traders expérimentés retiennent un repère de l’ordre de <strong>1 % du capital par opération</strong>, parfois jusqu’à 2 %. C’est un repère courant, pas une règle : il faut plutôt choisir un pourcentage qu’on supporte psychologiquement, en sachant qu’une série de pertes arrive toujours.</p>
+    <div class="tablewrap"><table>
+    <tr><th>Capital</th><th>Risque à 1 %</th><th>Risque à 2 %</th></tr>
+    <tr><td>5 000 €</td><td>50 €</td><td>100 €</td></tr>
+    <tr><td>10 000 €</td><td>100 €</td><td>200 €</td></tr>
+    <tr><td>25 000 €</td><td>250 €</td><td>500 €</td></tr>
+    </table></div>
+    <div class="astuce">Avec un risque de 1 % par opération, dix pertes d’affilée font perdre environ 10 % du capital. Avec 10 %, elles le font disparaître.</div>
+
+    <h2 id="stop">Le stop-loss : où sortir si l’idée est fausse</h2>
+    <p>Un <strong>stop-loss</strong> est un ordre qui clôture la position si le prix atteint un niveau fixé à l’avance. Le bon niveau n’est pas un pourcentage choisi au hasard : c’est le prix qui montre que le scénario de départ est <strong>invalidé</strong>.</p>
+    <ul>
+    <li><strong>Sous un support</strong> (pour une position acheteuse) ou <strong>au-dessus d’une résistance</strong> (pour une position vendeuse), avec une petite marge car les mèches dépassent souvent.</li>
+    <li><strong>Sous le dernier creux</strong> (ou au-dessus du dernier sommet) significatif.</li>
+    <li><strong>À une distance liée à la volatilité</strong>, par exemple en multiple de l’ATR (voir la <a href="didacticiel-tradingview-avance.html#volatilite">partie 2 du didacticiel</a>).</li>
+    </ul>
+    <div class="alerte"><strong>Limites :</strong> un stop n’est pas une garantie absolue. Si le prix saute d’un niveau à l’autre (ouverture en gap, annonce, marché illiquide), l’ordre est exécuté au prochain prix disponible, parfois plus loin que prévu. Et un stop ne se déplace pas vers le bas pour « laisser respirer » une position qui perd : le niveau est choisi avant d’entrer.</div>
+
+    <h2 id="taille">La taille de position : une conséquence, pas un choix</h2>
+    <p>On ne décide pas « j’achète 100 actions ». On décide d’abord le risque et le stop, et la quantité en découle :</p>
+    <div class="formule">Quantité = (Capital × % de risque) ÷ (Prix d’entrée − Prix du stop)</div>
+    <p><strong>Exemple.</strong> Capital de 10 000 €, risque de 1 % (soit 100 €). Entrée à 50 €, stop à 47 € : chaque action fait perdre 3 € si le stop est touché.</p>
+    <ol class="etapes">
+    <li>Risque maximal : 10 000 € × 1 % = 100 €.</li>
+    <li>Risque par action : 50 € − 47 € = 3 €.</li>
+    <li>Quantité : 100 € ÷ 3 € ≈ 33 actions, soit une position de 33 × 50 € = 1 650 € (environ 16,5 % du capital).</li>
+    </ol>
+    <p>Si le stop est plus éloigné, la quantité diminue ; s’il est plus proche, elle augmente. Le <strong>risque en euros reste le même</strong>.</p>
+
+    <h2 id="ratio">Le ratio gain/risque</h2>
+    <p>Avant d’entrer, on compare ce que l’on espère gagner (l’<strong>objectif</strong>, ou take-profit) à ce que l’on risque (la distance jusqu’au stop). Dans l’exemple, avec un stop à 3 € et un objectif à 56 € (6 € de gain par action), le ratio est de <strong>2 pour 1</strong>.</p>
+    <p>Ce ratio change le taux de réussite dont on a besoin pour ne pas perdre d’argent (hors frais) :</p>
+    <div class="tablewrap"><table>
+    <tr><th>Gain visé pour 1 de risque</th><th>Taux de réussite minimal pour l’équilibre</th></tr>
+    <tr><td>0,5 pour 1</td><td>67 %</td></tr>
+    <tr><td>1 pour 1</td><td>50 %</td></tr>
+    <tr><td>2 pour 1</td><td>33 %</td></tr>
+    <tr><td>3 pour 1</td><td>25 %</td></tr>
+    </table></div>
+    <div class="astuce">Un taux de réussite élevé ne suffit pas : avec 60 % de gains de 50 € et 40 % de pertes de 100 €, le résultat moyen par opération est 0,6 × 50 − 0,4 × 100 = <strong>−10 €</strong>. À l’inverse, 40 % de gains de 200 € et 60 % de pertes de 80 € donnent 0,4 × 200 − 0,6 × 80 = <strong>+32 €</strong> (c’est l’« espérance »). Les frais et les écarts de prix réduisent ces chiffres.</div>
+
+    <h2 id="levier">Le levier : il multiplie gains et pertes</h2>
+    <p>Le levier permet d’exposer plus d’argent que celui que l’on dépose (CFD, contrats à terme, marge). Avec 1 000 € de marge et un levier de 10, on est exposé comme avec 10 000 €.</p>
+    <div class="tablewrap"><table>
+    <tr><th>Le prix évolue de…</th><th>Effet sur 1 000 € de marge (levier 10)</th></tr>
+    <tr><td>+5 %</td><td>+500 € (+50 %)</td></tr>
+    <tr><td>−5 %</td><td>−500 € (−50 %)</td></tr>
+    <tr><td>−10 %</td><td>Toute la marge perdue : le courtier clôture la position</td></tr>
+    </table></div>
+    <p>Le levier ne change pas la logique de la leçon : le risque se calcule toujours à partir du stop et de la perte maximale acceptée, pas de la marge. En Europe, le levier des CFD proposés aux particuliers est plafonné et les courtiers doivent clôturer les positions avant que le solde ne devienne négatif ; vérifiez les règles exactes de votre courtier. Pour un débutant, le <a href="trading.html">trading sans levier</a> laisse davantage de marge d’erreur.</p>
+
+    <h2 id="positions">Plusieurs positions à la fois</h2>
+    <p>Les risques s’additionnent. Trois positions à 1 % de risque mettent <strong>3 % du capital en jeu au même moment</strong>. Et si ces positions sont corrélées (trois valeurs technologiques, ou plusieurs cryptomonnaies), elles peuvent toutes toucher leur stop ensemble : elles comptent presque comme une seule grosse position. On fixe donc aussi une limite de risque total sur l’ensemble des positions ouvertes.</p>
+
+    <h2 id="journal">Le journal de trading</h2>
+    <p>Un journal transforme l’expérience en données. Pour chaque opération, on note : l’actif, la période, la raison d’entrer, le prix d’entrée, le stop, l’objectif, le résultat, et l’état d’esprit. Au bout de quelques dizaines d’opérations, on calcule :</p>
+    <ul>
+    <li>le <strong>taux de réussite</strong> (part des opérations gagnantes) ;</li>
+    <li>le <strong>gain moyen</strong> et la <strong>perte moyenne</strong>, donc le ratio réel ;</li>
+    <li>l’<strong>espérance</strong> : taux de réussite × gain moyen − taux de perte × perte moyenne ;</li>
+    <li>la <strong>baisse maximale</strong> du capital (le « drawdown »), pour savoir ce que l’on a réellement supporté.</li>
+    </ul>
+    <p>Beaucoup d’erreurs se répètent : sortir trop tôt, renforcer une position perdante, déplacer un stop. Elles sont liées à des <a href="biais-investisseur.html">biais psychologiques</a> et se repèrent bien mieux dans un journal que de mémoire.</p>
+
+    <h2 id="tradingview">Le faire sur TradingView</h2>
+    <p>TradingView propose un outil qui dessine l’entrée, le stop et l’objectif, et calcule le ratio. Il est utile en <a href="didacticiel-tradingview-avance.html#etape13">trading papier</a>.</p>
+    <ol class="etapes">
+    <li>Dans la barre de gauche, ouvrez le menu des <strong>outils de prévision et de mesure</strong> et choisissez <strong>Position longue</strong> (pari à la hausse) ou <strong>Position courte</strong> (pari à la baisse).</li>
+    <li>Cliquez sur le prix d’entrée : une zone verte (objectif) et une zone rouge (stop) apparaissent.</li>
+    <li>Faites glisser le haut et le bas de la zone pour placer l’objectif et le stop (par exemple sous un support de l’<a href="didacticiel-tradingview-avance.html#etape8">étape de tracé des lignes</a>).</li>
+    <li>Double-cliquez sur l’outil : dans les réglages, indiquez la <strong>taille du compte</strong> et le <strong>risque</strong> (en % ou en monnaie). L’outil affiche la quantité correspondante et le ratio gain/risque.</li>
+    </ol>
+    <div class="astuce">Les noms exacts des menus et des champs peuvent varier selon la version de TradingView. L’outil est un aide-calcul : il ne passe aucun ordre et ne remplace pas votre propre vérification.</div>
+
+    <h2 id="checklist">La liste avant d’agir</h2>
+    <ol class="etapes">
+    <li>Quelle est mon idée, et qu’est-ce qui l’invaliderait ?</li>
+    <li>Où est mon stop, fixé avant d’entrer ?</li>
+    <li>Combien d’euros perdrais-je au stop, et quel pourcentage du capital cela représente-t-il ?</li>
+    <li>Quelle quantité en découle ?</li>
+    <li>Quel est mon objectif, et le ratio gain/risque est-il cohérent ?</li>
+    <li>Quel est mon risque total avec mes autres positions ouvertes ?</li>
+    <li>Suis-je calme, ou est-ce que j’agis pour « me refaire » ?</li>
+    </ol>
+    <div class="alerte">Cette leçon est pédagogique. Elle ne constitue ni un conseil en investissement ni une recommandation d’achat ou de vente. Les chiffres sont des exemples. Le trading comporte un risque de perte en capital, pouvant dépasser la somme engagée avec certains produits à effet de levier.</div>
+
+    <h2 id="quiz">Testez-vous</h2>
+<details><summary>1. Une position perd 50 % : de combien doit-elle remonter pour revenir à l’équilibre ?</summary><p>De 100 %. Une perte de 50 % se rattrape par un gain de 100 %.</p></details>
+<details><summary>2. Capital de 5 000 €, risque de 1 %, entrée à 20 €, stop à 18 € : combien d’actions ?</summary><p>Le risque maximal est de 50 €. Chaque action fait perdre 2 € au stop, donc 50 ÷ 2 = 25 actions (une position de 500 €).</p></details>
+<details><summary>3. Avec un ratio gain/risque de 3 pour 1, quel taux de réussite suffit à l’équilibre (hors frais) ?</summary><p>25 % : un gain compense trois pertes.</p></details>
+<details><summary>4. Pourquoi un stop-loss n’est-il pas une garantie absolue ?</summary><p>En cas de gap ou de marché peu liquide, l’ordre est exécuté au prochain prix disponible, qui peut être plus loin que le stop prévu.</p></details>
+<details><summary>5. Quel est l’effet d’un levier de 10 sur une variation de 10 % contre soi ?</summary><p>La perte atteint la totalité de la marge : le levier multiplie les pertes autant que les gains.</p></details>
+<details><summary>6. Que doit contenir un journal de trading ?</summary><p>L’actif, la raison d’entrer, le prix d’entrée, le stop, l’objectif, le résultat et l’état d’esprit, pour calculer ensuite le taux de réussite, le ratio réel et l’espérance.</p></details>
+
+    <div class="pager"><a href="didacticiel-tradingview-avance.html">← Didacticiel Trading View : aller plus loin</a><a class="next" href="budget-epargne.html">Planifier : budget et épargne de précaution →</a></div>
+  </article>
+</main>
+
+<footer>
+  <p>&copy; 2026 EikoFinance. Tous droits réservés.</p>
+  <p>Contact : <a href="mailto:contacteikofinance@gmail.com">contacteikofinance@gmail.com</a></p>
+</footer>
+<script src="js/lesson.js"></script>
+</body>
+</html>

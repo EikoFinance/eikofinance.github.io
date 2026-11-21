@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Didacticiel Trading View (2/2) : aller plus loin - EikoFinance</title>
-<meta name="description" content="Suite du didacticiel TradingView : liste de surveillance, supports, résistances et tendances, alertes de prix, Fibonacci, échelle logarithmique, outil de mesure, screener et trading papier.">
+<meta name="description" content="Suite du didacticiel TradingView : liste de surveillance, supports, résistances et tendances, alertes de prix, Fibonacci, échelle logarithmique, outil de mesure, bandes de Bollinger, ATR, screener et trading papier.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -56,7 +56,7 @@
 
   <section class="scene scene-hero img-analyse img-tradingview">
     <h1>Didacticiel Trading View : aller plus loin</h1>
-    <p>Partie 2 : sept outils pour organiser et affiner votre analyse. Liste de surveillance, lignes de support, de résistance et de tendance, alertes de prix, Fibonacci, échelle logarithmique et mesure, screener, trading papier. Environ 30 minutes.</p>
+    <p>Partie 2 : huit outils pour organiser et affiner votre analyse. Liste de surveillance, lignes de support, de résistance et de tendance, alertes de prix, Fibonacci, échelle logarithmique et mesure, bandes de Bollinger et ATR, screener, trading papier. Environ 35 minutes.</p>
     <a href="#etape7" class="btn-gold">Commencer</a>
   </section>
 
@@ -66,10 +66,11 @@
     <a class="card" href="#etape9"><h3>Les alertes de prix</h3><p>Être prévenu sans surveiller l'écran.</p></a>
     <a class="card" href="#etape10"><h3>Fibonacci</h3><p>Repérer des zones de repli.</p></a>
     <a class="card" href="#etape11"><h3>Échelle log et mesure</h3><p>Lire les grands mouvements.</p></a>
+    <a class="card" href="#volatilite"><h3>Bandes de Bollinger et ATR</h3><p>Mesurer la volatilité.</p></a>
     <a class="card" href="#etape12"><h3>Le screener</h3><p>Trouver des actifs selon des critères.</p></a>
     <a class="card" href="#etape13"><h3>Le trading papier</h3><p>S'entraîner sans risque.</p></a>
     <a class="card" href="#resultat"><h3>Résultat et erreurs</h3><p>Ce que vous savez faire, et les pièges.</p></a>
-    <a class="card" href="#quiz"><h3>Testez-vous</h3><p>Sept questions pour vérifier.</p></a>
+    <a class="card" href="#quiz"><h3>Testez-vous</h3><p>Neuf questions pour vérifier.</p></a>
   </section>
 
   <article class="chapitre" id="lecon">
@@ -189,6 +190,37 @@
 <li>Une zone colorée affiche les valeurs. Cliquez ailleurs pour la faire disparaître. L’outil <strong>Règle</strong> du menu des outils de prévision et de mesure fait la même chose.</li>
 </ol>
 
+    <h2 id="volatilite">Mesurer la volatilité : bandes de Bollinger et ATR</h2>
+<p>La volatilité mesure l’amplitude des mouvements du prix. Deux indicateurs la rendent visible : les bandes de Bollinger, qui s’affichent sur le prix, et l’ATR, qui s’affiche dans un cadre séparé. Avec l’offre gratuite, chacun compte dans la limite de deux indicateurs par graphique.</p>
+
+<h3>Les bandes de Bollinger</h3>
+<ol class="etapes">
+<li>Cliquez sur <strong>Indicateurs</strong>, tapez « Bollinger » et choisissez <strong>Bollinger Bands</strong> (bandes de Bollinger).</li>
+<li>Gardez les réglages standard : <strong>longueur 20</strong> et <strong>2 écarts-types</strong>.</li>
+</ol>
+<p>Trois lignes apparaissent : une moyenne mobile à 20 périodes au centre, et une bande haute et une bande basse placées à deux écarts-types de part et d’autre. Le prix reste entre les bandes la plupart du temps.</p>
+<div class="tablewrap"><table>
+<tr><th>Ce que vous voyez</th><th>Lecture classique</th></tr>
+<tr><td>Bandes très resserrées</td><td>Volatilité faible : une phase de mouvement plus ample suit souvent, sans indiquer dans quel sens</td></tr>
+<tr><td>Bandes qui s’écartent</td><td>Volatilité en hausse : le mouvement s’accélère</td></tr>
+<tr><td>Prix collé à la bande haute (ou basse) en tendance</td><td>Signe de force de la tendance, pas un signal de retournement</td></tr>
+<tr><td>Prix qui touche une bande dans un marché sans tendance</td><td>Retour probable vers la moyenne du milieu</td></tr>
+</table></div>
+<div class="alerte"><strong>Attention :</strong> toucher la bande haute n’est pas un signal de vente automatique. En forte tendance, le prix peut longer une bande pendant longtemps. On l’utilise avec le RSI, le volume et les supports.</div>
+
+<h3>L’ATR (Average True Range)</h3>
+<p>L’ATR mesure l’<strong>amplitude moyenne des bougies</strong> sur les dernières périodes, en tenant compte des gaps. Il s’exprime dans l’unité du prix et n’indique <strong>aucune direction</strong>.</p>
+<ol class="etapes">
+<li>Cliquez sur <strong>Indicateurs</strong>, tapez « ATR » et choisissez <strong>Average True Range</strong>.</li>
+<li>Gardez la <strong>longueur 14</strong>.</li>
+</ol>
+<p>Un ATR de 2 € sur une action signifie qu’en moyenne, une bougie y couvre environ 2 € entre son plus haut et son plus bas. Deux usages :</p>
+<ul>
+<li><strong>Placer un stop à une distance cohérente</strong> avec la volatilité, par exemple 1,5 à 2 fois l’ATR sous le prix d’entrée. Avec une entrée à 50 € et un ATR de 2 €, un stop à 1,5 ATR se place à 47 €. Ce multiple est un repère courant, pas une règle.</li>
+<li><strong>Comparer la volatilité</strong> de deux actifs ou de deux périodes.</li>
+</ul>
+<div class="astuce">La distance du stop détermine la quantité à acheter pour un risque donné : c’est le sujet de la leçon <a href="gestion-risque.html">Gérer son risque</a>.</div>
+
     <h2 id="etape12">Trouver des actifs avec le screener</h2>
 <p>Un screener filtre des milliers d’actifs selon des critères que vous choisissez. Il sert à trouver des idées à étudier, puis à les ajouter à votre liste de surveillance.</p>
 <ol class="etapes">
@@ -209,11 +241,11 @@
 <li>Passez un ordre depuis le panneau : achat ou vente, quantité, puis, si vous le souhaitez, un <strong>stop-loss</strong> (sortie en cas de perte) et un <strong>take-profit</strong> (sortie en cas de gain).</li>
 <li>Suivez vos positions et votre résultat dans le même panneau. Vous pouvez réinitialiser le compte pour recommencer.</li>
 </ol>
-<div class="astuce">Tenez un petit journal : l’actif, la raison de l’entrée, le niveau du stop, le résultat. Après quelques semaines, vous verrez quelles habitudes fonctionnent et lesquelles vous coûtent de l’argent.</div>
+<div class="astuce">Tenez un petit journal : l’actif, la raison de l’entrée, le niveau du stop, le résultat. Après quelques semaines, vous verrez quelles habitudes fonctionnent et lesquelles vous coûtent de l’argent. La leçon <a href="gestion-risque.html">Gérer son risque</a> détaille la taille de position et le stop.</div>
 <div class="alerte"><strong>Limites :</strong> certaines fonctions avancées sont réservées aux offres payantes, et un simulateur ne reproduit ni le stress d’une vraie perte ni tous les frais et décalages de prix d’un vrai courtier. De bons résultats en simulation ne garantissent donc pas les mêmes résultats avec de l’argent réel.</div>
 
     <h2 id="resultat">Résultat et erreurs à éviter</h2>
-<p>Vous avez maintenant une liste de surveillance, vos propres lignes de support, de résistance et de tendance, des alertes de prix sur vos niveaux, des outils de lecture (Fibonacci, échelle logarithmique, mesure), un screener pour trouver des idées et un trading papier pour vous entraîner sans risque.</p>
+<p>Vous avez maintenant une liste de surveillance, vos propres lignes de support, de résistance et de tendance, des alertes de prix sur vos niveaux, des outils de lecture (Fibonacci, échelle logarithmique, mesure, bandes de Bollinger, ATR), un screener pour trouver des idées et un trading papier pour vous entraîner sans risque.</p>
 <ul>
 <li>Tracer trop de lignes : gardez les niveaux les plus nets, touchés plusieurs fois.</li>
 <li>Se fier à un seul outil : Fibonacci, supports et moyennes gagnent à se confirmer entre eux.</li>
@@ -229,8 +261,10 @@
 <details><summary>5. Vous tracez un retracement de Fibonacci sur une hausse : où placez-vous les deux points ?</summary><p>Le premier sur le creux de départ, le second sur le sommet atteint. Les niveaux de repli (38,2 %, 50 %, 61,8 %) apparaissent alors sous le sommet.</p></details>
 <details><summary>6. Que représente une même hauteur sur une échelle logarithmique ?</summary><p>Une même variation en pourcentage : passer de 100 à 200 occupe la même hauteur que passer de 200 à 400.</p></details>
 <details><summary>7. Quel est l’intérêt du trading papier ?</summary><p>Tester ses idées et ses réglages sur de vrais prix avec de l’argent fictif, sans risque. Les résultats réels peuvent toutefois différer, car la simulation ne reproduit pas l’émotion ni tous les frais.</p></details>
+<details><summary>8. Les bandes de Bollinger se resserrent fortement : que cela indique-t-il ?</summary><p>Une volatilité faible. Une phase de mouvement plus ample suit souvent, mais les bandes n’indiquent pas dans quel sens.</p></details>
+<details><summary>9. L’ATR d’une action vaut 2 € : à quoi sert cette valeur ?</summary><p>Elle mesure l’amplitude moyenne des bougies, sans direction. On s’en sert par exemple pour placer un stop à une distance cohérente (1,5 à 2 fois l’ATR sous le prix d’entrée) et pour comparer la volatilité de deux actifs.</p></details>
 
-    <div class="pager"><a href="didacticiel-tradingview.html">← Partie 1 : premiers pas</a><a class="next" href="budget-epargne.html">Planifier : budget et épargne de précaution →</a></div>
+    <div class="pager"><a href="didacticiel-tradingview.html">← Partie 1 : premiers pas</a><a class="next" href="gestion-risque.html">Gérer son risque →</a></div>
   </article>
 </main>
 
