@@ -130,7 +130,7 @@
     ]
   };
   window.EIKO_SITE = SITE;
- 
+
   /* ---------- Outils ---------- */
   function h(tag, props, kids) {
     var e = document.createElement(tag);
@@ -144,19 +144,19 @@
   function link(file, title, isActive) {
     return h('a', isActive ? { href: file, text: title, class: 'active' } : { href: file, text: title });
   }
- 
+
   var page = location.pathname.split('/').pop() || 'index.html';
   var isHome = page === 'index.html';
   var current = SITE.branches.filter(function (b) {
     return b.items.some(function (i) { return i.file === page; });
   })[0];
- 
+
   /* ---------- Menu ---------- */
   function buildNav() {
     var nav = document.querySelector('header nav');
     if (!nav) return;
     var ul = h('ul');
- 
+
     /* Sur l'accueil, l'arbre remplace le menu : seul le contact reste en haut */
     if (!isHome) {
       SITE.branches.forEach(function (b) {
@@ -183,7 +183,7 @@
       ul.appendChild(h('li', {}, [link(x.file, x.title, x.file === page)]));
     });
     nav.replaceChildren(ul);
- 
+
     /* Le logo ramène à l'accueil */
     var logo = document.querySelector('header .logo-container');
     if (logo && !isHome) {
@@ -194,23 +194,23 @@
       logo.addEventListener('keydown', function (e) { if (e.key === 'Enter') location.href = 'index.html'; });
     }
   }
- 
+
   /* ---------- Accueil : cinq boutons, chacun donne accès à ses leçons ---------- */
   function buildTree() {
     var box = document.querySelector('[data-eiko="tree"]');
     if (!box) return;
- 
+
     var roots = h('div', { class: 'roots', role: 'group', 'aria-label': 'Choisissez un chemin' });
     var branches = h('div', { class: 'branches' });
     var views = {};
- 
+
     SITE.branches.forEach(function (b) {
       var btn = h('button', {
         type: 'button', class: 'root', 'data-id': b.id,
         'aria-expanded': 'false', 'aria-controls': 'branch-' + b.id
       }, [h('span', { class: 'root-title', text: b.title }), h('small', { text: b.tagline })]);
       roots.appendChild(btn);
- 
+
       var list = h('ol', { class: 'leaves' });
       list.style.setProperty('--n', b.items.length);
       b.items.forEach(function (it, j) {
@@ -230,10 +230,10 @@
       branches.appendChild(br);
       views[b.id] = { btn: btn, br: br };
     });
- 
+
     box.appendChild(roots);
     box.appendChild(branches);
- 
+
     var openId = null;
     function close() {
       if (!openId) return;
@@ -249,14 +249,14 @@
       box.classList.add('has-open');
       openId = id;
     }
- 
+
     SITE.branches.forEach(function (b) {
       views[b.id].btn.addEventListener('click', function () {
         if (openId === b.id) { close(); history.replaceState(null, '', location.pathname); }
         else { open(b.id); history.replaceState(null, '', '#' + b.id); }
       });
     });
- 
+
     /* Un lien du type index.html#investir ouvre directement le bon chemin */
     function fromHash() {
       var id = location.hash.replace('#', '');
@@ -269,13 +269,50 @@
     window.addEventListener('hashchange', fromHash);
     fromHash();
   }
- 
+
+  /* ---------- Avertissement : texte unique, affiché en tête de chaque leçon ---------- */
+  var NOTICE = {
+    lead: 'Ces contenus servent à comprendre, pas à décider.',
+    text: " Ils expliquent comment fonctionnent l'économie, les marchés et les produits financiers ; ils ne constituent ni un conseil en investissement, ni une recommandation personnalisée. L'auteur est titulaire de la certification professionnelle AMF, qui atteste d'un niveau de connaissances réglementaires et financières ; il n'est pas conseiller en investissements financiers. Tout investissement comporte un risque de perte en capital. ",
+    more: 'Avertissement et mentions légales',
+    file: 'avertissement.html'
+  };
+  var NO_NOTICE = ['index.html', 'avertissement.html']; /* pages sans bandeau */
+
+  function addNotice() {
+    if (NO_NOTICE.indexOf(page) !== -1) return;
+    var main = document.querySelector('main');
+    if (!main || main.querySelector('.avertissement')) return;
+    document.head.appendChild(h('style', { id: 'eiko-notice-style', text:
+      '.avertissement{background:#f6f1e4;border-left:5px solid #c9a24b;border-radius:6px;padding:.8rem 1rem;margin:1rem 0 1.4rem;font-size:.92rem;line-height:1.6;color:#1c2433}' +
+      '.avertissement p{margin:0}.avertissement strong{color:#0b1f3a}.avertissement a{color:#13305a;font-weight:600}' }));
+    var box = h('aside', { class: 'avertissement', role: 'note', 'aria-label': 'Avertissement' }, [
+      h('p', {}, [
+        h('strong', { text: NOTICE.lead }),
+        document.createTextNode(NOTICE.text),
+        h('a', { href: NOTICE.file, text: NOTICE.more + ' \u2192' })
+      ])
+    ]);
+    var hero = main.querySelector('.scene-hero');
+    var art = main.querySelector('article.chapitre');
+    if (hero) hero.parentNode.insertBefore(box, hero.nextSibling);
+    else if (art) art.parentNode.insertBefore(box, art);
+    else main.insertBefore(box, main.firstChild);
+  }
+
+  function addFooterLink() {
+    var f = document.querySelector('footer');
+    if (!f || f.querySelector('a[href="avertissement.html"]')) return;
+    f.appendChild(h('p', {}, [link('avertissement.html', 'Avertissement et mentions légales', page === 'avertissement.html')]));
+  }
+
   function init() {
     buildNav();
     buildTree();
+    addNotice();
+    addFooterLink();
     document.querySelectorAll('.subnav').forEach(function (n) { n.remove(); });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 })();
- 
