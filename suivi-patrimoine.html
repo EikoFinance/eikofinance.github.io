@@ -3,53 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Suivi de patrimoine — EikoFinance</title>
+<meta name="description" content="Suivi de patrimoine en ligne : immobilier, épargne, bourse, métaux précieux, crypto et staking, avec pondération et allocation cible.">
+<title>Suivi de patrimoine - EikoFinance</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/menu.css">
 <style>
-/* CSS de l'outil limité à .pat, sur les variables de style.css (bleu #102A56, or #C5A059) */
-.pat{--navy:var(--primary-blue,#102A56);--gold:var(--gold-accent,#C5A059);--ink:var(--text-dark,#1F2937);--mut:var(--text-muted,#4B5563);--line:#E5E9F0;--pos:#1e7a4c;--neg:#b3382c;
- max-width:1100px;margin:0 auto;padding:1.5rem 5% 3rem;color:var(--ink);font-size:.95rem;
- .tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin:0 0 1.2rem}
- .tabs button{background:#fff;border:1px solid var(--navy);color:var(--navy);padding:.45rem .95rem;border-radius:4px;font:600 .88rem var(--font-body,inherit);cursor:pointer}
- .tabs button:hover{border-color:var(--gold);color:var(--gold)}
- .tabs button.on{background:var(--navy);border-color:var(--navy);color:var(--gold-bright,#D4AF37)}
- .tabs .sep{flex:1}
- .tabs button[data-act]{border-style:dashed;font-weight:500}
- .card{padding:1.4rem;margin-bottom:1.4rem;overflow-x:auto}
- .card:hover{transform:none;box-shadow:0 4px 12px rgba(0,0,0,.04)}
- h2{font:700 1.1rem var(--font-title,serif);color:var(--navy);margin:0 0 .9rem}
- .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.8rem;margin-bottom:1.4rem}
- .kpi{background:var(--navy);color:#fff;border-radius:8px;padding:.9rem 1rem;border-bottom:3px solid var(--gold)}
- .kpi small{color:#b9c4dc;display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em}
- .kpi b{font-size:1.3rem;color:var(--gold-bright,#D4AF37)}
- .kpi input{margin-top:.3rem}
- .scroll{overflow-x:auto}
- table{width:100%;border-collapse:collapse;font-size:.88rem}
- th{background:var(--navy);color:#fff;font-weight:600;text-align:left;padding:.5rem;white-space:nowrap}
- td{padding:.25rem .4rem;border-bottom:1px solid var(--line);white-space:nowrap}
- td.o{text-align:right;font-variant-numeric:tabular-nums}
- tfoot td{font-weight:700;background:var(--bg-subtle,#F4F6F9);border-top:2px solid var(--gold)}
- input,select{font:inherit;padding:.4rem .5rem;border:1px solid #cfd6e2;border-radius:4px;width:100%;min-width:70px;background:#fff;color:var(--ink)}
- input.r{text-align:right}
- input:focus,select:focus{outline:2px solid var(--gold);border-color:var(--gold)}
- .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.8rem}
- .grid label{font-size:.72rem;color:var(--mut);text-transform:uppercase;letter-spacing:.04em;display:block}
- .pos{color:var(--pos)}.neg{color:var(--neg)}
- .btn{background:var(--navy);color:#fff;border:0;padding:.45rem .9rem;border-radius:4px;cursor:pointer;font:600 .82rem var(--font-body,inherit);margin:.7rem .5rem 0 0}
- .btn.alt{background:#fff;color:var(--navy);border:1px solid var(--navy)}
- .btn.alt:hover{border-color:var(--gold);color:var(--gold)}
- .x{background:none;border:0;color:var(--neg);cursor:pointer;font-size:1rem}
- .donut{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center}
- .donut svg{width:210px;height:210px;flex:none}
- .bar{height:10px;background:var(--line);border-radius:5px;overflow:hidden;min-width:120px}
- .bar i{display:block;height:100%;background:var(--gold)}
- .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
- .note{color:var(--mut);font-size:.8rem;margin-top:.7rem}
- .note a{color:var(--navy);font-weight:600}
-}
+.lecon{max-width:900px;margin:0 auto;padding:1.5rem 5% 3rem;line-height:1.7;color:var(--text-dark)}
+.fil{max-width:900px;margin:0 auto;padding:1rem 5% 0;font-size:.85rem;color:var(--text-muted)}
+.fil a{color:var(--primary-blue);text-decoration:none;font-weight:600}.fil a:hover{color:var(--gold-accent)}
+.lecon h2{font-family:var(--font-title);color:var(--primary-blue);font-size:1.4rem;margin:2.2rem 0 .8rem;scroll-margin-top:90px}
+.lecon h3{font-family:var(--font-title);color:var(--primary-blue);font-size:1.1rem;margin:1.4rem 0 .5rem}
+.lecon p,.lecon ul{margin:0 0 1rem}.lecon ul{padding-left:1.3rem}.lecon li{margin-bottom:.45rem}
+.citation{border-left:4px solid var(--gold-accent);padding:.3rem 1rem;color:var(--text-muted);font-style:italic;margin:0 0 1rem}
+.frame{width:100%;height:82vh;min-height:640px;border:1px solid #E5E9F0;border-radius:12px;background:#0a1a3d;box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.ouvrir{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin:1rem 0 0}
+.ouvrir small{color:var(--text-muted)}
+.apropos{background:var(--bg-subtle);border-left:4px solid var(--gold-accent);border-radius:6px;padding:.8rem 1rem;margin:1.2rem 0}
+.pager{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid #E5E9F0}
+.pager a{color:var(--primary-blue);font-weight:600;text-decoration:none}.pager a:hover{color:var(--gold-accent)}
 </style>
 </head>
 <body class="no-intro">
@@ -59,14 +32,63 @@
   <nav></nav>
 </header>
 <main>
+<nav class="fil" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> › <a href="index.html#planifier">Planifier</a> › Suivi de patrimoine</nav>
+
 <section class="hero">
-  <h1>Suivi de patrimoine</h1>
-  <p>Immobilier, épargne, bourse, métaux précieux, crypto, revenus de staking : votre patrimoine et sa répartition en un seul tableau de bord. Les chiffres affichés sont des exemples : remplacez-les par les vôtres.</p>
+  <h1>Suivi de patrimoine : voir tout ce que tu possèdes, d'un seul coup d'œil</h1>
+  <p>Immobilier, épargne, bourse, métaux précieux, crypto : additionne tout, mesure la répartition et compare-la à l'allocation que tu vises.</p>
+  <a class="btn-gold" href="#outil">Ouvrir l'outil</a>
 </section>
-<div class="pat">
-<div class="tabs" id="tabs"></div>
-<div id="view"></div>
-<p class="note">Vos données restent dans votre navigateur (aucun envoi sur un serveur) : utilisez « Exporter » pour les sauvegarder.</p>
+
+<div class="card-grid">
+  <a class="card" href="#outil"><h3>L'outil en ligne</h3><p>Ouvre-le ici ou dans un nouvel onglet.</p></a>
+  <a class="card" href="#onglets"><h3>Les huit onglets</h3><p>Ce que contient chaque section.</p></a>
+  <a class="card" href="#lire"><h3>Lire les résultats</h3><p>Pondération, patrimoine net, reste à investir.</p></a>
+  <a class="card" href="#limites"><h3>Les limites</h3><p>Ce que l'outil ne sait pas faire.</p></a>
+</div>
+
+<div class="lecon">
+<h2 id="outil">Le suivi de patrimoine en ligne</h2>
+<p class="citation">« On ne pilote bien que ce que l'on mesure. »</p>
+<p>Saisis tes placements dans l'outil ci-dessous : il calcule les totaux, les performances et la répartition de ton patrimoine. Les chiffres affichés au départ sont des exemples, inspirés d'une allocation de type All Weather : remplace-les par les tiens. Tes données restent privées : elles sont enregistrées uniquement dans ton navigateur.</p>
+<iframe class="frame" src="outil-suivi-patrimoine.html" title="Suivi de patrimoine Eiko Finance" loading="lazy"></iframe>
+<div class="ouvrir">
+  <a class="btn-gold" href="outil-suivi-patrimoine.html" target="_blank" rel="noopener">Ouvrir le suivi de patrimoine dans un nouvel onglet</a>
+  <small>Plus confortable sur téléphone, et tes saisies y sont conservées de la même façon.</small>
+</div>
+
+<h2 id="onglets">Les huit onglets, en un coup d'œil</h2>
+<ul>
+  <li><strong>Synthèse</strong> : ton patrimoine financier, ta valeur nette immobilière, un camembert de pondération et la répartition par type d'actif.</li>
+  <li><strong>Immobilier</strong> : à partir du prêt (montant, taux, durée, date de début), l'outil calcule la mensualité, le capital restant dû, les intérêts payés et la valeur nette du bien.</li>
+  <li><strong>Épargne</strong> : livrets et autres supports, avec le revenu annuel que chacun rapporte.</li>
+  <li><strong>Bourse</strong> : tes ETF, leur enveloppe (PEA, CTO…), leur performance et leur type (actions, obligations, matières premières).</li>
+  <li><strong>Métaux précieux</strong> : pièces et lingots d'or et d'argent, valorisés au cours de l'once.</li>
+  <li><strong>Crypto</strong> : positions par plateforme, prix moyen, variation et pertes déjà réalisées.</li>
+  <li><strong>Staking (BNC)</strong> : un registre des revenus reçus, avec un récapitulatif par année et une base imposable estimée.</li>
+  <li><strong>Plan d'allocation</strong> : tes cibles par produit, ce qu'il reste à investir et la mensualité pour y arriver sur la durée choisie.</li>
+</ul>
+<p>Le bouton « Exporter » enregistre tes données dans un fichier, et « Importer » les recharge : c'est ta sauvegarde.</p>
+
+<h2 id="lire">Comment lire les résultats</h2>
+<ul>
+  <li><strong>Patrimoine financier et patrimoine net</strong> : le premier additionne épargne et investissements ; le second y ajoute la valeur nette de l'immobilier, c'est-à-dire la valeur estimée du bien moins le capital restant dû.</li>
+  <li><strong>La pondération</strong> : la part de chaque actif dans tes investissements. Elle montre où est réellement concentré ton risque, souvent loin de l'idée qu'on s'en fait.</li>
+  <li><strong>La performance</strong> : l'écart entre ce que tu as investi et la valeur actuelle. Elle dépend des cours que tu saisis : pense à les mettre à jour.</li>
+  <li><strong>Le reste à investir</strong> : la différence entre ta cible et la valeur actuelle. Un reste négatif signale une ligne devenue trop lourde par rapport au plan, ce qui invite à rééquilibrer.</li>
+</ul>
+<div class="apropos"><strong>Un repère pour comparer :</strong> le plan d'exemple suit la version la plus citée du portefeuille All Weather (30 % d'actions, 40 % d'obligations long terme, 15 % d'obligations moyen terme, 7,5 % d'or, 7,5 % de matières premières). C'est une illustration, pas une recommandation : retrouve la logique et les limites de ce portefeuille dans la leçon <a href="portefeuilles-historiques.html">Les portefeuilles historiques</a>.</div>
+
+<h2 id="limites">Ce que l'outil ne sait pas faire</h2>
+<ul>
+  <li><strong>Il ne récupère pas les cours.</strong> Tu les saisis toi-même : une valeur périmée donne une image périmée.</li>
+  <li><strong>Il ne remplace pas ta déclaration d'impôts.</strong> Le calcul de la base imposable du staking est une estimation pédagogique : le taux d'abattement est modifiable, et il faut vérifier les règles en vigueur sur <a href="https://www.impots.gouv.fr" target="_blank" rel="noopener">impots.gouv.fr</a>.</li>
+  <li><strong>Il ne connaît pas ta situation.</strong> Il ne tient compte ni de tes objectifs, ni de ton horizon, ni de ta fiscalité personnelle.</li>
+  <li><strong>Tes données vivent dans ton navigateur.</strong> Les effacer, ou changer d'appareil, les fait disparaître : exporte-les régulièrement.</li>
+</ul>
+<p><strong>À savoir :</strong> cet outil est pédagogique. Il ne constitue ni une promesse de rendement ni un conseil en investissement. Les performances passées ne préjugent pas des performances futures.</p>
+
+<div class="pager"><a href="portefeuilles-historiques.html">← Les portefeuilles historiques</a><a href="antifragilite.html">L'antifragilité d'un portefeuille →</a></div>
 </div>
 </main>
 <footer><p>© 2026 EikoFinance. Tous droits réservés.</p><p>Contact : <a href="mailto:contacteikofinance@gmail.com">contacteikofinance@gmail.com</a></p></footer>
@@ -74,143 +96,6 @@
 <script>
 (function(){var t=document.querySelector('.menu-toggle'),n=document.querySelector('header nav');
  if(t&&n)t.addEventListener('click',function(){var o=n.classList.toggle('mobile-open');t.setAttribute('aria-expanded',o?'true':'false')})})();
-</script>
-<script>
-/* ===== Données d'exemple (fictives) : remplacez-les ou saisissez les vôtres dans l'outil ===== */
-const CL=['Cash','Actions & crypto','Obligations','Commodités'],BC='Actions & crypto',OB='Obligations',CM='Commodités';
-const DEMO={
- immo:{montant:250000,date:'2018-09-10',taux:1.5,duree:240,valeur:340000},
- epargne:[{bank:'Banque A',nom:'Livret A',montant:12000,taux:1.7},{bank:'Banque A',nom:'LDDS',montant:6000,taux:1.7}],
- bourse:{fx:1.1,rows:[
-  {etf:'ETF Actions Monde',em:'Émetteur A',env:'PEA',qte:120,achat:13000,val:15800,cl:BC},
-  {etf:"ETF Obligations d'États long terme (20 ans et +)",em:'Émetteur B',env:'CTO',qte:300,achat:22000,val:19400,cl:OB},
-  {etf:"ETF Obligations d'États moyen terme (7-10 ans)",em:'Émetteur B',env:'CTO',qte:150,achat:7800,val:7600,cl:OB},
-  {etf:'ETF Matières premières diversifiées',em:'Émetteur C',env:'CTO',qte:90,achat:3500,val:3700,cl:CM}]},
- metaux:{orSpot:3700,agSpot:55,or:[{n:'Maple Leaf 1 oz',g:31.1035,p:3300,d:''}],ag:[]},
- crypto:{pertes:0,prix:{Ethereum:1800},rows:[{a:'Ethereum',pf:'Plateforme A',cout:800,u:0.5,cl:BC}]},
- plan:{mois:120,rows:[
-  {n:'Actions mondiales',g:'Actions (30 %)',lie:'ETF Actions Monde',manuel:0,cible:15000},
-  {n:'Obligations long terme',g:'Obligations (40 %)',lie:"ETF Obligations d'États long terme (20 ans et +)",manuel:0,cible:20000},
-  {n:'Obligations moyen terme',g:'Obligations (15 %)',lie:"ETF Obligations d'États moyen terme (7-10 ans)",manuel:0,cible:7500},
-  {n:'Or',g:'Or (7,5 %)',lie:'Or',manuel:0,cible:3750},
-  {n:'Matières premières',g:'Matières premières (7,5 %)',lie:'ETF Matières premières diversifiées',manuel:0,cible:3750}]},
- bnc:{abatt:34,rows:[
-  {d:'2025-01-31',a:'Ethereum',m:42},{d:'2025-01-31',a:'Solana',m:35},
-  {d:'2025-02-28',a:'Ethereum',m:38},{d:'2025-02-28',a:'Solana',m:32},
-  {d:'2025-03-31',a:'Ethereum',m:36},{d:'2025-03-31',a:'Solana',m:40},
-  {d:'2026-01-31',a:'Ethereum',m:35},{d:'2026-01-31',a:'Solana',m:28}]}
-};
-const NEW={'epargne':{bank:'',nom:'',montant:0,taux:0},'bourse.rows':{etf:'',em:'',env:'PEA',qte:0,achat:0,val:0,cl:BC},
- 'metaux.or':{n:'',g:0,p:0,d:''},'metaux.ag':{n:'',g:0,p:0,d:''},'crypto.rows':{a:'Bitcoin',pf:'',cout:0,u:0,cl:CM},
- 'plan.rows':{n:'',g:'',lie:'',manuel:0,cible:0},'bnc.rows':{d:'',a:'Ethereum',m:0}};
-const KEY='eiko_patrimoine_v2',OZ=31.1035;
-const $=s=>document.querySelector(s);
-const esc=s=>String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
-const fmt=(n,d=0)=>isFinite(n)?n.toLocaleString('fr-FR',{minimumFractionDigits:d,maximumFractionDigits:d}):'–';
-const eur=(n,d=0)=>fmt(n,d)+' €';
-const pc=(n,d=1)=>isFinite(n)?fmt(n*100,d)+' %':'–';
-const num=v=>{const x=parseFloat(String(v).replace(/\s/g,'').replace(',','.'));return isFinite(x)?x:0};
-const sg=n=>`<span class="${n>=0?'pos':'neg'}">${n>=0?'+':''}${pc(n)}</span>`;
-let S,tab='syn';
-try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}
-if(!S||!S.immo||!S.bnc)S=structuredClone(DEMO);
-const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
-const get=p=>p.split('.').reduce((o,k)=>o[k],S);
-function setP(p,v){const k=p.split('.'),l=k.pop(),o=k.reduce((o,x)=>o[x],S);o[l]=typeof o[l]==='number'?num(v):v}
-const T=(p,v,o='')=>`<input data-p="${p}" value="${esc(v)}" ${o}>`;
-const N=(p,v)=>`<input class="r" inputmode="decimal" data-p="${p}" value="${v}">`;
-const D=(p,v)=>`<input type="date" data-p="${p}" value="${v||''}">`;
-const SEL=(p,v,opts)=>`<select data-p="${p}">${opts.map(o=>`<option ${o===v?'selected':''}>${esc(o)}</option>`).join('')}</select>`;
-const del=p=>`<td><button class="x" data-del="${p}" title="Supprimer">✕</button></td>`;
-const add=p=>`<button class="btn alt" data-add="${p}">+ Ajouter une ligne</button>`;
-const tbl=(h,body,foot)=>`<div class="scroll"><table><thead><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${body}</tbody>${foot?`<tfoot>${foot}</tfoot>`:''}</table></div>`;
-const o=x=>`<td class="o">${x}</td>`;
-const sum=(a,f)=>a.reduce((s,x)=>s+f(x),0);
-
-/* ===== Calculs ===== */
-function immo(){const I=S.immo,P=I.montant,r=I.taux/1200,n=I.duree||1;
- const m=r?P*r/(1-Math.pow(1+r,-n)):P/n;
- const d=new Date(I.date),t=new Date();
- let k=(t.getFullYear()-d.getFullYear())*12+t.getMonth()-d.getMonth()-(t.getDate()<d.getDate()?1:0);
- k=isNaN(k)?0:Math.max(0,Math.min(n,k));
- const crd=r?P*Math.pow(1+r,k)-m*(Math.pow(1+r,k)-1)/r:P-P/n*k;
- return{m,total:m*n,int:m*n-P,k,crd,intPay:m*k-(P-crd),net:I.valeur-crd}}
-const metalV=(r,spot)=>r.g/OZ*spot;
-function assets(){const A={};const ad=(n,v,cl)=>{n=n||'(sans nom)';A[n]=A[n]||{v:0,cl};A[n].v+=v};
- S.bourse.rows.forEach(r=>ad(r.etf,r.val,r.cl));
- S.crypto.rows.forEach(r=>ad(r.a,r.u*(S.crypto.prix[r.a]||0),r.cl));
- ad('Or',sum(S.metaux.or,r=>metalV(r,S.metaux.orSpot)),CM);
- ad('Argent',sum(S.metaux.ag,r=>metalV(r,S.metaux.agSpot)),CM);
- return A}
-
-/* ===== Vues ===== */
-const COL=['#0b1e3f','#c9a24b','#2f5597','#e0c27a','#5b7fbf','#8a6d1f','#9db3dc','#b88a2a','#16305f','#d9d2bd'];
-function vSyn(){const A=assets(),I=immo(),cash=sum(S.epargne,r=>r.montant),names=Object.keys(A).sort((a,b)=>A[b].v-A[a].v),inv=sum(names,n=>A[n].v),fin=inv+cash;
- let cum=0;const arcs=names.map((n,i)=>{const p=inv?A[n].v/inv*100:0,s=`<circle r="15.9155" cx="21" cy="21" fill="none" stroke="${COL[i%10]}" stroke-width="6" stroke-dasharray="${p} ${100-p}" stroke-dashoffset="${25-cum}"/>`;cum+=p;return s}).join('');
- const cls={};CL.forEach(c=>cls[c]=0);cls.Cash=cash;names.forEach(n=>cls[A[n].cl]+=A[n].v);
- const k=(l,v)=>`<div class="kpi"><small>${l}</small><b>${eur(v)}</b></div>`;
- return`<div class="kpis">${k('Patrimoine financier',fin)}${k('Valeur nette immobilière',I.net)}${k('Patrimoine net total',fin+I.net)}${k('Dont investissements (hors épargne)',inv)}</div>
- <div class="card"><h2>Pondération des investissements</h2><div class="donut"><svg viewBox="0 0 42 42"><circle r="15.9155" cx="21" cy="21" fill="none" stroke="#eee" stroke-width="6"/>${arcs}</svg>
- <div style="flex:1;min-width:260px">${tbl(['Actif','Valeur','Pondération'],names.map((n,i)=>`<tr><td><span class="dot" style="background:${COL[i%10]}"></span>${esc(n)}</td>${o(eur(A[n].v))}${o(pc(inv?A[n].v/inv:0))}</tr>`).join(''),`<tr><td>Total</td>${o(eur(inv))}${o('100 %')}</tr>`)}</div></div></div>
- <div class="card"><h2>Répartition par type d'actif</h2>${tbl(['Type','Valeur','Part',''],CL.map(c=>`<tr><td>${c}</td>${o(eur(cls[c]||0))}${o(pc(fin?(cls[c]||0)/fin:0))}<td style="width:35%"><div class="bar"><i style="width:${fin?(cls[c]||0)/fin*100:0}%"></i></div></td></tr>`).join(''))}
- <p class="note">« Cash » = épargne ; le type de chaque ETF ou crypto se choisit dans son onglet.</p></div>`}
-
-function vImmo(){const I=S.immo,c=immo(),f=(l,x)=>`<div><label>${l}</label>${x}</div>`,k=(l,v)=>`<div class="kpi"><small>${l}</small><b>${v}</b></div>`;
- return`<div class="card"><h2>Prêt immobilier</h2><div class="grid">${f('Montant du prêt (€)',N('immo.montant',I.montant))}${f('Début du prêt',D('immo.date',I.date))}${f('Taux (%)',N('immo.taux',I.taux))}${f('Durée (mois)',N('immo.duree',I.duree))}${f('Valeur estimée du bien (€)',N('immo.valeur',I.valeur))}</div></div>
- <div class="kpis">${k('Mensualité (hors assurance)',eur(c.m,2))}${k('Total à rembourser',eur(c.total))}${k('Total des intérêts',eur(c.int))}${k('Mois écoulés',c.k+' / '+I.duree)}${k('Capital restant dû',eur(c.crd))}${k('Intérêts payés cumulés',eur(c.intPay))}${k('Valeur nette du bien',eur(c.net))}</div>
- <p class="note">Capital restant dû et intérêts cumulés sont calculés automatiquement à partir de la date de début.</p>`}
-
-function vEp(){const rows=S.epargne,tot=sum(rows,r=>r.montant),rev=sum(rows,r=>r.montant*r.taux/100);
- return`<div class="card"><h2>Épargne</h2>${tbl(['Banque','Placement','Montant (€)','Taux (%)','Revenu annuel',''],rows.map((r,i)=>`<tr><td>${T(`epargne.${i}.bank`,r.bank)}</td><td>${T(`epargne.${i}.nom`,r.nom)}</td><td>${N(`epargne.${i}.montant`,r.montant)}</td><td>${N(`epargne.${i}.taux`,r.taux)}</td>${o(eur(r.montant*r.taux/100))}${del('epargne.'+i)}</tr>`).join(''),`<tr><td colspan="2">Total</td>${o(eur(tot))}<td></td>${o(eur(rev))}<td></td></tr>`)}${add('epargne')}</div>`}
-
-function vBo(){const B=S.bourse,r=B.rows,ta=sum(r,x=>x.achat),tv=sum(r,x=>x.val);
- return`<div class="card"><h2>Bourse (ETF)</h2><div class="grid" style="max-width:260px;margin-bottom:12px"><div><label>Taux EUR/USD</label>${N('bourse.fx',B.fx)}</div></div>
- ${tbl(['ETF','Émetteur','Enveloppe','Quantité','Montant investi (€)','Valeur actuelle (€)','Performance','Valeur ($)','Type',''],r.map((x,i)=>{const p=`bourse.rows.${i}.`;return`<tr><td>${T(p+'etf',x.etf)}</td><td>${T(p+'em',x.em)}</td><td>${SEL(p+'env',x.env,['PEA','CTO','Assurance-vie','PER','Autre'])}</td><td>${N(p+'qte',x.qte)}</td><td>${N(p+'achat',x.achat)}</td><td>${N(p+'val',x.val)}</td>${o(sg(x.achat?x.val/x.achat-1:0))}${o(eur(x.val*B.fx))}<td>${SEL(p+'cl',x.cl,CL.slice(1))}</td>${del('bourse.rows.'+i)}</tr>`}).join(''),
- `<tr><td colspan="4">Total</td>${o(eur(ta))}${o(eur(tv))}${o(sg(ta?tv/ta-1:0))}${o(eur(tv*B.fx))}<td colspan="2"></td></tr>`)}${add('bourse.rows')}</div>`}
-
-function metal(key,title,spotKey){const M=S.metaux,r=M[key],spot=M[spotKey],g=sum(r,x=>x.g),ta=sum(r,x=>x.p),tv=sum(r,x=>metalV(x,spot));
- return`<div class="card"><h2>${title}</h2><div class="grid" style="max-width:260px;margin-bottom:12px"><div><label>Cours de l'once (€)</label>${N('metaux.'+spotKey,spot)}</div></div>
- ${tbl(['Pièce / lingot','Poids (g)','Prix d\'achat (€)','Date d\'achat','Valeur actuelle (€)','Performance',''],r.map((x,i)=>{const p=`metaux.${key}.${i}.`;return`<tr><td>${T(p+'n',x.n)}</td><td>${N(p+'g',x.g)}</td><td>${N(p+'p',x.p)}</td><td>${D(p+'d',x.d)}</td>${o(eur(metalV(x,spot),2))}${o(sg(x.p?metalV(x,spot)/x.p-1:0))}${del('metaux.'+key+'.'+i)}</tr>`}).join(''),
- `<tr><td>Total</td>${o(fmt(g,2)+' g')}${o(eur(ta))}${o(fmt(g/OZ,2)+' oz')}${o(eur(tv))}${o(sg(ta?tv/ta-1:0))}<td></td></tr>`)}${add('metaux.'+key)}</div>`}
-const vMe=()=>metal('or','Or','orSpot')+metal('ag','Argent','agSpot')+'<p class="note">Valeur = poids ÷ 31,1035 × cours de l\'once.</p>';
-
-function vCr(){const C=S.crypto,r=C.rows;r.forEach(x=>{if(C.prix[x.a]===undefined)C.prix[x.a]=0});
- const val=x=>x.u*(C.prix[x.a]||0),tc=sum(r,x=>x.cout),tv=sum(r,val),assetsL=[...new Set(r.map(x=>x.a))],pf={};r.forEach(x=>pf[x.pf||'—']=(pf[x.pf||'—']||0)+val(x));
- const btc=sum(r.filter(x=>x.a==='Bitcoin'),val);
- return`<div class="card"><h2>Cours actuels (€)</h2><div class="grid">${assetsL.map(a=>`<div><label>${esc(a)}</label>${N('crypto.prix.'+a,C.prix[a])}</div>`).join('')}</div></div>
- <div class="card"><h2>Positions</h2>${tbl(['Actif','Plateforme','Coût de base (€)','Unités','Valeur (€)','Prix moyen','Variation','Pondération','Type',''],r.map((x,i)=>{const p=`crypto.rows.${i}.`,v=val(x);return`<tr><td>${T(p+'a',x.a)}</td><td>${T(p+'pf',x.pf)}</td><td>${N(p+'cout',x.cout)}</td><td>${N(p+'u',x.u)}</td>${o(eur(v))}${o(x.u?eur(x.cout/x.u,2):'–')}${o(sg(x.cout?v/x.cout-1:0))}${o(pc(tv?v/tv:0))}<td>${SEL(p+'cl',x.cl,CL.slice(1))}</td>${del('crypto.rows.'+i)}</tr>`}).join(''),
- `<tr><td colspan="2">Total</td>${o(eur(tc))}<td></td>${o(eur(tv))}<td></td>${o(sg(tc?tv/tc-1:0))}${o('100 %')}<td colspan="2"></td></tr>`)}${add('crypto.rows')}</div>
- <div class="kpis"><div class="kpi"><small>Pertes réalisées (€)</small>${N('crypto.pertes',C.pertes)}</div><div class="kpi"><small>Total investi (coût + pertes)</small><b>${eur(tc+C.pertes)}</b></div><div class="kpi"><small>Plus-value latente</small><b>${eur(tv-tc)}</b></div><div class="kpi"><small>Résultat net après pertes</small><b>${eur(tv-tc-C.pertes)}</b></div></div>
- <div class="card"><h2>Par plateforme</h2>${tbl(['Plateforme','Valeur','Part'],Object.keys(pf).map(k=>`<tr><td>${esc(k)}</td>${o(eur(pf[k]))}${o(pc(tv?pf[k]/tv:0))}</tr>`).join(''))}<p class="note">Bitcoin : ${pc(tv?btc/tv:0)} · Autres actifs : ${pc(tv?1-btc/tv:0)}</p></div>`}
-
-function vPl(){const P=S.plan,A=assets(),opts=['—',...Object.keys(A)],val=x=>x.lie&&A[x.lie]?A[x.lie].v:x.manuel,tc=sum(P.rows,x=>x.cible),tv=sum(P.rows,val),mens=sum(P.rows,x=>Math.max(0,x.cible-val(x)))/(P.mois||1);
- return`<div class="card"><h2>Plan d'allocation cible</h2><div class="grid" style="max-width:260px;margin-bottom:12px"><div><label>Horizon d'investissement (mois)</label>${N('plan.mois',P.mois)}</div></div>
- ${tbl(['Produit','Classe','Actif lié','Valeur manuelle (€)','Cible (€)','Allocation','Valeur actuelle','Reste à investir','Mensualité',''],P.rows.map((x,i)=>{const p=`plan.rows.${i}.`,v=val(x),rest=x.cible-v;return`<tr><td>${T(p+'n',x.n)}</td><td>${T(p+'g',x.g)}</td><td>${SEL(p+'lie',x.lie||'—',opts).replace('data-p=',`data-p=`)}</td><td>${x.lie&&A[x.lie]?'<span class="note">auto</span>':N(p+'manuel',x.manuel)}</td><td>${N(p+'cible',x.cible)}</td>${o(pc(tc?x.cible/tc:0))}${o(eur(v))}${o(`<span class="${rest<0?'neg':''}">${eur(rest)}</span>`)}${o(eur(Math.max(0,rest)/(P.mois||1)))}${del('plan.rows.'+i)}</tr>`}).join(''),
- `<tr><td colspan="4">Total</td>${o(eur(tc))}${o('100 %')}${o(eur(tv))}${o(eur(tc-tv))}${o(eur(mens))}<td></td></tr>`)}${add('plan.rows')}
- <p class="note">Un reste négatif (en rouge) signale une ligne surpondérée par rapport à la cible. La mensualité répartit le reste à investir sur l'horizon choisi.</p></div>`}
-
-function vBn(){const B=S.bnc,r=B.rows,yr=d=>(d||'').slice(0,4)||'—',ys=[...new Set(r.map(x=>yr(x.d)))].sort(),as=[...new Set(r.map(x=>x.a||'—'))];
- const tot=(y,a)=>sum(r.filter(x=>yr(x.d)===y&&(a===undefined||(x.a||'—')===a)),x=>x.m);
- return`<div class="card"><h2>Revenus de staking (BNC)</h2><div class="grid" style="max-width:260px;margin-bottom:12px"><div><label>Abattement forfaitaire (%)</label>${N('bnc.abatt',B.abatt)}</div></div>
- ${tbl(['Date de réception','Actif','Montant reçu (€)',''],r.map((x,i)=>{const p=`bnc.rows.${i}.`;return`<tr><td>${D(p+'d',x.d)}</td><td>${T(p+'a',x.a)}</td><td>${N(p+'m',x.m)}</td>${del('bnc.rows.'+i)}</tr>`}).join(''))}${add('bnc.rows')}</div>
- <div class="card"><h2>Récapitulatif par année</h2>${tbl(['Année',...as,'Total reçu','Base imposable estimée'],ys.map(y=>`<tr><td>${y}</td>${as.map(a=>o(eur(tot(y,a),2))).join('')}${o(eur(tot(y),2))}${o(eur(tot(y)*(1-B.abatt/100),2))}</tr>`).join(''))}
- <p class="note">Montants en euros au moment de la réception. Estimation pédagogique en régime micro-BNC : le taux d\'abattement est modifiable, mais vérifiez-le ainsi que les plafonds et les règles de déclaration sur <a href="https://www.impots.gouv.fr" target="_blank" rel="noopener">impots.gouv.fr</a>.</p></div>`}
-
-const TABS=[['syn','Synthèse',vSyn],['immo','Immobilier',vImmo],['ep','Épargne',vEp],['bo','Bourse',vBo],['me','Métaux précieux',vMe],['cr','Crypto',vCr],['bn','Staking (BNC)',vBn],['pl','Plan d\'allocation',vPl]];
-function draw(focus){
- $('#tabs').innerHTML=TABS.map(t=>`<button data-t="${t[0]}" class="${t[0]===tab?'on':''}">${t[1]}</button>`).join('')+'<span class="sep"></span><button data-act="exp">Exporter</button><button data-act="imp">Importer</button><button data-act="rst">Réinitialiser</button>';
- const a=focus&&document.activeElement,ss=a&&a.selectionStart;
- $('#view').innerHTML=TABS.find(t=>t[0]===tab)[2]();
- if(focus){const el=document.querySelector(`[data-p="${focus}"]`);if(el){el.focus();try{el.setSelectionRange(ss,ss)}catch(e){}}}}
-document.addEventListener('input',e=>{const p=e.target.dataset&&e.target.dataset.p;if(!p)return;setP(p,e.target.value);save();draw(p)});
-document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const d=b.dataset;
- if(d.t){tab=d.t}else if(d.add){get(d.add).push({...NEW[d.add]});save()}
- else if(d.del){const k=d.del.split('.'),i=+k.pop();get(k.join('.')).splice(i,1);save()}
- else if(d.act==='exp'){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(S,null,1)],{type:'application/json'}));a.download='patrimoine.json';a.click();return}
- else if(d.act==='imp'){const f=document.createElement('input');f.type='file';f.accept='.json';f.onchange=()=>f.files[0].text().then(t=>{try{const j=JSON.parse(t);if(!j.immo)throw 0;S=j;save();draw()}catch(x){alert('Fichier invalide.')}});f.click();return}
- else if(d.act==='rst'){if(confirm('Revenir aux données d\'exemple ? Vos saisies seront effacées.')){S=structuredClone(DEMO);save()}else return}
- else return;draw()});
-draw();
 </script>
 </body>
 </html>
