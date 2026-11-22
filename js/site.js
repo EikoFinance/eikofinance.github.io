@@ -179,7 +179,7 @@
   function injectStyles() {
     if (document.getElementById('eiko-extra-style')) return;
     document.head.appendChild(h('style', { id: 'eiko-extra-style', text:
-      '.avertissement{background:#f6f1e4;border-left:5px solid #c9a24b;border-radius:6px;padding:.8rem 1rem;margin:1rem 0 1.4rem;font-size:.92rem;line-height:1.6;color:#1c2433}' +
+      '.avertissement{background:#f6f1e4;border-left:5px solid #c9a24b;border-radius:6px;padding:.8rem 1rem;margin:2rem 0 1rem;font-size:.92rem;line-height:1.6;color:#1c2433}' +
       '.avertissement p{margin:0}.avertissement strong{color:#0b1f3a}.avertissement a{color:#13305a;font-weight:600}' +
       '.avertissement .avertissement-meta{margin-top:.4rem;font-size:.85rem;color:#4a5568}' +
       '.sources{margin-top:2rem}.sources ul{line-height:1.8}' }));
@@ -314,7 +314,7 @@
     fromHash();
   }
 
-  /* ---------- Avertissement : texte unique, affiché en tête de chaque leçon ---------- */
+  /* ---------- Avertissement : texte unique, affiché tout en bas de chaque leçon ---------- */
   var NOTICE = {
     lead: 'Ces contenus servent à comprendre, pas à décider.',
     text: " Ils expliquent comment fonctionnent l'économie, les marchés et les produits financiers ; ils ne constituent ni un conseil en investissement, ni une recommandation personnalisée. L'auteur est titulaire de la certification professionnelle AMF, qui atteste d'un niveau de connaissances réglementaires et financières ; il n'est pas conseiller en investissements financiers. Tout investissement comporte un risque de perte en capital. ",
@@ -338,11 +338,10 @@
     if (item && item.maj) {
       box.appendChild(h('p', { class: 'avertissement-meta', text: 'Mis à jour : ' + item.maj }));
     }
-    var hero = main.querySelector('.scene-hero');
+    /* Tout en bas de la leçon, après le pager : même largeur que le texte de l'article */
     var art = main.querySelector('article.chapitre');
-    if (hero) hero.parentNode.insertBefore(box, hero.nextSibling);
-    else if (art) art.parentNode.insertBefore(box, art);
-    else main.insertBefore(box, main.firstChild);
+    if (art) art.appendChild(box);
+    else main.appendChild(box);
   }
 
   function addSources() {
@@ -369,8 +368,8 @@
     buildNav();
     buildTree();
     injectStyles();
+    addSources();   /* d'abord les sources, puis l'avertissement tout en bas */
     addNotice();
-    addSources();
     addFooterLink();
     document.querySelectorAll('.subnav').forEach(function (n) { n.remove(); });
   }
