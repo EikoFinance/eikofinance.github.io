@@ -116,6 +116,8 @@
             desc: "Diversification, allocation, rééquilibrage, horizon, passif ou actif, en une fois ou progressivement : une méthode." },
           { title: 'Les portefeuilles historiques', file: 'portefeuilles-historiques.html',
             desc: "60/40, Permanent Portfolio de Browne, All Weather de Dalio, Golden Butterfly, trois fonds : composition, logique et limites." },
+          { title: 'Suivi de patrimoine', file: 'suivi-patrimoine.html', maj: 'novembre 2026',
+            desc: "Immobilier, épargne, bourse, métaux, crypto et revenus de staking : un tableau de bord pour suivre sa répartition face à une allocation cible." },
           { title: "L'antifragilité d'un portefeuille", file: 'antifragilite.html',
             desc: "Fragile, robuste ou antifragile ? Comment un portefeuille réagit aux chocs, et pourquoi garder des munitions compte autant que diversifier." },
           { title: 'Simulation Monte Carlo', file: 'monte-carlo.html',
