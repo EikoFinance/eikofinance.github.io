@@ -219,5 +219,15 @@ document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)r
 document.addEventListener('change',e=>{if(e.target.id==='tabSel'){tab=e.target.value;draw()}});
 draw();
 </script>
+<script>
+/* Intégration : hauteur automatique dans la page de leçon */
+(function(){
+  var emb=window.self!==window.top;
+  function send(){if(emb)parent.postMessage({eikoPatrimoineH:Math.ceil(document.body.getBoundingClientRect().height)},'*');}
+  window.addEventListener('load',send);window.addEventListener('resize',send);
+  if(window.ResizeObserver)new ResizeObserver(send).observe(document.body);
+  setTimeout(send,300);
+})();
+</script>
 </body>
 </html>

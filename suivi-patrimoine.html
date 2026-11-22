@@ -1,101 +1,129 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Suivi de patrimoine en ligne : immobilier, épargne, bourse, métaux précieux, crypto et staking, avec pondération et allocation cible.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Suivi de patrimoine - EikoFinance</title>
+<meta name="description" content="Suivi de patrimoine en ligne : immobilier, épargne, bourse, métaux précieux, crypto et staking, avec pondération et allocation cible.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/lesson.css">
+<link rel="stylesheet" href="css/scene.css">
+<link rel="stylesheet" href="css/cartes.css">
 <style>
-.lecon{max-width:900px;margin:0 auto;padding:1.5rem 5% 3rem;line-height:1.7;color:var(--text-dark)}
-.fil{max-width:900px;margin:0 auto;padding:1rem 5% 0;font-size:.85rem;color:var(--text-muted)}
-.fil a{color:var(--primary-blue);text-decoration:none;font-weight:600}.fil a:hover{color:var(--gold-accent)}
-.lecon h2{font-family:var(--font-title);color:var(--primary-blue);font-size:1.4rem;margin:2.2rem 0 .8rem;scroll-margin-top:90px}
-.lecon h3{font-family:var(--font-title);color:var(--primary-blue);font-size:1.1rem;margin:1.4rem 0 .5rem}
-.lecon p,.lecon ul{margin:0 0 1rem}.lecon ul{padding-left:1.3rem}.lecon li{margin-bottom:.45rem}
-.citation{border-left:4px solid var(--gold-accent);padding:.3rem 1rem;color:var(--text-muted);font-style:italic;margin:0 0 1rem}
-.frame{width:100%;height:82vh;min-height:640px;border:1px solid #E5E9F0;border-radius:12px;background:#0a1a3d;box-shadow:0 4px 12px rgba(0,0,0,.06)}
-.ouvrir{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin:1rem 0 0}
-.ouvrir small{color:var(--text-muted)}
-.apropos{background:var(--bg-subtle);border-left:4px solid var(--gold-accent);border-radius:6px;padding:.8rem 1rem;margin:1.2rem 0}
-.pager{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid #E5E9F0}
-.pager a{color:var(--primary-blue);font-weight:600;text-decoration:none}.pager a:hover{color:var(--gold-accent)}
+/* Repli du bandeau : ne s'applique que tant que scene.css n'a pas de règle .img-suivi-patrimoine */
+:where(.img-suivi-patrimoine){background-image:linear-gradient(135deg,#0A1C3B 0%,#102A56 60%,#1e3f7a 100%);background-size:cover;background-position:center}
+.simulator-embed{margin:1rem 0 2rem;border:1px solid #d9dee5;border-radius:8px;overflow:hidden;background:#0a1a3d}
+.simulator-embed iframe{display:block;width:100%;height:1500px;border:0;background:#0a1a3d}
+.simulator-open{display:inline-block;margin:0 0 1rem;color:var(--primary-blue);font-weight:700}
 </style>
+<script src="js/site.js" defer></script>
 </head>
-<body class="no-intro">
+<body>
 <header>
-  <div class="logo-container"><img class="logo-img" src="images/logo.jpg" alt="Logo Eiko Finance"><span class="logo-text">EIKO FINANCE</span></div>
-  <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-  <nav></nav>
+  <div class="logo-container">
+    <img src="images/logo.jpg" alt="Logo Eiko Finance" class="logo-img">
+    <span class="logo-text">EIKO FINANCE</span>
+  </div>
+  <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+  <!-- Menu : généré par js/site.js (liste de secours si JavaScript est désactivé) -->
+  <nav>
+    <ul>
+      <li><a href="index.html#comprendre">Comprendre</a></li>
+      <li><a href="index.html#investir">Investir</a></li>
+      <li><a href="index.html#planifier">Planifier</a></li>
+      <li><a href="index.html#optimiser">Optimiser</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 </header>
+
 <main>
-<nav class="fil" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> › <a href="index.html#planifier">Planifier</a> › Suivi de patrimoine</nav>
+  <p class="crumbs"><a href="index.html">Accueil</a> › <a href="index.html#planifier">Planifier</a> › Suivi de patrimoine</p>
 
-<section class="hero">
-  <h1>Suivi de patrimoine : voir tout ce que tu possèdes, d'un seul coup d'œil</h1>
-  <p>Immobilier, épargne, bourse, métaux précieux, crypto : additionne tout, mesure la répartition et compare-la à l'allocation que tu vises.</p>
-  <a class="btn-gold" href="#outil">Ouvrir l'outil</a>
-</section>
+  <section class="scene scene-hero img-suivi-patrimoine">
+    <h1>Suivi de patrimoine : voir tout ce que tu possèdes, d'un seul coup d'œil</h1>
+    <p>Saisis ton immobilier, ton épargne, ta bourse, tes métaux précieux et ta crypto. Le camembert montre la répartition, et le plan d'allocation compare ce que tu as à ce que tu vises.</p>
+    <a href="#outil" class="btn-gold">Ouvrir le suivi</a>
+  </section>
 
-<div class="card-grid">
-  <a class="card" href="#outil"><h3>L'outil en ligne</h3><p>Ouvre-le ici ou dans un nouvel onglet.</p></a>
-  <a class="card" href="#onglets"><h3>Les huit onglets</h3><p>Ce que contient chaque section.</p></a>
-  <a class="card" href="#lire"><h3>Lire les résultats</h3><p>Pondération, patrimoine net, reste à investir.</p></a>
-  <a class="card" href="#limites"><h3>Les limites</h3><p>Ce que l'outil ne sait pas faire.</p></a>
-</div>
+  <section class="card-grid" aria-label="Sommaire de la page">
+    <a class="card" href="#outil"><h3>Le suivi en ligne</h3><p>Remplis ton patrimoine dans ton navigateur.</p></a>
+    <a class="card" href="#lire"><h3>Lire les résultats</h3><p>Pondération, patrimoine net, reste à investir.</p></a>
+    <a class="card" href="#reperes"><h3>Un repère : All Weather</h3><p>Une allocation cible pour comparer.</p></a>
+    <a class="card" href="#limites"><h3>Les limites</h3><p>Ce que l'outil ne sait pas faire.</p></a>
+  </section>
 
-<div class="lecon">
-<h2 id="outil">Le suivi de patrimoine en ligne</h2>
-<p class="citation">« On ne pilote bien que ce que l'on mesure. »</p>
-<p>Saisis tes placements dans l'outil ci-dessous : il calcule les totaux, les performances et la répartition de ton patrimoine. Les chiffres affichés au départ sont des exemples, inspirés d'une allocation de type All Weather : remplace-les par les tiens. Tes données restent privées : elles sont enregistrées uniquement dans ton navigateur.</p>
-<iframe class="frame" src="outil-suivi-patrimoine.html" title="Suivi de patrimoine Eiko Finance" loading="lazy"></iframe>
-<div class="ouvrir">
-  <a class="btn-gold" href="outil-suivi-patrimoine.html" target="_blank" rel="noopener">Ouvrir le suivi de patrimoine dans un nouvel onglet</a>
-  <small>Plus confortable sur téléphone, et tes saisies y sont conservées de la même façon.</small>
-</div>
+  <article class="chapitre">
 
-<h2 id="onglets">Les huit onglets, en un coup d'œil</h2>
-<ul>
-  <li><strong>Synthèse</strong> : ton patrimoine financier, ta valeur nette immobilière, un camembert de pondération et la répartition par type d'actif.</li>
-  <li><strong>Immobilier</strong> : à partir du prêt (montant, taux, durée, date de début), l'outil calcule la mensualité, le capital restant dû, les intérêts payés et la valeur nette du bien.</li>
-  <li><strong>Épargne</strong> : livrets et autres supports, avec le revenu annuel que chacun rapporte.</li>
-  <li><strong>Bourse</strong> : tes ETF, leur enveloppe (PEA, CTO…), leur performance et leur type (actions, obligations, matières premières).</li>
-  <li><strong>Métaux précieux</strong> : pièces et lingots d'or et d'argent, valorisés au cours de l'once.</li>
-  <li><strong>Crypto</strong> : positions par plateforme, prix moyen, variation et pertes déjà réalisées.</li>
-  <li><strong>Staking (BNC)</strong> : un registre des revenus reçus, avec un récapitulatif par année et une base imposable estimée.</li>
-  <li><strong>Plan d'allocation</strong> : tes cibles par produit, ce qu'il reste à investir et la mensualité pour y arriver sur la durée choisie.</li>
-</ul>
-<p>Le bouton « Exporter » enregistre tes données dans un fichier, et « Importer » les recharge : c'est ta sauvegarde.</p>
+    <h2 id="outil">Le suivi de patrimoine en ligne</h2>
+    <p class="accroche">« On ne pilote bien que ce que l'on mesure. »</p>
+    <p>Remplis l'outil directement dans cette page, ou ouvre-le en plein écran. Les chiffres affichés au départ sont des exemples : remplace-les par les tiens. Tes données restent privées : elles sont enregistrées uniquement dans ton navigateur.</p>
+    <div class="simulator-embed">
+      <iframe id="outil-frame" src="outil-suivi-patrimoine.html" title="Outil de suivi de patrimoine EikoFinance" loading="lazy"></iframe>
+    </div>
+    <a class="simulator-open" href="outil-suivi-patrimoine.html" target="_blank" rel="noopener">Ouvrir le suivi de patrimoine dans un nouvel onglet</a>
 
-<h2 id="lire">Comment lire les résultats</h2>
-<ul>
-  <li><strong>Patrimoine financier et patrimoine net</strong> : le premier additionne épargne et investissements ; le second y ajoute la valeur nette de l'immobilier, c'est-à-dire la valeur estimée du bien moins le capital restant dû.</li>
-  <li><strong>La pondération</strong> : la part de chaque actif dans tes investissements. Elle montre où est réellement concentré ton risque, souvent loin de l'idée qu'on s'en fait.</li>
-  <li><strong>La performance</strong> : l'écart entre ce que tu as investi et la valeur actuelle. Elle dépend des cours que tu saisis : pense à les mettre à jour.</li>
-  <li><strong>Le reste à investir</strong> : la différence entre ta cible et la valeur actuelle. Un reste négatif signale une ligne devenue trop lourde par rapport au plan, ce qui invite à rééquilibrer.</li>
-</ul>
-<div class="apropos"><strong>Un repère pour comparer :</strong> le plan d'exemple suit la version la plus citée du portefeuille All Weather (30 % d'actions, 40 % d'obligations long terme, 15 % d'obligations moyen terme, 7,5 % d'or, 7,5 % de matières premières). C'est une illustration, pas une recommandation : retrouve la logique et les limites de ce portefeuille dans la leçon <a href="portefeuilles-historiques.html">Les portefeuilles historiques</a>.</div>
+    <details>
+      <summary>Les huit onglets de l'outil, en un coup d'œil</summary>
+      <ul class="liste">
+        <li><strong>Synthèse</strong> : ton patrimoine financier, ta valeur nette immobilière, un camembert de pondération et la répartition par type d'actif.</li>
+        <li><strong>Immobilier</strong> : à partir du prêt (montant, taux, durée, date de début), l'outil calcule la mensualité, le capital restant dû, les intérêts payés et la valeur nette du bien.</li>
+        <li><strong>Épargne</strong> : livrets et autres supports, avec le revenu annuel que chacun rapporte.</li>
+        <li><strong>Bourse</strong> : tes ETF, leur enveloppe (PEA, CTO…), leur performance et leur type (actions, obligations, matières premières).</li>
+        <li><strong>Métaux précieux</strong> : pièces et lingots d'or et d'argent, valorisés au cours de l'once.</li>
+        <li><strong>Crypto</strong> : positions par plateforme, prix moyen, variation et pertes déjà réalisées.</li>
+        <li><strong>Staking (BNC)</strong> : un registre des revenus reçus, avec un récapitulatif par année et une base imposable estimée.</li>
+        <li><strong>Plan d'allocation</strong> : tes cibles par produit, ce qu'il reste à investir et la mensualité pour y arriver sur la durée choisie.</li>
+      </ul>
+      <p>Le bouton « Exporter mes données » enregistre tout dans un fichier, et « Importer » le recharge : c'est ta sauvegarde.</p>
+    </details>
 
-<h2 id="limites">Ce que l'outil ne sait pas faire</h2>
-<ul>
-  <li><strong>Il ne récupère pas les cours.</strong> Tu les saisis toi-même : une valeur périmée donne une image périmée.</li>
-  <li><strong>Il ne remplace pas ta déclaration d'impôts.</strong> Le calcul de la base imposable du staking est une estimation pédagogique : le taux d'abattement est modifiable, et il faut vérifier les règles en vigueur sur <a href="https://www.impots.gouv.fr" target="_blank" rel="noopener">impots.gouv.fr</a>.</li>
-  <li><strong>Il ne connaît pas ta situation.</strong> Il ne tient compte ni de tes objectifs, ni de ton horizon, ni de ta fiscalité personnelle.</li>
-  <li><strong>Tes données vivent dans ton navigateur.</strong> Les effacer, ou changer d'appareil, les fait disparaître : exporte-les régulièrement.</li>
-</ul>
-<p><strong>À savoir :</strong> cet outil est pédagogique. Il ne constitue ni une promesse de rendement ni un conseil en investissement. Les performances passées ne préjugent pas des performances futures.</p>
+    <h2 id="lire">Comment lire les résultats</h2>
+    <ul class="liste">
+      <li><strong>Patrimoine financier et patrimoine net</strong> : le premier additionne épargne et investissements ; le second y ajoute la valeur nette de l'immobilier, c'est-à-dire la valeur estimée du bien moins le capital restant dû.</li>
+      <li><strong>La pondération</strong> : la part de chaque actif dans tes investissements. Elle montre où est réellement concentré ton risque, souvent loin de l'idée qu'on s'en fait.</li>
+      <li><strong>La performance</strong> : l'écart entre ce que tu as investi et la valeur actuelle. Elle dépend des cours que tu saisis : pense à les mettre à jour.</li>
+      <li><strong>Le reste à investir</strong> : la différence entre ta cible et la valeur actuelle. Un reste négatif signale une ligne devenue trop lourde par rapport au plan, ce qui invite à rééquilibrer.</li>
+    </ul>
 
-<div class="pager"><a href="portefeuilles-historiques.html">← Les portefeuilles historiques</a><a href="antifragilite.html">L'antifragilité d'un portefeuille →</a></div>
-</div>
+    <h2 id="reperes">Un repère pour comparer : All Weather</h2>
+    <p>Le plan d'exemple suit la version la plus citée du portefeuille All Weather : 30 % d'actions, 40 % d'obligations long terme, 15 % d'obligations moyen terme, 7,5 % d'or et 7,5 % de matières premières. C'est une illustration, pas une recommandation. Retrouve sa logique et ses limites dans la leçon <a href="portefeuilles-historiques.html">Les portefeuilles historiques</a>.</p>
+
+    <h2 id="limites">Ce que l'outil ne sait pas faire</h2>
+    <ul class="liste">
+      <li><strong>Il ne récupère pas les cours.</strong> Tu les saisis toi-même : une valeur périmée donne une image périmée.</li>
+      <li><strong>Il ne remplace pas ta déclaration d'impôts.</strong> La base imposable du staking est une estimation pédagogique : le taux d'abattement est modifiable, et il faut vérifier les règles en vigueur sur <a href="https://www.impots.gouv.fr" target="_blank" rel="noopener">impots.gouv.fr</a>.</li>
+      <li><strong>Il ne connaît pas ta situation.</strong> Il ne tient compte ni de tes objectifs, ni de ton horizon, ni de ta fiscalité personnelle.</li>
+      <li><strong>Tes données vivent dans ton navigateur.</strong> Les effacer, ou changer d'appareil, les fait disparaître : exporte-les régulièrement.</li>
+    </ul>
+    <div class="alerte"><strong>Un outil pédagogique :</strong> il ne constitue ni une promesse de rendement ni un conseil en investissement. Les performances passées ne préjugent pas des performances futures.</div>
+
+    <div class="pager">
+      <a href="portefeuilles-historiques.html">← Les portefeuilles historiques</a>
+      <a class="next" href="antifragilite.html">L'antifragilité d'un portefeuille →</a>
+    </div>
+  </article>
+
 </main>
-<footer><p>© 2026 EikoFinance. Tous droits réservés.</p><p>Contact : <a href="mailto:contacteikofinance@gmail.com">contacteikofinance@gmail.com</a></p></footer>
-<script src="js/site.js"></script>
+
+<footer>
+  <p>&copy; 2026 EikoFinance. Tous droits réservés.</p>
+  <p>Contact : <a href="mailto:contacteikofinance@gmail.com">contacteikofinance@gmail.com</a></p>
+</footer>
+<script src="js/lesson.js"></script>
 <script>
-(function(){var t=document.querySelector('.menu-toggle'),n=document.querySelector('header nav');
- if(t&&n)t.addEventListener('click',function(){var o=n.classList.toggle('mobile-open');t.setAttribute('aria-expanded',o?'true':'false')})})();
+/* Ajuste la hauteur de l'outil encadré à son contenu */
+(function(){
+  var f=document.getElementById('outil-frame');
+  window.addEventListener('message',function(e){
+    if(e.origin!==location.origin||!f||e.source!==f.contentWindow)return;
+    if(e.data&&typeof e.data.eikoPatrimoineH==='number')f.style.height=Math.ceil(e.data.eikoPatrimoineH)+'px';
+  });
+})();
 </script>
 </body>
 </html>
