@@ -1,6 +1,7 @@
 /* =========================================================
-   EIKO FINANCE - LES QUATRE BOUTONS DE L'ACCUEIL
-   Chaque bouton affiche, juste en dessous, la liste de ses leçons.
+   EIKO FINANCE - LES SIX BOUTONS DE L'ACCUEIL
+   Cinq chemins de leçons et un bloc Outils, sur deux lignes de trois.
+   Chaque bouton affiche, juste en dessous, la liste de ses leçons ou de ses outils.
    ========================================================= */
 
 .tree {
@@ -19,9 +20,14 @@
 }
 .tree .tree-lead { color: var(--text-muted); margin-bottom: 2rem; }
 
-/* ---------- Les cinq boutons ---------- */
-.roots { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
-@media (max-width: 1000px) { .roots { grid-template-columns: repeat(3, 1fr); } }
+/* ---------- Les six boutons : deux lignes de trois ---------- */
+.roots {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
 
 .root {
     position: relative;
@@ -63,7 +69,7 @@
 .tree.has-open .root[aria-expanded="false"] { opacity: 0.6; }
 .tree.has-open .root[aria-expanded="false"]:hover { opacity: 1; }
 
-/* ---------- Les leçons du chemin choisi ---------- */
+/* ---------- Les leçons (ou les outils) du bloc choisi ---------- */
 .branch { padding-top: 1.8rem; }
 .branch[hidden] { display: none; }
 
@@ -161,11 +167,10 @@
     .root::before, .leaf::before { display: none; }
 }
 
-/* ---------- Mobile ---------- */
+/* ---------- Mobile : deux colonnes, trois lignes ---------- */
 @media (max-width: 760px) {
     .tree { padding: 2rem 1rem 3rem; }
     .roots { grid-template-columns: 1fr 1fr; gap: 0.7rem; }
-    .root:last-child:nth-child(odd) { grid-column: 1 / -1; }
     .root { padding: 1rem 0.6rem 0.9rem; }
     .root-title { font-size: 1.1rem; }
     .root small { font-size: 0.78rem; }
