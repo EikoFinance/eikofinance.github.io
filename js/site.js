@@ -249,17 +249,12 @@
       li.appendChild(sub);
       return li;
     }
-    var allTools = [];
-    SITE.tools.groups.forEach(function (g) { allTools = allTools.concat(g.items); });
-
-    /* Sur l'accueil, l'arbre remplace le menu : seuls Outils et Contact restent en haut */
+    /* Sur l'accueil, l'arbre remplace le menu : seul le contact reste en haut.
+       Les outils sont le sixième bloc de l'arbre (index.html#outils), pas une entrée du menu. */
     if (!isHome) {
       SITE.branches.forEach(function (b) {
         ul.appendChild(subItem(b.title, 'index.html#' + b.id, current === b, b.items));
       });
-      ul.appendChild(subItem('Outils', 'outils.html', isOutils, allTools));
-    } else {
-      ul.appendChild(h('li', {}, [link('outils.html', 'Outils', false)]));
     }
     SITE.extras.forEach(function (x) {
       ul.appendChild(h('li', {}, [link(x.file, x.title, x.file === page)]));
