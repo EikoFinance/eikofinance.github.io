@@ -5,7 +5,7 @@
    Le reste reste sobre, aux couleurs de la charte.
    ========================================================= */
 
-/* ---------- Hero : marine profond + courbes dorées, courbe moyenne argentée ---------- */
+/* ---------- Hero : marine profond + courbes dorées, Kondratiev en cuivre, courbe moyenne argentée ---------- */
 .hero-art {
     position: relative;
     overflow: hidden;
@@ -69,6 +69,12 @@
     width: 26px;
     border-top: 2px solid var(--gold-accent);
     opacity: 0.6;
+}
+/* Cycle de Kondratiev (3e ligne de la légende) : cuivre, comme dans js/cycles.js (constante COPPER) */
+.cycles-legend li:nth-child(3) i {
+    border-color: #C97A44;
+    opacity: 1;
+    box-shadow: 0 0 6px rgba(255, 208, 166, 0.45);
 }
 .cycles-legend li.sum { color: #FFFFFF; font-weight: 600; }
 /* Courbe moyenne : argent (même teinte que dans js/cycles.js, constante SILVER) */
