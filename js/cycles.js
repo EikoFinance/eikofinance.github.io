@@ -1,8 +1,9 @@
 /* =========================================================
    EIKO FINANCE - LES CYCLES SUPERPOSÉS
    Trois cycles de durées différentes (Kitchin, Juglar,
-   Kondratiev) tracés en or fin, chacun avec sa propre vitesse
-   de défilement ; leur somme est la courbe argentée.
+   Kondratiev) chacun avec sa propre vitesse de défilement :
+   or fin pour Kitchin et Juglar, cuivre scintillant pour
+   Kondratiev ; leur somme est la courbe argentée.
    Schéma illustratif, pas une donnée réelle.
    ========================================================= */
 (function () {
@@ -13,6 +14,9 @@
   var GOLD = '197,160,89';
   var SILVER = '214,220,231';        /* courbe moyenne : argent (même teinte dans css/art.css, légende .sum i) */
   var SILVER_HI = '244,247,252';     /* reflet clair au centre du trait */
+  var COPPER = '201,122,68';         /* cycle de Kondratiev : cuivre (même teinte dans css/art.css, légende) */
+  var COPPER_HI = '255,208,166';     /* éclats clairs du cuivre */
+  var ETINCELLES = 16;               /* nombre d'étincelles qui scintillent le long de la courbe de cuivre */
 
   /* Vitesse de défilement des courbes, calée sur celle de l'image de fond.
      L'image glisse d'une tuile (1376 x 768 px, mise à la hauteur du bandeau) toutes les
@@ -27,9 +31,9 @@
   /* p : durée du cycle (années) · a : poids relatif de l'amplitude · ph : décalage
      v : vitesse de défilement propre à ce cycle (le plus court va le plus vite) */
   var CYCLES = [
-    { p: 4,  a: 0.146, ph: 0.6, alpha: 0.40, v: 2.0 },   /* Kitchin */
-    { p: 9,  a: 0.292, ph: 1.9, alpha: 0.45, v: 1.4 },   /* Juglar */
-    { p: 50, a: 0.562, ph: 0.3, alpha: 0.55, v: 0.9 }    /* Kondratiev */
+    { p: 4,  a: 0.146, ph: 0.6, alpha: 0.40, v: 2.0, color: GOLD },                   /* Kitchin */
+    { p: 9,  a: 0.292, ph: 1.9, alpha: 0.45, v: 1.4, color: GOLD },                   /* Juglar */
+    { p: 50, a: 0.562, ph: 0.3, alpha: 0.78, v: 0.9, color: COPPER, spark: true }     /* Kondratiev */
   ];
 
   Array.prototype.forEach.call(canvases, init);
@@ -62,6 +66,28 @@
       ctx.lineCap = 'round';
       ctx.strokeStyle = 'rgba(' + color + ',' + alpha + ')';
       ctx.stroke();
+    }
+
+    /* Étincelles : de petits éclats qui s'allument et s'éteignent le long de la courbe de cuivre */
+    function glints(line, el) {
+      if (line.length < 2) return;
+      for (var k = 0; k < ETINCELLES; k++) {
+        var fk = 0.18 + ((k * 37) % 11) / 40;                    /* rythme propre à chaque étincelle */
+        var phi = ((k * 53) % 17) / 17;                           /* décalage */
+        var a = reduce ? 0.55 : Math.pow(Math.max(0, Math.sin(2 * Math.PI * (el * fk + phi))), 4);
+        if (a < 0.04) continue;
+        /* chacune glisse très lentement le long de la courbe */
+        var pos = ((k + 0.5) / ETINCELLES + (reduce ? 0 : el * 0.006 * (1 + (k % 3) * 0.4))) % 1;
+        var pt = line[Math.min(line.length - 1, Math.floor(pos * (line.length - 1)))];
+        var x = pt[0], y = pt[1], r = 2 + 6 * a;
+        ctx.beginPath(); ctx.arc(x, y, 1.6 + 1.2 * a, 0, 6.2832);
+        ctx.fillStyle = 'rgba(' + COPPER_HI + ',' + (0.35 + 0.55 * a).toFixed(3) + ')'; ctx.fill();
+        ctx.beginPath();
+        ctx.moveTo(x - r, y); ctx.lineTo(x + r, y);
+        ctx.moveTo(x, y - r); ctx.lineTo(x, y + r);
+        ctx.lineWidth = 0.8; ctx.lineCap = 'round';
+        ctx.strokeStyle = 'rgba(255,232,205,' + (0.85 * a).toFixed(3) + ')'; ctx.stroke();
+      }
     }
 
     function draw(now) {
@@ -102,7 +128,15 @@
         sumPts.push([x, s]);
       }
 
-      CYCLES.forEach(function (c, i) { strokePts(pts[i], 1.2, GOLD, c.alpha); });
+      CYCLES.forEach(function (c, i) {
+        if (!c.spark) { strokePts(pts[i], 1.2, c.color, c.alpha); return; }
+        /* cuivre : halo doux, trait cuivré, fin filet clair dont l'intensité respire */
+        var respire = reduce ? 0.3 : 0.3 + 0.2 * Math.sin(el * 1.3);
+        strokePts(pts[i], 4.5, c.color, 0.10);
+        strokePts(pts[i], 1.6, c.color, c.alpha);
+        strokePts(pts[i], 0.7, COPPER_HI, respire);
+        glints(pts[i], el);
+      });
 
       /* courbe moyenne argentée : halo doux, trait argent, fin reflet clair */
       strokePts(sumPts, 6, SILVER, 0.14);
