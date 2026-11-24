@@ -123,7 +123,9 @@
           { title: 'Simulation Monte Carlo', file: 'monte-carlo.html',
             desc: "Le simulateur en ligne et l'application Android qui testent des milliers d'évolutions possibles d'un portefeuille." },
           { title: 'Intérêts composés', file: 'interets-composes.html',
-            desc: 'Voir comment le temps et la régularité font grandir un capital.' }
+            desc: 'Voir comment le temps et la régularité font grandir un capital.' },
+          { title: 'Simulateur de prêt immobilier', file: 'simulateur-pret-immo.html', maj: 'novembre 2026',
+            desc: "Mensualité, coût total du crédit, TAEG, amortissement, effet de la durée et du taux, capacité d'emprunt : tester son projet avant de voir la banque." }
         ]
       },
       {
