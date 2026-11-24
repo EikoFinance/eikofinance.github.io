@@ -277,7 +277,16 @@
     }
   }
 
-  /* ---------- Accueil : cinq boutons, chacun donne accès à ses leçons ---------- */
+  /* Les outils forment un sixième bloc de l'arbre : un clic ouvre les cinq outils */
+  function treeBranches() {
+    var list = [];
+    SITE.tools.groups.forEach(function (g) {
+      g.items.forEach(function (t) { list.push({ title: t.title, file: t.file, desc: t.short }); });
+    });
+    return SITE.branches.concat([{ id: 'outils', title: 'Outils', tagline: 'Mesurer, simuler, tester', items: list }]);
+  }
+
+  /* ---------- Accueil : six boutons (cinq chemins et les outils), chacun donne accès à son contenu ---------- */
   function buildTree() {
     var box = document.querySelector('[data-eiko="tree"]');
     if (!box) return;
@@ -286,7 +295,7 @@
     var branches = h('div', { class: 'branches' });
     var views = {};
 
-    SITE.branches.forEach(function (b) {
+    treeBranches().forEach(function (b) {
       var btn = h('button', {
         type: 'button', class: 'root', 'data-id': b.id,
         'aria-expanded': 'false', 'aria-controls': 'branch-' + b.id
@@ -332,7 +341,7 @@
       openId = id;
     }
 
-    SITE.branches.forEach(function (b) {
+    treeBranches().forEach(function (b) {
       views[b.id].btn.addEventListener('click', function () {
         if (openId === b.id) { close(); history.replaceState(null, '', location.pathname); }
         else { open(b.id); history.replaceState(null, '', '#' + b.id); }
