@@ -3,11 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Outils &amp; Simulateurs - EikoFinance</title>
-<meta http-equiv="refresh" content="0; url=monte-carlo.html">
-<link rel="canonical" href="monte-carlo.html">
+<title>Boîte à outils - EikoFinance</title>
+<meta name="description" content="Les outils gratuits d'EikoFinance : suivi de budget, suivi de patrimoine, intérêts composés, simulateur de prêt immobilier et simulation Monte Carlo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/lesson.css">
+<link rel="stylesheet" href="css/scene.css">
+<link rel="stylesheet" href="css/cartes.css">
+<style>
+/* Repli du bandeau : ne s'applique que tant que scene.css n'a pas de règle .img-outils */
+:where(.img-outils){background-image:linear-gradient(135deg,#0A1C3B 0%,#102A56 60%,#1e3f7a 100%);background-size:cover;background-position:center}
+</style>
+<script src="js/site.js" defer></script>
 </head>
 <body>
-<p>Cette page a été déplacée. Va à la <a href="monte-carlo.html">simulation Monte Carlo</a> ou au <a href="interets-composes.html">calculateur d'intérêts composés</a>.</p>
+<header>
+  <div class="logo-container">
+    <img src="images/logo.jpg" alt="Logo Eiko Finance" class="logo-img">
+    <span class="logo-text">EIKO FINANCE</span>
+  </div>
+  <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+  <!-- Menu : généré par js/site.js (liste de secours si JavaScript est désactivé) -->
+  <nav>
+    <ul>
+      <li><a href="index.html#comprendre">Comprendre</a></li>
+      <li><a href="index.html#investir">Investir</a></li>
+      <li><a href="index.html#planifier">Planifier</a></li>
+      <li><a href="index.html#optimiser">Optimiser</a></li>
+      <li><a href="outils.html">Outils</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <p class="crumbs"><a href="index.html">Accueil</a> › Outils</p>
+
+  <section class="scene scene-hero img-outils">
+    <h1>La boîte à outils : passer de la théorie à la pratique</h1>
+    <p>Des outils gratuits pour mesurer ta situation et tester tes projets. Tes données restent dans ton navigateur : rien n'est envoyé à un serveur.</p>
+  </section>
+
+  <article class="chapitre">
+    <p>Les leçons expliquent, les outils s'utilisent. Chaque outil s'ouvre dans sa page, avec quelques explications, et peut aussi s'ouvrir en plein écran. Si tu débutes, un ordre simple : commence par le suivi de budget, puis regarde l'effet du temps avec les intérêts composés.</p>
+    <div data-eiko="tools" data-mode="full"></div>
+  </article>
+</main>
+
+<footer>
+  <p>&copy; 2026 EikoFinance. Tous droits réservés.</p>
+  <p>Contact : <a href="mailto:contacteikofinance@gmail.com">contacteikofinance@gmail.com</a></p>
+</footer>
+<script src="js/lesson.js"></script>
 </body>
 </html>
