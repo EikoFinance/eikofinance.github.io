@@ -102,12 +102,10 @@
       {
         id: 'planifier',
         title: 'Planifier',
-        tagline: 'Construire, mesurer et décider',
+        tagline: 'Construire sa stratégie et décider',
         items: [
           { title: 'Budget et épargne de précaution', file: 'budget-epargne.html',
             desc: "Établir son budget, rembourser les dettes chères, constituer une réserve avant d'investir." },
-          { title: 'Suivi de budget', file: 'suivi-budget.html',
-            desc: "Revenus, logement, charges fixes et variables, reste à vivre : un camembert pour voir où part votre argent." },
           { title: 'La pyramide financière', file: 'pyramide-finance.html',
             desc: "La pyramide de Maslow appliquée à l'argent : quatre étages pour savoir par où commencer, et un test pour situer votre prochain pas." },
           { title: 'Les frais', file: 'frais.html',
@@ -116,16 +114,8 @@
             desc: "Diversification, allocation, rééquilibrage, horizon, passif ou actif, en une fois ou progressivement : une méthode." },
           { title: 'Les portefeuilles historiques', file: 'portefeuilles-historiques.html',
             desc: "60/40, Permanent Portfolio de Browne, All Weather de Dalio, Golden Butterfly, trois fonds : composition, logique et limites." },
-          { title: 'Suivi de patrimoine', file: 'suivi-patrimoine.html', maj: 'novembre 2026',
-            desc: "Immobilier, épargne, bourse, métaux, crypto et revenus de staking : un tableau de bord pour suivre sa répartition face à une allocation cible." },
           { title: "L'antifragilité d'un portefeuille", file: 'antifragilite.html',
-            desc: "Fragile, robuste ou antifragile ? Comment un portefeuille réagit aux chocs, et pourquoi garder des munitions compte autant que diversifier." },
-          { title: 'Simulation Monte Carlo', file: 'monte-carlo.html',
-            desc: "Le simulateur en ligne et l'application Android qui testent des milliers d'évolutions possibles d'un portefeuille." },
-          { title: 'Intérêts composés', file: 'interets-composes.html',
-            desc: 'Voir comment le temps et la régularité font grandir un capital.' },
-          { title: 'Simulateur de prêt immobilier', file: 'simulateur-pret-immo.html', maj: 'novembre 2026',
-            desc: "Mensualité, coût total du crédit, TAEG, amortissement, effet de la durée et du taux, capacité d'emprunt : tester son projet avant de voir la banque." }
+            desc: "Fragile, robuste ou antifragile ? Comment un portefeuille réagit aux chocs, et pourquoi garder des munitions compte autant que diversifier." }
         ]
       },
       {
@@ -160,7 +150,27 @@
     ],
     extras: [
       { title: 'Contact', file: 'contact.html' }
-    ]
+    ],
+    /* Boîte à outils : séparée des leçons (menu « Outils », bande sur l'accueil, page outils.html) */
+    tools: {
+      title: 'Boîte à outils',
+      groups: [
+        { title: 'Je mesure ma situation', items: [
+          { title: 'Suivi de budget', file: 'suivi-budget.html', short: 'Où part ton argent chaque mois', lesson: 'budget-epargne.html',
+            desc: "Revenus, logement, charges fixes et variables, reste à vivre : un camembert pour voir où part votre argent." },
+          { title: 'Suivi de patrimoine', file: 'suivi-patrimoine.html', maj: 'novembre 2026', short: 'Tout ce que tu possèdes, au même endroit', lesson: 'portefeuille.html',
+            desc: "Immobilier, épargne, bourse, métaux, crypto et revenus de staking : un tableau de bord pour suivre sa répartition face à une allocation cible." }
+        ] },
+        { title: 'Je teste un projet', items: [
+          { title: 'Intérêts composés', file: 'interets-composes.html', short: 'Ce que le temps fait à ton épargne',
+            desc: 'Voir comment le temps et la régularité font grandir un capital.' },
+          { title: 'Simulateur de prêt immobilier', file: 'simulateur-pret-immo.html', maj: 'novembre 2026', short: 'Combien coûte vraiment ton crédit', lesson: 'immobilier.html',
+            desc: "Mensualité, coût total du crédit, TAEG, amortissement, effet de la durée et du taux, capacité d'emprunt : tester son projet avant de voir la banque." },
+          { title: 'Simulation Monte Carlo', file: 'monte-carlo.html', short: 'Tester des milliers d\'avenirs possibles', lesson: 'portefeuille.html',
+            desc: "Le simulateur en ligne et l'application Android qui testent des milliers d'évolutions possibles d'un portefeuille." }
+        ] }
+      ]
+    }
   };
   window.EIKO_SITE = SITE;
 
@@ -184,7 +194,15 @@
       '.avertissement{background:#f6f1e4;border-left:5px solid #c9a24b;border-radius:6px;padding:.8rem 1rem;margin:2rem 0 1rem;font-size:.92rem;line-height:1.6;color:#1c2433}' +
       '.avertissement p{margin:0}.avertissement strong{color:#0b1f3a}.avertissement a{color:#13305a;font-weight:600}' +
       '.avertissement .avertissement-meta{margin-top:.4rem;font-size:.85rem;color:#4a5568}' +
-      '.sources{margin-top:2rem}.sources ul{line-height:1.8}' }));
+      '.sources{margin-top:2rem}.sources ul{line-height:1.8}' +
+      '.outils-band{background:var(--bg-subtle,#F4F6F9);padding:2.5rem 5%}' +
+      '.outils-band h2{font-family:var(--font-title);color:var(--primary-blue);font-size:1.5rem;margin:0 0 .4rem}' +
+      '.outils-intro{color:var(--text-muted);margin:0 0 .5rem}' +
+      '.outils-groupe{font-family:var(--font-body);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin:1.4rem 0 .7rem}' +
+      '.outils-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}' +
+      '.outil-card h3 a{color:inherit;text-decoration:none}.outil-card h3 a:hover{color:var(--gold-accent)}' +
+      '.outil-lecon{margin-top:.6rem;font-size:.85rem;color:var(--text-muted)}.outil-lecon a{color:var(--primary-blue);font-weight:600}' +
+      '.outils-tous{display:inline-block;margin-top:1.4rem;color:var(--primary-blue);font-weight:700;text-decoration:none}.outils-tous:hover{color:var(--gold-accent)}' }));
   }
 
   var page = location.pathname.split('/').pop() || 'index.html';
@@ -192,10 +210,19 @@
   var current = SITE.branches.filter(function (b) {
     return b.items.some(function (i) { return i.file === page; });
   })[0];
-  var item = null;
+  var item = null, inTools = false;
   SITE.branches.forEach(function (b) {
     b.items.forEach(function (i) { if (i.file === page) item = i; });
   });
+  SITE.tools.groups.forEach(function (g) {
+    g.items.forEach(function (i) { if (i.file === page) { item = i; inTools = true; } });
+  });
+  var isOutils = inTools || page === 'outils.html';
+  function findLesson(file) {
+    var r = null;
+    SITE.branches.forEach(function (b) { b.items.forEach(function (i) { if (i.file === file) r = i; }); });
+    return r;
+  }
 
   /* ---------- Menu ---------- */
   function buildNav() {
@@ -203,27 +230,36 @@
     if (!nav) return;
     var ul = h('ul');
 
-    /* Sur l'accueil, l'arbre remplace le menu : seul le contact reste en haut */
+    function subItem(text, href, active, list) {
+      var li = h('li', { class: 'has-sub' });
+      li.appendChild(h('a', Object.assign({ href: href, text: text }, active ? { class: 'active' } : {})));
+      var btn = h('button', {
+        type: 'button', class: 'sub-toggle', text: '▾',
+        'aria-expanded': 'false', 'aria-label': 'Afficher : ' + text
+      });
+      btn.addEventListener('click', function () {
+        var open = li.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      var sub = h('ul', { class: 'sub' });
+      list.forEach(function (it) {
+        sub.appendChild(h('li', {}, [link(it.file, it.title, it.file === page)]));
+      });
+      li.appendChild(btn);
+      li.appendChild(sub);
+      return li;
+    }
+    var allTools = [];
+    SITE.tools.groups.forEach(function (g) { allTools = allTools.concat(g.items); });
+
+    /* Sur l'accueil, l'arbre remplace le menu : seuls Outils et Contact restent en haut */
     if (!isHome) {
       SITE.branches.forEach(function (b) {
-        var li = h('li', { class: 'has-sub' });
-        li.appendChild(h('a', Object.assign({ href: 'index.html#' + b.id, text: b.title }, current === b ? { class: 'active' } : {})));
-        var btn = h('button', {
-          type: 'button', class: 'sub-toggle', text: '▾',
-          'aria-expanded': 'false', 'aria-label': 'Afficher les leçons : ' + b.title
-        });
-        btn.addEventListener('click', function () {
-          var open = li.classList.toggle('open');
-          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
-        var sub = h('ul', { class: 'sub' });
-        b.items.forEach(function (it) {
-          sub.appendChild(h('li', {}, [link(it.file, it.title, it.file === page)]));
-        });
-        li.appendChild(btn);
-        li.appendChild(sub);
-        ul.appendChild(li);
+        ul.appendChild(subItem(b.title, 'index.html#' + b.id, current === b, b.items));
       });
+      ul.appendChild(subItem('Outils', 'outils.html', isOutils, allTools));
+    } else {
+      ul.appendChild(h('li', {}, [link('outils.html', 'Outils', false)]));
     }
     SITE.extras.forEach(function (x) {
       ul.appendChild(h('li', {}, [link(x.file, x.title, x.file === page)]));
@@ -325,6 +361,41 @@
   };
   var NO_NOTICE = ['index.html', 'avertissement.html']; /* pages sans bandeau */
 
+  /* ---------- Boîte à outils : bande de l'accueil et page outils.html ---------- */
+  function buildTools() {
+    var boxes = document.querySelectorAll('[data-eiko="tools"]');
+    if (!boxes.length) return;
+    injectStyles();
+    Array.prototype.forEach.call(boxes, function (box) {
+      var full = box.getAttribute('data-mode') === 'full';
+      if (!full) {
+        box.classList.add('outils-band');
+        box.id = box.id || 'outils';
+        box.appendChild(h('h2', { text: SITE.tools.title }));
+        box.appendChild(h('p', { class: 'outils-intro', text: 'Des outils gratuits pour passer de la théorie à la pratique. Tes données restent dans ton navigateur.' }));
+      }
+      SITE.tools.groups.forEach(function (g) {
+        box.appendChild(h('h3', { class: 'outils-groupe', text: g.title }));
+        var grid = h('div', { class: 'outils-grille' });
+        g.items.forEach(function (t) {
+          if (!full) {
+            grid.appendChild(h('a', { class: 'card', href: t.file }, [h('h3', { text: t.title }), h('p', { text: t.short })]));
+            return;
+          }
+          var card = h('div', { class: 'card outil-card' }, [
+            h('h3', {}, [h('a', { href: t.file, text: t.title })]),
+            h('p', { text: t.desc })
+          ]);
+          var l = t.lesson && findLesson(t.lesson);
+          if (l) card.appendChild(h('p', { class: 'outil-lecon' }, [document.createTextNode('Leçon associée : '), h('a', { href: l.file, text: l.title })]));
+          grid.appendChild(card);
+        });
+        box.appendChild(grid);
+      });
+      if (!full) box.appendChild(h('a', { class: 'outils-tous', href: 'outils.html', text: 'Voir tous les outils \u2192' }));
+    });
+  }
+
   function addNotice() {
     if (NO_NOTICE.indexOf(page) !== -1) return;
     var main = document.querySelector('main');
@@ -369,6 +440,7 @@
   function init() {
     buildNav();
     buildTree();
+    buildTools();
     injectStyles();
     addSources();   /* d'abord les sources, puis l'avertissement tout en bas */
     addNotice();
