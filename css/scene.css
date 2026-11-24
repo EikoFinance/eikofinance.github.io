@@ -57,6 +57,11 @@
 .img-antifragilite { --img: url(../images/scene-antifragilite.webp); }
 .img-suivi-budget { --img: url(../images/scene-suivi-budget.webp); }
 .img-historiques { --img: url(../images/scene-historiques.webp); }
+/* Outils : fond sobre (dégradé marine) en attendant une image dédiée.
+   Pour une image : remplacer le dégradé par url(../images/scene-xxx.webp) */
+.img-suivi-patrimoine { --img: linear-gradient(135deg, #0A1C3B 0%, #17335f 100%); }
+.img-pret-immo        { --img: linear-gradient(135deg, #0A1C3B 0%, #17335f 100%); }
+.img-outils           { --img: linear-gradient(135deg, #0A1C3B 0%, #17335f 100%); }
 
 .scene {
     position: relative;
