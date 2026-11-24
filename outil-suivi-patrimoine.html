@@ -532,7 +532,7 @@ function build(cfg,layout,forced,noCheck){
       y+=(gap==null?1.5:gap);
     },
     note:function(text){H.para(text,7.8,MUTED,'normal',2);},
-    sub:function(text){ensure(14);y+=1.5;setText(9.5,'bold',NAVY);doc.text(pt(text),ML,y+3.2);y+=6;},
+    sub:function(text,need){ensure(need||32);y+=1.5;setText(9.5,'bold',NAVY);doc.text(pt(text),ML,y+3.2);y+=6;},
     params:function(items){
       var cols=land?4:3,cw=CW/cols;
       for(var i=0;i<items.length;i+=cols){
@@ -849,7 +849,7 @@ const num=v=>{const x=parseFloat(String(v).replace(/\s/g,'').replace(',','.'));r
 const sg=n=>`<span class="${n>=0?'pos':'neg'}">${n>=0?'+':''}${pc(n)}</span>`;
 let S,tab='syn';
 try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}
-if(!S||!S.immo||!S.bnc)S=structuredClone(DEMO);
+if(!S||!S.immo||!S.bnc)S=structuredClone(DEMO);try{var _q=JSON.parse(localStorage.getItem('eiko_pret_vers_patrimoine')||'null');if(_q){Object.assign(S.immo,_q);tab='immo';localStorage.removeItem('eiko_pret_vers_patrimoine');localStorage.setItem(KEY,JSON.stringify(S));}}catch(e){}
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
 const get=p=>p.split('.').reduce((o,k)=>o[k],S);
 function setP(p,v){const k=p.split('.'),l=k.pop(),o=k.reduce((o,x)=>o[x],S);o[l]=typeof o[l]==='number'?num(v):v}

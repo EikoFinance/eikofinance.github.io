@@ -634,7 +634,7 @@ function build(cfg,layout,forced,noCheck){
       y+=(gap==null?1.5:gap);
     },
     note:function(text){H.para(text,7.8,MUTED,'normal',2);},
-    sub:function(text){ensure(14);y+=1.5;setText(9.5,'bold',NAVY);doc.text(pt(text),ML,y+3.2);y+=6;},
+    sub:function(text,need){ensure(need||32);y+=1.5;setText(9.5,'bold',NAVY);doc.text(pt(text),ML,y+3.2);y+=6;},
     params:function(items){
       var cols=land?4:3,cw=CW/cols;
       for(var i=0;i<items.length;i+=cols){

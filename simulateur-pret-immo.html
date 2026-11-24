@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulateur de prêt immobilier - EikoFinance</title>
+<meta name="description" content="Simulateur de prêt immobilier en ligne : mensualité, coût total du crédit, TAEG, tableau d'amortissement, effet de la durée et du taux, capacité d'emprunt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/lesson.css">
+<link rel="stylesheet" href="css/scene.css">
+<link rel="stylesheet" href="css/cartes.css">
+<style>
+/* Repli du bandeau : ne s'applique que tant que scene.css n'a pas de règle .img-pret-immo */
+:where(.img-pret-immo){background-image:linear-gradient(135deg,#0A1C3B 0%,#102A56 60%,#1e3f7a 100%);background-size:cover;background-position:center}
+.simulator-embed{margin:1rem 0 2rem;border:1px solid #d9dee5;border-radius:8px;overflow:hidden;background:#0a1a3d}
+.simulator-embed iframe{display:block;width:100%;height:1500px;border:0;background:#0a1a3d}
+.simulator-open{display:inline-block;margin:0 0 1rem;color:var(--primary-blue);font-weight:700}
+</style>
+<script src="js/site.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="logo-container">
+    <img src="images/logo.jpg" alt="Logo Eiko Finance" class="logo-img">
+    <span class="logo-text">EIKO FINANCE</span>
+  </div>
+  <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+  <!-- Menu : généré par js/site.js (liste de secours si JavaScript est désactivé) -->
+  <nav>
+    <ul>
+      <li><a href="index.html#comprendre">Comprendre</a></li>
+      <li><a href="index.html#investir">Investir</a></li>
+      <li><a href="index.html#planifier">Planifier</a></li>
+      <li><a href="index.html#optimiser">Optimiser</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <p class="crumbs"><a href="index.html">Accueil</a> › <a href="index.html#planifier">Planifier</a> › Simulateur de prêt immobilier</p>
+
+  <section class="scene scene-hero img-pret-immo">
+    <h1>Simulateur de prêt immobilier : combien coûte vraiment ton crédit ?</h1>
+    <p>Saisis ton projet, le taux et la durée. L'outil calcule ta mensualité, le coût total du crédit, le TAEG et le tableau d'amortissement, et te montre l'effet d'une durée ou d'un taux différent.</p>
+    <a href="#outil" class="btn-gold">Ouvrir le simulateur</a>
+  </section>
+
+  <section class="card-grid" aria-label="Sommaire de la page">
+    <a class="card" href="#outil"><h3>Le simulateur en ligne</h3><p>Teste ton projet dans ton navigateur.</p></a>
+    <a class="card" href="#utiliser"><h3>Comment l'utiliser</h3><p>Les étapes, dans le bon ordre.</p></a>
+    <a class="card" href="#lire"><h3>Comprendre les résultats</h3><p>Mensualité, TAEG, coût total.</p></a>
+    <a class="card" href="#limites"><h3>Les limites</h3><p>Ce que la simulation ne dit pas.</p></a>
+  </section>
+
+  <article class="chapitre">
+
+    <h2 id="outil">Le simulateur en ligne</h2>
+    <p class="accroche">« Le prix d'un bien, c'est ce que tu paies ; le coût d'un crédit, c'est ce que tu paies en plus. »</p>
+    <p>Remplis l'outil directement dans cette page, ou ouvre-le en plein écran. Les chiffres affichés au départ sont des exemples : remplace-les par ceux de ton projet. Tes données restent privées : elles sont enregistrées uniquement dans ton navigateur.</p>
+    <div class="simulator-embed">
+      <iframe id="outil-frame" src="outil-pret-immo.html" title="Simulateur de prêt immobilier EikoFinance" loading="lazy"></iframe>
+    </div>
+    <a class="simulator-open" href="outil-pret-immo.html" target="_blank" rel="noopener">Ouvrir le simulateur dans un nouvel onglet</a>
+
+    <details>
+      <summary>Les quatre onglets de l'outil, en un coup d'œil</summary>
+      <ul class="liste">
+        <li><strong>Ma simulation</strong> : ton projet (prix, travaux, frais de notaire, apport), le prêt (taux, durée, assurance, frais), la mensualité, le coût total, le TAEG estimé et la répartition de ce que tu paies.</li>
+        <li><strong>Amortissement</strong> : année après année, la part d'intérêts, la part de capital remboursé et le capital restant dû.</li>
+        <li><strong>Comparer</strong> : ce que change une durée plus courte ou plus longue, et ce que change un taux plus bas ou plus haut.</li>
+        <li><strong>Capacité d'emprunt</strong> : à partir de tes revenus et de ton taux d'endettement visé, la mensualité maximale et le montant empruntable.</li>
+      </ul>
+      <p>L'outil peut aussi exporter la simulation en PDF avec une mise en page modifiable, et envoyer les chiffres du prêt vers ton <a href="suivi-patrimoine.html">suivi de patrimoine</a>.</p>
+    </details>
+
+    <h2 id="utiliser">Comment l'utiliser</h2>
+    <ul class="liste">
+      <li>Pars du <strong>prix du bien</strong> si tu cherches encore, ou du <strong>montant à emprunter</strong> si tu as déjà une offre.</li>
+      <li>Indique ton <strong>apport</strong> et les <strong>frais de notaire</strong> : ils déterminent la somme à emprunter.</li>
+      <li>Renseigne le <strong>taux</strong> et la <strong>durée</strong> de ton offre ou de ta simulation bancaire, puis le <strong>taux de l'assurance</strong> (demande un devis, il varie beaucoup).</li>
+      <li>Lis la <strong>mensualité totale</strong>, le <strong>coût du crédit</strong> et le <strong>TAEG</strong>.</li>
+      <li>Passe à l'onglet <strong>Comparer</strong> : raccourcir ou allonger la durée, ou gagner un demi-point de taux, change-t-il vraiment ton projet ?</li>
+      <li>Dans <strong>Capacité d'emprunt</strong>, saisis tes revenus pour voir si ta mensualité reste raisonnable.</li>
+    </ul>
+
+    <h2 id="lire">Comprendre les résultats</h2>
+    <ul class="liste">
+      <li><strong>La mensualité</strong> : ce que tu paies chaque mois. Elle est constante, mais sa composition change : au début, elle paie surtout des intérêts ; à la fin, surtout du capital.</li>
+      <li><strong>Le coût total du crédit</strong> : intérêts, assurance et frais de dossier et de garantie. C'est le vrai prix de l'emprunt, au-delà du capital que tu rembourses.</li>
+      <li><strong>Le TAEG</strong> : un taux qui regroupe le taux du crédit, l'assurance et les frais, pour comparer des offres entre elles. L'outil en donne une estimation ; seule l'offre de la banque fait foi.</li>
+      <li><strong>La durée</strong> : l'allonger baisse la mensualité mais augmente le coût total. C'est le compromis central d'un crédit.</li>
+      <li><strong>Le taux d'endettement</strong> : la part de tes revenus consacrée aux crédits. Les banques en fixent souvent un plafond autour de 35 %, assurance comprise : ce repère évolue, vérifie-le auprès de ta banque ou d'un courtier.</li>
+    </ul>
+    <p>Pour aller plus loin sur l'achat d'un logement (résidence principale, locatif, rentabilité, risques), lis la leçon <a href="immobilier.html">L'immobilier</a>.</p>
+
+    <h2 id="limites">Ce que la simulation ne sait pas faire</h2>
+    <ul class="liste">
+      <li><strong>Elle suppose un taux fixe</strong> et des mensualités constantes. Un prêt à taux variable, modulable ou avec différé se comporte autrement.</li>
+      <li><strong>Elle ignore les remboursements anticipés</strong>, les aides (prêts aidés, dispositifs locaux) et les frais propres à ta banque.</li>
+      <li><strong>Les frais de notaire et l'assurance sont des estimations.</strong> Remplace-les par les chiffres réels dès que tu les as.</li>
+      <li><strong>Elle ne remplace ni une offre de prêt ni un conseil.</strong> Les règles d'octroi (taux d'endettement, durée maximale) évoluent : vérifie-les auprès de ta banque ou d'un courtier.</li>
+    </ul>
+    <div class="alerte"><strong>Un outil pédagogique :</strong> il aide à comprendre un crédit et à préparer une discussion avec ta banque. Il ne constitue ni une offre de prêt, ni une promesse de financement, ni un conseil personnalisé.</div>
+
+    <div class="pager">
+      <a href="interets-composes.html">← Intérêts composés</a>
+      <a class="next" href="immobilier.html">L'immobilier →</a>
+    </div>
+  </article>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 EikoFinance. Tous droits réservés.</p>
+  <p>Contact : <a href="mailto:contacteikofinance@gmail.com">contacteikofinance@gmail.com</a></p>
+</footer>
+<script src="js/lesson.js"></script>
+<script>
+/* Ajuste la hauteur de l'outil encadré à son contenu */
+(function(){
+  var f=document.getElementById('outil-frame');
+  window.addEventListener('message',function(e){
+    if(e.origin!==location.origin||!f||e.source!==f.contentWindow)return;
+    if(e.data&&typeof e.data.eikoPretH==='number')f.style.height=Math.ceil(e.data.eikoPretH)+'px';
+  });
+})();
+</script>
+</body>
+</html>
