@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Macroéconomie - EikoFinance</title>
-<meta name="description" content="Les grands indicateurs, la dette et le déficit, la balance commerciale, la parité de pouvoir d'achat, les leviers des banques centrales et des États, et leur effet sur les marchés.">
+<meta name="description" content="Les grands indicateurs, l'évolution du PIB, la balance commerciale et le taux de change, la parité de pouvoir d'achat, la dette publique, les économies financées par la dette ou par la productivité, et leur effet sur les marchés.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="css/menu.css">
 <link rel="stylesheet" href="css/scene.css">
 <link rel="stylesheet" href="css/cartes.css">
+<script src="js/site.js" defer></script>
 <style>
 @media (min-width:769px) and (max-width:1500px){nav{padding-right:1rem}nav ul{gap:1rem;flex-wrap:wrap;justify-content:flex-end}nav a{font-size:.86rem}}
 .chapitre{max-width:760px;margin:0 auto;padding:1rem 1.2rem 3rem}
@@ -22,13 +23,14 @@
 .chapitre h3{font-family:var(--font-title);color:var(--primary-blue);font-size:1.15rem;margin:1.5rem 0 .5rem}
 .chapitre p{margin-bottom:1rem;line-height:1.7}
 .chapitre ul.liste{margin:0 0 1rem 1.2rem;line-height:1.7}
+.chapitre ul.liste li{margin-bottom:.35rem}
 .accroche{font-size:1.25rem;font-style:italic;color:var(--primary-blue);border-left:4px solid var(--gold-accent);padding-left:1rem;margin:0 0 1.5rem}
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0}
 .duo>div{border:1px solid #d9dee5;border-radius:8px;padding:.9rem 1.1rem}
 .duo h3{margin:0 0 .4rem;font-size:1rem}
 .duo ul{margin:0 0 0 1.1rem;line-height:1.6}
-.duo .pour{border-top:4px solid #2e7d4f}
-.duo .contre{border-top:4px solid #b3402e}
+.duo .a{border-top:4px solid var(--primary-blue)}
+.duo .b{border-top:4px solid var(--gold-accent)}
 @media(max-width:640px){.duo{grid-template-columns:1fr}}
 figure{margin:1.5rem 0;background:var(--bg-subtle);border-radius:8px;padding:1rem}
 figure svg{width:100%;height:auto;display:block}
@@ -77,7 +79,8 @@ details p{margin:.7rem 0 0}
     <ul>
       <li><a href="index.html#comprendre">Comprendre</a></li>
       <li><a href="index.html#investir">Investir</a></li>
-      <li><a href="index.html#mesurer">Mesurer</a></li>
+      <li><a href="index.html#trading">Trading</a></li>
+      <li><a href="index.html#planifier">Planifier</a></li>
       <li><a href="index.html#optimiser">Optimiser</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -85,24 +88,26 @@ details p{margin:.7rem 0 0}
 </header>
 
 <main>
-  <p class="crumbs"><a href="index.html">Accueil</a> › Macroéconomie</p>
+  <p class="crumbs"><a href="index.html">Accueil</a> › <a href="index.html#comprendre">Comprendre</a> › Macroéconomie</p>
 
   <section class="scene scene-hero img-macro">
     <h1>Macroéconomie : le tableau de bord d'un pays</h1>
-    <p>PIB, inflation, taux, dette, commerce extérieur, pouvoir d'achat : les grands indicateurs, ceux qui agissent dessus, et ce que cela change pour les marchés.</p>
+    <p>PIB, inflation, taux, dette, commerce extérieur, taux de change, productivité : les grands indicateurs, ceux qui agissent dessus, et ce que cela change pour les marchés.</p>
     <a href="#intro" class="btn-gold">Commencer</a>
   </section>
 
   <section class="card-grid" aria-label="Sommaire">
     <a class="card" href="#intro"><h3>Les indicateurs</h3><p>Le tableau de bord d'un pays.</p></a>
     <a class="card" href="#inflation"><h3>Inflation et pouvoir d'achat</h3><p>Taux nominal, taux réel.</p></a>
+    <a class="card" href="#croissance"><h3>L'évolution du PIB</h3><p>Croissance, récession, conséquences.</p></a>
     <a class="card" href="#leviers"><h3>Qui peut agir ?</h3><p>Banque centrale et État.</p></a>
     <a class="card" href="#cycles"><h3>Les cycles</h3><p>Indicateurs avancés et retardés.</p></a>
-    <a class="card" href="#commerce"><h3>Commerce extérieur</h3><p>Balance commerciale et solde courant.</p></a>
+    <a class="card" href="#commerce"><h3>Commerce et taux de change</h3><p>Qui influence qui ?</p></a>
     <a class="card" href="#ppa"><h3>Comparer deux pays</h3><p>Parité de pouvoir d'achat.</p></a>
     <a class="card" href="#dette"><h3>La dette publique</h3><p>Déficit, déficit primaire, taux.</p></a>
-    <a class="card" href="#marches"><h3>Macro et marchés</h3><p>Un instantané d'octobre 2026.</p></a>
-    <a class="card" href="#quiz"><h3>Teste-toi</h3><p>Treize questions pour vérifier.</p></a>
+    <a class="card" href="#productivite"><h3>Dette ou productivité ?</h3><p>Ce qui finance la croissance.</p></a>
+    <a class="card" href="#marches"><h3>Macro et marchés</h3><p>Un instantané de novembre 2026.</p></a>
+    <a class="card" href="#quiz"><h3>Teste-toi</h3><p>Dix-neuf questions pour vérifier.</p></a>
   </section>
 
   <article class="chapitre">
@@ -112,7 +117,7 @@ details p{margin:.7rem 0 0}
     <div class="tablewrap">
       <table>
         <thead><tr><th></th><th>Ce qu'il mesure</th><th>Pourquoi le suivre</th></tr></thead>
-        <tbody><tr><th scope="row">PIB</th><td>La richesse produite dans un pays sur une période</td><td>Mesure la croissance : une baisse prolongée signale une récession</td></tr><tr><th scope="row">Inflation</th><td>La hausse générale des prix</td><td>Érode le pouvoir d'achat et guide les décisions des banques centrales</td></tr><tr><th scope="row">Chômage</th><td>La part de la population active sans emploi</td><td>Révèle la santé du marché du travail</td></tr><tr><th scope="row">Taux d'intérêt</th><td>Le coût de l'argent emprunté</td><td>Influence le crédit, l'immobilier, les obligations et les actions</td></tr><tr><th scope="row">Dette et déficit publics</th><td>Ce que l'État doit et ce qu'il dépense en plus de ses recettes</td><td>Affecte la confiance des prêteurs et les impôts futurs</td></tr><tr><th scope="row">Balance commerciale</th><td>La différence entre exportations et importations</td><td>Reflète la compétitivité et les dépendances d'un pays</td></tr><tr><th scope="row">Solde courant</th><td>Tout ce qu'un pays reçoit et paie au reste du monde : biens, services, revenus</td><td>Montre s'il vit au-dessus ou en dessous de ses moyens vis-à-vis de l'étranger</td></tr><tr><th scope="row">Taux de change</th><td>Le prix d'une monnaie en une autre</td><td>Joue sur les prix à l'import, les exportations et les placements étrangers</td></tr><tr><th scope="row">Parité de pouvoir d'achat</th><td>Ce qu'une même somme permet réellement d'acheter dans chaque pays</td><td>Permet de comparer des niveaux de vie et des économies, au-delà du taux de change</td></tr></tbody>
+        <tbody><tr><th scope="row">PIB</th><td>La richesse produite dans un pays sur une période</td><td>Mesure la croissance : une baisse prolongée signale une récession</td></tr><tr><th scope="row">Inflation</th><td>La hausse générale des prix</td><td>Érode le pouvoir d'achat et guide les décisions des banques centrales</td></tr><tr><th scope="row">Chômage</th><td>La part de la population active sans emploi</td><td>Révèle la santé du marché du travail</td></tr><tr><th scope="row">Taux d'intérêt</th><td>Le coût de l'argent emprunté</td><td>Influence le crédit, l'immobilier, les obligations et les actions</td></tr><tr><th scope="row">Dette et déficit publics</th><td>Ce que l'État doit et ce qu'il dépense en plus de ses recettes</td><td>Affecte la confiance des prêteurs et les impôts futurs</td></tr><tr><th scope="row">Balance commerciale</th><td>La différence entre exportations et importations</td><td>Reflète la compétitivité et les dépendances d'un pays</td></tr><tr><th scope="row">Solde courant</th><td>Tout ce qu'un pays reçoit et paie au reste du monde : biens, services, revenus</td><td>Montre s'il vit au-dessus ou en dessous de ses moyens vis-à-vis de l'étranger</td></tr><tr><th scope="row">Taux de change</th><td>Le prix d'une monnaie en une autre</td><td>Joue sur les prix à l'import, les exportations et les placements étrangers</td></tr><tr><th scope="row">Productivité</th><td>Ce qu'une heure de travail produit</td><td>Détermine à long terme le niveau de vie et la capacité à rembourser ses dettes</td></tr><tr><th scope="row">Parité de pouvoir d'achat</th><td>Ce qu'une même somme permet réellement d'acheter dans chaque pays</td><td>Permet de comparer des niveaux de vie et des économies, au-delà du taux de change</td></tr></tbody>
       </table>
     </div>
 
@@ -145,6 +150,75 @@ details p{margin:.7rem 0 0}
     <h3>Chômage : un indicateur qui réagit après coup</h3>
     <p>Le taux de chômage mesure la part des personnes qui n'ont pas d'emploi, sont disponibles et en recherchent activement un. Il ne compte pas ceux qui se sont découragés : on parle du « halo » du chômage. On distingue le chômage <strong>conjoncturel</strong> (lié au cycle), <strong>structurel</strong> (décalage entre les compétences et les emplois disponibles) et <strong>frictionnel</strong> (le temps normal de transition entre deux emplois). Longtemps, on a cru à un arbitrage simple entre chômage et inflation (la « courbe de Phillips ») : un marché du travail tendu fait monter les salaires, donc les prix. Ce lien existe, mais il est moins mécanique qu'on ne l'a cru.</p>
 
+    <h2 id="croissance">L'évolution du PIB : croissance, récession et conséquences</h2>
+    <p class="accroche">« Une économie qui ne progresse plus, est-ce grave ? »</p>
+    <p>Le PIB se publie chaque trimestre. On compare un trimestre au précédent (<strong>variation trimestrielle</strong>) ou au même trimestre un an plus tôt (<strong>glissement annuel</strong>). Une croissance de +0,5 % sur un trimestre, si elle se répète quatre fois, représente environ +2 % sur l'année.</p>
+    <h3>Expansion, stagnation, récession</h3>
+    <ul class="liste">
+      <li><strong>Expansion</strong> : le PIB réel augmente.</li>
+      <li><strong>Stagnation</strong> : il varie à peine autour de zéro.</li>
+      <li><strong>Récession</strong> : le PIB baisse de façon durable. On parle de <strong>récession technique</strong> après deux trimestres consécutifs de baisse : c'est un repère pratique, pas une définition officielle partout. Aux États-Unis, par exemple, un comité d'experts date les récessions en regardant aussi l'emploi, les revenus et la production.</li>
+    </ul>
+    <h3>L'exemple de la France en 2026</h3>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Période</th><th>Variation du PIB (par rapport au trimestre précédent)</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">4e trimestre 2025</th><td>+0,2 %</td></tr>
+          <tr><th scope="row">1er trimestre 2026</th><td>-0,1 % (estimation révisée par l'Insee)</td></tr>
+          <tr><th scope="row">2e trimestre 2026</th><td>0,0 %</td></tr>
+          <tr><th scope="row">3e trimestre 2026</th><td>-0,1 % (première estimation de l'Insee, 30 octobre)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Ce n'est pas une récession technique au sens strict, puisque le deuxième trimestre est stable et non négatif. Mais l'économie française n'a pas progressé depuis la fin de 2025, ce qui explique que plusieurs commentateurs la jugent à l'arrêt. Au troisième trimestre, la consommation des ménages a accéléré (+0,4 % après +0,2 %), mais le commerce extérieur a retiré 0,6 point à la croissance, après en avoir ajouté 0,6 point au trimestre précédent. Les résultats détaillés doivent être publiés le 27 novembre : une première estimation est souvent révisée.</p>
+    <h3>D'où vient la croissance ? PIB = C + I + G + (X − M)</h3>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Composante</th><th>Ce que c'est</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">C : consommation</th><td>Les dépenses des ménages (alimentation, loyers, services, achats)</td></tr>
+          <tr><th scope="row">I : investissement</th><td>Machines, bâtiments, logements neufs, logiciels : ce qui augmente la capacité de production</td></tr>
+          <tr><th scope="row">G : dépenses publiques</th><td>Salaires publics, services, investissements des administrations</td></tr>
+          <tr><th scope="row">X − M : exportations nettes</th><td>Ce que le pays vend à l'étranger moins ce qu'il y achète</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Les importations sont retranchées, car elles correspondent à des produits fabriqués ailleurs, déjà comptés dans la consommation ou l'investissement. C'est pourquoi un boom des importations peut réduire la croissance du PIB d'un trimestre.</p>
+    <h3>PIB potentiel et écart de production</h3>
+    <p>Le <strong>PIB potentiel</strong> est ce qu'une économie peut produire durablement, sans créer de tensions sur les prix. Il dépend du nombre de personnes qui travaillent, du capital disponible et de la <strong>productivité</strong>. Pour la France, l'OFCE retient une croissance potentielle d'environ 1,2 % par an. L'<strong>écart de production</strong> est la différence entre le PIB réel et le PIB potentiel :</p>
+    <ul class="liste">
+      <li><strong>PIB réel sous le potentiel</strong> : des usines et des travailleurs inemployés, un chômage plus élevé, une inflation qui tend à ralentir.</li>
+      <li><strong>PIB réel au-dessus du potentiel</strong> : surchauffe, tensions sur les salaires et les prix, inflation qui tend à monter.</li>
+    </ul>
+    <h3>La règle de 70 : de petits écarts de croissance, de grands écarts à long terme</h3>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Croissance annuelle</th><th>Années pour doubler (70 ÷ taux)</th></tr></thead>
+        <tbody>
+          <tr><td>1 %</td><td>70 ans</td></tr>
+          <tr><td>2 %</td><td>35 ans</td></tr>
+          <tr><td>3 %</td><td>environ 23 ans</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Avec 0,9 % de croissance moyenne en 2025, un pays met près de 80 ans à doubler son PIB ; à 3 %, un peu plus de 20 ans. D'où l'importance de comprendre ce qui fait croître durablement une économie (voir plus bas : la productivité).</p>
+    <h3>Les conséquences d'une croissance faible ou négative</h3>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Ce qui se passe</th><th>Pourquoi</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">L'emploi souffre, avec retard</th><td>Les entreprises ralentissent d'abord les embauches, puis licencient : le chômage réagit après coup</td></tr>
+          <tr><th scope="row">Le déficit public se creuse</th><td>Les recettes d'impôts baissent et les allocations montent (stabilisateurs automatiques)</td></tr>
+          <tr><th scope="row">Le ratio dette/PIB monte</th><td>Le PIB, au dénominateur, ne croît plus : le ratio augmente même sans nouvelle dépense</td></tr>
+          <tr><th scope="row">La banque centrale est sollicitée</th><td>Elle peut baisser ses taux pour soutenir l'activité, sauf si l'inflation reste forte (dilemme de 2026)</td></tr>
+          <tr><th scope="row">Les entreprises et les marchés réagissent</th><td>Les bénéfices attendus baissent, les valeurs cycliques sont pénalisées, les valeurs défensives résistent mieux</td></tr>
+          <tr><th scope="row">Le pouvoir d'achat stagne</th><td>Les salaires progressent moins vite, surtout si les prix, eux, continuent de monter</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>À l'inverse, une croissance très supérieure au potentiel peut entraîner une surchauffe. Et le PIB n'est pas le bien-être : une économie peut croître sans que le niveau de vie de tous s'améliore, ou ralentir sans que chacun s'appauvrisse. C'est un indicateur parmi d'autres.</p>
+
     <h2 id="leviers">Qui peut agir ? Politique monétaire et politique budgétaire</h2>
     <p>Deux grands leviers permettent d'influencer l'économie :</p>
     <ul class="liste">
@@ -168,7 +242,7 @@ details p{margin:.7rem 0 0}
     </figure>
 
     <h3>Le dilemme de la banque centrale : l'exemple de 2026</h3>
-    <p>En 2026, l'inflation est remontée en zone euro, tirée par l'énergie (hausse des prix du pétrole et du gaz liée aux tensions au Moyen-Orient). La BCE a relevé ses trois taux directeurs de 0,25 point en juin, puis le 10 septembre : son taux de dépôt, référence des marchés, est de <strong>2,50 %</strong>. Sa prochaine décision est prévue le 29 octobre 2026.</p>
+    <p>En 2026, l'inflation est remontée en zone euro, tirée par l'énergie (hausse des prix du pétrole et du gaz liée aux tensions au Moyen-Orient). La BCE a relevé ses taux directeurs de 0,25 point en juin, puis le 10 septembre : son taux de dépôt, référence des marchés, est de <strong>2,50 %</strong>. Le 29 octobre, elle a laissé ses taux inchangés, à l'unanimité : selon Christine Lagarde, elle ne voit pas à ce stade de risque d'effets de second tour, c'est-à-dire de hausses de salaires et de prix qui s'entretiennent. Plusieurs analystes soulignent aussi que la hausse des taux longs de ces deux derniers mois a déjà resserré les conditions de financement. Ce jour-là, la présidente a annoncé qu'elle quitterait ses fonctions plus tôt que prévu, le 7 février 2027. La prochaine réunion est fixée au 17 décembre 2026.</p>
     <p>Le dilemme est classique : monter les taux freine l'inflation, mais aussi le crédit, l'investissement et l'activité, alors que la croissance est fragile. Quand l'inflation vient d'un <strong>choc d'offre</strong> (énergie plus chère) plutôt que d'une demande trop forte, relever les taux agit moins sur la cause et plus sur ses conséquences. Une situation où les prix montent tandis que l'activité stagne a un nom : la <strong>stagflation</strong>. Les économistes sont partagés sur la meilleure réponse : agir vite pour ancrer les anticipations, ou attendre pour ne pas aggraver le ralentissement.</p>
 
     <h3>L'État, l'autre levier : un exemple</h3>
@@ -189,7 +263,7 @@ details p{margin:.7rem 0 0}
     <h3>La courbe des taux</h3>
     <p>La courbe des taux compare ce que rapportent les emprunts de l'État à court terme et à long terme. En temps normal, les taux longs sont plus élevés que les taux courts (on demande plus pour prêter plus longtemps). Quand la courbe s'<strong>inverse</strong> (les taux courts dépassent les taux longs), c'est souvent un signal que les marchés anticipent un ralentissement. C'est un indicateur avancé utile, mais imparfait : il a parfois annoncé des récessions qui ne sont pas venues, ou longtemps à l'avance.</p>
 
-    <h2 id="commerce">Le commerce extérieur : balance commerciale et solde courant</h2>
+    <h2 id="commerce">Le commerce extérieur : balance commerciale, solde courant et taux de change</h2>
     <p class="accroche">« Un pays qui achète plus qu'il ne vend est-il en danger ? »</p>
     <p>Un pays échange avec le reste du monde, comme Camille avec ses fournisseurs : elle importe de la farine et exporte du pain à des touristes de passage. La <strong>balance commerciale</strong> mesure la différence entre ce qu'un pays exporte et ce qu'il importe, en général pour les <strong>biens</strong>. Mais d'autres flux comptent aussi :</p>
     <div class="tablewrap">
@@ -212,8 +286,35 @@ details p{margin:.7rem 0 0}
       <li><strong>Au total.</strong> En ajoutant les services et les revenus, le solde courant français est proche de l'équilibre ces dernières années, selon l'OFCE pour 2024.</li>
     </ul>
     <h3>Un déficit commercial est-il un problème ?</h3>
-    <p>Les économistes ne sont pas d'accord sur la gravité d'un déficit commercial. Ses défenseurs soulignent qu'un pays peut importer parce qu'il investit (équipements, énergie) ou parce que ses habitants consomment plus : si les capitaux étrangers viennent financer cet écart, ce n'est pas forcément inquiétant. Ses critiques notent qu'un déficit durable peut traduire une dépendance (énergie, composants, médicaments), la perte de capacités industrielles ou une accumulation de dettes vis-à-vis de l'étranger, ce qui rend le pays vulnérable si le financement s'arrête. On regarde donc <strong>la durée, la taille et la façon dont il est financé</strong>.</p>
-    <p>La balance commerciale est aussi liée au <strong>taux de change</strong> : un euro fort rend les produits européens plus chers à l'export et les importations moins chères, comme dans le tableau « Quand la macro bouge les marchés » plus bas. La compétitivité ne dépend pas que des prix : qualité, innovation, image de marque et fiabilité comptent. Pour le lien avec les tensions entre pays, voir la page <a href="geopolitique.html#commerce">Géopolitique</a>.</p>
+    <p>Les économistes ne sont pas d'accord sur la gravité d'un déficit commercial. Ses défenseurs soulignent qu'un pays peut importer parce qu'il investit (équipements, énergie) ou parce que ses habitants consomment plus : si les capitaux étrangers viennent financer cet écart, ce n'est pas forcément inquiétant. Ses critiques notent qu'un déficit durable peut traduire une dépendance (énergie, composants, médicaments), la perte de capacités industrielles ou une accumulation de dettes vis-à-vis de l'étranger, ce qui rend le pays vulnérable si le financement s'arrête. On regarde donc <strong>la durée, la taille et la façon dont il est financé</strong>. Pour le lien avec les tensions entre pays, voir la page <a href="geopolitique.html#commerce">Géopolitique</a>.</p>
+
+    <h3>Balance commerciale et taux de change : qui influence qui ?</h3>
+    <p>Une même question revient : un pays qui achète plus qu'il ne vend voit-il sa monnaie baisser ? La réponse dépend de l'horizon, et deux mécanismes s'opposent.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th></th><th>Le mécanisme classique</th><th>Le mécanisme financier</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">L'idée</th><td>Le déficit commercial fait baisser la monnaie, ce qui corrige le déficit</td><td>Les flux de capitaux font bouger la monnaie, qui à son tour pèse sur le commerce</td></tr>
+          <tr><th scope="row">La chaîne</th><td>Le pays offre sa monnaie pour acheter des devises, elle baisse, ses exportations deviennent moins chères et ses importations plus chères, le déficit se réduit</td><td>Des investisseurs achètent des obligations ou des actions du pays, sa monnaie monte, les importations deviennent moins chères et les exportations moins compétitives, le déficit se creuse</td></tr>
+          <tr><th scope="row">L'horizon</th><td>Long terme, avec retard (« courbe en J » : au début, le déficit peut même s'aggraver)</td><td>Court et moyen terme</td></tr>
+          <tr><th scope="row">Ce qui domine</th><td>Les prix relatifs des biens et services</td><td>Les écarts de taux d'intérêt, la confiance, les mouvements de capitaux</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>La raison de cette seconde logique est une affaire d'ordres de grandeur : les flux financiers qui traversent les frontières dépassent de très loin les flux de marchandises. Un déficit courant a d'ailleurs un miroir : il est financé par des capitaux étrangers qui entrent dans le pays. Les deux sont les deux faces d'une même comptabilité.</p>
+    <h3>Trois exemples de 2026</h3>
+    <ul class="liste">
+      <li><strong>Les États-Unis : un déficit durable et pourtant un dollar fort.</strong> Le pays enregistre des déficits courants depuis une quarantaine d'années : 3,6 % du PIB en 2025 (contre 4,0 % en 2024), 3,0 % au deuxième trimestre 2026 (BEA). Des capitaux étrangers affluent pour acheter des obligations et des actions américaines : ils soutiennent le dollar, ce qui rend les importations moins chères et les exportations moins compétitives, et entretient le déficit (Brookings, Réserve fédérale). La position extérieure nette des États-Unis, c'est-à-dire la différence entre les actifs étrangers que détiennent les Américains et les actifs américains que détiennent les étrangers, était de <strong>-22 420 milliards de dollars</strong> à la fin du deuxième trimestre 2026 (BEA).</li>
+      <li><strong>L'euro face au dollar : l'écart de taux.</strong> L'euro a atteint son plus haut de l'année le 28 janvier (1,1974 $), puis est tombé à environ 1,10 $ à la mi-novembre (taux de référence BCE : 1,0968 $ le 18 novembre), sous 1,11 $ pour la première fois depuis avril 2025. Selon Test-Achats, c'est avant tout l'écart de taux d'intérêt entre les États-Unis et la zone euro qui l'explique, et non une brusque dégradation du commerce européen. Le yen a connu un mouvement comparable : il est revenu vers 160 pour 1 dollar, avec un taux japonais à deux ans limité à 1,8 %.</li>
+      <li><strong>La Chine : une monnaie qui pèse sur la balance.</strong> Selon l'économiste John Gagnon (PIIE), un yuan faible gonfle l'excédent commercial chinois, qui pourrait dépasser 6 % du PIB l'an prochain sans les effets de la guerre en Iran.</li>
+    </ul>
+    <h3>Ce que fait un euro plus faible</h3>
+    <p>Entre le 28 janvier et le 18 novembre 2026, l'euro a perdu environ 8 % face au dollar : 1 000 $ coûtaient 835 € en janvier, contre environ 912 € à la mi-novembre. Les conséquences se répartissent :</p>
+    <ul class="liste">
+      <li><strong>Les importations facturées en dollars</strong> (pétrole, gaz, nombreuses matières premières) coûtent plus cher en euros : un euro faible ajoute à l'inflation importée, au moment même où l'énergie renchérit.</li>
+      <li><strong>Les exportateurs européens</strong> gagnent en compétitivité-prix : leurs produits sont moins chers pour les clients payant en dollars.</li>
+      <li><strong>Les épargnants européens</strong> qui détiennent des actifs en dollars voient leur valeur augmenter une fois convertie en euros (voir le risque de change dans la page <a href="etf.html">ETF</a>).</li>
+    </ul>
 
     <h2 id="ppa">Comparer deux pays : le taux de change ne dit pas tout</h2>
     <p class="accroche">« 100 € permettent-ils de vivre pareil à Paris et ailleurs ? »</p>
@@ -221,7 +322,7 @@ details p{margin:.7rem 0 0}
     <p>La <strong>parité de pouvoir d'achat</strong> (PPA) comble cet écart. Son principe : à long terme, un même panier de biens devrait coûter à peu près le même prix partout, une fois converti dans une même monnaie. S'il est moins cher dans un pays, c'est que sa monnaie est « sous-évaluée » par rapport à la PPA, et inversement. Les organismes internationaux (FMI, Banque mondiale, OCDE) calculent des taux de PPA à partir de centaines de produits et de services.</p>
 
     <h3>Un exemple ludique : l'indice Big Mac</h3>
-    <p>Depuis 1986, le magazine <em>The Economist</em> compare le prix d'un même Big Mac dans le monde, comme une version simple de la PPA. En janvier 2026, il coûtait environ <strong>6,12 $ aux États-Unis</strong> contre environ <strong>3,03 $ au Japon</strong> : selon cet indice, le yen est très sous-évalué. En juillet 2026, le Big Mac coûtait 6,22 $ aux États-Unis et environ 6,19 € en zone euro. Cela revient à un taux « d'équilibre » de 0,995 € pour 1 $, soit environ 1,00 $ pour 1 €, alors que le marché cotait l'euro à environ 1,14 $ : l'euro apparaissait donc <strong>surévalué d'environ 14 %</strong> par rapport au dollar.</p>
+    <p>Depuis 1986, le magazine <em>The Economist</em> compare le prix d'un même Big Mac dans le monde, comme une version simple de la PPA. En janvier 2026, il coûtait environ <strong>6,12 $ aux États-Unis</strong> contre environ <strong>3,03 $ au Japon</strong> : selon cet indice, le yen est très sous-évalué. En juillet 2026, le Big Mac coûtait 6,22 $ aux États-Unis et environ 6,19 € en zone euro. Cela revient à un taux « d'équilibre » de 0,995 € pour 1 $, soit environ 1,00 $ pour 1 €, alors que le marché cotait l'euro à environ 1,14 $ : l'euro apparaissait donc <strong>surévalué d'environ 14 %</strong> par rapport au dollar. Avec l'euro à environ 1,10 $ à la mi-novembre, ce même calcul ramène l'écart à environ 9 %.</p>
     <div class="alerte"><strong>Attention :</strong> l'indice Big Mac est une illustration, pas une mesure précise. Un burger intègre des loyers, des salaires et des services locaux qui ne s'échangent pas d'un pays à l'autre, et son prix dépend aussi des taxes et de la concurrence.</div>
 
     <h3>PIB nominal ou PIB en PPA : deux classements différents</h3>
@@ -237,6 +338,9 @@ details p{margin:.7rem 0 0}
       </table>
     </div>
     <p>En termes nominaux, les États-Unis restent la première économie mondiale. En PPA, la Chine les devance depuis le milieu des années 2010, et l'Inde est très au-dessus de son rang nominal. La raison : en Chine ou en Inde, les services, les loyers et beaucoup de produits sont bien moins chers, donc la même somme y achète davantage. Le PIB nominal mesure surtout le <strong>poids financier</strong> d'une économie dans le monde (commerce, dette, marchés) ; le PIB en PPA donne une idée du <strong>volume réel de biens et de services</strong> et du niveau de vie intérieur.</p>
+
+    <h3>PPA et taux de change : un lien de long terme, pas un outil de prévision</h3>
+    <p>La PPA sert d'<strong>ancre de long terme</strong> : un pays dont l'inflation est durablement plus forte que celle de ses partenaires voit en général sa monnaie perdre de la valeur, ce qui rétablit peu à peu l'équilibre des prix. Mais l'ajustement est lent, et les écarts peuvent durer des années. Surtout, les estimations de « valeur d'équilibre » divergent selon les méthodes : l'indice Big Mac suggère un euro plutôt trop cher, alors que Test-Achats situe la valeur d'équilibre de l'euro autour de 1,20 $, donc plutôt trop bas. Preuve qu'une parité d'équilibre est une estimation fragile, pas un fait.</p>
 
     <h3>Ce que la PPA peut et ne peut pas faire</h3>
     <ul class="liste">
@@ -274,7 +378,7 @@ details p{margin:.7rem 0 0}
 
     <h3>L'effet « boule de neige » : taux contre croissance</h3>
     <p>Le ratio dette/PIB évolue selon trois ingrédients : le <strong>taux d'intérêt</strong> payé sur la dette (<em>r</em>), la <strong>croissance nominale</strong> de l'économie (<em>g</em>) et le <strong>solde primaire</strong>. Quand <em>r</em> dépasse <em>g</em>, la dette grossit mécaniquement plus vite que le PIB, même sans nouveau déficit primaire : c'est l'effet « boule de neige ». La formule pour stabiliser le ratio est simple : <strong>excédent primaire requis ≈ (r − g) ÷ (1 + g) × dette/PIB</strong>.</p>
-    <p>Aujourd'hui, le taux apparent de la dette française (intérêts payés divisés par la dette) est d'environ 1,9 %, proche de la croissance nominale, parce que beaucoup d'anciennes dettes ont été émises à des taux très bas. Mais à mesure que ces dettes arrivent à échéance et sont remplacées par de nouvelles à des taux plus élevés (début octobre 2026, l'OAT à 10 ans est autour de 4,9 %, contre environ 3,4 % un an plus tôt), ce taux apparent monte. Voici ce que cela implique, pour une dette de 119 % du PIB :</p>
+    <p>Aujourd'hui, le taux apparent de la dette française (intérêts payés divisés par la dette) est d'environ 2 % : l'OFCE l'estime à 2,10 % pour la dette négociable de l'État, proche de la croissance nominale, parce que beaucoup d'anciennes dettes ont été émises à des taux très bas. Mais à mesure que ces dettes arrivent à échéance et sont remplacées par de nouvelles à des taux plus élevés, ce taux apparent monte. À l'automne 2026, l'OAT à 10 ans a oscillé entre 4,7 % et 5,1 %, contre environ 3,4 % un an plus tôt. Voici ce que cela implique, pour une dette de 119 % du PIB :</p>
     <div class="tablewrap">
       <table>
         <thead><tr><th>Taux moyen de la dette (r)</th><th>Croissance nominale (g)</th><th>Excédent primaire nécessaire pour stabiliser le ratio</th></tr></thead>
@@ -288,6 +392,8 @@ details p{margin:.7rem 0 0}
     </div>
     <p>Autrement dit, avec un déficit primaire d'environ 2,9 % du PIB, il y a un écart important à combler pour stabiliser la dette, et cet écart se creuse quand les taux montent. Autre repère : avec une croissance nominale d'environ 1,9 %, stabiliser le ratio à 119 % exigerait un déficit total d'environ 2,2 % du PIB, soit moins de la moitié du niveau actuel (5,1 % en 2025).</p>
     <p>Trois leviers peuvent stabiliser un ratio : <strong>plus de croissance</strong>, un <strong>solde primaire amélioré</strong> (moins de dépenses ou plus de recettes), ou des <strong>taux plus bas</strong>. L'inflation allège la dette en termes réels, mais elle fait aussi monter les taux sur les nouvelles émissions.</p>
+    <h3>L'écart avec l'Allemagne, ou « spread »</h3>
+    <p>L'écart entre le taux français à 10 ans et le taux allemand mesure la prime de risque que les prêteurs exigent pour prêter à la France. Il a dépassé 100 points de base (1 point) le 18 septembre pour la première fois depuis 2012, puis est monté à 174 points de base le 22 octobre, quand l'OAT a franchi 5,13 %. Le 3 novembre, selon l'OFCE, le taux français à 10 ans atteignait 4,94 %, soit 1,63 point de plus que l'Allemagne : un écart jamais vu depuis la crise des dettes souveraines. L'OFCE estime que, s'il se maintenait, cet écart alourdirait la charge d'intérêts d'environ 7 milliards d'euros d'ici fin 2027. Le 10 novembre, le taux français était revenu à environ 4,7 %.</p>
 
     <h3>Un débat ouvert : à quel rythme agir ?</h3>
     <p>Les économistes s'accordent sur la mécanique (la dette doit être financée, et sa trajectoire dépend de <em>r</em>, <em>g</em> et du solde primaire) mais pas sur la bonne politique. Les arguments en présence :</p>
@@ -307,16 +413,61 @@ details p{margin:.7rem 0 0}
     <h3>Ce que cela change pour un épargnant</h3>
     <p>Une dette plus élevée et des taux plus hauts se répercutent sur l'épargnant de plusieurs façons : les <a href="obligations.html">obligations d'État</a> rapportent davantage, mais leur prix baisse quand les taux montent ; les fonds en euros des assurances-vie, investis en grande partie en obligations, voient leur rendement évoluer avec ces taux ; et les finances publiques influencent à terme la fiscalité (voir <a href="fiscalite.html">Fiscalité &amp; Enveloppes</a>). Ni catastrophe annoncée, ni risque nul : c'est un paramètre de plus à suivre, pas une prédiction.</p>
 
+    <h2 id="productivite">Croissance financée par la productivité ou par la dette ?</h2>
+    <p class="accroche">« Une économie peut-elle grandir durablement en s'endettant ? »</p>
+    <p>Camille veut développer sa boulangerie. Première option : elle emprunte pour acheter un four plus performant. Elle produit davantage de pain avec le même temps de travail, et ce revenu supplémentaire lui permet de rembourser. Seconde option : elle emprunte pour payer ses dépenses courantes et vivre mieux. Son quotidien est plus confortable aujourd'hui, mais elle ne produit pas plus : le prêt reste à rembourser, sans revenu supplémentaire pour le faire. <strong>Même dette, effets opposés.</strong> À l'échelle d'un pays, la logique est la même.</p>
+    <h3>Les deux moteurs de la croissance</h3>
+    <p>En simplifiant, <strong>PIB ≈ heures travaillées × productivité horaire</strong>. Les heures travaillées dépendent de la démographie et du taux d'emploi. La <strong>productivité</strong>, c'est ce qu'une heure de travail produit : elle progresse grâce à la technologie, aux équipements, à la formation et à l'organisation du travail. À long terme, c'est elle qui détermine le niveau de vie. La dette, elle, peut stimuler la demande aujourd'hui, mais elle ne crée de capacité de production que si elle finance des investissements qui rapportent plus qu'elle ne coûte.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th></th><th>Dette qui finance de la productivité</th><th>Dette qui finance la consommation courante</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Usage</th><td>Machines, infrastructures, recherche, formation, logements productifs</td><td>Dépenses de fonctionnement, consommation à crédit, spéculation immobilière</td></tr>
+          <tr><th scope="row">Ce qui reste après</th><td>Un actif qui produit des revenus</td><td>Rien de durable, sinon la dette</td></tr>
+          <tr><th scope="row">Remboursement</th><td>Financé par les revenus créés</td><td>Financé par des impôts futurs ou par une nouvelle dette</td></tr>
+          <tr><th scope="row">Risque</th><td>Un investissement qui ne rapporte pas assez</td><td>Une dette qui grossit plus vite que le revenu</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Comment reconnaître une croissance tirée par la dette ?</h3>
+    <ul class="liste">
+      <li><strong>La dette progresse plus vite que le PIB</strong>, publique comme privée.</li>
+      <li><strong>Le déficit public reste élevé même quand l'économie va bien</strong> et que le chômage est bas.</li>
+      <li><strong>Le pays vit au-dessus de ses moyens vis-à-vis de l'étranger</strong> : déficit courant durable, financé par des capitaux étrangers.</li>
+      <li><strong>La croissance repose surtout sur la consommation et l'immobilier</strong>, plutôt que sur l'investissement productif et les exportations.</li>
+      <li><strong>La productivité stagne.</strong></li>
+      <li><strong>L'économie dépend de taux bas</strong> pour que le poids de la dette reste supportable.</li>
+    </ul>
+    <h3>Pourquoi cela peut tenir longtemps, puis casser</h3>
+    <p>Tant que les prêteurs ont confiance et que les taux restent inférieurs à la croissance, une économie peut s'endetter longtemps sans difficulté apparente. Le risque est celui de l'<strong>arrêt brutal du financement</strong> : quand les prêteurs étrangers se retirent, la monnaie chute, les taux montent, et le pays doit corriger en urgence, souvent dans la douleur. L'histoire récente en donne des exemples souvent cités :</p>
+    <ul class="liste">
+      <li><strong>La Grèce des années 2000</strong> : déficits publics et déficit extérieur financés à bas taux grâce à l'euro, puis crise de la dette à partir de 2010.</li>
+      <li><strong>L'Espagne et l'Irlande</strong> : boom du crédit immobilier et déficits extérieurs, puis krach immobilier, crise bancaire et crise souveraine entre 2008 et 2012.</li>
+      <li><strong>Les États-Unis des années 2000</strong> : crédit hypothécaire abondant et déficit courant record (6,3 % du PIB au troisième trimestre 2006, selon Brookings), avant la crise de 2008.</li>
+    </ul>
+    <h3>Aujourd'hui : quatre situations, sans verdict</h3>
+    <ul class="liste">
+      <li><strong>Les États-Unis.</strong> Le déficit fédéral était de 5,9 % du PIB en 2025, alors que le chômage était très bas, et le déficit courant de 3,6 % (Brookings, BEA). Mais le dollar est la première monnaie de réserve, les marchés américains sont les plus profonds du monde, et le pays investit massivement dans la technologie. Les économistes sont partagés sur la soutenabilité de cette trajectoire.</li>
+      <li><strong>La France.</strong> Un déficit de 5,1 % du PIB en 2025 pour une croissance de 0,9 %, et une économie qui stagne en 2026. Avec un déficit primaire d'environ 2,9 % du PIB, l'État dépense plus que ses recettes avant même de payer ses intérêts : la dette ne s'accompagne plus d'un surcroît d'activité qui la rendrait plus légère à porter.</li>
+      <li><strong>Le Japon, un contre-exemple.</strong> Sa dette publique dépasse 200 % du PIB, mais elle est détenue en grande partie par des investisseurs japonais, et le pays dégage des excédents extérieurs : le risque d'arrêt du financement par l'étranger y est très différent.</li>
+      <li><strong>La Chine, un modèle tiré par l'investissement.</strong> Son taux d'investissement atteint 39 % du PIB, contre 21 % aux États-Unis et 26 % dans le monde (PIIE). La question est le rendement de cet investissement, alors que le marché immobilier est en difficulté.</li>
+    </ul>
+    <div class="duo">
+      <div class="a"><h3>Ceux qui défendent le recours à la dette</h3><ul><li>Elle finance des infrastructures, l'éducation, la transition énergétique : des dépenses qui rapportent à long terme.</li><li>En période de ralentissement, elle soutient la demande et évite une spirale récessive.</li><li>Un pays dont la monnaie est une monnaie de réserve peut s'endetter davantage.</li></ul></div>
+      <div class="b"><h3>Ceux qui s'en inquiètent</h3><ul><li>Les intérêts évincent d'autres dépenses et grandissent quand les taux montent.</li><li>Un pays dépendant de prêteurs étrangers est vulnérable à un changement de confiance.</li><li>Dépenser à crédit pour la consommation courante ne crée pas de capacité de production pour rembourser.</li></ul></div>
+    </div>
+    <div class="retenir"><strong>Pour l'épargnant</strong><ul><li>Le critère clé n'est pas le montant de la dette, mais ce qu'elle finance et à quel taux.</li><li>Un pays très endetté peut voir ses taux, sa monnaie et ses obligations bouger plus brutalement.</li><li>D'où l'intérêt de ne pas concentrer son patrimoine sur un seul pays ou une seule monnaie.</li></ul></div>
+
     <h2 id="marches">Quand la macro bouge les marchés</h2>
     <div class="tablewrap">
       <table>
         <thead><tr><th>Si cela arrive…</th><th>Alors, souvent…</th></tr></thead>
-        <tbody><tr><th scope="row">Inflation plus forte que prévu</th><td>Les taux montent, le prix des obligations existantes baisse, et les actions de croissance peuvent souffrir</td></tr><tr><th scope="row">Ralentissement de l'activité</th><td>Les banques centrales peuvent baisser leurs taux, les valeurs défensives résistent mieux</td></tr><tr><th scope="row">Chômage en forte hausse</th><td>La consommation faiblit, les valeurs cycliques sont pénalisées</td></tr><tr><th scope="row">Euro qui monte face au dollar</th><td>Les exportateurs européens sont moins compétitifs, mais les importations deviennent moins chères</td></tr><tr><th scope="row">Choc sur les prix de l'énergie</th><td>L'inflation remonte, la balance commerciale d'un pays importateur se dégrade, et la banque centrale est face à un dilemme</td></tr><tr><th scope="row">Doutes sur les finances publiques d'un État</th><td>Les investisseurs demandent un taux plus élevé pour lui prêter : l'écart (« spread ») avec l'Allemagne s'élargit</td></tr></tbody>
+        <tbody><tr><th scope="row">Inflation plus forte que prévu</th><td>Les taux montent, le prix des obligations existantes baisse, et les actions de croissance peuvent souffrir</td></tr><tr><th scope="row">Ralentissement de l'activité</th><td>Les banques centrales peuvent baisser leurs taux, les valeurs défensives résistent mieux</td></tr><tr><th scope="row">Chômage en forte hausse</th><td>La consommation faiblit, les valeurs cycliques sont pénalisées</td></tr><tr><th scope="row">Euro qui monte face au dollar</th><td>Les exportateurs européens sont moins compétitifs, mais les importations deviennent moins chères</td></tr><tr><th scope="row">Euro qui baisse face au dollar</th><td>Les importations facturées en dollars coûtent plus cher, les exportateurs gagnent en compétitivité</td></tr><tr><th scope="row">Choc sur les prix de l'énergie</th><td>L'inflation remonte, la balance commerciale d'un pays importateur se dégrade, et la banque centrale est face à un dilemme</td></tr><tr><th scope="row">Doutes sur les finances publiques d'un État</th><td>Les investisseurs demandent un taux plus élevé pour lui prêter : l'écart (« spread ») avec l'Allemagne s'élargit</td></tr></tbody>
       </table>
     </div>
     <p>Ce sont des tendances, pas des règles : les marchés anticipent souvent les annonces, et les réactions varient. C'est pourquoi on dit que les marchés « se nourrissent de surprises ».</p>
 
-    <h3>Un instantané : comment les indicateurs racontent une même histoire (octobre 2026)</h3>
+    <h3>Un instantané : comment les indicateurs racontent une même histoire (novembre 2026)</h3>
     <figure>
       <svg viewBox="0 0 600 150" role="img" aria-label="Choc énergétique, inflation en hausse, hausse des taux de la banque centrale, renchérissement de la dette de l'État">
         <defs><marker id="ar3" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#C5A059"/></marker></defs>
@@ -334,34 +485,41 @@ details p{margin:.7rem 0 0}
     </figure>
     <div class="tablewrap">
       <table>
-        <thead><tr><th>Indicateur</th><th>Niveau (octobre 2026)</th><th>Ce qu'il suggère</th></tr></thead>
+        <thead><tr><th>Indicateur</th><th>Niveau (novembre 2026)</th><th>Ce qu'il suggère</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Inflation en zone euro (septembre, estimation)</th><td>≈ 3,8 % sur un an (énergie : environ +18,8 %)</td><td>Un choc d'offre lié à l'énergie, bien au-dessus de la cible de 2 %</td></tr>
+          <tr><th scope="row">Inflation en zone euro (octobre, estimation rapide)</th><td>≈ 4,0 % sur un an (3,8 % en septembre)</td><td>Un choc d'offre lié à l'énergie, bien au-dessus de la cible de 2 %</td></tr>
           <tr><th scope="row">Inflation en France (IPC, septembre)</th><td>3,1 %, contre 0,9 % en moyenne en 2025</td><td>Un net rebond après une année très calme</td></tr>
-          <tr><th scope="row">Taux de dépôt de la BCE</th><td>2,50 % (hausses de juin et de septembre)</td><td>Un resserrement monétaire alors que la croissance est fragile</td></tr>
-          <tr><th scope="row">OAT à 10 ans</th><td>≈ 4,9 % début octobre (contre ≈ 3,4 % un an plus tôt)</td><td>Un coût de financement plus élevé pour l'État</td></tr>
+          <tr><th scope="row">PIB de la France (3e trimestre, 1re estimation)</th><td>-0,1 %, après 0,0 % et -0,1 %</td><td>Une économie qui n'a pas progressé depuis fin 2025</td></tr>
+          <tr><th scope="row">Taux de dépôt de la BCE</th><td>2,50 % (hausses de juin et de septembre, statu quo le 29 octobre ; prochaine réunion le 17 décembre)</td><td>Un resserrement monétaire suivi d'une pause, alors que la croissance est fragile</td></tr>
+          <tr><th scope="row">OAT à 10 ans</th><td>≈ 4,7 % le 10 novembre (pic à 5,13 % le 22 octobre ; ≈ 3,4 % un an plus tôt)</td><td>Un coût de financement plus élevé pour l'État</td></tr>
+          <tr><th scope="row">Écart OAT – Bund à 10 ans</th><td>1,63 point le 3 novembre (OFCE)</td><td>Une prime de risque plus élevée sur la dette française</td></tr>
           <tr><th scope="row">Dette publique française</th><td>119,0 % du PIB (record)</td><td>Une marge de manœuvre budgétaire qui se réduit</td></tr>
+          <tr><th scope="row">Euro face au dollar</th><td>≈ 1,10 $ (1,0968 le 18 novembre ; plus haut de l'année : 1,1974 le 28 janvier)</td><td>Un écart de taux favorable au dollar, qui renchérit les importations facturées en dollars</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="alerte"><strong>À savoir :</strong> ces chiffres sont un instantané d'octobre 2026 : ils évoluent vite et sont parfois révisés. Vérifie toujours les données à jour auprès de l'Insee, de la Banque de France, de la BCE et de l'Agence France Trésor.</div>
+    <div class="alerte"><strong>À savoir :</strong> ces chiffres sont un instantané de la fin novembre 2026 : ils évoluent vite et sont parfois révisés. Vérifie toujours les données à jour auprès de l'Insee, de la Banque de France, de la BCE, d'Eurostat et de l'Agence France Trésor.</div>
 
     <h2 id="lire">Lire un chiffre macro sans se tromper</h2>
     <ul class="liste">
       <li><strong>Glissement annuel, trimestriel, mensuel.</strong> « +3 % » peut désigner une variation sur un an, sur un trimestre ou sur un mois. Les trois ne se comparent pas : vérifie toujours la période.</li>
-      <li><strong>Premières estimations et révisions.</strong> Les chiffres publiés d'abord (PIB, emploi, dette) sont souvent corrigés ensuite, parfois sensiblement.</li>
+      <li><strong>Premières estimations et révisions.</strong> Les chiffres publiés d'abord (PIB, emploi, dette) sont souvent corrigés ensuite, parfois sensiblement : le PIB français du premier trimestre 2026 est ainsi passé de 0,0 % à -0,1 %.</li>
       <li><strong>Réel ou nominal.</strong> Une croissance en euros courants peut cacher une simple hausse des prix.</li>
       <li><strong>Niveau ou tendance.</strong> Un indicateur qui baisse mais reste élevé n'a pas le même sens qu'un indicateur bas qui continue de reculer.</li>
       <li><strong>Surprise ou attendu.</strong> Les marchés réagissent à l'écart entre la publication et ce qu'ils attendaient, pas au chiffre pris isolément.</li>
       <li><strong>Un seul chiffre ne suffit pas.</strong> Inflation, croissance, chômage, taux et dette doivent se lire ensemble.</li>
     </ul>
 
-    <div class="retenir"><strong>3 idées à retenir</strong><ul><li>Un indicateur isolé ne dit pas tout : c'est leur combinaison qui éclaire.</li><li>Banque centrale et État disposent de leviers différents, qu'ils combinent.</li><li>Les marchés réagissent aux surprises plus qu'aux nouvelles attendues.</li></ul></div>
+    <div class="retenir"><strong>5 idées à retenir</strong><ul><li>Un indicateur isolé ne dit pas tout : c'est leur combinaison qui éclaire.</li><li>Banque centrale et État disposent de leviers différents, qu'ils combinent.</li><li>La croissance durable vient de la productivité ; la dette ne la remplace pas, elle ne fait que l'avancer ou la financer.</li><li>À court terme, le taux de change suit surtout les écarts de taux et les capitaux ; à long terme, les prix et la productivité.</li><li>Les marchés réagissent aux surprises plus qu'aux nouvelles attendues.</li></ul></div>
 
     <h3>Le jargon traduit</h3>
     <dl>
       <dt><strong>PIB</strong></dt><dd>La valeur de tout ce qu'un pays produit en un an.</dd>
       <dt><strong>PIB réel / nominal</strong></dt><dd>Le nominal est exprimé aux prix du moment ; le réel retire l'effet de l'inflation.</dd>
+      <dt><strong>PIB potentiel</strong></dt><dd>Ce qu'une économie peut produire durablement, sans tensions sur les prix.</dd>
+      <dt><strong>Écart de production</strong></dt><dd>La différence entre le PIB réel et le PIB potentiel.</dd>
+      <dt><strong>Récession technique</strong></dt><dd>Deux trimestres consécutifs de baisse du PIB : un repère pratique, pas une définition officielle partout.</dd>
+      <dt><strong>Productivité</strong></dt><dd>Ce qu'une heure de travail produit.</dd>
       <dt><strong>Inflation sous-jacente</strong></dt><dd>L'inflation hors prix volatils (énergie, alimentation frais).</dd>
       <dt><strong>Taux réel</strong></dt><dd>Le taux nominal moins l'inflation : ce qu'un placement rapporte vraiment en pouvoir d'achat.</dd>
       <dt><strong>Politique monétaire</strong></dt><dd>Les décisions de la banque centrale sur les taux et la monnaie.</dd>
@@ -375,6 +533,8 @@ details p{margin:.7rem 0 0}
       <dt><strong>Spread</strong></dt><dd>L'écart de taux entre deux emprunteurs, par exemple entre la France et l'Allemagne.</dd>
       <dt><strong>Balance commerciale</strong></dt><dd>La différence entre exportations et importations de biens.</dd>
       <dt><strong>Solde courant</strong></dt><dd>L'ensemble des échanges d'un pays avec le reste du monde : biens, services, revenus et transferts.</dd>
+      <dt><strong>Position extérieure nette</strong></dt><dd>La différence entre ce qu'un pays possède à l'étranger et ce que les étrangers possèdent chez lui.</dd>
+      <dt><strong>Courbe en J</strong></dt><dd>Le fait qu'après une baisse de la monnaie, le déficit commercial peut d'abord s'aggraver avant de se réduire.</dd>
       <dt><strong>Parité de pouvoir d'achat (PPA)</strong></dt><dd>Un taux de conversion qui égalise ce qu'une même somme permet d'acheter dans deux pays.</dd>
     </dl>
 
@@ -463,12 +623,53 @@ details p{margin:.7rem 0 0}
       <button>Stagflation</button>
       <div class="fb" aria-live="polite"></div>
     </div>
-
     <div class="q" data-good="1">
       <p>13. Que dit la loi de Goodhart ?</p>
       <button>Les prix baissent quand la monnaie est rare</button>
       <button>Quand une mesure devient un objectif, elle cesse souvent d'être une bonne mesure</button>
       <button>Un déficit commercial est toujours un problème</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="1" data-exp="C'est un repère pratique, pas une définition officielle partout : on regarde aussi l'emploi, les revenus et la production.">
+      <p>14. Qu'appelle-t-on souvent une « récession technique » ?</p>
+      <button>Un trimestre de croissance nulle</button>
+      <button>Deux trimestres consécutifs de baisse du PIB</button>
+      <button>Une inflation supérieure à 5 %</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="2" data-exp="Règle de 70 : 70 ÷ 2 = 35 ans. À 1 %, il faudrait 70 ans.">
+      <p>15. À 2 % de croissance par an, en combien de temps le PIB double-t-il environ ?</p>
+      <button>10 ans</button>
+      <button>70 ans</button>
+      <button>35 ans</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="0" data-exp="Les importations correspondent à des produits fabriqués ailleurs, déjà comptés dans la consommation ou l'investissement : on les retranche pour ne mesurer que la production du pays.">
+      <p>16. Dans PIB = C + I + G + (X − M), pourquoi retranche-t-on les importations ?</p>
+      <button>Parce qu'elles correspondent à des produits fabriqués à l'étranger, déjà comptés ailleurs</button>
+      <button>Parce qu'elles sont toujours néfastes</button>
+      <button>Parce qu'elles font baisser les prix</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="1" data-exp="Les capitaux étrangers qui achètent des obligations et des actions du pays soutiennent sa monnaie : les flux financiers pèsent souvent plus que les flux de marchandises. C'est le cas des États-Unis.">
+      <p>17. Pourquoi un pays en déficit courant durable peut-il avoir une monnaie forte ?</p>
+      <button>Parce que son déficit rend ses produits plus compétitifs</button>
+      <button>Parce que des capitaux étrangers affluent pour acheter ses actifs</button>
+      <button>Parce que la banque centrale interdit les ventes de monnaie</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="2" data-exp="Une dette est utile à long terme quand elle finance un actif dont les revenus dépassent son coût ; une dette qui finance la consommation courante ne crée pas de revenu pour la rembourser.">
+      <p>18. Quelle dette finance de la productivité ?</p>
+      <button>Celle qui finance les dépenses courantes</button>
+      <button>Celle qui finance n'importe quel achat</button>
+      <button>Celle qui finance un investissement dont les revenus dépassent le coût</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="1" data-exp="Un euro plus faible renchérit les importations facturées en dollars (pétrole, gaz, matières premières) et ajoute à l'inflation importée. Il avantage en revanche les exportateurs européens.">
+      <p>19. L'euro passe d'environ 1,20 $ en janvier 2026 à environ 1,10 $ en novembre. Quel est l'effet direct sur les importations facturées en dollars ?</p>
+      <button>Elles coûtent moins cher en euros</button>
+      <button>Elles coûtent plus cher en euros</button>
+      <button>Aucun effet</button>
       <div class="fb" aria-live="polite"></div>
     </div>
 
@@ -488,13 +689,13 @@ details p{margin:.7rem 0 0}
 var t=document.querySelector('.menu-toggle'),n=document.querySelector('nav');
 if(t&&n){t.addEventListener('click',function(){n.classList.toggle('mobile-open');});}
 document.querySelectorAll('.q').forEach(function(q){
-  var good=+q.dataset.good,btns=q.querySelectorAll('button'),fb=q.querySelector('.fb');
+  var good=+q.dataset.good,btns=q.querySelectorAll('button'),fb=q.querySelector('.fb'),exp=q.dataset.exp?' '+q.dataset.exp:'';
   btns.forEach(function(b,i){
     b.addEventListener('click',function(){
       btns.forEach(function(x){x.disabled=true});
       btns[good].classList.add('good');
-      if(i===good){fb.textContent="Bravo, c'est la bonne réponse.";}
-      else{b.classList.add('bad');fb.textContent="Pas tout à fait : la bonne réponse est « "+btns[good].textContent+" ».";}
+      if(i===good){fb.textContent="Bravo, c'est la bonne réponse."+exp;}
+      else{b.classList.add('bad');fb.textContent="Pas tout à fait : la bonne réponse est « "+btns[good].textContent+" »."+exp;}
     });
   });
 });
