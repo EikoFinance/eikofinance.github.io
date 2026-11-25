@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Géopolitique & rapports de force - EikoFinance</title>
-<meta name="description" content="Comment les rapports de force entre pays (commerce, énergie, monnaies, technologie) influencent l'économie et les marchés.">
+<title>Géopolitique &amp; rapports de force - EikoFinance</title>
+<meta name="description" content="Comment les rapports de force entre pays influencent l'économie et les marchés : Ukraine et Iran (hydrocarbures, détroit d'Ormuz), bras de fer États-Unis – Chine (puces Nvidia, terres rares), dédollarisation et BRICS.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -23,13 +23,14 @@
 .chapitre h3{font-family:var(--font-title);color:var(--primary-blue);font-size:1.15rem;margin:1.5rem 0 .5rem}
 .chapitre p{margin-bottom:1rem;line-height:1.7}
 .chapitre ul.liste{margin:0 0 1rem 1.2rem;line-height:1.7}
+.chapitre ul.liste li{margin-bottom:.35rem}
 .accroche{font-size:1.25rem;font-style:italic;color:var(--primary-blue);border-left:4px solid var(--gold-accent);padding-left:1rem;margin:0 0 1.5rem}
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0}
 .duo>div{border:1px solid #d9dee5;border-radius:8px;padding:.9rem 1.1rem}
 .duo h3{margin:0 0 .4rem;font-size:1rem}
 .duo ul{margin:0 0 0 1.1rem;line-height:1.6}
-.duo .pour{border-top:4px solid #2e7d4f}
-.duo .contre{border-top:4px solid #b3402e}
+.duo .a{border-top:4px solid var(--primary-blue)}
+.duo .b{border-top:4px solid var(--gold-accent)}
 @media(max-width:640px){.duo{grid-template-columns:1fr}}
 figure{margin:1.5rem 0;background:var(--bg-subtle);border-radius:8px;padding:1rem}
 figure svg{width:100%;height:auto;display:block}
@@ -38,6 +39,7 @@ figcaption{font-size:.9rem;color:var(--text-muted);text-align:center;margin-top:
 .retenir ul{margin:.5rem 0 0 1.2rem}
 .retenir li{margin-bottom:.4rem}
 .alerte{background:#fff8e6;border:1px solid var(--gold-accent);border-radius:8px;padding:.9rem 1.1rem;font-size:.95rem;margin:1.5rem 0}
+.date{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);margin:0 0 .6rem}
 .tablewrap{overflow-x:auto;margin:1.2rem 0}
 table{border-collapse:collapse;width:100%;min-width:600px;font-size:.93rem}
 th,td{border:1px solid #d9dee5;padding:.55rem .7rem;text-align:left;vertical-align:top}
@@ -77,7 +79,8 @@ details p{margin:.7rem 0 0}
     <ul>
       <li><a href="index.html#comprendre">Comprendre</a></li>
       <li><a href="index.html#investir">Investir</a></li>
-      <li><a href="index.html#mesurer">Mesurer</a></li>
+      <li><a href="index.html#trading">Trading</a></li>
+      <li><a href="index.html#planifier">Planifier</a></li>
       <li><a href="index.html#optimiser">Optimiser</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -85,26 +88,26 @@ details p{margin:.7rem 0 0}
 </header>
 
 <main>
-  <p class="crumbs"><a href="index.html">Accueil</a> › <a href="index.html#comprendre">Comprendre</a> › Géopolitique & rapports de force</p>
+  <p class="crumbs"><a href="index.html">Accueil</a> › <a href="index.html#comprendre">Comprendre</a> › Géopolitique &amp; rapports de force</p>
 
   <section class="scene scene-hero img-brent">
-    <h1>Géopolitique & rapports de force : comprendre ce qui bouge l'économie</h1>
-    <p>Commerce, énergie, monnaies, dette, technologie : comment les rapports de force entre les pays se transmettent aux prix, aux taux et aux marchés.</p>
+    <h1>Géopolitique &amp; rapports de force : comprendre ce qui bouge l'économie</h1>
+    <p>Ukraine, Iran et détroit d'Ormuz, puces Nvidia et terres rares, dédollarisation et BRICS : quatre événements d'aujourd'hui pour comprendre comment les rapports de force entre pays se transmettent aux prix, aux taux et aux marchés.</p>
     <a href="#intro" class="btn-gold">Commencer</a>
   </section>
 
   <section class="card-grid" aria-label="Sommaire">
-    <a class="card" href="#commerce"><h3>Le commerce</h3><p>Libre-échange ou protectionnisme.</p></a>
-    <a class="card" href="#energie"><h3>L'énergie</h3><p>Pétrole, gaz, métaux critiques.</p></a>
-    <a class="card" href="#monnaies"><h3>Les monnaies</h3><p>Dollar, sanctions, or.</p></a>
-    <a class="card" href="#tech"><h3>La technologie</h3><p>Chaînes d'approvisionnement.</p></a>
+    <a class="card" href="#ukraine"><h3>Ukraine et énergie</h3><p>Sanctions, prix plafonné, gaz russe.</p></a>
+    <a class="card" href="#ormuz"><h3>Iran et détroit d'Ormuz</h3><p>Un passage, 20 % du pétrole et du gaz.</p></a>
+    <a class="card" href="#usa-chine"><h3>États-Unis – Chine</h3><p>Puces Nvidia et terres rares.</p></a>
+    <a class="card" href="#multipolaire"><h3>Un monde multipolaire</h3><p>Dédollarisation et BRICS.</p></a>
   </section>
 
   <article class="chapitre">
     <h2 id="intro">L'économie n'est jamais neutre</h2>
-    <p class="accroche">« Pourquoi une décision prise à des milliers de kilomètres change-t-elle le prix de ma baguette ? »</p>
-    <p>Les États ne se contentent pas de laisser faire les marchés : ils utilisent le commerce, l'énergie, les monnaies, la finance et la technologie comme <strong>leviers de puissance</strong>. On appelle cela la <strong>géoéconomie</strong>. Les rapports de force entre pays façonnent les prix, les taux, les chaînes d'approvisionnement, et donc notre quotidien et nos placements.</p>
-    <div class="alerte"><strong>À savoir :</strong> contenu pédagogique, basé sur des mécanismes et des exemples historiques, sans prise de position politique. Le contexte évolue vite : consulte des sources à jour. Ce n'est pas un conseil en investissement.</div>
+    <p class="accroche">« Pourquoi une décision prise à des milliers de kilomètres change-t-elle le prix de mon plein d'essence ? »</p>
+    <p>Les États ne se contentent pas de laisser faire les marchés : ils utilisent le commerce, l'énergie, les monnaies, la finance et la technologie comme <strong>leviers de puissance</strong>. On appelle cela la <strong>géoéconomie</strong>. Cette leçon part de quatre situations contemporaines pour montrer comment ces leviers fonctionnent, et ce qu'ils changent pour les prix, les taux, les entreprises et les placements.</p>
+    <div class="alerte"><strong>À savoir :</strong> contenu pédagogique rédigé le 25 novembre 2026, à partir des sources citées en bas de page. Il décrit des faits et des mécanismes, sans prendre parti dans les différends entre États. Le contexte évolue très vite : les chiffres datés ci-dessous peuvent avoir changé quand tu lis cette page. Ce n'est pas un conseil en investissement.</div>
     <figure>
       <svg viewBox="0 0 600 220" role="img" aria-label="Une tension géopolitique agit par l'énergie, le commerce, les monnaies et la finance, et la confiance, puis sur l'inflation, la croissance et les marchés">
         <defs><marker id="ar3" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#C5A059"/></marker></defs>
@@ -124,61 +127,226 @@ details p{margin:.7rem 0 0}
       <figcaption>Les grands canaux par lesquels une tension entre pays atteint l'économie et les marchés.</figcaption>
     </figure>
 
-    <h2 id="commerce">1. Le commerce : libre-échange ou protectionnisme ?</h2>
-    <p>Un <strong>droit de douane</strong> est une taxe sur les produits importés. Les partisans du <strong>protectionnisme</strong> y voient un moyen de protéger l'emploi et des industries jugées stratégiques. Les partisans du <strong>libre-échange</strong> soulignent que ces taxes renchérissent les produits pour les consommateurs, peuvent provoquer des représailles et désorganisent les chaînes d'approvisionnement. Les économistes nuancent : les effets dépendent des produits, des pays et de la durée.</p>
+    <h3>Les cinq leviers, et où les voir à l'œuvre</h3>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Levier</th><th>Comment il fonctionne</th><th>Exemple de cette leçon</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Commerce et sanctions</th><td>Droits de douane, embargos, plafonnement de prix, interdictions d'acheter ou de vendre</td><td>Embargo et plafonnement du prix du pétrole russe</td></tr>
+          <tr><th scope="row">Énergie et passages maritimes</th><td>Contrôler une ressource, ou un passage par lequel elle transite</td><td>Le détroit d'Ormuz</td></tr>
+          <tr><th scope="row">Technologie et métaux critiques</th><td>Autoriser ou refuser l'accès à une technologie ou à une matière première indispensable</td><td>Puces d'IA de Nvidia, terres rares chinoises</td></tr>
+          <tr><th scope="row">Monnaies et finance</th><td>Le rôle d'une monnaie dans les réserves, les paiements et les sanctions</td><td>Le dollar et la dédollarisation</td></tr>
+          <tr><th scope="row">Alliances et blocs</th><td>S'unir pour peser davantage dans les négociations</td><td>Les BRICS</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-    <h2 id="energie">2. L'énergie et les matières premières</h2>
-    <p>Le pétrole, le gaz, mais aussi les métaux critiques (lithium, cobalt, terres rares) sont inégalement répartis dans le monde. Quand leur approvisionnement est menacé, les prix s'envolent. Les <strong>chocs pétroliers</strong> des années 1970 en sont un exemple historique. Plus récemment, la hausse des prix du gaz en Europe en 2022 a contribué à la forte inflation, et a poussé plusieurs pays à diversifier leurs sources d'énergie.</p>
+    <h2 id="ukraine">1. Ukraine : l'énergie comme levier, et ses dommages collatéraux</h2>
+    <p class="date">Depuis février 2022</p>
+    <p>Avant 2022, l'Europe achetait à la Russie une grande partie de son gaz, de son pétrole et de son charbon. L'invasion de l'Ukraine a transformé cette dépendance en vulnérabilité : le baril de Brent a approché les 120 $ dès mars 2022 et les prix du gaz en Europe ont atteint des niveaux record dans l'année. Les <strong>dommages collatéraux</strong> ne se sont pas arrêtés à l'énergie : l'inflation a grimpé dans la zone euro, la BCE a relevé ses taux et de nombreux ménages ont vu leurs factures s'envoler.</p>
+    <h3>Ce que l'Europe a fait</h3>
+    <ul class="liste">
+      <li><strong>Décembre 2022</strong> : l'UE interdit la plupart des importations de brut russe par voie maritime. Avec le G7 et l'Australie, elle fixe un <strong>plafond de 60 $ le baril</strong> pour le pétrole russe vendu au reste du monde. Le principe : les services occidentaux (assurance, transport) ne servent que si le prix reste sous le plafond.</li>
+      <li><strong>2026</strong> : le plafond devient flottant (15 % sous le prix du marché dès février), puis il est <strong>gelé à 44,10 $ pour un an à partir de juillet 2026</strong>, après le choc pétrolier lié au Moyen-Orient (S&amp;P Global).</li>
+      <li><strong>Le gaz</strong> : l'UE s'est engagée à sortir du gaz russe, avec une fin des importations de GNL (gaz liquéfié) au 31 décembre 2026 et du gaz par gazoduc au 30 septembre 2027.</li>
+    </ul>
+    <h3>Le pétrole russe n'a pas disparu : il a changé de clients</h3>
+    <p>Selon le centre de recherche CREA, la Chine et l'Inde ont acheté en septembre 2026 pour 6 milliards et 3,6 milliards d'euros de brut russe, devant la Turquie. La Hongrie et la Slovaquie gardent des dérogations à l'interdiction européenne. L'Union européenne importait aussi encore du gaz russe : 817 millions d'euros par gazoduc et 615 millions de GNL en septembre 2026, et plus de 12 millions de tonnes de GNL russe de l'Arctique entre janvier et septembre, en hausse de 9,5 % sur un an (Urgewald). De son côté, la Russie subit des frappes sur ses installations : selon S&amp;P Global, 40 % de ses capacités de raffinage étaient à l'arrêt fin juillet 2026.</p>
+    <div class="retenir"><strong>Ce que montre le cas ukrainien</strong><ul><li>Sanctionner un grand exportateur d'énergie a un coût pour celui qui sanctionne.</li><li>Les marchés s'adaptent : les flux se détournent vers d'autres acheteurs plutôt que de disparaître.</li><li>Se désengager d'une dépendance prend des années, pas des mois.</li></ul></div>
 
-    <h2 id="monnaies">3. Les monnaies et le système financier</h2>
-    <p>Le dollar américain joue un rôle central : il sert dans une grande partie des échanges de matières premières, des dettes internationales et des réserves de change. Cette place donne aux États-Unis une influence importante, notamment par les <strong>sanctions financières</strong> (gel d'avoirs, restrictions d'accès au système bancaire).</p>
-    <p>Certains pays cherchent à réduire cette dépendance : développement des échanges dans d'autres monnaies, achats d'or par des banques centrales, projets de systèmes de paiement alternatifs. Ces évolutions sont lentes, et leur portée fait l'objet de débats entre économistes.</p>
+    <h2 id="ormuz">2. Iran et détroit d'Ormuz : quand un passage commande les prix</h2>
+    <p class="date">Depuis le 28 février 2026</p>
+    <p>Le détroit d'Ormuz, un passage d'environ 35 km de large à son point le plus étroit entre l'Iran et la péninsule arabique, voyait transiter avant la guerre environ <strong>20 % du pétrole et du gaz mondiaux</strong>. Après les frappes américano-israéliennes sur l'Iran du 28 février 2026, l'Iran a visé des navires et réclamé des péages : le trafic s'est presque arrêté. Au début du conflit, pas plus de cinq navires par jour franchissaient le détroit, contre 138 en moyenne avant la guerre (centre britannique UKMTO).</p>
+    <h3>Les prix : un pic, puis une détente partielle</h3>
+    <p>Le Brent a dépassé 100 $ puis 120 $. Au 24 novembre 2026, selon Al Jazeera, il s'échangeait autour de 88 $ : l'approvisionnement s'est en partie rétabli, mais le trafic pétrolier dans le détroit restait inférieur d'environ 40 % à la normale, et les attaques de navires continuaient. Les États-Unis ont imposé un blocus des ports iraniens et escortent des pétroliers. Plusieurs médias parlent de la plus grosse perturbation de l'approvisionnement énergétique en une génération.</p>
+    <h3>Les dommages collatéraux : bien au-delà du pétrole</h3>
+    <figure>
+      <svg viewBox="0 0 600 230" role="img" aria-label="Un blocage du détroit d'Ormuz touche le pétrole, le gaz naturel liquéfié, les engrais, les plastiques et le fret, puis l'inflation, les taux, la croissance et les décisions des États">
+        <g font-size="12" text-anchor="middle" fill="#1F2937">
+          <rect x="190" y="10" width="220" height="38" rx="8" fill="#102A56"/><text x="300" y="34" fill="#fff" font-weight="700">Détroit d'Ormuz perturbé</text>
+          <rect x="12" y="92" width="104" height="42" rx="8" fill="#fff" stroke="#102A56"/><text x="64" y="118" font-weight="700">Pétrole</text>
+          <rect x="130" y="92" width="104" height="42" rx="8" fill="#fff" stroke="#102A56"/><text x="182" y="118" font-weight="700">Gaz (GNL)</text>
+          <rect x="248" y="92" width="104" height="42" rx="8" fill="#fff" stroke="#102A56"/><text x="300" y="118" font-weight="700">Engrais</text>
+          <rect x="366" y="92" width="104" height="42" rx="8" fill="#fff" stroke="#102A56"/><text x="418" y="118" font-weight="700">Plastiques</text>
+          <rect x="484" y="92" width="104" height="42" rx="8" fill="#fff" stroke="#102A56"/><text x="536" y="110" font-weight="700">Fret et</text><text x="536" y="125" font-weight="700">assurances</text>
+          <rect x="110" y="178" width="380" height="40" rx="8" fill="#fff" stroke="#C5A059" stroke-width="2"/><text x="300" y="203" font-weight="700">Inflation · Taux · Croissance · Réactions des États</text>
+        </g>
+        <g stroke="#C5A059" stroke-width="2" marker-end="url(#ar3)" fill="none">
+          <line x1="250" y1="48" x2="70" y2="90"/><line x1="275" y1="48" x2="182" y2="90"/><line x1="300" y1="48" x2="300" y2="90"/><line x1="325" y1="48" x2="418" y2="90"/><line x1="350" y1="48" x2="530" y2="90"/>
+          <line x1="64" y1="136" x2="200" y2="175"/><line x1="182" y1="136" x2="250" y2="175"/><line x1="300" y1="136" x2="300" y2="175"/><line x1="418" y1="136" x2="350" y2="175"/><line x1="536" y1="136" x2="400" y2="175"/>
+        </g>
+      </svg>
+      <figcaption>De l'énergie à la vie quotidienne : un passage maritime touche bien plus que le prix du baril.</figcaption>
+    </figure>
+    <ul class="liste">
+      <li><strong>Le gaz</strong> : une partie du GNL consommé en Europe et en Asie transite par le détroit.</li>
+      <li><strong>Les plastiques</strong> : environ 84 % du polyéthylène du Moyen-Orient (emballages, bouteilles, tuyaux) passe par Ormuz (Hydrocarbon Engineering, cité par Axios).</li>
+      <li><strong>Les engrais</strong> : leurs prix ont aussi grimpé, ce qui pèse sur les coûts agricoles.</li>
+      <li><strong>Le quotidien</strong> : dans les premières semaines, l'essence avait pris 17 % aux États-Unis (OPIS).</li>
+    </ul>
+    <h3>Le ricochet sur l'Ukraine : deux crises qui se croisent</h3>
+    <p>Pour amortir la hausse des prix, plusieurs États ont ajusté leurs sanctions sur la Russie : l'UE a gelé son plafond sur le pétrole russe, et en octobre 2026 Washington a suspendu jusqu'en avril 2027 des sanctions sur le diesel russe, puis levé de nouvelles sanctions votées par le Congrès. La mesure fait débat :</p>
+    <div class="duo">
+      <div class="a"><h3>Ceux qui la critiquent</h3><ul><li>L'Ukraine et plusieurs pays européens y voient un cadeau à Moscou, qui finance sa guerre avec ces revenus.</li><li>Des économistes estiment que la Russie en profite en vendant son pétrole moins décoté.</li></ul></div>
+      <div class="b"><h3>Ceux qui la défendent</h3><ul><li>Washington invoque l'intérêt national et la baisse des prix de l'énergie.</li><li>Il reproche aux Européens de continuer à acheter du gaz russe.</li></ul></div>
+    </div>
+    <p>Un économiste cité par Al Jazeera estime qu'environ 60 centimes de chaque dollar supplémentaire sur le baril russe finissent dans les caisses de l'État russe. Pour la Commission européenne, les volumes de diesel concernés ne pèsent pas à l'échelle macroéconomique.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th></th><th>2022 : Ukraine</th><th>2026 : Ormuz</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Nature du choc</th><td>Rupture d'une dépendance à un fournisseur</td><td>Blocage d'un passage maritime</td></tr>
+          <tr><th scope="row">Produits touchés</th><td>Gaz, pétrole, charbon, engrais</td><td>Pétrole, GNL, engrais, plastiques, fret</td></tr>
+          <tr><th scope="row">Réponses des États</th><td>Embargo, plafonnement, diversification</td><td>Escortes, blocus, assouplissement de sanctions</td></tr>
+          <tr><th scope="row">Rythme</th><td>Une transition de plusieurs années</td><td>Un choc brutal, encore en cours</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="retenir"><strong>Ce que montre le cas d'Ormuz</strong><ul><li>Un point d'étranglement (<em>chokepoint</em>) maritime peut peser plus lourd qu'un pays entier.</li><li>L'énergie est aussi une matière première : elle se retrouve dans les plastiques, les engrais et le fret.</li><li>Les prix montent vite, mais les pics sont souvent temporaires : le marché anticipe, puis s'adapte.</li></ul></div>
 
-    <h2 id="dette">4. La dette, arme et fragilité</h2>
-    <p>Les pays endettés en devises étrangères (surtout en dollars) sont vulnérables quand les taux montent ou que leur monnaie baisse : leur dette devient plus lourde à rembourser. Les relations entre pays créanciers et débiteurs, et le rôle d'institutions comme le FMI, pèsent sur les politiques économiques. L'Europe l'a vu lors de la crise de la dette de 2010-2012.</p>
+    <h2 id="usa-chine">3. États-Unis – Chine : le bras de fer des puces et des métaux</h2>
+    <p class="date">Depuis 2022, et toujours en négociation</p>
+    <p>Chaque camp détient un levier que l'autre ne peut pas remplacer facilement : Washington contrôle l'accès à des technologies de pointe, notamment les puces d'intelligence artificielle ; Pékin domine la transformation de matériaux indispensables, comme les terres rares. Aucun des deux ne peut vraiment couper l'autre sans se faire mal : c'est ce qui rend ce bras de fer instable, avec des trêves et des reprises.</p>
+    <h3>Les puces d'IA de Nvidia</h3>
+    <p>Les règles américaines visent les <strong>puces d'IA les plus puissantes</strong> (les « GPU » des centres de données). Nvidia a conçu pour la Chine des versions volontairement bridées, avant que les règles ne changent plusieurs fois :</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Date</th><th>Événement</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Octobre 2022</th><td>Washington restreint les exportations de puces d'IA avancées vers la Chine. Nvidia conçoit ensuite la H20, une version bridée.</td></tr>
+          <tr><th scope="row">Avril 2025</th><td>Une licence devient obligatoire pour la H20 : les ventes s'arrêtent, avec une charge de 5,5 milliards de dollars pour Nvidia.</td></tr>
+          <tr><th scope="row">Juillet à décembre 2025</th><td>Assouplissements successifs ; en décembre, annonce de la vente de la H200, bien plus puissante, à des clients approuvés.</td></tr>
+          <tr><th scope="row">14 janvier 2026</th><td>Règles formalisées : H200 autorisée au cas par cas, avec conditions. Les puces les plus avancées (Blackwell, Rubin) restent exclues.</td></tr>
+          <tr><th scope="row">2026</th><td>Pékin bloque d'abord les H200 à la douane et pousse les puces nationales (Huawei Ascend), puis autorise des livraisons limitées, à garder à Hong Kong (Reuters, août 2026).</td></tr>
+          <tr><th scope="row">Juin 2026</th><td>Selon l'AP, les ventes de Nvidia en Chine sont à l'arrêt ; DeepSeek adapte son modèle V4 aux puces Huawei.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>De nombreux analystes y voient un effet pervers : chaque restriction accélère l'émergence d'alternatives locales. Selon des analystes cités par l'AP, les puces Huawei les plus récentes seraient comparables à la H200 sur certains critères, sans remplacer Nvidia du jour au lendemain.</p>
+    <h3>Les terres rares</h3>
+    <p>La Chine assurerait environ <strong>70 % de l'extraction</strong> mondiale de terres rares et près de <strong>90 % de leur transformation</strong> (estimations de presse spécialisée). Ces métaux entrent dans les aimants des véhicules électriques, des éoliennes, de l'électronique et de l'armement. Le calendrier récent :</p>
+    <ul class="liste">
+      <li><strong>Avril 2025</strong> : Pékin soumet sept terres rares lourdes à des licences d'exportation.</li>
+      <li><strong>Octobre 2025</strong> : les contrôles sont élargis de façon considérable, jusqu'aux produits contenant de faibles quantités de terres rares chinoises.</li>
+      <li><strong>Fin octobre 2025</strong> : après une rencontre entre les présidents américain et chinois en Corée du Sud, la Chine suspend ces nouvelles mesures pour un an, jusqu'au 10 novembre 2026.</li>
+      <li><strong>9 novembre 2026</strong> : la suspension est prolongée de deux mois, jusqu'au 10 janvier 2027, dans l'attente d'un accord commercial plus durable (Reuters). Un sommet de l'APEC à Shenzhen était attendu à la fin du mois.</li>
+    </ul>
+    <p>La trêve suspend le levier sans le supprimer : le système de licences reste en place, et Pékin a montré qu'il peut s'en servir (Columbia, Center on Global Energy Policy).</p>
+    <div class="retenir"><strong>Ce que montre le bras de fer États-Unis – Chine</strong><ul><li>Les technologies et les matières premières critiques sont devenues des armes économiques.</li><li>Les trêves sont fragiles : elles suspendent les mesures plutôt que de les supprimer.</li><li>Les entreprises concentrées sur un seul fournisseur ou un seul marché sont les plus exposées.</li></ul></div>
 
-    <h2 id="tech">5. La technologie et les chaînes d'approvisionnement</h2>
-    <p>Les semi-conducteurs, l'intelligence artificielle ou les batteries sont devenus des enjeux de puissance. Les États restreignent parfois l'exportation de certaines technologies et subventionnent leurs industries. Les perturbations de 2020-2021 (pandémie, transports) ont montré la fragilité de chaînes d'approvisionnement très concentrées, et alimenté les politiques de <strong>relocalisation</strong> ou de diversification des fournisseurs.</p>
-
-    <h2 id="blocs">Un monde de plusieurs pôles</h2>
-    <p>Aujourd'hui, plusieurs grands ensembles pèsent sur l'économie mondiale : les États-Unis, la Chine, l'Union européenne, et des puissances émergentes (Inde, pays du Golfe, Brésil et d'autres). Leurs intérêts, leurs monnaies et leurs modèles économiques diffèrent, et se concurrencent sur certains terrains tout en restant très interdépendants. Cette page décrit des mécanismes, sans prendre parti dans les différends entre États.</p>
+    <h2 id="multipolaire">4. Vers un monde multipolaire : dédollarisation et BRICS</h2>
+    <p class="date">Une tendance de fond, plus lente que les titres de presse</p>
+    <p>Un monde <strong>multipolaire</strong> est un monde où plusieurs puissances (États-Unis, Chine, Union européenne, Inde, pays du Golfe, Brésil…) pèsent à la fois, au lieu d'une seule. Deux idées reviennent souvent dans le débat : la <strong>dédollarisation</strong> et la montée des <strong>BRICS</strong>.</p>
+    <h3>La dédollarisation : un mot fort pour un mouvement lent</h3>
+    <ul class="liste">
+      <li><strong>La part du dollar dans les réserves de change</strong> des banques centrales est passée d'environ 71 % en 2001 à 56,8 % fin 2025, son plus bas niveau depuis 1994, puis 57,1 % au premier trimestre 2026 (FMI). Le FMI présente cette légère remontée comme un effet de valorisation, pas comme un changement de stratégie.</li>
+      <li><strong>L'or</strong> : les banques centrales en achètent plus de 1 000 tonnes par an depuis 2022 (World Gold Council). En 2025, l'or est devenu le premier actif de réserve devant les bons du Trésor américain, surtout parce que son prix a bondi (+64 % en 2025 selon la BCE).</li>
+    </ul>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Ce qui change</th><th>Ce qui ne change pas (encore)</th></tr></thead>
+        <tbody>
+          <tr><td>La part du dollar dans les réserves recule lentement</td><td>Le dollar reste de loin la première monnaie de réserve</td></tr>
+          <tr><td>L'or gagne du poids dans les réserves</td><td>Le dollar domine le commerce de matières premières et les marchés de dettes</td></tr>
+          <tr><td>Des pays règlent davantage leurs échanges en monnaies locales</td><td>Aucune autre monnaie n'offre des marchés aussi profonds et liquides</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Les économistes nuancent : le Council on Foreign Relations parle de « dé-réservification » plutôt que de dédollarisation, c'est-à-dire de diversification des réserves plutôt que d'abandon du dollar. Une analyse d'un économiste de la Réserve fédérale rappelle aussi que rapatrier de l'or stocké aux États-Unis, comme l'a fait la Banque de France, ne revient pas forcément à réduire sa part en dollars.</p>
+    <h3>Les BRICS : un club élargi, aux intérêts variés</h3>
+    <ul class="liste">
+      <li><strong>Un bloc qui a grandi</strong> : à l'origine le Brésil, la Russie, l'Inde, la Chine et l'Afrique du Sud, il s'est élargi à partir de 2024 (Égypte, Éthiopie, Iran, Émirats arabes unis, puis d'autres) et compte aujourd'hui une dizaine de pays.</li>
+      <li><strong>Le sommet de New Delhi</strong> (12 et 13 septembre 2026, sous présidence indienne) : les membres ont confirmé leur volonté d'étendre les échanges et les paiements en monnaies locales, et de travailler à relier leurs systèmes de paiement, dont l'initiative « BRICS Pay ».</li>
+      <li><strong>Pas de monnaie commune en vue</strong> : l'Inde, prudente, ne veut pas d'un système qui apparaisse comme un concurrent direct de SWIFT, la messagerie interbancaire mondiale.</li>
+      <li><strong>Un exemple concret</strong> : selon la banque russe Sberbank, environ 96 % des échanges de l'Inde avec la Russie passent désormais par des mécanismes roupie–rouble.</li>
+    </ul>
+    <p>Le club a aussi ses limites : en mai 2026, ses ministres des Affaires étrangères n'ont pas réussi à adopter une déclaration commune sur la guerre en Iran, l'Iran et les Émirats arabes unis, tous deux membres, ayant des positions opposées. Plus le bloc grandit, plus le consensus est difficile.</p>
+    <div class="retenir"><strong>Ce que montre la multipolarité</strong><ul><li>Le monde se diversifie : plusieurs pôles pèsent, avec des intérêts qui divergent même à l'intérieur d'un bloc.</li><li>La dédollarisation est surtout une diversification lente : l'or gagne du poids, mais le dollar reste dominant.</li><li>Un changement de système monétaire se compte en décennies, pas en années.</li></ul></div>
 
     <h2 id="argent">Et pour mon argent ?</h2>
     <div class="tablewrap">
       <table>
-        <thead><tr><th>Effet possible</th><th>Pourquoi</th></tr></thead>
-        <tbody><tr><th scope="row">Inflation</th><td>Les prix de l'énergie et des matières premières montent, ce qui renchérit les produits du quotidien</td></tr><tr><th scope="row">Taux d'intérêt</th><td>Les banques centrales ajustent leurs taux pour contenir l'inflation ou soutenir l'activité</td></tr><tr><th scope="row">Marchés financiers</th><td>Les incertitudes font monter la volatilité, certains secteurs en profitent, d'autres souffrent</td></tr><tr><th scope="row">Valeurs refuges</th><td>Les investisseurs se tournent parfois vers l'or ou les obligations d'États jugés sûrs, sans garantie de résultat</td></tr><tr><th scope="row">Taux de change</th><td>Les monnaies réagissent aux écarts de croissance, de taux et à la confiance</td></tr></tbody>
+        <thead><tr><th>Événement</th><th>Effet possible sur tes finances</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Choc sur le pétrole et le gaz</th><td>Carburants, factures et produits du quotidien renchéris : l'inflation monte, les banques centrales ajustent leurs taux</td></tr>
+          <tr><th scope="row">Sanctions et plafonds de prix</th><td>Les flux d'énergie se déplacent, les coûts et la volatilité des prix augmentent</td></tr>
+          <tr><th scope="row">Contrôles sur les puces</th><td>Les entreprises technologiques très exposées à un seul marché ou fournisseur voient leurs résultats varier fortement</td></tr>
+          <tr><th scope="row">Terres rares</th><td>Les secteurs qui en dépendent (automobile électrique, éolien, électronique) subissent des risques d'approvisionnement</td></tr>
+          <tr><th scope="row">Dédollarisation</th><td>Plus de volatilité sur les taux de change et sur l'or, sans que le dollar disparaisse</td></tr>
+          <tr><th scope="row">Valeurs refuges</th><td>L'or ou les obligations d'États jugés sûrs sont recherchés en période de tension, sans garantie de résultat</td></tr>
+        </tbody>
       </table>
     </div>
-    <p>Face à cette incertitude, le meilleur réflexe reste la <strong>diversification</strong> et l'horizon long : personne ne sait prédire un événement géopolitique. On peut en revanche comprendre comment il se transmet, et éviter de concentrer tout son patrimoine sur un seul pays, un seul secteur ou une seule monnaie.</p>
-    <p>Pour suivre l'actualité, privilégie des sources institutionnelles : BCE, Banque de France, INSEE, FMI, OCDE.</p>
-    <div class="retenir"><strong>3 idées à retenir</strong><ul><li>L'économie est aussi un outil de puissance : commerce, énergie, monnaie et technologie.</li><li>Les tensions entre pays se transmettent aux prix, aux taux et aux marchés.</li><li>On ne prévoit pas les événements, mais on peut limiter son exposition par la diversification.</li></ul></div>
+    <h3>Cinq réflexes à retenir</h3>
+    <ul class="liste">
+      <li><strong>Diversifier</strong> par pays, par secteur et par monnaie : personne ne sait prédire un événement géopolitique.</li>
+      <li><strong>Comprendre le canal</strong> : l'énergie passe par l'inflation, donc par les taux, donc par les obligations et l'immobilier.</li>
+      <li><strong>Se méfier des pics</strong> : les prix de l'énergie montent souvent juste après un événement, puis se calment (le Brent est passé de plus de 120 $ à environ 88 $ en quelques mois).</li>
+      <li><strong>Garder un horizon long</strong> : les chocs finissent par s'intégrer dans les prix.</li>
+      <li><strong>S'informer à la source</strong> : BCE, Banque de France, FMI, OCDE, Agence internationale de l'énergie, plutôt que des titres alarmistes.</li>
+    </ul>
+    <div class="retenir"><strong>5 idées à retenir</strong><ul><li>L'économie est aussi un outil de puissance : commerce, énergie, monnaie, technologie.</li><li>Un point d'étranglement comme Ormuz, ou une dépendance comme celle au gaz russe, se transmet vite aux prix.</li><li>Technologie et matières premières critiques sont devenues des armes : puces d'IA d'un côté, terres rares de l'autre.</li><li>La multipolarité avance, mais la dédollarisation est une diversification lente.</li><li>On ne prévoit pas les événements, mais on peut limiter son exposition.</li></ul></div>
 
     <h3>Le jargon traduit</h3>
     <dl>
-      <dt><strong>Géoéconomie</strong></dt><dd>L'usage de leviers économiques (commerce, énergie, finance) au service de la puissance d'un État.</dd>
-      <dt><strong>Droit de douane</strong></dt><dd>Une taxe sur les produits importés.</dd>
-      <dt><strong>Sanctions financières</strong></dt><dd>Des mesures qui bloquent des avoirs ou l'accès au système bancaire.</dd>
-      <dt><strong>Relocalisation</strong></dt><dd>Le retour de certaines productions vers le pays ou des pays proches.</dd>
+      <dt><strong>Géoéconomie</strong></dt><dd>L'usage de leviers économiques (commerce, énergie, finance, technologie) au service de la puissance d'un État.</dd>
+      <dt><strong>Point d'étranglement (chokepoint)</strong></dt><dd>Un passage étroit, comme le détroit d'Ormuz, par lequel transite une part importante du commerce mondial.</dd>
+      <dt><strong>Plafonnement du prix (price cap)</strong></dt><dd>Un prix maximal au-delà duquel les services occidentaux (assurance, transport) ne peuvent pas servir au pétrole russe.</dd>
+      <dt><strong>GNL</strong></dt><dd>Gaz naturel liquéfié : du gaz refroidi pour être transporté par bateau.</dd>
+      <dt><strong>Contrôle des exportations</strong></dt><dd>L'interdiction ou l'encadrement de la vente à l'étranger de produits sensibles, comme les puces d'IA.</dd>
+      <dt><strong>Terres rares</strong></dt><dd>Un groupe de métaux indispensables aux aimants et à l'électronique, dont la transformation est très concentrée en Chine.</dd>
+      <dt><strong>Monnaie de réserve</strong></dt><dd>Une monnaie que les banques centrales détiennent en réserve, comme le dollar, l'euro ou le yen.</dd>
+      <dt><strong>Dédollarisation</strong></dt><dd>La volonté de réduire sa dépendance au dollar dans les réserves, les échanges ou les paiements.</dd>
+      <dt><strong>Multipolarité</strong></dt><dd>Un monde où plusieurs puissances pèsent à la fois, plutôt qu'une seule.</dd>
+      <dt><strong>BRICS</strong></dt><dd>Un groupe de pays émergents, à l'origine le Brésil, la Russie, l'Inde, la Chine et l'Afrique du Sud, élargi depuis 2024.</dd>
+      <dt><strong>SWIFT</strong></dt><dd>La messagerie interbancaire mondiale, qui permet de transmettre les ordres de paiement entre banques.</dd>
     </dl>
 
     <h3>Teste-toi</h3>
-    <div class="q" data-good="0">
-      <p>1. Qu'est-ce qu'un droit de douane ?</p>
-      <button>Une taxe sur les produits importés</button>
-      <button>Une aide aux exportateurs</button>
-      <button>Un taux d'intérêt</button>
+    <div class="q" data-good="0" data-exp="Un point d'étranglement est un passage étroit, comme le détroit d'Ormuz, par lequel passe une part importante du commerce mondial.">
+      <p>1. Qu'est-ce qu'un « point d'étranglement » (chokepoint) maritime ?</p>
+      <button>Un passage étroit par lequel transite une part importante du commerce</button>
+      <button>Une taxe sur les navires étrangers</button>
+      <button>Un port de commerce très profond</button>
       <div class="fb" aria-live="polite"></div>
     </div>
-    <div class="q" data-good="0">
-      <p>2. Pourquoi une tension sur l'énergie peut-elle faire monter l'inflation ?</p>
-      <button>Parce que les coûts de production et de transport augmentent</button>
-      <button>Parce que les salaires baissent</button>
-      <button>Parce que les impôts diminuent</button>
+    <div class="q" data-good="1" data-exp="Le pétrole et le gaz sont aussi des matières premières : on les retrouve dans les plastiques, les engrais et le transport.">
+      <p>2. Pourquoi une tension à Ormuz touche-t-elle aussi les plastiques, les engrais et le fret ?</p>
+      <button>Parce que les salaires baissent dans les pays du Golfe</button>
+      <button>Parce que ces produits dépendent de l'énergie ou transitent par le détroit</button>
+      <button>Parce que les impôts augmentent en Europe</button>
       <div class="fb" aria-live="polite"></div>
     </div>
-    <div class="q" data-good="1">
-      <p>3. Quel est le meilleur réflexe face à l'incertitude géopolitique ?</p>
+    <div class="q" data-good="2" data-exp="Le plafonnement vise à limiter les revenus de la Russie sans retirer son pétrole du marché : au-delà du plafond, les services occidentaux ne peuvent pas servir.">
+      <p>3. À quoi sert le plafonnement du prix du pétrole russe ?</p>
+      <button>À fixer un prix minimum pour soutenir les producteurs</button>
+      <button>À interdire toute vente de pétrole russe dans le monde</button>
+      <button>À limiter les revenus russes tout en gardant le pétrole sur le marché</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="0" data-exp="Les puces d'IA avancées sont indispensables à l'intelligence artificielle : en restreindre l'accès freine un rival, mais pousse aussi ce rival à développer ses propres puces.">
+      <p>4. Pourquoi les contrôles sur les puces d'IA sont-ils un levier de puissance ?</p>
+      <button>Ils limitent l'accès à une technologie clé, au risque d'encourager des alternatives locales</button>
+      <button>Ils font baisser le prix de l'électricité</button>
+      <button>Ils remplacent les droits de douane</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="2" data-exp="Selon des estimations de presse spécialisée, la Chine assure environ 70 % de l'extraction et près de 90 % de la transformation des terres rares.">
+      <p>5. Quelle part de la transformation des terres rares la Chine assurerait-elle ?</p>
+      <button>Environ 10 %</button>
+      <button>Environ la moitié</button>
+      <button>Environ 90 %</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="1" data-exp="La part du dollar dans les réserves recule lentement (autour de 57 %), mais il reste très largement la première monnaie de réserve : c'est une diversification plutôt qu'un remplacement.">
+      <p>6. Que montrent les chiffres du FMI sur la dédollarisation ?</p>
+      <button>Le dollar a disparu des réserves des banques centrales</button>
+      <button>Le dollar reste majoritaire, mais sa part recule lentement</button>
+      <button>Le yuan a remplacé le dollar</button>
+      <div class="fb" aria-live="polite"></div>
+    </div>
+    <div class="q" data-good="1" data-exp="Personne ne prévoit les événements géopolitiques : la diversification et un horizon long limitent l'exposition à un seul pays, secteur ou monnaie.">
+      <p>7. Quel est le meilleur réflexe face à l'incertitude géopolitique ?</p>
       <button>Tout miser sur un seul pays</button>
       <button>La diversification et un horizon de long terme</button>
       <button>Attendre la prochaine crise pour investir</button>
@@ -201,13 +369,13 @@ details p{margin:.7rem 0 0}
 var t=document.querySelector('.menu-toggle'),n=document.querySelector('nav');
 if(t&&n){t.addEventListener('click',function(){n.classList.toggle('mobile-open');});}
 document.querySelectorAll('.q').forEach(function(q){
-  var good=+q.dataset.good,btns=q.querySelectorAll('button'),fb=q.querySelector('.fb');
+  var good=+q.dataset.good,btns=q.querySelectorAll('button'),fb=q.querySelector('.fb'),exp=q.dataset.exp||'';
   btns.forEach(function(b,i){
     b.addEventListener('click',function(){
       btns.forEach(function(x){x.disabled=true});
       btns[good].classList.add('good');
-      if(i===good){fb.textContent="Bravo, c'est la bonne réponse.";}
-      else{b.classList.add('bad');fb.textContent="Pas tout à fait : la bonne réponse est « "+btns[good].textContent+" ».";}
+      if(i===good){fb.textContent="Bravo, c'est la bonne réponse. "+exp;}
+      else{b.classList.add('bad');fb.textContent="Pas tout à fait : la bonne réponse est « "+btns[good].textContent+" ». "+exp;}
     });
   });
 });
