@@ -37,8 +37,18 @@
               { title: 'Al Jazeera : « BRICS Pay » peut-il concurrencer SWIFT ?', url: 'https://www.aljazeera.com/news/2026/9/16/what-is-brics-pay-and-can-it-rival-the-wests-swift-payments-system' }
             ],
             desc: 'Ukraine, Iran et détroit d\'Ormuz, puces Nvidia et terres rares, dédollarisation et BRICS : comment les rapports de force entre pays touchent les prix, les taux et les marchés.' },
-          { title: 'La macroéconomie', file: 'macro.html',
-            desc: "Indicateurs, taux, dette : le tableau de bord d'un pays et les leviers des banques centrales." },
+          { title: 'La macroéconomie', file: 'macro.html', maj: 'novembre 2026', sources: [
+              { title: 'Insee : le PIB recule légèrement au troisième trimestre 2026 (30 octobre 2026)', url: 'https://insee.fr/fr/statistiques/9111036' },
+              { title: 'Boursorama : la BCE laisse ses taux inchangés (29 octobre 2026)', url: 'https://www.boursorama.com/bourse/actualites-amp/la-bce-laisse-ses-taux-inchanges-l-inflation-pourrait-peser-sur-la-croissance-9ff96a59ee53fb73018e56ccc8595e20' },
+              { title: 'OFCE : coût pour les finances publiques de l\'écart de taux entre la France et l\'Allemagne (5 novembre 2026)', url: 'https://www.ofce.fr/blog2024/fr/2026/20261105_RS/' },
+              { title: 'Banque de France : taux de change, parités quotidiennes (18 novembre 2026)', url: 'https://www.banque-france.fr/fr/statistiques/taux-et-cours/taux-de-change-parites-quotidiennes-2026-11-18' },
+              { title: 'Test-Achats : la baisse de l\'euro face au dollar (12 novembre 2026)', url: 'https://www.test-achats.be/invest/investir/marches-et-devises/articles/euro-dollar-baisse-taux-interet' },
+              { title: 'BEA : transactions internationales et position extérieure des États-Unis, 2e trimestre 2026', url: 'https://bea.gov/news/2026/us-international-transactions-and-investment-position-2nd-quarter-2026' },
+              { title: 'Brookings : le retour des déséquilibres mondiaux, le cas américain', url: 'https://www.brookings.edu/articles/the-return-of-global-imbalances-the-us-case/' },
+              { title: 'Réserve fédérale : flux financiers américains et déséquilibres mondiaux (9 octobre 2026)', url: 'https://www.federalreserve.gov/econres/notes/feds-notes/beyond-the-current-account-u-s-financial-flows-and-global-imbalances-20261009.html' },
+              { title: 'PIIE : déséquilibres américains et chinois, causes et perspectives', url: 'https://www.piie.com/sites/default/files/2026-04/2026-04-16-gagnon-ppt.pdf' }
+            ],
+            desc: "PIB et croissance, inflation, taux de change et balance commerciale, parité de pouvoir d'achat, dette publique, dette ou productivité : le tableau de bord d'un pays." },
           { title: 'Les courants de pensée économique', file: 'courants.html',
             desc: 'Capitalisme, socialisme, Smith, Marx, Keynes, Friedman, Hayek, Schumpeter : pourquoi les experts divergent.' },
           { title: "Les biais de l'investisseur", file: 'biais-investisseur.html',
@@ -287,6 +297,14 @@
     }
   }
 
+  /* Nombre de colonnes selon le nombre de blocs : 8 blocs = deux lignes de quatre */
+  function colsFor(n) {
+    if (n <= 4) return Math.max(n, 1);
+    if (n % 4 === 0) return 4;
+    if (n % 3 === 0 || n === 5) return 3;
+    return 4;
+  }
+
   /* Les outils forment un sixième bloc de l'arbre : un clic ouvre les cinq outils */
   function treeBranches() {
     var list = [];
@@ -314,11 +332,11 @@
 
       var list = h('ol', { class: 'leaves' });
       list.style.setProperty('--n', b.items.length);
+      list.style.setProperty('--cols', colsFor(b.items.length));
       b.items.forEach(function (it, j) {
         var li = h('li', { class: 'leaf' }, [
           h('span', { class: 'leaf-no', text: String(j + 1) }),
-          h('h3', {}, [h('a', { href: it.file, text: it.title })]),
-          h('p', { text: it.desc })
+          h('h3', {}, [h('a', { href: it.file, text: it.title })])
         ]);
         if (it.sub) {
           var chips = h('div', { class: 'leaf-sub' });
