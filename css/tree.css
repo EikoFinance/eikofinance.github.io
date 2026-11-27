@@ -25,7 +25,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    max-width: 900px;
+    max-width: none;
     margin: 0 auto;
 }
 
@@ -36,10 +36,8 @@
     font: inherit;
     cursor: pointer;
     padding: 1.3rem 1rem 1.1rem;
-    /* gris clair légèrement glossy : un reflet blanc dans la moitié haute, sur un dégradé gris */
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.28) 48%, rgba(255, 255, 255, 0) 52%),
-        linear-gradient(165deg, #F4F6F9 0%, #E8ECF1 100%);
+    /* gris légèrement glossy : dégradé défini dans style.css (--grad-gloss, --grad-card) */
+    background: var(--grad-gloss), var(--grad-card);
     color: var(--primary-blue);
     border: 1px solid #D9DEE5;
     border-top: 4px solid var(--gold-accent);
@@ -59,7 +57,7 @@
     margin-top: 0.45rem;
     font-size: 0.85rem;
     line-height: 1.4;
-    color: var(--text-muted);
+    color: var(--text-on-grey);
 }
 .root:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 12px 24px rgba(16, 42, 86, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.9); }
 .root:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: 3px; }
@@ -93,9 +91,7 @@
     align-items: center;
     min-height: 6.2rem;
     padding: 1.1rem 1.1rem 1rem;
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.28) 48%, rgba(255, 255, 255, 0) 52%),
-        linear-gradient(165deg, #F4F6F9 0%, #E8ECF1 100%);
+    background: var(--grad-gloss), var(--grad-card);
     border: 1px solid #E1E6ED;
     border-top: 3px solid var(--gold-accent);
     border-radius: 8px;
@@ -106,7 +102,7 @@
 .leaf h3 a { color: var(--primary-blue); text-decoration: none; }
 /* toute la carte est cliquable */
 .leaf h3 a::after { content: ""; position: absolute; inset: 0; }
-.leaf p { font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); }
+.leaf p { font-size: 0.9rem; line-height: 1.5; color: var(--text-on-grey); }
 .leaf:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 12px 24px rgba(16, 42, 86, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.9); }
 .leaf:hover h3 a { color: var(--gold-accent); }
 

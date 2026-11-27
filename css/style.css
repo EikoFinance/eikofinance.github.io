@@ -13,6 +13,12 @@
     --text-muted: #4B5563;
     --font-title: 'Cinzel', 'Playfair Display', serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
+
+    /* Fond des blocs : gris légèrement glossy, tirant vers le gris foncé.
+       Pour assombrir davantage, modifier la 2e couleur de --grad-card (ex. #A9B1BD). */
+    --grad-gloss: linear-gradient(180deg, rgba(255, 255, 255, 0.70) 0%, rgba(255, 255, 255, 0.22) 48%, rgba(255, 255, 255, 0) 52%);
+    --grad-card: linear-gradient(165deg, #E4E8ED 0%, #BFC6D0 100%);
+    --text-on-grey: #374151;
 }
 
 * {
@@ -266,7 +272,7 @@ nav a:hover {
 }
 
 .card {
-    background-color: #FFFFFF;
+    background: var(--grad-gloss), var(--grad-card);
     padding: 1.8rem;
     border-radius: 8px;
     border-top: 4px solid var(--gold-accent);
@@ -287,7 +293,7 @@ nav a:hover {
 }
 
 .card p {
-    color: var(--text-muted);
+    color: var(--text-on-grey);
     font-size: 0.95rem;
 }
 
