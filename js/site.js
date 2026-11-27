@@ -355,7 +355,6 @@
       list.style.setProperty('--cols', colsFor(b.items.length));
       b.items.forEach(function (it, j) {
         var li = h('li', { class: 'leaf' }, [
-          h('span', { class: 'leaf-no', text: String(j + 1) }),
           h('h3', {}, [h('a', { href: it.file, text: it.title })])
         ]);
         if (it.sub) {
